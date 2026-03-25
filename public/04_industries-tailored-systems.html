@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+
+<html class="dark scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Inter:wght@400;500;600&amp;family=Manrope:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .animate-slide-up { animation: slide-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+            .animate-fade-in { animation: fade-in 1s ease-out forwards; }
+            .delay-200 { animation-delay: 200ms; }
+        }
+        @keyframes slide-up {
+            from { transform: translateY(30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes fade-in {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-tertiary-container": "#0085bd",
+              "surface-dim": "#0b1326",
+              "surface-container-low": "#131b2e",
+              "on-primary-fixed": "#002113",
+              "surface-container-lowest": "#060e20",
+              "outline-variant": "#45474b",
+              "on-background": "#dae2fd",
+              "primary-container": "#00150b",
+              "secondary-container": "#3a4a5f",
+              "on-tertiary-fixed-variant": "#004c6e",
+              "secondary": "#b7c8e1",
+              "on-surface": "#dae2fd",
+              "surface-container": "#171f33",
+              "on-surface-variant": "#c6c6cb",
+              "tertiary-fixed-dim": "#89ceff",
+              "on-tertiary": "#00344d",
+              "error-container": "#93000a",
+              "primary-fixed-dim": "#0A84FF",
+              "on-primary-container": "#00E68A",
+              "inverse-primary": "#006c49",
+              "surface-variant": "#2d3449",
+              "on-primary-fixed-variant": "#005236",
+              "surface-container-high": "#222a3d",
+              "secondary-fixed-dim": "#b7c8e1",
+              "on-secondary": "#213145",
+              "primary": "#0A84FF",
+              "surface": "#0F172A",
+              "error": "#ffb4ab",
+              "on-secondary-fixed-variant": "#38485d",
+              "tertiary-container": "#001320",
+              "tertiary-fixed": "#c9e6ff",
+              "primary-fixed": "#6ffbbe",
+              "secondary-fixed": "#d3e4fe",
+              "inverse-surface": "#dae2fd",
+              "background": "#0F172A",
+              "tertiary": "#89ceff",
+              "on-secondary-fixed": "#0b1c30",
+              "on-tertiary-fixed": "#001e2f",
+              "surface-tint": "#0A84FF",
+              "inverse-on-surface": "#283044",
+              "surface-container-highest": "#2d3449",
+              "on-primary": "#FFFFFF",
+              "surface-bright": "#31394d",
+              "outline": "#8f9095",
+              "on-error": "#690005",
+              "on-error-container": "#ffdad6",
+              "on-secondary-container": "#a9bad3",
+              "brand-green": "#00E68A"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Inter"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-effect {
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+      }
+      .signature-gradient {
+        background: linear-gradient(135deg, #4edea3 0%, #00150b 100%);
+      }
+      .glow-pulse {
+        box-shadow: 0 0 0 0 rgba(78, 222, 163, 0.4);
+        animation: pulse 2s infinite;
+      }
+      @keyframes pulse {
+        0% { box-shadow: 0 0 0 0 rgba(78, 222, 163, 0.4); }
+        70% { box-shadow: 0 0 0 10px rgba(78, 222, 163, 0); }
+        100% { box-shadow: 0 0 0 0 rgba(78, 222, 163, 0); }
+      }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body selection:bg-primary selection:text-on-primary">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#0b1326]/70 backdrop-blur-xl shadow-2xl shadow-[#060e20]/40 border-b border-outline-variant/10">
+<div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
+<a href="index.html" class="flex items-center gap-3 hover:opacity-80 transition-opacity">
+    <div class="flex items-center gap-3">
+        <svg width="32" height="32" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-8 h-8">
+            <circle cx="24" cy="24" r="18" stroke="#0A84FF" stroke-width="3" />
+            <ellipse cx="24" cy="24" rx="13" ry="7.5" stroke="#00E68A" stroke-width="3" transform="rotate(60 24 24)" />
+            <ellipse cx="24" cy="24" rx="13" ry="7.5" stroke="#00E68A" stroke-width="3" transform="rotate(-60 24 24)" />
+            <circle cx="24" cy="6" r="2.5" fill="#0A84FF" />
+            <circle cx="24" cy="42" r="2.5" fill="#0A84FF" />
+            <circle cx="39.59" cy="15" r="2.5" fill="#00E68A" />
+            <circle cx="8.41" cy="15" r="2.5" fill="#FFFFFF" />
+            <circle cx="39.59" cy="33" r="2.5" fill="#FFFFFF" />
+            <circle cx="8.41" cy="33" r="2.5" fill="#00E68A" />
+            <circle cx="24" cy="24" r="3.5" fill="#FFFFFF" />
+        </svg>
+        <div class="flex items-baseline font-serif text-2xl font-bold tracking-tighter">
+            <span class="text-white">CRESCA</span><span class="text-[#00E68A] ml-px">OS</span>
+        </div>
+    </div>
+</a>
+<div class="hidden md:flex space-x-8">
+<a class="text-[#8f9095] hover:text-[#dae2fd] font-serif text-lg tracking-tight transition-all duration-200" href="02_solutions-infrastructure-ai.html">Solutions</a>
+<a class="text-[#8f9095] hover:text-[#dae2fd] font-serif text-lg tracking-tight transition-all duration-200" href="04_industries-tailored-systems.html">Industries</a>
+<a class="text-[#8f9095] hover:text-[#dae2fd] font-serif text-lg tracking-tight transition-all duration-200" href="11_pricing.html">Pricing</a>
+<a class="text-[#8f9095] hover:text-[#dae2fd] font-serif text-lg tracking-tight transition-all duration-200" href="05_about-practical-systems-thinking.html">About</a>
+<a class="text-[#8f9095] hover:text-[#dae2fd] font-serif text-lg tracking-tight transition-all duration-200" href="07_el-salvador-hub-v2.html">El Salvador</a>
+</div>
+<div class="flex items-center gap-6">
+<span class="text-[#8f9095] font-label text-sm cursor-pointer hover:text-[#dae2fd]" onclick="alert('Bilingual support (ES) is currently in internal testing. Contact our San Salvador hub for localized implementation.')">EN/ES</span>
+<a class="bg-[#4edea3] text-[#003824] px-5 py-2 rounded-lg font-label font-bold scale-95 transition-transform duration-200 hover:scale-100 uppercase tracking-widest text-[10px]" href="08_request-proposal-updated-logo.html">
+                    Book Audit
+                </a>
+</div>
+</div>
+</nav>
+
+<main class="pt-32 pb-24">
+<!-- Hero Section -->
+<header class="max-w-7xl mx-auto px-8 mb-24">
+<div class="max-w-3xl">
+<div class="flex items-center space-x-3 mb-6">
+<span class="w-2 h-2 rounded-full bg-primary glow-pulse"></span>
+<span class="font-label text-sm tracking-[0.2em] text-primary uppercase">Tailored Systems by Industry</span>
+</div>
+<h1 class="font-headline text-6xl md:text-7xl font-bold text-on-surface tracking-tight leading-tight mb-8 animate-slide-up">
+                    Systems Built for <br/>
+                    <span class="text-brand-green italic">Your Industry</span>.
+</h1>
+<p class="font-body text-xl text-on-surface-variant leading-relaxed mb-10">
+                    Every industry has its own "operational physics." We don't use generic templates because your business isn't generic. We build the system that fits how you actually work.
+                </p>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-3 h-3 bg-primary rounded-full glow-pulse"></div>
+<span class="font-label text-sm uppercase tracking-widest text-primary">Live Infrastructure Ready</span>
+</div>
+</header>
+<!-- Industries Bento Grid -->
+<section class="max-w-7xl mx-auto px-8 mb-32">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 h-auto md:h-[900px]">
+<!-- Logistics & Supply Chain -->
+<div class="md:col-span-8 bg-surface-container-low rounded-xl overflow-hidden group flex flex-col justify-end p-10 relative">
+<div class="absolute inset-0 bg-gradient-to-t from-surface-dim via-surface-dim/20 to-transparent z-10"></div>
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-40" data-alt="Solar panels on a residential roof" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbSChRav39s_MRu32kqp6ZlXImTOLwEjQotWdIKxrFqyyP2HfX4Mxya5rQnADWFMIZTlSY9XRnTH2FIhHyl5F0x8Lj5wbIKGlFd1t4LYExmJvdKEr5v6B3Ks1hSWUNxnN1dLyBl31skQCT5BGh0n1lFcHnePm-sYzxKSY5F4Hk9fhFB2-y9QPtmLgsH3Q-ct-dLk__86FE-nvTQuB8HF8_TjOJk890dbXtIcx2uiQnRDHbMU8fexGLtS4lMU233C3THrlTqBWD-D8"/>
+<div class="relative z-20">
+<span class="font-label text-xs font-bold text-[#00E68A] tracking-widest uppercase mb-4 block">Solar & Renewable Energy</span>
+<h3 class="font-headline text-4xl text-on-surface mb-4">From Lead to Interconnection.</h3>
+<p class="font-body text-on-surface-variant max-w-xl mb-6">Automate the complexity of solar sales and operations. We build systems that handle everything from lead intake and site audits to project tracking and interconnection updates.</p>
+</div>
+</div>
+<!-- Financial Services -->
+<div class="md:col-span-4 bg-surface-container rounded-xl p-10 border border-outline-variant/15 flex flex-col justify-between">
+<div>
+<span class="material-symbols-outlined text-4xl text-[#00E68A] mb-8">home_repair_service</span>
+<h3 class="font-headline text-3xl text-on-surface mb-4">HVAC & Home Services</h3>
+<p class="font-body text-on-surface-variant">Don't let leads go cold while your team is on the roof. Instant response, automated scheduling, and multi-channel follow-up built for the field.</p>
+</div>
+<div class="pt-8 mt-8 border-t border-outline-variant/10">
+<ul class="space-y-3">
+<li class="flex items-center gap-3 text-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[#00E68A] text-lg">check_circle</span> Instant Lead Response
+                            </li>
+<li class="flex items-center gap-3 text-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[#00E68A] text-lg">check_circle</span> Automated Scheduling
+                            </li>
+</ul>
+</div>
+</div>
+<!-- Manufacturing & Operations -->
+<div class="md:col-span-4 bg-surface-container-high rounded-xl p-10 flex flex-col items-center justify-center text-center">
+<div class="w-20 h-20 signature-gradient rounded-full flex items-center justify-center mb-8">
+<span class="material-symbols-outlined text-on-primary text-3xl">construction</span>
+</div>
+<h3 class="font-headline text-3xl text-on-surface mb-4">Roofing & Construction</h3>
+<p class="font-body text-on-surface-variant">Manage complex projects from first contact to final inspection. Our systems keep the office and the field perfectly in sync.</p>
+</div>
+<!-- Operations-Heavy -->
+<div class="md:col-span-8 bg-surface-container-low rounded-xl overflow-hidden relative group">
+<div class="absolute inset-0 signature-gradient opacity-5"></div>
+<div class="relative p-12 h-full flex flex-col md:flex-row gap-10 items-center">
+<div class="flex-1">
+<h3 class="font-headline text-4xl text-on-surface mb-6">Operations-Heavy Businesses</h3>
+<p class="font-body text-on-surface-variant mb-8">For logistics, supply chain, and complex fulfillment. Our intelligence engine identifies bottlenecks in real-time, redirecting resources where they yield maximum ROI.</p>
+<div class="flex flex-wrap gap-4">
+<span class="px-4 py-2 bg-surface-container-highest rounded-lg font-label text-xs text-secondary">Logistics</span>
+<span class="px-4 py-2 bg-surface-container-highest rounded-lg font-label text-xs text-secondary">Fulfillment</span>
+<span class="px-4 py-2 bg-surface-container-highest rounded-lg font-label text-xs text-secondary">Supply Chain</span>
+</div>
+</div>
+<div class="w-full md:w-1/3 aspect-square bg-surface-container-highest/50 rounded-lg p-6 flex flex-col gap-4">
+<div class="h-4 bg-primary/20 rounded w-3/4"></div>
+<div class="h-4 bg-primary/10 rounded w-full"></div>
+<div class="h-4 bg-primary/20 rounded w-1/2"></div>
+<div class="mt-auto h-24 bg-surface-container-lowest rounded-lg border border-outline-variant/10 flex items-center justify-center">
+<span class="text-xs font-label text-outline">LIVE_DATA_STREAM</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Founder Led Section (Asymmetric Editorial) -->
+<section class="max-w-7xl mx-auto px-8 mb-32">
+<div class="flex flex-col md:flex-row gap-16 items-center">
+<div class="md:w-1/2">
+<div class="relative">
+<div class="absolute -top-10 -left-10 w-40 h-40 bg-primary/10 blur-3xl"></div>
+<img class="rounded-xl shadow-2xl relative z-10 border border-outline-variant/10" data-alt="Modern architectural building with glass reflections" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAz3uBywhZ0B7LlslXmF9th2Ok1Xd3W5R2ERpGpQo0Apo9kw2V-9Wzkj_zAzUiGjZkfLHe_1bgBndI0Vs8yqKXNoXgayaAZanmH3kLdb0SU06W_94-d-MM_gdP_ZSH5ePMRXq6kUkoZYziVwsjj8Hwd88JkRH8PBtQ6G1SF59vTTrSsQZPOENOcvVNeVxiQ1kFiW_2lH7z7SjgwDzBHxcWDspyIBYoB6IZ9ue9h-zN6wcBIk2Ug-Ty74MNm__TVtkQ1C2ZfsVCu3sI"/>
+</div>
+</div>
+<div class="md:w-1/2">
+<span class="font-label text-primary uppercase tracking-[0.3em] mb-4 block">The Human Factor</span>
+<h2 class="font-headline text-5xl text-on-surface mb-8 leading-tight">Founder-Led Businesses</h2>
+<p class="font-body text-xl text-on-surface-variant leading-relaxed mb-8">
+                        The founder's vision is the engine, but the founder's time is the bottleneck. Cresca OS extracts the operational logic from the founder's mind and codifies it into repeatable, autonomous systems.
+                    </p>
+<div class="space-y-6">
+<div class="flex gap-6 items-start">
+<div class="w-12 h-12 bg-surface-container-high rounded-full flex-shrink-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">psychology</span>
+</div>
+<div>
+<h4 class="font-headline text-xl text-on-surface mb-2">Cognitive Offloading</h4>
+<p class="font-body text-on-surface-variant">Automating the high-frequency decisions that drain creative energy.</p>
+</div>
+</div>
+<div class="flex gap-6 items-start">
+<div class="w-12 h-12 bg-surface-container-high rounded-full flex-shrink-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">hub</span>
+</div>
+<div>
+<h4 class="font-headline text-xl text-on-surface mb-2">Operational Sovereignty</h4>
+<p class="font-body text-on-surface-variant">Building a business that operates with excellence, even when the founder is offline.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="max-w-7xl mx-auto px-8">
+<div class="signature-gradient rounded-2xl p-16 text-center">
+<h2 class="font-headline text-5xl text-on-primary mb-6">Ready to Build Your Industry's OS?</h2>
+<p class="font-body text-xl text-on-primary/80 mb-10 max-w-2xl mx-auto">
+                    Speak with a systems expert to see how Cresca OS can tailor a solution for your specific industry challenges.
+                </p>
+<div class="flex flex-col md:flex-row justify-center gap-4">
+<a class="bg-on-primary text-primary px-10 py-4 rounded-lg font-label font-bold text-lg hover:bg-surface-dim transition-colors block" href="08_request-proposal-updated-logo.html">
+                        Book Your Free Industry Audit →
+</a>
+</div>
+</div>
+</section>
+</main>
+
+<footer class="bg-[#0b1326] w-full border-t border-[#45474b]/15 mt-32">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8 px-8 py-16 max-w-7xl mx-auto">
+<div class="col-span-2 md:col-span-1">
+<div class="flex items-center gap-2.5 mb-6">
+    <svg width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6">
+        <circle cx="24" cy="24" r="18" stroke="#0A84FF" stroke-width="3" />
+        <ellipse cx="24" cy="24" rx="13" ry="7.5" stroke="#00E68A" stroke-width="3" transform="rotate(60 24 24)" />
+        <ellipse cx="24" cy="24" rx="13" ry="7.5" stroke="#00E68A" stroke-width="3" transform="rotate(-60 24 24)" />
+        <circle cx="24" cy="6" r="2.5" fill="#0A84FF" />
+        <circle cx="24" cy="42" r="2.5" fill="#0A84FF" />
+        <circle cx="39.59" cy="15" r="2.5" fill="#00E68A" />
+        <circle cx="8.41" cy="15" r="2.5" fill="#FFFFFF" />
+        <circle cx="39.59" cy="33" r="2.5" fill="#FFFFFF" />
+        <circle cx="8.41" cy="33" r="2.5" fill="#00E68A" />
+        <circle cx="24" cy="24" r="3.5" fill="#FFFFFF" />
+    </svg>
+    <div class="flex items-baseline font-serif text-xl font-bold tracking-tighter">
+        <span class="text-white">CRESCA</span><span class="text-[#00E68A] ml-px">OS</span>
+    </div>
+</div>
+<p class="font-sans text-sm text-[#8f9095] mb-8 leading-relaxed max-w-xs">
+                    Done-for-you business operating systems for high-growth service companies.
+                </p>
+</div>
+<div>
+<h6 class="text-[#4edea3] font-label text-xs uppercase tracking-widest mb-6 font-bold">Solutions</h6>
+<ul class="space-y-4">
+<li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="02_solutions-infrastructure-ai.html">Systems Audit</a></li>
+<li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="11_pricing.html">Pricing</a></li>
+<li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="04_industries-tailored-systems.html">Industries</a></li>
+</ul>
+</div>
+<div>
+<h6 class="text-[#4edea3] font-label text-xs uppercase tracking-widest mb-6 font-bold">Markets</h6>
+<ul class="space-y-4">
+<li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="index.html">United States</a></li>
+<li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="07_el-salvador-hub-v2.html">El Salvador Hub</a></li>
+</ul>
+</div>
+<div>
+<h6 class="text-[#4edea3] font-label text-xs uppercase tracking-widest mb-6 font-bold">Company</h6>
+<ul class="space-y-4">
+<li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="05_about-practical-systems-thinking.html">About Us</a></li>
+<li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="08_request-proposal-updated-logo.html">Book Audit</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-8 py-8 border-t border-[#45474b]/10 text-center">
+<p class="font-sans text-xs text-[#8f9095] opacity-80 uppercase tracking-widest">
+                © 2024 Cresca OS. All rights reserved.
+            </p>
+</div>
+</footer>
+</body></html>
