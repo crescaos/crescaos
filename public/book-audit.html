@@ -391,44 +391,46 @@
 <span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">waving_hand</span> No Obligation</span>
 </div>
 </div>
-<form class="space-y-8 relative z-10" data-netlify="true" method="POST" name="audit-booking">
+<form class="space-y-8 relative z-10" data-netlify="true" method="POST" name="audit-booking" id="audit-form">
 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 <div class="space-y-2">
 <label class="block font-label text-sm text-on-surface-variant uppercase tracking-wider">Full Name</label>
-<input class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant/15 px-0 py-3 text-on-surface placeholder:text-outline transition-all duration-200" placeholder="John Doe" type="text"/>
+<input name="full_name" id="full_name" required class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant/15 px-0 py-3 text-on-surface placeholder:text-outline transition-all duration-200" placeholder="John Doe" type="text"/>
 </div>
 <div class="space-y-2">
 <label class="block font-label text-sm text-on-surface-variant uppercase tracking-wider">Company Email</label>
-<input class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant/15 px-0 py-3 text-on-surface placeholder:text-outline transition-all duration-200" placeholder="john@company.com" type="email"/>
+<input name="email" id="email" required class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant/15 px-0 py-3 text-on-surface placeholder:text-outline transition-all duration-200" placeholder="john@company.com" type="email"/>
 </div>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 <div class="space-y-2">
 <label class="block font-label text-sm text-on-surface-variant uppercase tracking-wider">Company Website</label>
-<input class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant/15 px-0 py-3 text-on-surface placeholder:text-outline transition-all duration-200" placeholder="www.yourbusiness.com" type="url"/>
+<input name="website" id="website" required class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant/15 px-0 py-3 text-on-surface placeholder:text-outline transition-all duration-200" placeholder="www.yourbusiness.com" type="text"/>
 </div>
 <div class="space-y-2">
 <label class="block font-label text-sm text-on-surface-variant uppercase tracking-wider">Est. Monthly Leads</label>
-<select class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant/15 px-0 py-3 text-on-surface transition-all duration-200 appearance-none cursor-pointer">
-<option>0 - 50 leads/mo</option>
-<option>50 - 200 leads/mo</option>
-<option>200 - 500 leads/mo</option>
-<option>500+ leads/mo</option>
+<select name="monthly_leads" id="monthly_leads" required class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant/15 px-0 py-3 text-on-surface transition-all duration-200 appearance-none cursor-pointer">
+<option value="" disabled selected>Select an option</option>
+<option value="0-50">0 - 50 leads/mo</option>
+<option value="50-200">50 - 200 leads/mo</option>
+<option value="200-500">200 - 500 leads/mo</option>
+<option value="500+">500+ leads/mo</option>
 </select>
 </div>
 </div>
 <div class="space-y-2">
 <label class="block font-label text-sm text-on-surface-variant uppercase tracking-wider">Your Biggest Operational Bottleneck</label>
-<textarea class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant/15 px-0 py-3 text-on-surface placeholder:text-outline transition-all duration-200 resize-none" placeholder="What is currently slowing down your growth?" rows="4"></textarea>
+<textarea name="bottleneck" id="bottleneck" required class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant/15 px-0 py-3 text-on-surface placeholder:text-outline transition-all duration-200 resize-none" placeholder="What is currently slowing down your growth?" rows="4"></textarea>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 <div class="space-y-2">
 <label class="block font-label text-sm text-on-surface-variant uppercase tracking-wider">Desired Timeline</label>
-<select class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant/15 px-0 py-3 text-on-surface transition-all duration-200 appearance-none cursor-pointer">
-<option>Immediate (As soon as possible)</option>
-<option>Within 30 days</option>
-<option>Within 90 days</option>
-<option>Just exploring options</option>
+<select name="timeline" id="timeline" required class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant/15 px-0 py-3 text-on-surface transition-all duration-200 appearance-none cursor-pointer">
+<option value="" disabled selected>Select a timeline</option>
+<option value="immediate">Immediate (As soon as possible)</option>
+<option value="30-days">Within 30 days</option>
+<option value="90-days">Within 90 days</option>
+<option value="exploring">Just exploring options</option>
 </select>
 </div>
 </div>
@@ -445,8 +447,47 @@
 </section>
 </div>
 </section>
-</main>
-<footer class="bg-[#0b1326] w-full border-t border-[#45474b]/15 mt-32">
+    </main>
+    <script>
+        document.getElementById('audit-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const form = e.target;
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<span class="material-symbols-outlined animate-spin">sync</span> Processing...';
+
+            // 1. Prepare data
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData.entries());
+            data.source = 'Website Audit Form';
+
+            try {
+                // 2. Send to Backend/GHL
+                await fetch('https://api.crescaos.com/api/webhook', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+
+                // 3. Send to Netlify (optional, for backup)
+                await fetch('/', {
+                    method: 'POST',
+                    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                    body: new URLSearchParams(formData).toString()
+                });
+
+                // 4. Redirect to Thank You Page
+                window.location.href = 'thank-you.html';
+            } catch (error) {
+                console.error('Submission error:', error);
+                // Fallback redirect even if webhook fails, so user isn't stuck
+                window.location.href = 'thank-you.html';
+            }
+        });
+    </script>
+    <footer class="bg-[#0b1326] w-full border-t border-[#45474b]/15 mt-32">
 <div class="grid grid-cols-2 md:grid-cols-4 gap-8 px-8 py-16 max-w-7xl mx-auto">
 <div class="col-span-2 md:col-span-1">
 <div class="flex items-center gap-2.5 mb-6">
