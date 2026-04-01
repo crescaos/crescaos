@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+
+<html class="dark scroll-smooth" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About | Cresca OS</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Inter:wght@400;500;600&amp;family=Manrope:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style type="text/tailwindcss">
+        @layer utilities {
+            .animate-slide-up { animation: slide-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+            .animate-fade-in { animation: fade-in 1s ease-out forwards; }
+            .delay-200 { animation-delay: 200ms; }
+        }
+        @keyframes slide-up {
+            from { transform: translateY(30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes fade-in {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+       .signature-texture {
+        background: linear-gradient(135deg, #0A84FF 0%, #00E68A 100%);
+      }
+      .glow-pulse {
+        box-shadow: 0 0 15px rgba(0, 230, 138, 0.4);
+      }
+      
+    
+      #neural-bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        opacity: 0.8; /* Amplified visibility */
+        pointer-events: none;
+      }
+
+      /* Seamless Translation CSS */
+      body { top: 0 !important; }
+      .goog-te-banner-frame { display: none !important; }
+      #goog-gt-tt { display: none !important; }
+      .goog-te-spinner-pos { display: none !important; }
+      #google_translate_element { display: none !important; }
+      font { background-color: transparent !important; box-shadow: none !important; }
+
+</style>
+<script>
+      
+
+      // Neural Network Particle Background
+      window.addEventListener('DOMContentLoaded', () => {
+        const canvas = document.getElementById('neural-bg');
+        if (!canvas) return;
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+        const particleCount = 80; /* Increased particles */
+        const maxDistance = 160;
+
+        function resize() {
+          canvas.width = window.innerWidth;
+          canvas.height = window.innerHeight;
+        }
+
+        window.addEventListener('resize', resize);
+        resize();
+
+        class Particle {
+          constructor() {
+            this.x = Math.random() * canvas.width;
+            this.y = Math.random() * canvas.height;
+            this.vx = (Math.random() - 0.5) * 0.5;
+            this.vy = (Math.random() - 0.5) * 0.5;
+            this.radius = Math.random() * 2 + 0.5;
+          }
+
+          update() {
+            this.x += this.vx;
+            this.y += this.vy;
+
+            if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+            if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+          }
+
+          draw() {
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+            ctx.fillStyle = 'rgba(0, 230, 138, 0.9)'; /* Brighter particles */
+            ctx.fill();
+          }
+        }
+
+        for (let i = 0; i < particleCount; i++) {
+          particles.push(new Particle());
+        }
+
+        function animate() {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          
+          for (let i = 0; i < particles.length; i++) {
+            particles[i].update();
+            particles[i].draw();
+
+            for (let j = i + 1; j < particles.length; j++) {
+              const dx = particles[i].x - particles[j].x;
+              const dy = particles[i].y - particles[j].y;
+              const distance = Math.sqrt(dx * dx + dy * dy);
+
+              if (distance < maxDistance) {
+                ctx.beginPath();
+                ctx.moveTo(particles[i].x, particles[i].y);
+                ctx.lineTo(particles[j].x, particles[j].y);
+                ctx.strokeStyle = `rgba(10, 132, 255, ${0.4 * (1 - distance / maxDistance)})`; /* Brighter connections */
+                ctx.lineWidth = 0.8;
+                ctx.stroke();
+              }
+            }
+          }
+          requestAnimationFrame(animate);
+        }
+
+        animate();
+      });
+
+    </script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-tertiary-container": "#0085bd",
+              "surface-dim": "#0b1326",
+              "surface-container-low": "#131b2e",
+              "on-primary-fixed": "#002113",
+              "surface-container-lowest": "#060e20",
+              "outline-variant": "#45474b",
+              "on-background": "#dae2fd",
+              "primary-container": "#00150b",
+              "secondary-container": "#3a4a5f",
+              "on-tertiary-fixed-variant": "#004c6e",
+              "secondary": "#b7c8e1",
+              "on-surface": "#dae2fd",
+              "surface-container": "#171f33",
+              "on-surface-variant": "#c6c6cb",
+              "tertiary-fixed-dim": "#89ceff",
+              "on-tertiary": "#00344d",
+              "error-container": "#93000a",
+              "primary-fixed-dim": "#0A84FF",
+              "on-primary-container": "#00E68A",
+              "inverse-primary": "#006c49",
+              "surface-variant": "#2d3449",
+              "on-primary-fixed-variant": "#005236",
+              "surface-container-high": "#222a3d",
+              "secondary-fixed-dim": "#b7c8e1",
+              "on-secondary": "#213145",
+              "primary": "#0A84FF",
+              "surface": "#0F172A",
+              "error": "#ffb4ab",
+              "on-secondary-fixed-variant": "#38485d",
+              "tertiary-container": "#001320",
+              "tertiary-fixed": "#c9e6ff",
+              "primary-fixed": "#6ffbbe",
+              "secondary-fixed": "#d3e4fe",
+              "inverse-surface": "#dae2fd",
+              "background": "#0F172A",
+              "tertiary": "#89ceff",
+              "on-secondary-fixed": "#0b1c30",
+              "on-tertiary-fixed": "#001e2f",
+              "surface-tint": "#0A84FF",
+              "inverse-on-surface": "#283044",
+              "surface-container-highest": "#2d3449",
+              "on-primary": "#FFFFFF",
+              "surface-bright": "#31394d",
+              "outline": "#8f9095",
+              "on-error": "#690005",
+              "on-error-container": "#ffdad6",
+              "on-secondary-container": "#a9bad3",
+              "brand-green": "#00E68A"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Inter"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<!-- Headless Translation Engine -->
+<meta content="Cresca OS replaces disconnected tools with one unified business automation system. We capture leads, respond instantly, and automate follow-ups." name="description"/><meta content="Cresca OS | Business Automation System for Service Businesses" property="og:title"/><meta content="Cresca OS replaces disconnected tools with one unified business automation system. We capture leads, respond instantly, and automate follow-ups." property="og:description"/><meta content="https://crescaos.com/og-image.jpg" property="og:image"/><meta content="https://crescaos.com/about" property="og:url"/><link href="/favicon.ico" rel="icon"/><link href="https://crescaos.com/about" rel="canonical"/></head>
+<body class="bg-background text-on-background font-body">
+<canvas id="neural-bg"></canvas>
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#0b1326]/70 backdrop-blur-xl shadow-2xl shadow-[#060e20]/40 border-b border-outline-variant/10">
+<div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
+<a class="flex items-center gap-3 hover:opacity-80 transition-opacity" href="/es/index.html">
+<div class="flex items-center gap-3">
+<svg class="w-8 h-8" fill="none" height="32" viewbox="0 0 48 48" width="32" xmlns="http://www.w3.org/2000/svg">
+<circle cx="24" cy="24" r="18" stroke="#0A84FF" stroke-width="3"></circle>
+<ellipse cx="24" cy="24" rx="13" ry="7.5" stroke="#00E68A" stroke-width="3" transform="rotate(60 24 24)"></ellipse>
+<ellipse cx="24" cy="24" rx="13" ry="7.5" stroke="#00E68A" stroke-width="3" transform="rotate(-60 24 24)"></ellipse>
+<circle cx="24" cy="6" fill="#0A84FF" r="2.5"></circle>
+<circle cx="24" cy="42" fill="#0A84FF" r="2.5"></circle>
+<circle cx="39.59" cy="15" fill="#00E68A" r="2.5"></circle>
+<circle cx="8.41" cy="15" fill="#FFFFFF" r="2.5"></circle>
+<circle cx="39.59" cy="33" fill="#FFFFFF" r="2.5"></circle>
+<circle cx="8.41" cy="33" fill="#00E68A" r="2.5"></circle>
+<circle cx="24" cy="24" fill="#FFFFFF" r="3.5"></circle>
+</svg>
+<div class="flex items-baseline font-serif text-2xl font-bold tracking-tighter">
+<span class="text-white">CRESCA</span><span class="text-[#00E68A] ml-px">OS</span>
+</div>
+</div>
+</a>
+<div class="hidden md:flex space-x-8">
+<a class="text-[#8f9095] hover:text-[#dae2fd] font-serif text-lg tracking-tight transition-all duration-200" href="/es/solutions.html">Solutions</a>
+<a class="text-[#8f9095] hover:text-[#dae2fd] font-serif text-lg tracking-tight transition-all duration-200" href="/es/industries.html">Industries</a>
+<a class="text-[#8f9095] hover:text-[#dae2fd] font-serif text-lg tracking-tight transition-all duration-200" href="/es/pricing.html">Pricing</a>
+<a class="text-[#8f9095] hover:text-[#dae2fd] font-serif text-lg tracking-tight transition-all duration-200" href="/es/about.html">About</a>
+<a class="text-[#8f9095] hover:text-[#dae2fd] font-serif text-lg tracking-tight transition-all duration-200" href="/es/el-salvador.html">El Salvador</a>
+</div>
+<div class="flex items-center gap-6 mr-10 md:mr-0">
+<a href="/about.html" class="text-[#00E68A] font-label text-sm hover:text-[#dae2fd] transition-colors font-bold">EN</a><a class="bg-[#4edea3] text-[#003824] px-5 py-2 rounded-lg font-label font-bold scale-95 transition-transform duration-200 hover:scale-100 uppercase tracking-widest text-[10px]" href="/es/book-audit.html">
+                    Book Audit
+                </a>
+</div>
+</div>
+<!-- Mobile Menu Button (Absolute positioned to top right for safety) -->
+<button class="md:hidden absolute top-5 right-6 text-on-surface focus:outline-none z-[60]" id="mobile-menu-btn">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+<!-- Mobile Menu Overlay -->
+<div class="fixed inset-0 bg-surface-dim/95 backdrop-blur-2xl z-[55] hidden flex-col pt-24 px-8 transform transition-transform duration-300 translate-x-full" id="mobile-menu">
+<div class="flex flex-col space-y-8 font-headline text-3xl">
+<a class="text-on-surface hover:text-primary transition-colors" href="/es/solutions.html">Solutions</a>
+<a class="text-on-surface hover:text-primary transition-colors" href="/es/industries.html">Industries</a>
+<a class="text-on-surface hover:text-primary transition-colors" href="/es/pricing.html">Pricing</a>
+<a class="text-on-surface hover:text-primary transition-colors" href="/es/about.html">About</a>
+<a class="text-on-surface hover:text-primary transition-colors" href="/es/el-salvador.html">El Salvador</a>
+</div>
+<div class="mt-12">
+<a class="bg-primary text-on-primary px-6 py-3 rounded-lg font-label font-bold uppercase tracking-widest text-sm inline-block w-full text-center" href="/es/book-audit.html">Book Your Free Audit</a>
+</div>
+</div>
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const btn = document.getElementById('mobile-menu-btn');
+            const menu = document.getElementById('mobile-menu');
+            if(btn && menu) {
+                btn.addEventListener('click', () => {
+                    const isHidden = menu.classList.contains('translate-x-full');
+                    if (isHidden) {
+                        menu.classList.remove('hidden');
+                        // tiny delay to allow display:block to apply before animating transform
+                        setTimeout(() => {
+                            menu.classList.remove('translate-x-full');
+                            menu.classList.add('translate-x-0');
+                        }, 10);
+                        btn.innerHTML = '<span class="material-symbols-outlined text-3xl text-error">close</span>';
+                    } else {
+                        menu.classList.remove('translate-x-0');
+                        menu.classList.add('translate-x-full');
+                        setTimeout(() => menu.classList.add('hidden'), 300);
+                        btn.innerHTML = '<span class="material-symbols-outlined text-3xl">menu</span>';
+                    }
+                });
+            }
+        });
+    </script>
+</nav>
+<main class="pt-24 pb-0 relative overflow-hidden bg-surface">
+<!-- Hero Section -->
+<section class="relative min-h-[50vh] flex flex-col items-center justify-center px-6 md:px-8 mt-12 mb-20 z-10 border-b border-outline-variant/5">
+<div class="absolute inset-0 z-0 bg-primary/5 blur-[120px] rounded-full w-[600px] h-[600px] left-1/2 -translate-x-1/2 pointer-events-none"></div>
+<div class="relative z-10 max-w-4xl text-center">
+<span class="inline-block font-label text-primary tracking-[0.2em] mb-6 uppercase text-sm font-bold animate-fade-in border border-primary/20 bg-primary/5 px-6 py-2 rounded-full">About Cresca OS</span>
+<h1 class="font-headline text-5xl sm:text-6xl md:text-7xl font-bold text-white leading-tight tracking-tight mb-8 animate-slide-up">
+                Systems Designed <br/><span class="text-brand-green italic leading-tight">For Scale.</span>
+</h1>
+</div>
+</section>
+<!-- Our Approach -->
+<section class="py-24 px-6 md:px-8 bg-surface-container-lowest relative z-10">
+<div class="max-w-7xl mx-auto flex flex-col lg:flex-row gap-20 items-center">
+<div class="lg:w-1/2">
+<span class="text-xs font-label tracking-[0.2em] text-brand-green uppercase font-bold mb-4 block">Our Approach</span>
+<h2 class="font-headline text-4xl md:text-5xl font-bold mb-8 text-white leading-tight">Practical Systems Thinking</h2>
+<p class="text-on-surface-variant text-xl leading-relaxed mb-8 font-light">
+                    Our approach is simple and focused:
+                </p>
+<ul class="space-y-4 mb-10">
+<li class="flex items-start gap-4"><span class="material-symbols-outlined text-brand-green">rule</span><span class="text-on-surface text-lg">Build systems that reflect how real businesses operate</span></li>
+<li class="flex items-start gap-4"><span class="material-symbols-outlined text-brand-green">rule</span><span class="text-on-surface text-lg">Focus on outcomes, not features</span></li>
+<li class="flex items-start gap-4"><span class="material-symbols-outlined text-brand-green">rule</span><span class="text-on-surface text-lg">Reduce manual work wherever possible</span></li>
+<li class="flex items-start gap-4"><span class="material-symbols-outlined text-brand-green">rule</span><span class="text-on-surface text-lg">Create consistent, repeatable processes</span></li>
+<li class="flex items-start gap-4"><span class="material-symbols-outlined text-brand-green">rule</span><span class="text-on-surface text-lg">Make growth easier, not more complicated</span></li>
+</ul>
+</div>
+<div class="lg:w-1/2">
+<div class="bg-surface-container p-12 rounded-3xl border border-outline-variant/10 shadow-2xl relative overflow-hidden group hover:border-primary/30 transition-all duration-500">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/10 blur-[50px] rounded-full point-events-none"></div>
+<span class="material-symbols-outlined text-primary text-5xl mb-8">psychology</span>
+<h3 class="font-headline text-2xl text-white mb-6 leading-relaxed">Every decision we make comes down to one question:</h3>
+<p class="text-3xl font-headline text-white italic font-bold mb-8">"Does this help the business run better?"</p>
+<div class="bg-error/10 border border-error/20 px-6 py-4 rounded-xl inline-block">
+<p class="text-error font-label font-bold tracking-widest uppercase text-sm">If it doesn't, we don't build it.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Our Advantage & Portrait -->
+<section class="py-32 px-6 md:px-8 relative z-10 border-y border-outline-variant/5">
+<div class="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16 items-center">
+<!-- Portrait Area -->
+<div class="lg:w-5/12 relative">
+<div class="relative rounded-3xl overflow-hidden aspect-[4/5] border border-outline-variant/10 shadow-2xl group">
+<img alt="Cresca OS Execution" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 grayscale hover:grayscale-0 opacity-90 transition-all duration-700" src="../assets/whatsapp_founder.jpeg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-dim via-transparent to-transparent pointer-events-none"></div>
+</div>
+<!-- Signature Badge -->
+<div class="absolute -bottom-6 -right-6 bg-surface-container border border-primary/20 backdrop-blur-md px-8 py-6 rounded-2xl shadow-2xl">
+<h4 class="font-headline text-white text-xl font-bold">Execution First.</h4>
+<p class="font-label text-primary text-xs uppercase tracking-[0.2em] mt-1">Cresca OS Leadership</p>
+</div>
+</div>
+<!-- Content -->
+<div class="lg:w-7/12 lg:pl-12">
+<span class="text-xs font-label tracking-[0.2em] text-primary uppercase font-bold mb-4 block">Our Advantage</span>
+<h2 class="font-headline text-4xl md:text-5xl font-bold mb-8 text-white leading-tight">Built with a Bilingual, Global Execution Model</h2>
+<p class="text-on-surface-variant text-xl leading-relaxed mb-8 font-light">
+                    Cresca OS combines strong systems with a unique operational structure.<br/><br/>
+                    Our team spans the United States and El Salvador, allowing us to deliver:
+                </p>
+<div class="space-y-6">
+<div class="bg-surface-container-low p-6 rounded-2xl border border-outline-variant/10 flex items-start gap-4">
+<span class="material-symbols-outlined text-primary mt-1">translate</span>
+<div><strong class="text-white block mb-1">Bilingual Execution</strong><p class="text-on-surface-variant text-sm">Operate seamlessly across English and Spanish markets.</p></div>
+</div>
+<div class="bg-surface-container-low p-6 rounded-2xl border border-outline-variant/10 flex items-start gap-4">
+<span class="material-symbols-outlined text-primary mt-1">schedule</span>
+<div><strong class="text-white block mb-1">Real-time Support</strong><p class="text-on-surface-variant text-sm">Synchronized operations aligned strictly with US business hours.</p></div>
+</div>
+<div class="bg-surface-container-low p-6 rounded-2xl border border-outline-variant/10 flex items-start gap-4">
+<span class="material-symbols-outlined text-primary mt-1">gavel</span>
+<div><strong class="text-white block mb-1">Modern Compliance</strong><p class="text-on-surface-variant text-sm">Systems built with modern data protection and compliance standards in mind.</p></div>
+</div>
+</div>
+<div class="mt-8 pt-6 border-t border-outline-variant/10">
+<p class="text-lg text-primary font-medium italic">"This structure allows us to deliver consistent, high-quality results while staying responsive and efficient."</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Who We Work With -->
+<section class="py-32 px-6 md:px-8 bg-surface-container-lowest relative z-10">
+<div class="max-w-7xl mx-auto">
+<div class="text-center mb-16 max-w-3xl mx-auto">
+<span class="text-xs font-label tracking-[0.2em] text-brand-green uppercase font-bold mb-4 block">Who We Work With</span>
+<h2 class="font-headline text-4xl md:text-5xl font-bold mb-6 text-white">Designed for Service Businesses That Depend on Lead Flow</h2>
+<p class="text-on-surface-variant text-xl leading-relaxed font-light">
+                    Cresca OS is built for businesses where speed, follow-up, and organization directly impact revenue. We work with:
+                </p>
+</div>
+<!-- Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="bg-surface-container p-8 rounded-2xl border border-outline-variant/10 flex items-center gap-4 hover:border-primary/30 transition-colors">
+<span class="material-symbols-outlined text-brand-green text-3xl">solar_power</span>
+<h3 class="font-headline text-lg font-bold text-white">Solar &amp; Renewable Energy</h3>
+</div>
+<div class="bg-surface-container p-8 rounded-2xl border border-outline-variant/10 flex items-center gap-4 hover:border-primary/30 transition-colors">
+<span class="material-symbols-outlined text-brand-green text-3xl">construction</span>
+<h3 class="font-headline text-lg font-bold text-white">Contractors &amp; Home Services</h3>
+</div>
+<div class="bg-surface-container p-8 rounded-2xl border border-outline-variant/10 flex items-center gap-4 hover:border-primary/30 transition-colors">
+<span class="material-symbols-outlined text-brand-green text-3xl">cleaning_services</span>
+<h3 class="font-headline text-lg font-bold text-white">Cleaning &amp; Restoration</h3>
+</div>
+<div class="bg-surface-container p-8 rounded-2xl border border-outline-variant/10 flex items-center gap-4 hover:border-primary/30 transition-colors">
+<span class="material-symbols-outlined text-brand-green text-3xl">real_estate_agent</span>
+<h3 class="font-headline text-lg font-bold text-white">Real Estate &amp; Property Mgmt</h3>
+</div>
+<div class="bg-surface-container md:col-span-2 p-8 rounded-2xl border border-outline-variant/10 flex items-center justify-center gap-4 hover:border-primary/30 transition-colors">
+<span class="material-symbols-outlined text-brand-green text-3xl">local_hospital</span>
+<h3 class="font-headline text-lg font-bold text-white">Clinics, Dental &amp; Professional Services</h3>
+</div>
+</div>
+<div class="mt-12 text-center bg-surface-dim p-8 rounded-2xl max-w-4xl mx-auto border border-brand-green/20">
+<p class="text-xl text-white font-medium">If your business depends on capturing and converting opportunities — without adding more complexity — <span class="text-brand-green font-bold">Cresca OS is built for you.</span></p>
+</div>
+</div>
+</section>
+<!-- Closing Section -->
+<section class="max-w-5xl mx-auto px-6 md:px-8 py-32 text-center relative z-10 border-t border-outline-variant/5">
+<div class="signature-texture p-12 md:p-24 rounded-[2.5rem] overflow-hidden relative shadow-2xl">
+<div class="absolute inset-0 bg-[url('../assets/hero_viz.png')] bg-cover bg-center opacity-10 mix-blend-overlay"></div>
+<div class="relative z-10">
+<h2 class="font-headline text-4xl md:text-5xl font-bold text-on-primary mb-8 leading-tight">You Don’t Need More Tools. You Need a System That Works.</h2>
+<p class="text-on-primary/90 text-xl md:text-2xl mb-12 max-w-3xl mx-auto leading-relaxed font-light">
+                    Most businesses lose revenue every month through slow responses, missed follow-ups, forgotten appointments, and disorganized processes — often without realizing how much it’s costing them.<br/><br/>
+<strong class="text-white font-medium">Cresca OS fixes that at the system level.</strong>
+</p>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto mb-16">
+<div class="bg-surface/20 backdrop-blur-md rounded-xl p-4 border border-white/10 text-white font-bold text-sm">More leads captured</div>
+<div class="bg-surface/20 backdrop-blur-md rounded-xl p-4 border border-white/10 text-white font-bold text-sm">Faster conversions</div>
+<div class="bg-surface/20 backdrop-blur-md rounded-xl p-4 border border-white/10 text-white font-bold text-sm">Consistent operations</div>
+<div class="bg-surface/20 backdrop-blur-md rounded-xl p-4 border border-white/10 text-white font-bold text-sm">More time back</div>
+</div>
+<a class="bg-surface text-white px-10 py-5 rounded-xl font-label font-bold tracking-widest uppercase transition-all shadow-xl hover:bg-surface-variant hover:scale-105 inline-block w-full sm:w-auto mb-6" href="/es/book-audit.html">Book Your Free Business Systems Audit</a>
+<p class="text-white font-label tracking-widest uppercase text-xs opacity-80">See where your current setup is losing opportunities — and how to fix it.</p>
+</div>
+</div>
+</section>
+</main>
+<footer class="bg-[#0b1326] w-full border-t border-[#45474b]/15 mt-32">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8 px-8 py-16 max-w-7xl mx-auto">
+<div class="col-span-2 md:col-span-1">
+<div class="flex items-center gap-2.5 mb-6">
+<svg class="w-6 h-6" fill="none" height="24" viewbox="0 0 48 48" width="24" xmlns="http://www.w3.org/2000/svg">
+<circle cx="24" cy="24" r="18" stroke="#0A84FF" stroke-width="3"></circle>
+<ellipse cx="24" cy="24" rx="13" ry="7.5" stroke="#00E68A" stroke-width="3" transform="rotate(60 24 24)"></ellipse>
+<ellipse cx="24" cy="24" rx="13" ry="7.5" stroke="#00E68A" stroke-width="3" transform="rotate(-60 24 24)"></ellipse>
+<circle cx="24" cy="6" fill="#0A84FF" r="2.5"></circle>
+<circle cx="24" cy="42" fill="#0A84FF" r="2.5"></circle>
+<circle cx="39.59" cy="15" fill="#00E68A" r="2.5"></circle>
+<circle cx="8.41" cy="15" fill="#FFFFFF" r="2.5"></circle>
+<circle cx="39.59" cy="33" fill="#FFFFFF" r="2.5"></circle>
+<circle cx="8.41" cy="33" fill="#00E68A" r="2.5"></circle>
+<circle cx="24" cy="24" fill="#FFFFFF" r="3.5"></circle>
+</svg>
+<div class="flex items-baseline font-serif text-xl font-bold tracking-tighter">
+<span class="text-white">CRESCA</span><span class="text-[#00E68A] ml-px">OS</span>
+</div>
+</div>
+<p class="font-sans text-sm text-[#8f9095] mb-8 leading-relaxed max-w-xs">
+                    Done-for-you business operating systems for high-growth service companies.
+                </p>
+</div>
+<div>
+<h6 class="text-[#4edea3] font-label text-xs uppercase tracking-widest mb-6 font-bold">Solutions</h6>
+<ul class="space-y-4">
+<li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="/es/book-audit.html">Systems Audit</a></li>
+<li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="/es/pricing.html">Pricing</a></li>
+<li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="/es/industries.html">Industries</a></li>
+</ul>
+</div>
+<div>
+<h6 class="text-[#4edea3] font-label text-xs uppercase tracking-widest mb-6 font-bold">Markets</h6>
+<ul class="space-y-4">
+<li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="/es/index.html">United States</a></li>
+<li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="/es/el-salvador.html">El Salvador Hub</a></li>
+</ul>
+</div>
+<div>
+<h6 class="text-[#4edea3] font-label text-xs uppercase tracking-widest mb-6 font-bold">Company</h6>
+<ul class="space-y-4">
+<li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="/es/about.html">About Us</a></li>
+<li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="/es/book-audit.html">Book Audit</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-8 py-8 border-t border-[#45474b]/10 text-center">
+<p class="font-sans text-xs text-[#8f9095] opacity-80 uppercase tracking-widest">
+                © 2026 Cresca OS. All rights reserved.
+            </p>
+<p class="font-sans text-xs text-[#8f9095] mt-2"><a class="hover:text-[#4edea3] transition-colors" href="mailto:info@crescaos.com">info@crescaos.com</a></p></div>
+</footer>
+</body></html>

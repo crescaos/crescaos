@@ -7,7 +7,7 @@
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&amp;family=Inter:wght@400;500;600&amp;family=Manrope:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-    <style type="text/tailwindcss">
+<style type="text/tailwindcss">
         @layer utilities {
             .animate-slide-up { animation: slide-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
             .animate-fade-in { animation: fade-in 1s ease-out forwards; }
@@ -21,7 +21,27 @@
             from { opacity: 0; }
             to { opacity: 1; }
         }
-    </style>
+    
+      #neural-bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        opacity: 0.8; /* Amplified visibility */
+        pointer-events: none;
+      }
+
+      /* Seamless Translation CSS */
+      body { top: 0 !important; }
+      .goog-te-banner-frame { display: none !important; }
+      #goog-gt-tt { display: none !important; }
+      .goog-te-spinner-pos { display: none !important; }
+      #google_translate_element { display: none !important; }
+      font { background-color: transparent !important; box-shadow: none !important; }
+
+</style>
 <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
@@ -93,10 +113,14 @@
             display: inline-block;
             vertical-align: middle;
         }
+        .signature-texture {
+            background: linear-gradient(135deg, #0A84FF 0%, #00E68A 100%);
+        }
         .glow-pulse {
-            box-shadow: 0 0 0 0 rgba(78, 222, 163, 0.4);
+            box-shadow: 0 0 15px rgba(0, 230, 138, 0.4);
             animation: pulse 2s infinite;
         }
+        
         @keyframes pulse {
             0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(78, 222, 163, 0.7); }
             70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(78, 222, 163, 0); }
@@ -105,54 +129,185 @@
         .editorial-gradient {
             background: linear-gradient(135deg, #4edea3 0%, #00150b 100%);
         }
-    </style>
-</head>
+    
+      #neural-bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        opacity: 0.8; /* Amplified visibility */
+        pointer-events: none;
+      }
+</style>
+<script>
+      
+
+      // Neural Network Particle Background
+      window.addEventListener('DOMContentLoaded', () => {
+        const canvas = document.getElementById('neural-bg');
+        if (!canvas) return;
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+        const particleCount = 80; /* Increased particles */
+        const maxDistance = 160;
+
+        function resize() {
+          canvas.width = window.innerWidth;
+          canvas.height = window.innerHeight;
+        }
+
+        window.addEventListener('resize', resize);
+        resize();
+
+        class Particle {
+          constructor() {
+            this.x = Math.random() * canvas.width;
+            this.y = Math.random() * canvas.height;
+            this.vx = (Math.random() - 0.5) * 0.5;
+            this.vy = (Math.random() - 0.5) * 0.5;
+            this.radius = Math.random() * 2 + 0.5;
+          }
+
+          update() {
+            this.x += this.vx;
+            this.y += this.vy;
+
+            if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+            if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+          }
+
+          draw() {
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+            ctx.fillStyle = 'rgba(0, 230, 138, 0.9)'; /* Brighter particles */
+            ctx.fill();
+          }
+        }
+
+        for (let i = 0; i < particleCount; i++) {
+          particles.push(new Particle());
+        }
+
+        function animate() {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          
+          for (let i = 0; i < particles.length; i++) {
+            particles[i].update();
+            particles[i].draw();
+
+            for (let j = i + 1; j < particles.length; j++) {
+              const dx = particles[i].x - particles[j].x;
+              const dy = particles[i].y - particles[j].y;
+              const distance = Math.sqrt(dx * dx + dy * dy);
+
+              if (distance < maxDistance) {
+                ctx.beginPath();
+                ctx.moveTo(particles[i].x, particles[i].y);
+                ctx.lineTo(particles[j].x, particles[j].y);
+                ctx.strokeStyle = `rgba(10, 132, 255, ${0.4 * (1 - distance / maxDistance)})`; /* Brighter connections */
+                ctx.lineWidth = 0.8;
+                ctx.stroke();
+              }
+            }
+          }
+          requestAnimationFrame(animate);
+        }
+
+        animate();
+      });
+
+    </script>
+<!-- Headless Translation Engine -->
+<meta content="Cresca OS replaces disconnected tools with one unified business automation system. We capture leads, respond instantly, and automate follow-ups." name="description"/><meta content="Cresca OS | Business Automation System for Service Businesses" property="og:title"/><meta content="Cresca OS replaces disconnected tools with one unified business automation system. We capture leads, respond instantly, and automate follow-ups." property="og:description"/><meta content="https://crescaos.com/og-image.jpg" property="og:image"/><meta content="https://crescaos.com/solutions" property="og:url"/><link href="/favicon.ico" rel="icon"/><link href="https://crescaos.com/solutions" rel="canonical"/></head>
 <body class="bg-surface text-on-surface font-body selection:bg-primary selection:text-on-primary">
+<canvas id="neural-bg"></canvas>
 <!-- TopNavBar -->
 <nav class="fixed top-0 w-full z-50 bg-[#0b1326]/70 backdrop-blur-xl shadow-2xl shadow-[#060e20]/40 border-b border-outline-variant/10 transition-all duration-200">
 <div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
-<a href="index.html" class="flex items-center gap-3 hover:opacity-80 transition-opacity">
-    <div class="flex items-center gap-3">
-        <svg width="32" height="32" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-8 h-8">
-            <circle cx="24" cy="24" r="18" stroke="#0A84FF" stroke-width="3" />
-            <ellipse cx="24" cy="24" rx="13" ry="7.5" stroke="#00E68A" stroke-width="3" transform="rotate(60 24 24)" />
-            <ellipse cx="24" cy="24" rx="13" ry="7.5" stroke="#00E68A" stroke-width="3" transform="rotate(-60 24 24)" />
-            <circle cx="24" cy="6" r="2.5" fill="#0A84FF" />
-            <circle cx="24" cy="42" r="2.5" fill="#0A84FF" />
-            <circle cx="39.59" cy="15" r="2.5" fill="#00E68A" />
-            <circle cx="8.41" cy="15" r="2.5" fill="#FFFFFF" />
-            <circle cx="39.59" cy="33" r="2.5" fill="#FFFFFF" />
-            <circle cx="8.41" cy="33" r="2.5" fill="#00E68A" />
-            <circle cx="24" cy="24" r="3.5" fill="#FFFFFF" />
-        </svg>
-        <div class="flex items-baseline font-serif text-2xl font-bold tracking-tighter">
-            <span class="text-white">CRESCA</span><span class="text-[#00E68A] ml-px">OS</span>
-        </div>
-    </div>
+<a class="flex items-center gap-3 hover:opacity-80 transition-opacity" href="index.html">
+<div class="flex items-center gap-3">
+<svg class="w-8 h-8" fill="none" height="32" viewbox="0 0 48 48" width="32" xmlns="http://www.w3.org/2000/svg">
+<circle cx="24" cy="24" r="18" stroke="#0A84FF" stroke-width="3"></circle>
+<ellipse cx="24" cy="24" rx="13" ry="7.5" stroke="#00E68A" stroke-width="3" transform="rotate(60 24 24)"></ellipse>
+<ellipse cx="24" cy="24" rx="13" ry="7.5" stroke="#00E68A" stroke-width="3" transform="rotate(-60 24 24)"></ellipse>
+<circle cx="24" cy="6" fill="#0A84FF" r="2.5"></circle>
+<circle cx="24" cy="42" fill="#0A84FF" r="2.5"></circle>
+<circle cx="39.59" cy="15" fill="#00E68A" r="2.5"></circle>
+<circle cx="8.41" cy="15" fill="#FFFFFF" r="2.5"></circle>
+<circle cx="39.59" cy="33" fill="#FFFFFF" r="2.5"></circle>
+<circle cx="8.41" cy="33" fill="#00E68A" r="2.5"></circle>
+<circle cx="24" cy="24" fill="#FFFFFF" r="3.5"></circle>
+</svg>
+<div class="flex items-baseline font-serif text-2xl font-bold tracking-tighter">
+<span class="text-white">CRESCA</span><span class="text-[#00E68A] ml-px">OS</span>
+</div>
+</div>
 </a>
 <div class="hidden md:flex items-center space-x-8 font-serif text-lg tracking-tight">
-<a class="text-[#8f9095] hover:text-[#dae2fd] transition-all duration-200" href="02_solutions-infrastructure-ai.html">Solutions</a>
-<a class="text-[#8f9095] hover:text-[#dae2fd] transition-all duration-200" href="04_industries-tailored-systems.html">Industries</a>
-<a class="text-[#8f9095] hover:text-[#dae2fd] transition-all duration-200" href="11_pricing.html">Pricing</a>
-<a class="text-[#8f9095] hover:text-[#dae2fd] transition-all duration-200" href="05_about-practical-systems-thinking.html">About</a>
-<a class="text-[#8f9095] hover:text-[#dae2fd] transition-all duration-200" href="07_el-salvador-hub-v2.html">El Salvador</a>
+<a class="text-[#8f9095] hover:text-[#dae2fd] transition-all duration-200" href="solutions.html">Solutions</a>
+<a class="text-[#8f9095] hover:text-[#dae2fd] transition-all duration-200" href="industries.html">Industries</a>
+<a class="text-[#8f9095] hover:text-[#dae2fd] transition-all duration-200" href="pricing.html">Pricing</a>
+<a class="text-[#8f9095] hover:text-[#dae2fd] transition-all duration-200" href="about.html">About</a>
+<a class="text-[#8f9095] hover:text-[#dae2fd] transition-all duration-200" href="el-salvador.html">El Salvador</a>
 </div>
-<div class="flex items-center space-x-6">
-<button class="hidden lg:block text-[#8f9095] text-sm font-label tracking-widest hover:text-[#dae2fd]" onclick="alert('Bilingual support (ES) is currently in internal testing. Contact our San Salvador hub for localized implementation.')">EN/ES</button>
-<a class="bg-[#4edea3] text-[#003824] px-5 py-2 rounded-lg font-label font-bold scale-95 transition-transform duration-200 hover:scale-100 uppercase tracking-widest text-[10px]" href="08_request-proposal-updated-logo.html">
+<div class="flex items-center gap-6 mr-10 md:mr-0">
+<a href="/es/solutions.html" class="text-[#8f9095] font-label text-sm hover:text-[#dae2fd] transition-colors">ES</a><a class="bg-[#4edea3] text-[#003824] px-5 py-2 rounded-lg font-label font-bold scale-95 transition-transform duration-200 hover:scale-100 uppercase tracking-widest text-[10px]" href="book-audit.html">
                     Book Audit
                 </a>
 </div>
 </div>
+<!-- Mobile Menu Button (Absolute positioned to top right for safety) -->
+<button class="md:hidden absolute top-5 right-6 text-on-surface focus:outline-none z-[60]" id="mobile-menu-btn">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+<!-- Mobile Menu Overlay -->
+<div class="fixed inset-0 bg-surface-dim/95 backdrop-blur-2xl z-[55] hidden flex-col pt-24 px-8 transform transition-transform duration-300 translate-x-full" id="mobile-menu">
+<div class="flex flex-col space-y-8 font-headline text-3xl">
+<a class="text-on-surface hover:text-primary transition-colors" href="solutions.html">Solutions</a>
+<a class="text-on-surface hover:text-primary transition-colors" href="industries.html">Industries</a>
+<a class="text-on-surface hover:text-primary transition-colors" href="pricing.html">Pricing</a>
+<a class="text-on-surface hover:text-primary transition-colors" href="about.html">About</a>
+<a class="text-on-surface hover:text-primary transition-colors" href="el-salvador.html">El Salvador</a>
+</div>
+<div class="mt-12">
+<a class="bg-primary text-on-primary px-6 py-3 rounded-lg font-label font-bold uppercase tracking-widest text-sm inline-block w-full text-center" href="book-audit.html">Book Your Free Audit</a>
+</div>
+</div>
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const btn = document.getElementById('mobile-menu-btn');
+            const menu = document.getElementById('mobile-menu');
+            if(btn && menu) {
+                btn.addEventListener('click', () => {
+                    const isHidden = menu.classList.contains('translate-x-full');
+                    if (isHidden) {
+                        menu.classList.remove('hidden');
+                        // tiny delay to allow display:block to apply before animating transform
+                        setTimeout(() => {
+                            menu.classList.remove('translate-x-full');
+                            menu.classList.add('translate-x-0');
+                        }, 10);
+                        btn.innerHTML = '<span class="material-symbols-outlined text-3xl text-error">close</span>';
+                    } else {
+                        menu.classList.remove('translate-x-0');
+                        menu.classList.add('translate-x-full');
+                        setTimeout(() => menu.classList.add('hidden'), 300);
+                        btn.innerHTML = '<span class="material-symbols-outlined text-3xl">menu</span>';
+                    }
+                });
+            }
+        });
+    </script>
 </nav>
-
 <main class="pt-32 pb-24">
 <!-- Hero Section -->
 <header class="max-w-7xl mx-auto px-8 mb-24">
 <div class="max-w-3xl">
 <div class="flex items-center space-x-3 mb-6">
 <span class="w-2 h-2 rounded-full bg-primary glow-pulse"></span>
-<span class="font-label text-sm tracking-[0.2em] text-primary uppercase">Infrastructure & AI</span>
+<span class="font-label text-sm tracking-[0.2em] text-primary uppercase">Infrastructure &amp; AI</span>
 </div>
 <h1 class="font-headline text-6xl md:text-7xl font-bold text-on-surface leading-[1.1] tracking-tight mb-8 animate-slide-up">
                     Real Business <span class="text-primaryitalic">Outcomes</span>. Backed by the <span class="text-brand-green italic">Right Systems</span>.
@@ -236,7 +391,7 @@
 </div>
 <div class="bg-surface-container-highest/30 backdrop-blur-md p-10 rounded-xl border border-outline-variant/20 flex flex-col">
 <span class="material-symbols-outlined text-primary text-4xl mb-6">database</span>
-<h3 class="font-headline text-3xl font-bold mb-4">Sovereign Data Architecture</h3>
+<h3 class="font-headline text-3xl font-bold mb-4">Secure Business Data</h3>
 <p class="text-on-surface-variant mb-8 flex-grow">
                         Data infrastructure designed so your organization retains full governance. No vendor lock-in. No third-party data exposure. Your intelligence stays yours.
                     </p>
@@ -280,33 +435,32 @@
                     Book a free 15-minute Business Systems Audit. We'll show you exactly where leads are leaking and how to fix it.
                 </p>
 <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
-<a class="bg-primary text-on-primary px-10 py-4 rounded-lg font-label font-bold text-sm tracking-widest uppercase hover:scale-105 transition-transform block" href="08_request-proposal-updated-logo.html">
+<a class="bg-primary text-on-primary px-10 py-4 rounded-lg font-label font-bold text-sm tracking-widest uppercase hover:scale-105 transition-transform block" href="book-audit.html">
                         Book Your Free Audit →
 </a>
 </div>
 </div>
 </section>
 </main>
-
 <footer class="bg-[#0b1326] w-full border-t border-[#45474b]/15 mt-32">
 <div class="grid grid-cols-2 md:grid-cols-4 gap-8 px-8 py-16 max-w-7xl mx-auto">
 <div class="col-span-2 md:col-span-1">
 <div class="flex items-center gap-2.5 mb-6">
-    <svg width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6">
-        <circle cx="24" cy="24" r="18" stroke="#0A84FF" stroke-width="3" />
-        <ellipse cx="24" cy="24" rx="13" ry="7.5" stroke="#00E68A" stroke-width="3" transform="rotate(60 24 24)" />
-        <ellipse cx="24" cy="24" rx="13" ry="7.5" stroke="#00E68A" stroke-width="3" transform="rotate(-60 24 24)" />
-        <circle cx="24" cy="6" r="2.5" fill="#0A84FF" />
-        <circle cx="24" cy="42" r="2.5" fill="#0A84FF" />
-        <circle cx="39.59" cy="15" r="2.5" fill="#00E68A" />
-        <circle cx="8.41" cy="15" r="2.5" fill="#FFFFFF" />
-        <circle cx="39.59" cy="33" r="2.5" fill="#FFFFFF" />
-        <circle cx="8.41" cy="33" r="2.5" fill="#00E68A" />
-        <circle cx="24" cy="24" r="3.5" fill="#FFFFFF" />
-    </svg>
-    <div class="flex items-baseline font-serif text-xl font-bold tracking-tighter">
-        <span class="text-white">CRESCA</span><span class="text-[#00E68A] ml-px">OS</span>
-    </div>
+<svg class="w-6 h-6" fill="none" height="24" viewbox="0 0 48 48" width="24" xmlns="http://www.w3.org/2000/svg">
+<circle cx="24" cy="24" r="18" stroke="#0A84FF" stroke-width="3"></circle>
+<ellipse cx="24" cy="24" rx="13" ry="7.5" stroke="#00E68A" stroke-width="3" transform="rotate(60 24 24)"></ellipse>
+<ellipse cx="24" cy="24" rx="13" ry="7.5" stroke="#00E68A" stroke-width="3" transform="rotate(-60 24 24)"></ellipse>
+<circle cx="24" cy="6" fill="#0A84FF" r="2.5"></circle>
+<circle cx="24" cy="42" fill="#0A84FF" r="2.5"></circle>
+<circle cx="39.59" cy="15" fill="#00E68A" r="2.5"></circle>
+<circle cx="8.41" cy="15" fill="#FFFFFF" r="2.5"></circle>
+<circle cx="39.59" cy="33" fill="#FFFFFF" r="2.5"></circle>
+<circle cx="8.41" cy="33" fill="#00E68A" r="2.5"></circle>
+<circle cx="24" cy="24" fill="#FFFFFF" r="3.5"></circle>
+</svg>
+<div class="flex items-baseline font-serif text-xl font-bold tracking-tighter">
+<span class="text-white">CRESCA</span><span class="text-[#00E68A] ml-px">OS</span>
+</div>
 </div>
 <p class="font-sans text-sm text-[#8f9095] mb-8 leading-relaxed max-w-xs">
                     Done-for-you business operating systems for high-growth service companies.
@@ -315,30 +469,30 @@
 <div>
 <h6 class="text-[#4edea3] font-label text-xs uppercase tracking-widest mb-6 font-bold">Solutions</h6>
 <ul class="space-y-4">
-<li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="02_solutions-infrastructure-ai.html">Systems Audit</a></li>
-<li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="11_pricing.html">Pricing</a></li>
-<li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="04_industries-tailored-systems.html">Industries</a></li>
+<li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="book-audit.html">Systems Audit</a></li>
+<li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="pricing.html">Pricing</a></li>
+<li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="industries.html">Industries</a></li>
 </ul>
 </div>
 <div>
 <h6 class="text-[#4edea3] font-label text-xs uppercase tracking-widest mb-6 font-bold">Markets</h6>
 <ul class="space-y-4">
 <li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="index.html">United States</a></li>
-<li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="07_el-salvador-hub-v2.html">El Salvador Hub</a></li>
+<li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="el-salvador.html">El Salvador Hub</a></li>
 </ul>
 </div>
 <div>
 <h6 class="text-[#4edea3] font-label text-xs uppercase tracking-widest mb-6 font-bold">Company</h6>
 <ul class="space-y-4">
-<li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="05_about-practical-systems-thinking.html">About Us</a></li>
-<li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="08_request-proposal-updated-logo.html">Book Audit</a></li>
+<li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="about.html">About Us</a></li>
+<li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="book-audit.html">Book Audit</a></li>
 </ul>
 </div>
 </div>
 <div class="max-w-7xl mx-auto px-8 py-8 border-t border-[#45474b]/10 text-center">
 <p class="font-sans text-xs text-[#8f9095] opacity-80 uppercase tracking-widest">
-                © 2024 Cresca OS. All rights reserved.
+                © 2026 Cresca OS. All rights reserved.
             </p>
-</div>
+<p class="font-sans text-xs text-[#8f9095] mt-2"><a class="hover:text-[#4edea3] transition-colors" href="mailto:info@crescaos.com">info@crescaos.com</a></p></div>
 </footer>
 </body></html>
