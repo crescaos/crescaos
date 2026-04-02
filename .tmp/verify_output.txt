@@ -1,0 +1,46 @@
+﻿Sheets: ['README', 'Assumptions', 'Clients', 'MRR Summary', 'Commission Liability', 'P&L', 'Targets', 'Monthly History']
+
+1. B9 format: 0.0% (expect 0.0%)
+2. P&L B14: =Assumptions!B6
+3. Validations: 3
+   H3:H500 -> "Active,Paused,Cancelled"
+   K3:K500 -> "Monthly,Annual"
+   Q3:Q500 -> "Cash,Transfer,Card,Stripe"
+4. A10=Paused Clients, A11=Paused MRR (potential reactivation)
+5. P&L:
+   R1: Monthly Profit & Owner Take | None
+   R3: Revenue | None
+   R4: Total MRR | ='MRR Summary'!B5
+   R5: Installation fees (this month) | =SUMIFS(Clients!M3:M500,Clients!H3:H500,"Active",Clients!I3:I500,">="&EOMONTH(Assumptions!B3,-1)+1,Clients!I3:I500,"<="&EOMONTH(Assumptions!B3,0))
+   R6: Total Revenue (MRR + installs) | =B4+B5
+   R7: Gross Margin % | =IFERROR((B6-B10)/B6,0)
+   R9: Costs | None
+   R10: Client variable costs ($/mo) | =SUMIF(Clients!H3:H500,"Active",Clients!N3:N500)
+   R11: Sales residual commissions ($/mo) | ='Commission Liability'!B4
+   R12: Tools/APIs base ($/mo) | =Assumptions!B7
+   R13: Payroll / contractors ($/mo) | =Assumptions!B8
+   R14: Fixed overhead ($/mo) | =Assumptions!B6
+   R15: Payment processing fees (est.) | =B6*Assumptions!B4 + 'MRR Summary'!B4*Assumptions!B5
+   R16: Total Costs | =SUM(B9:B14)
+   R18: Profit | None
+   R19: Pre-tax Profit | =B6-B15
+   R20: Tax reserve | =MAX(0,B18*Assumptions!B9)
+   R21: Net Profit | =B18-B19
+   R22: Net Margin % | =IFERROR(B21/B6,0)
+   R23: Owner Take-home (target %) | =MAX(0,B20*Assumptions!B12)
+   R24: Remaining for reinvestment | =B20-B21
+6. MRR tail:
+   R21: Churn Metrics (actual) | None
+   R22: Logo Churn Rate (this month) | =IFERROR(B8/(B4+B8),0)
+   R23: MRR Lost to Churn ($) | =SUMIFS(Clients!L3:L500,Clients!H3:H500,"Cancelled",Clients!J3:J500,">="&EOMONTH($E$4,-1)+1,Clients!J3:J500,"<="&EOMONTH($E$4,0))
+   R24: MRR Churn Rate (this month) | =IFERROR(B23/(B5+B23),0)
+7. S2=Effective MRR ($), S3==IF(K3="Annual",L3/12,L3)
+8. MRR cf=1, P&L cf=2
+9. History headers: ['Month', 'Active Clients', 'MRR ($)', 'Net Profit ($)', 'Owner Take ($)', 'New Clients', 'Cancelled', 'Paused', 'Logo Churn %', 'Gross Margin %', 'Net Margin %', 'ARPU ($)']
+10. MRR Summary protected: True
+10. Commission Liability protected: True
+10. P&L protected: True
+README:
+   A13: � Column S in Clients computes Effective MRR (adjusts Annual billing to monthly).
+   A14: � The 'Monthly History' sheet should be updated each month by pasting KPI values.
+   A15: � Formula sheets (MRR Summary, Commission Liability, P&L) are protected to prevent accidental edits.

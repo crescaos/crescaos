@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+
+<html class="dark scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Request a Proposal | Cresca OS</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Inter:wght@400;500;600&amp;family=Manrope:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .animate-slide-up { animation: slide-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+            .animate-fade-in { animation: fade-in 1s ease-out forwards; }
+            .delay-200 { animation-delay: 200ms; }
+        }
+        @keyframes slide-up {
+            from { transform: translateY(30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes fade-in {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-tertiary-container": "#0085bd",
+              "surface-dim": "#0b1326",
+              "surface-container-low": "#131b2e",
+              "on-primary-fixed": "#002113",
+              "surface-container-lowest": "#060e20",
+              "outline-variant": "#45474b",
+              "on-background": "#dae2fd",
+              "primary-container": "#00150b",
+              "secondary-container": "#3a4a5f",
+              "on-tertiary-fixed-variant": "#004c6e",
+              "secondary": "#b7c8e1",
+              "on-surface": "#dae2fd",
+              "surface-container": "#171f33",
+              "on-surface-variant": "#c6c6cb",
+              "tertiary-fixed-dim": "#89ceff",
+              "on-tertiary": "#00344d",
+              "error-container": "#93000a",
+              "primary-fixed-dim": "#0A84FF",
+              "on-primary-container": "#00E68A",
+              "inverse-primary": "#006c49",
+              "surface-variant": "#2d3449",
+              "on-primary-fixed-variant": "#005236",
+              "surface-container-high": "#222a3d",
+              "secondary-fixed-dim": "#b7c8e1",
+              "on-secondary": "#213145",
+              "primary": "#0A84FF",
+              "surface": "#0F172A",
+              "error": "#ffb4ab",
+              "on-secondary-fixed-variant": "#38485d",
+              "tertiary-container": "#001320",
+              "tertiary-fixed": "#c9e6ff",
+              "primary-fixed": "#6ffbbe",
+              "secondary-fixed": "#d3e4fe",
+              "inverse-surface": "#dae2fd",
+              "background": "#0F172A",
+              "tertiary": "#89ceff",
+              "on-secondary-fixed": "#0b1c30",
+              "on-tertiary-fixed": "#001e2f",
+              "surface-tint": "#0A84FF",
+              "inverse-on-surface": "#283044",
+              "surface-container-highest": "#2d3449",
+              "on-primary": "#FFFFFF",
+              "surface-bright": "#31394d",
+              "outline": "#8f9095",
+              "on-error": "#690005",
+              "on-error-container": "#ffdad6",
+              "on-secondary-container": "#a9bad3",
+              "brand-green": "#00E68A"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Inter"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .signature-gradient {
+        background: linear-gradient(135deg, #4edea3 0%, #00150b 100%);
+      }
+      .glass-effect {
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+      }
+      input:focus, select:focus, textarea:focus {
+        outline: none !important;
+        border-bottom-color: #00E68A !important;
+        box-shadow: 0 2px 0 0 rgba(0, 230, 138, 0.2) !important;
+      }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body selection:bg-primary selection:text-on-primary">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#0b1326]/70 backdrop-blur-xl shadow-2xl shadow-[#060e20]/40 border-b border-outline-variant/10">
+<div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
+<a href="03_cresca-os-home.html" class="flex items-center gap-3 hover:opacity-80 transition-opacity">
+    <div class="flex items-center gap-3">
+        <svg width="32" height="32" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-8 h-8">
+            <circle cx="24" cy="24" r="18" stroke="#0A84FF" stroke-width="3" />
+            <ellipse cx="24" cy="24" rx="13" ry="7.5" stroke="#00E68A" stroke-width="3" transform="rotate(60 24 24)" />
+            <ellipse cx="24" cy="24" rx="13" ry="7.5" stroke="#00E68A" stroke-width="3" transform="rotate(-60 24 24)" />
+            <circle cx="24" cy="6" r="2.5" fill="#0A84FF" />
+            <circle cx="24" cy="42" r="2.5" fill="#0A84FF" />
+            <circle cx="39.59" cy="15" r="2.5" fill="#00E68A" />
+            <circle cx="8.41" cy="15" r="2.5" fill="#FFFFFF" />
+            <circle cx="39.59" cy="33" r="2.5" fill="#FFFFFF" />
+            <circle cx="8.41" cy="33" r="2.5" fill="#00E68A" />
+            <circle cx="24" cy="24" r="3.5" fill="#FFFFFF" />
+        </svg>
+        <div class="flex items-baseline font-serif text-2xl font-bold tracking-tighter">
+            <span class="text-white">CRESCA</span><span class="text-[#00E68A] ml-px">OS</span>
+        </div>
+    </div>
+</a>
+<div class="hidden md:flex space-x-8">
+<a class="text-[#8f9095] hover:text-[#dae2fd] font-serif text-lg tracking-tight transition-all duration-200" href="02_solutions-infrastructure-ai.html">Solutions</a>
+<a class="text-[#8f9095] hover:text-[#dae2fd] font-serif text-lg tracking-tight transition-all duration-200" href="04_industries-tailored-systems.html">Industries</a>
+<a class="text-[#8f9095] hover:text-[#dae2fd] font-serif text-lg tracking-tight transition-all duration-200" href="11_pricing.html">Pricing</a>
+<a class="text-[#8f9095] hover:text-[#dae2fd] font-serif text-lg tracking-tight transition-all duration-200" href="05_about-practical-systems-thinking.html">About</a>
+<a class="text-[#8f9095] hover:text-[#dae2fd] font-serif text-lg tracking-tight transition-all duration-200" href="07_el-salvador-hub-v2.html">El Salvador</a>
+</div>
+<div class="flex items-center gap-6">
+<span class="text-[#8f9095] font-label text-sm cursor-pointer hover:text-[#dae2fd]" onclick="alert('Bilingual support (ES) is currently in internal testing. Contact our San Salvador hub for localized implementation.')">EN/ES</span>
+<a class="bg-[#4edea3] text-[#003824] px-5 py-2 rounded-lg font-label font-bold scale-95 transition-transform duration-200 hover:scale-100 uppercase tracking-widest text-[10px]" href="08_request-proposal-updated-logo.html">
+                    Book Audit
+                </a>
+</div>
+</div>
+</nav>
+
+<main class="pt-32 pb-24 px-6 md:px-12 max-w-7xl mx-auto">
+<!-- Hero Section -->
+<header class="mb-20 text-center max-w-4xl mx-auto">
+<div class="inline-flex items-center space-x-2 mb-6 px-4 py-1.5 rounded-full bg-surface-container-high border border-outline-variant/15">
+<span class="flex h-2 w-2 rounded-full bg-primary animate-pulse"></span>
+<span class="text-xs font-label uppercase tracking-widest text-primary">Sovereign Intelligent Systems</span>
+</div>
+<h1 class="font-headline text-5xl md:text-7xl font-bold tracking-tight mb-8 leading-tight animate-slide-up">
+                Book Your Free <span class="text-primary italic">Systems Audit</span>.
+</h1>
+<p class="text-lg md:text-xl text-on-surface-variant max-w-3xl mx-auto leading-relaxed animate-fade-in delay-200">
+                A 15-minute diagnostic to identify where your current systems are leaking leads and how to fix it for good. We'll show you exactly how to automate your growth infrastructure.
+            </p>
+</header>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+<!-- Trust & Info Column -->
+<aside class="lg:col-span-4 space-y-12 order-2 lg:order-1">
+<div class="p-8 rounded-xl bg-surface-container-low border border-outline-variant/10">
+<h3 class="font-headline text-2xl mb-6">Why Sovereign Intelligence?</h3>
+<ul class="space-y-8">
+<li class="flex gap-4">
+<span class="material-symbols-outlined text-primary">security</span>
+<div>
+<p class="font-label font-bold text-on-surface mb-1" style="font-variation-settings: 'FILL' 1;">Absolute Sovereignty</p>
+<p class="text-sm text-on-surface-variant leading-relaxed">Your data remains within your perimeter. No third-party leakages, ever.</p>
+</div>
+</li>
+<li class="flex gap-4">
+<span class="material-symbols-outlined text-primary">architecture</span>
+<div>
+<p class="font-label font-bold text-on-surface mb-1">Bespoke Architecture</p>
+<p class="text-sm text-on-surface-variant leading-relaxed">We don't sell licenses; we build the custom scaffolding your operations require.</p>
+</div>
+</li>
+<li class="flex gap-4">
+<span class="material-symbols-outlined text-primary">monitoring</span>
+<div>
+<p class="font-label font-bold text-on-surface mb-1">Live Audit Flow</p>
+<p class="text-sm text-on-surface-variant leading-relaxed">Our proposals include a high-level gap analysis of your current tech stack.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="relative group rounded-xl overflow-hidden aspect-video">
+<img alt="Cybersecurity command center" class="object-cover w-full h-full opacity-60 group-hover:scale-105 transition-transform duration-500" data-alt="Sophisticated dark server room with green status lights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-rg8SfANxD4Y1ttAQiHY5VHcPL_K4TvvvjIdrF7waudVWkWJGXmPHlGsnTIsStntu1XJOYyFKfVTDrCeaXVa7p1-F9ek2klnQcBJ_YjePLEPJgRVUiiApb5R-O4aQVG6sIvB0lqr9sObeuoH6rs65GMKyppZjxuaELDoXSsdKqd1pcg406Xdyyzwwtf364NHK9G2--AjXl-JRDDDVa45JERikJIKMGNlvY_9vLyS8c_uZ46rkMYz-YuaE_-bcD0iFnWZFm7yMQ4M"/>
+<div class="absolute inset-0 signature-gradient mix-blend-multiply opacity-40"></div>
+<div class="absolute bottom-6 left-6 right-6">
+<p class="text-sm font-label text-primary font-bold">LIVE SYSTEMS</p>
+<p class="text-lg font-headline">Enterprise Grade Resilience</p>
+</div>
+</div>
+</aside>
+<!-- Proposal Form Column -->
+<section class="lg:col-span-8 order-1 lg:order-2">
+<div class="bg-surface-container p-8 md:p-12 rounded-xl shadow-2xl shadow-surface-container-lowest/50 relative overflow-hidden">
+<!-- Subtle Glow in corner -->
+<div class="absolute -top-24 -right-24 w-64 h-64 bg-primary/5 blur-[100px] rounded-full"></div>
+<form class="space-y-8 relative z-10">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Full Name -->
+<div class="space-y-2">
+<label class="block font-label text-sm text-on-surface-variant uppercase tracking-wider">Full Name</label>
+<input class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant/15 px-0 py-3 text-on-surface placeholder:text-outline transition-all duration-200" placeholder="John Doe" type="text"/>
+</div>
+<!-- Email -->
+<div class="space-y-2">
+<label class="block font-label text-sm text-on-surface-variant uppercase tracking-wider">Company Email</label>
+<input class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant/15 px-0 py-3 text-on-surface placeholder:text-outline transition-all duration-200" placeholder="john@company.com" type="email"/>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Website -->
+<div class="space-y-2">
+<label class="block font-label text-sm text-on-surface-variant uppercase tracking-wider">Company Website</label>
+<input class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant/15 px-0 py-3 text-on-surface placeholder:text-outline transition-all duration-200" placeholder="www.yourbusiness.com" type="url"/>
+</div>
+<!-- Lead Volume -->
+<div class="space-y-2">
+<label class="block font-label text-sm text-on-surface-variant uppercase tracking-wider">Estimated Monthly Lead Volume</label>
+<select class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant/15 px-0 py-3 text-on-surface transition-all duration-200 appearance-none cursor-pointer">
+<option>0 - 50 leads/mo</option>
+<option>50 - 200 leads/mo</option>
+<option>200 - 500 leads/mo</option>
+<option>500+ leads/mo</option>
+</select>
+</div>
+</div>
+<!-- Project Goals -->
+<div class="space-y-2">
+<label class="block font-label text-sm text-on-surface-variant uppercase tracking-wider">Your Biggest Operational Bottleneck</label>
+<textarea class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant/15 px-0 py-3 text-on-surface placeholder:text-outline transition-all duration-200 resize-none" placeholder="What is currently slowing down your growth?" rows="4"></textarea>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Timeline -->
+<div class="space-y-2">
+<label class="block font-label text-sm text-on-surface-variant uppercase tracking-wider">Desired Timeline</label>
+<select class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant/15 px-0 py-3 text-on-surface transition-all duration-200 appearance-none cursor-pointer">
+<option>Immediate (As soon as possible)</option>
+<option>Within 30 days</option>
+<option>Within 90 days</option>
+<option>Just exploring options</option>
+</select>
+</div>
+</div>
+<div class="pt-6">
+<button class="w-full signature-gradient text-on-primary font-label font-bold py-5 rounded-lg text-lg flex items-center justify-center gap-3 transition-transform hover:scale-[1.01] active:scale-[0.99]" type="submit">
+                                Book My Free Audit →
+</button>
+<p class="mt-6 text-center text-xs text-outline font-label uppercase tracking-widest">
+                                Secure & Confidential Diagnostic
+                            </p>
+</div>
+</form>
+</div>
+</section>
+</div>
+</main>
+
+<footer class="bg-[#0b1326] w-full border-t border-[#45474b]/15 mt-32">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8 px-8 py-16 max-w-7xl mx-auto">
+<div class="col-span-2 md:col-span-1">
+<div class="flex items-center gap-2.5 mb-6">
+    <svg width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6">
+        <circle cx="24" cy="24" r="18" stroke="#0A84FF" stroke-width="3" />
+        <ellipse cx="24" cy="24" rx="13" ry="7.5" stroke="#00E68A" stroke-width="3" transform="rotate(60 24 24)" />
+        <ellipse cx="24" cy="24" rx="13" ry="7.5" stroke="#00E68A" stroke-width="3" transform="rotate(-60 24 24)" />
+        <circle cx="24" cy="6" r="2.5" fill="#0A84FF" />
+        <circle cx="24" cy="42" r="2.5" fill="#0A84FF" />
+        <circle cx="39.59" cy="15" r="2.5" fill="#00E68A" />
+        <circle cx="8.41" cy="15" r="2.5" fill="#FFFFFF" />
+        <circle cx="39.59" cy="33" r="2.5" fill="#FFFFFF" />
+        <circle cx="8.41" cy="33" r="2.5" fill="#00E68A" />
+        <circle cx="24" cy="24" r="3.5" fill="#FFFFFF" />
+    </svg>
+    <div class="flex items-baseline font-serif text-xl font-bold tracking-tighter">
+        <span class="text-white">CRESCA</span><span class="text-[#00E68A] ml-px">OS</span>
+    </div>
+</div>
+<p class="font-sans text-sm text-[#8f9095] mb-8 leading-relaxed max-w-xs">
+                    Done-for-you business operating systems for high-growth service companies.
+                </p>
+</div>
+<div>
+<h6 class="text-[#4edea3] font-label text-xs uppercase tracking-widest mb-6 font-bold">Solutions</h6>
+<ul class="space-y-4">
+<li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="02_solutions-infrastructure-ai.html">Systems Audit</a></li>
+<li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="11_pricing.html">Pricing</a></li>
+<li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="04_industries-tailored-systems.html">Industries</a></li>
+</ul>
+</div>
+<div>
+<h6 class="text-[#4edea3] font-label text-xs uppercase tracking-widest mb-6 font-bold">Markets</h6>
+<ul class="space-y-4">
+<li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="03_cresca-os-home.html">United States</a></li>
+<li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="07_el-salvador-hub-v2.html">El Salvador Hub</a></li>
+</ul>
+</div>
+<div>
+<h6 class="text-[#4edea3] font-label text-xs uppercase tracking-widest mb-6 font-bold">Company</h6>
+<ul class="space-y-4">
+<li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="05_about-practical-systems-thinking.html">About Us</a></li>
+<li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="08_request-proposal-updated-logo.html">Book Audit</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-8 py-8 border-t border-[#45474b]/10 text-center">
+<p class="font-sans text-xs text-[#8f9095] opacity-80 uppercase tracking-widest">
+                © 2024 Cresca OS. All rights reserved.
+            </p>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Cresca OS — Website Copy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Manrope', sans-serif;
+    background: #07101E;
+    color: #E2EAF4;
+    min-height: 100vh;
+  }
+
+  .cos-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem 2rem;
+    border-bottom: 0.5px solid rgba(80,160,255,0.15);
+    background: rgba(7,16,30,0.92);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(8px);
+  }
+
+  .cos-logo {
+    font-family: 'Noto Serif', serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: #E2EAF4;
+    letter-spacing: 0.04em;
+  }
+  .cos-logo span { color: #3DB87A; }
+
+  .cos-nav-tabs {
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+  }
+
+  .cos-tab {
+    padding: 7px 14px;
+    border: none;
+    background: transparent;
+    color: #7A99BB;
+    font-family: 'Manrope', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: all 0.15s;
+    letter-spacing: 0.03em;
+  }
+  .cos-tab:hover { color: #E2EAF4; background: rgba(61,184,122,0.08); }
+  .cos-tab.active { color: #3DB87A; background: rgba(61,184,122,0.12); }
+
+  .cos-page { display: none; }
+  .cos-page.active { display: block; }
+
+  .hero {
+    padding: 5rem 2rem 4rem;
+    max-width: 900px;
+    margin: 0 auto;
+    border-bottom: 0.5px solid rgba(80,160,255,0.08);
+  }
+
+  .hero-eyebrow {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: #3DB87A;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 1px;
+    background: #3DB87A;
+  }
+
+  .hero h1 {
+    font-family: 'Noto Serif', serif;
+    font-size: clamp(32px, 5vw, 52px);
+    font-weight: 700;
+    line-height: 1.15;
+    color: #F0F6FF;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.01em;
+  }
+
+  .hero h1 .accent { color: #3DB87A; }
+  .hero h1 .blue { color: #5BA8F5; }
+
+  .hero-sub {
+    font-size: 16px;
+    line-height: 1.75;
+    color: #8AACC8;
+    max-width: 660px;
+    margin-bottom: 2.5rem;
+  }
+
+  .cta-row {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .cta-primary {
+    padding: 13px 28px;
+    background: #3DB87A;
+    color: #07101E;
+    font-family: 'Manrope', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    letter-spacing: 0.03em;
+    transition: all 0.15s;
+  }
+  .cta-primary:hover { background: #4ECF8A; }
+
+  .cta-secondary {
+    padding: 13px 28px;
+    background: transparent;
+    color: #5BA8F5;
+    font-family: 'Manrope', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    border: 0.5px solid rgba(91,168,245,0.35);
+    border-radius: 6px;
+    cursor: pointer;
+    letter-spacing: 0.03em;
+    transition: all 0.15s;
+  }
+  .cta-secondary:hover { border-color: #5BA8F5; color: #E2EAF4; }
+
+  .section {
+    padding: 3.5rem 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+    border-bottom: 0.5px solid rgba(80,160,255,0.06);
+  }
+
+  .section-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    color: #3DB87A;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  .section h2 {
+    font-family: 'Noto Serif', serif;
+    font-size: clamp(22px, 3vw, 30px);
+    font-weight: 700;
+    color: #F0F6FF;
+    margin-bottom: 1rem;
+    line-height: 1.25;
+  }
+
+  .section-body {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #8AACC8;
+    max-width: 700px;
+    margin-bottom: 2rem;
+  }
+
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+    margin-top: 2rem;
+  }
+
+  .card {
+    background: rgba(13,26,46,0.8);
+    border: 0.5px solid rgba(80,160,255,0.14);
+    border-radius: 10px;
+    padding: 1.5rem;
+  }
+
+  .card-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    background: rgba(61,184,122,0.12);
+    border: 0.5px solid rgba(61,184,122,0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    font-size: 16px;
+  }
+
+  .card h3 {
+    font-family: 'Noto Serif', serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: #D8E8F8;
+    margin-bottom: 0.5rem;
+  }
+
+  .card p {
+    font-size: 13.5px;
+    line-height: 1.7;
+    color: #6A8AA6;
+  }
+
+  .stat-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 12px;
+    margin: 2rem 0;
+  }
+
+  .stat {
+    background: rgba(13,26,46,0.6);
+    border: 0.5px solid rgba(80,160,255,0.12);
+    border-radius: 8px;
+    padding: 1.25rem;
+  }
+
+  .stat-num {
+    font-family: 'Noto Serif', serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: #5BA8F5;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .stat-label {
+    font-size: 12px;
+    color: #6A8AA6;
+    line-height: 1.4;
+  }
+
+  .quote-block {
+    border-left: 2px solid #3DB87A;
+    padding: 1rem 1.5rem;
+    margin: 2rem 0;
+    background: rgba(61,184,122,0.04);
+    border-radius: 0 8px 8px 0;
+  }
+  .quote-block p {
+    font-family: 'Noto Serif', serif;
+    font-size: 16px;
+    color: #B8D0E8;
+    line-height: 1.7;
+    font-style: italic;
+  }
+
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 1.5rem;
+  }
+  @media(max-width: 600px) { .two-col { grid-template-columns: 1fr; } }
+
+  .pill {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    background: rgba(61,184,122,0.12);
+    border: 0.5px solid rgba(61,184,122,0.25);
+    color: #3DB87A;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    margin-bottom: 1rem;
+  }
+
+  .form-section {
+    background: rgba(13,26,46,0.8);
+    border: 0.5px solid rgba(80,160,255,0.15);
+    border-radius: 12px;
+    padding: 2.5rem;
+    max-width: 640px;
+    margin: 2rem auto 0;
+  }
+
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 14px;
+  }
+  @media(max-width: 500px) { .form-grid { grid-template-columns: 1fr; } }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .form-group label {
+    font-size: 11px;
+    font-weight: 600;
+    color: #6A8AA6;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+  }
+
+  .form-group input, .form-group select, .form-group textarea {
+    background: rgba(7,16,30,0.6);
+    border: 0.5px solid rgba(80,160,255,0.2);
+    border-radius: 6px;
+    padding: 10px 14px;
+    color: #D8E8F8;
+    font-family: 'Manrope', sans-serif;
+    font-size: 13.5px;
+    outline: none;
+    transition: border-color 0.15s;
+  }
+  .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+    border-color: rgba(61,184,122,0.5);
+  }
+  .form-group select option { background: #07101E; }
+  .form-group textarea { resize: vertical; min-height: 90px; }
+  .form-full { grid-column: 1 / -1; }
+
+  .cta-block {
+    background: rgba(61,184,122,0.06);
+    border: 0.5px solid rgba(61,184,122,0.18);
+    border-radius: 10px;
+    padding: 2rem;
+    margin-top: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .cta-block-text h3 {
+    font-family: 'Noto Serif', serif;
+    font-size: 17px;
+    color: #D8E8F8;
+    margin-bottom: 4px;
+  }
+  .cta-block-text p { font-size: 13px; color: #6A8AA6; }
+</style>
+</head>
+<body>
+
+<nav class="cos-nav">
+  <div class="cos-logo">CRESCA <span>OS</span></div>
+  <div class="cos-nav-tabs">
+    <button class="cos-tab active" onclick="showPage('home', this)">Home</button>
+    <button class="cos-tab" onclick="showPage('solutions', this)">Solutions</button>
+    <button class="cos-tab" onclick="showPage('industries', this)">Industries</button>
+    <button class="cos-tab" onclick="showPage('about', this)">About</button>
+    <button class="cos-tab" onclick="showPage('hub', this)">El Salvador Hub</button>
+    <button class="cos-tab" onclick="showPage('proposal', this)">Get Proposal</button>
+  </div>
+</nav>
+
+<!-- HOME -->
+<div class="cos-page active" id="page-home">
+  <div class="hero">
+    <div class="hero-eyebrow">Sovereign Operations Intelligence</div>
+    <h1>Global Strategy.<br><span class="accent">Local Execution.</span><br>Zero Compromise.</h1>
+    <p class="hero-sub">Cresca OS builds the operational layer that modern enterprises actually run on — custom-engineered infrastructure, AI-integrated workflows, and bilingual execution talent that operates on U.S. time, at a fraction of the cost. This isn't outsourcing. This is institutional sovereignty.</p>
+    <div class="cta-row">
+      <button class="cta-primary">Request a Strategic Audit</button>
+      <button class="cta-secondary">Explore the El Salvador Hub</button>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">The OS Layer</div>
+    <h2>Your Enterprise Runs on Infrastructure. Ours Was Built to Scale Yours.</h2>
+    <p class="section-body">Most operators reach a ceiling — not because their strategy is wrong, but because their infrastructure can't execute it. Cresca OS was designed to eliminate that ceiling. We function as the operating system beneath your growth: building the systems, deploying the intelligence, and running the operations that transform strategy into measurable outcomes.</p>
+    <div class="cards">
+      <div class="card">
+        <div class="card-icon">⚙</div>
+        <h3>Infrastructure & AI</h3>
+        <p>Custom-built enterprise systems designed to automate, integrate, and scale without breaking. No templates. No compromises.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🌐</div>
+        <h3>Strategic Nearshore Hub</h3>
+        <p>A dedicated execution center in San Salvador — zero timezone friction, bilingual elite talent, and full alignment with U.S. operating standards.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🔒</div>
+        <h3>Data Sovereignty</h3>
+        <p>Your data stays yours. Every system we build is architected so that control, access, and ownership remain entirely within your enterprise.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">Why Cresca OS</div>
+    <h2>Institutional-Grade Execution. Built for the Demands of Global Enterprise.</h2>
+    <p class="section-body">We don't offer a platform or a subscription. We become the operational intelligence layer inside your organization — embedding our systems and talent into your workflows, aligned to your outcomes, and accountable to your standards.</p>
+    <div class="stat-row">
+      <div class="stat"><div class="stat-num">0hrs</div><div class="stat-label">Timezone delta with U.S. operations</div></div>
+      <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Client data sovereignty, by design</div></div>
+      <div class="stat"><div class="stat-num">3×</div><div class="stat-label">Faster deployment vs. onshore build teams</div></div>
+      <div class="stat"><div class="stat-num">60%</div><div class="stat-label">Reduction in operational overhead, average</div></div>
+    </div>
+    <div class="cta-block">
+      <div class="cta-block-text">
+        <h3>Ready to architect your sovereign infrastructure?</h3>
+        <p>We take on a limited number of strategic engagements per quarter.</p>
+      </div>
+      <button class="cta-primary">Begin the Conversation</button>
+    </div>
+  </div>
+</div>
+
+<!-- SOLUTIONS -->
+<div class="cos-page" id="page-solutions">
+  <div class="hero">
+    <div class="hero-eyebrow">Infrastructure & AI</div>
+    <h1>Systems That <span class="accent">Actually Scale.</span><br>Intelligence That<br><span class="blue">Actually Works.</span></h1>
+    <p class="hero-sub">Off-the-shelf software was built for the average enterprise. You are not average. Cresca OS engineers custom infrastructure and AI workflows that fit your exact operational reality — and adapt as you grow. We build for permanence, not the demo.</p>
+    <div class="cta-row">
+      <button class="cta-primary">Scope Your Infrastructure Build</button>
+      <button class="cta-secondary">Download the Technical Overview</button>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">What We Build</div>
+    <h2>The Four Layers of Sovereign Enterprise Infrastructure</h2>
+    <p class="section-body">Every engagement begins with a structural audit. We map your operational gaps, data flows, and scale ceilings — then engineer a layered infrastructure that converts friction into throughput.</p>
+    <div class="cards">
+      <div class="card">
+        <div class="card-icon">🏗</div>
+        <h3>Core Systems Architecture</h3>
+        <p>ERP integrations, custom data pipelines, and process automation that eliminate the manual bottlenecks throttling your output. Built on your stack, owned by your team.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🤖</div>
+        <h3>AI Workflow Engineering</h3>
+        <p>Proprietary AI models and decision-support systems embedded into your operations. From procurement intelligence to demand forecasting — built for your data, not generic datasets.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">📊</div>
+        <h3>Operational Intelligence Dashboards</h3>
+        <p>Real-time visibility across your enterprise. Custom reporting layers that surface the signals executives need — without the noise of off-the-shelf BI tools.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🔐</div>
+        <h3>Sovereign Data Architecture</h3>
+        <p>Data infrastructure designed so your organization retains full governance. No vendor lock-in. No third-party data exposure. Your intelligence stays yours.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">Our Process</div>
+    <h2>We Don't Deploy Templates. We Engineer Solutions.</h2>
+    <p class="section-body">Our methodology is diagnostic-first. Before a single line of code is written, we understand how your operations actually run — the informal workarounds, the shadow systems, the decisions made on spreadsheets. Then we build infrastructure that solves the real problem.</p>
+    <div class="quote-block">
+      <p>"The difference between a template and a system is the difference between a tool and an operating advantage. We build operating advantages."</p>
+    </div>
+    <div class="two-col">
+      <div>
+        <div class="section-label">Phase 01</div>
+        <h2 style="font-size:18px; margin-bottom:0.5rem;">Structural Audit</h2>
+        <p class="section-body" style="font-size:14px; margin-bottom:0;">A 2-week deep-dive into your operational architecture. We document process flows, identify bottlenecks, and quantify the cost of your current infrastructure gaps.</p>
+      </div>
+      <div>
+        <div class="section-label">Phase 02</div>
+        <h2 style="font-size:18px; margin-bottom:0.5rem;">Architecture Design</h2>
+        <p class="section-body" style="font-size:14px; margin-bottom:0;">A custom infrastructure blueprint — presented as an executive-level strategic document, not a technical spec sheet. You own the architecture before we build a thing.</p>
+      </div>
+      <div>
+        <div class="section-label">Phase 03</div>
+        <h2 style="font-size:18px; margin-bottom:0.5rem;">Sovereign Build</h2>
+        <p class="section-body" style="font-size:14px; margin-bottom:0;">Our nearshore engineering team executes the build with full transparency — weekly milestones, executive check-ins, and zero black-box development. You see everything.</p>
+      </div>
+      <div>
+        <div class="section-label">Phase 04</div>
+        <h2 style="font-size:18px; margin-bottom:0.5rem;">Transfer & Scale</h2>
+        <p class="section-body" style="font-size:14px; margin-bottom:0;">We don't just hand over a system — we transfer institutional knowledge. Your team gains operational ownership. We remain as embedded intelligence partners, not permanent dependencies.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- INDUSTRIES -->
+<div class="cos-page" id="page-industries">
+  <div class="hero">
+    <div class="hero-eyebrow">Tailored Systems by Industry</div>
+    <h1>The Same <span class="accent">OS Layer.</span><br>Engineered for<br>Your Operational Reality.</h1>
+    <p class="hero-sub">Sovereign infrastructure is not one-size-fits-all. The compliance pressures in financial services are not the throughput demands of logistics, nor the precision requirements of manufacturing. We adapt our methodology to the operational physics of your industry — and build accordingly.</p>
+    <div class="cta-row">
+      <button class="cta-primary">Find Your Industry Solution</button>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="pill">Logistics & Supply Chain</div>
+    <h2>Move Faster. See Further. Lose Nothing in Transit.</h2>
+    <p class="section-body">Logistics operations fail at the intersection of data and decision-making. Shipments are delayed because systems don't talk. Costs spike because visibility lags reality. We build the connective infrastructure that closes those gaps — from customs automation and carrier integrations to real-time freight intelligence and exception management systems. The result: predictable throughput, reduced dwell time, and a supply chain that reports its own performance.</p>
+    <div class="cards">
+      <div class="card"><h3>Real-Time Freight Intelligence</h3><p>Live shipment visibility with predictive delay alerts before disruptions become crises.</p></div>
+      <div class="card"><h3>Customs & Compliance Automation</h3><p>Automated documentation and compliance workflows that cut customs clearance time by up to 70%.</p></div>
+      <div class="card"><h3>Carrier Performance Scoring</h3><p>AI-driven vendor scorecards that optimize carrier selection before the quote is accepted.</p></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="pill">Financial Services</div>
+    <h2>Institutional Controls. Institutional Speed. Zero Regulatory Exposure.</h2>
+    <p class="section-body">Financial institutions operate under a non-negotiable constraint: every system must be auditable, every data point sovereign, and every process defensible under regulatory scrutiny. We build financial operations infrastructure that meets those demands — not as a constraint, but as a design principle. From automated reconciliation and AML monitoring to executive reporting layers and client onboarding systems, we engineer for compliance without sacrificing execution velocity.</p>
+    <div class="cards">
+      <div class="card"><h3>Automated Reconciliation Engines</h3><p>Eliminate the 3-day close process. Real-time reconciliation infrastructure that runs continuously and flags discrepancies instantly.</p></div>
+      <div class="card"><h3>Regulatory Intelligence Dashboards</h3><p>Custom compliance monitoring with audit trails built into every layer — designed for both internal governance and external examination.</p></div>
+      <div class="card"><h3>Client Onboarding Automation</h3><p>KYC/AML workflows that reduce onboarding time from weeks to hours without compromising due diligence rigor.</p></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="pill">Manufacturing & Operations</div>
+    <h2>Precision Systems for Environments Where Downtime Has a Dollar Value.</h2>
+    <p class="section-body">In manufacturing, every system failure has a measurable cost. Downtime isn't an inconvenience — it's a financial event. We build operational infrastructure that turns your shop floor into an intelligent production environment: predictive maintenance systems, production scheduling AI, quality control automation, and ERP integrations that keep your data aligned with your physical reality. We engineer for resilience, not just efficiency.</p>
+    <div class="cards">
+      <div class="card"><h3>Predictive Maintenance AI</h3><p>Machine learning models trained on your equipment data — predicting failures before they interrupt production.</p></div>
+      <div class="card"><h3>Production Intelligence Systems</h3><p>Real-time OEE monitoring, yield analytics, and scheduling optimization that increase throughput without capital expenditure.</p></div>
+      <div class="card"><h3>Supply Chain Synchronization</h3><p>Integrated procurement and inventory systems that keep material availability aligned with production demand — automatically.</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<div class="cos-page" id="page-about">
+  <div class="hero">
+    <div class="hero-eyebrow">Practical Systems Thinking</div>
+    <h1>We Built Cresca OS<br>Because <span class="accent">Templates<br>Were Killing</span> Great Companies.</h1>
+    <p class="hero-sub">The gap between a company's strategic ambition and its operational reality isn't a strategy problem. It's an infrastructure problem. We founded Cresca OS to solve it — with custom systems, embedded intelligence, and a nearshore execution hub built specifically for the demands of global enterprise.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-label">Our Philosophy</div>
+    <h2>Systems Over Solutions. Infrastructure Over Advice.</h2>
+    <p class="section-body">The consulting industry is full of frameworks and roadmaps. We have no interest in delivering either. We build systems — because systems generate outcomes, and outcomes are the only currency that matters in enterprise operations. Our philosophy is rooted in practical systems thinking: understand the real operational constraint, engineer the smallest intervention that eliminates it, and build infrastructure that transfers ownership entirely to the client.</p>
+    <div class="quote-block">
+      <p>"Sovereign intelligence isn't a product feature. It's an organizational capability. We build the infrastructure that makes it possible."</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">Our Principles</div>
+    <h2>The Four Operating Principles of Cresca OS</h2>
+    <div class="cards">
+      <div class="card">
+        <div class="card-icon">🎯</div>
+        <h3>Outcomes Over Outputs</h3>
+        <p>We measure our work in revenue recovered, time eliminated, and margin expanded. Not features delivered or hours billed. Every engagement has a defined operational result.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🔑</div>
+        <h3>Sovereignty by Default</h3>
+        <p>Every system we build is architected so that the client owns it entirely. No proprietary lock-in. No dependency on Cresca OS to operate. We build for institutional independence.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🔬</div>
+        <h3>Diagnostic Before Prescriptive</h3>
+        <p>We never propose a solution before we understand the real constraint. Our structural audit process exists because the stated problem is rarely the actual problem.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🌎</div>
+        <h3>Global Standards. Local Precision.</h3>
+        <p>Silicon Valley engineering rigor. Latin American operational fluency. Our bilingual team operates at the intersection of both — with full alignment to U.S. compliance and quality standards.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">Why El Salvador</div>
+    <h2>The Most Strategically Positioned Execution Hub in the Americas.</h2>
+    <p class="section-body">We chose San Salvador deliberately — not for cost arbitrage, but for strategic positioning. El Salvador operates in the Central Standard Time zone, shares a growing bilingual professional class with deep ties to U.S. enterprise culture, and sits at the geographic center of a Latin American market undergoing rapid formalization. Our hub is not a call center. It is an institutional execution environment — engineered for the demands of global enterprise at every level.</p>
+    <button class="cta-secondary" style="margin-top:0.5rem;">Explore the Hub</button>
+  </div>
+</div>
+
+<!-- HUB -->
+<div class="cos-page" id="page-hub">
+  <div class="hero">
+    <div class="hero-eyebrow">The San Salvador Hub</div>
+    <h1>U.S. Standards.<br><span class="accent">Zero Friction.</span><br>Strategic Position.</h1>
+    <p class="hero-sub">The Cresca OS San Salvador Hub is not a nearshore vendor. It is a sovereign execution environment — purpose-built for enterprise-grade operations, staffed with bilingual institutional talent, and calibrated to run on U.S. time, U.S. standards, and U.S. operational rigor. From here, we bridge the world's two fastest-growing corridors: Silicon Valley innovation and Latin American enterprise transformation.</p>
+    <div class="cta-row">
+      <button class="cta-primary">Request a Hub Briefing</button>
+      <button class="cta-secondary">See Hub Capabilities</button>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">The Strategic Advantage</div>
+    <h2>Why San Salvador Is the Smartest Execution Decision in the Americas.</h2>
+    <p class="section-body">Nearshore outsourcing has historically meant accepting trade-offs: lower cost, but reduced quality. Closer proximity, but limited talent depth. The San Salvador Hub eliminates that trade-off. We operate in the same time zone as Dallas and Chicago, with bilingual professionals who have been trained to institutional standards, inside infrastructure built to match the expectations of Fortune 500 operations.</p>
+    <div class="stat-row">
+      <div class="stat"><div class="stat-num">CST</div><div class="stat-label">Zero timezone gap with U.S. Central operations</div></div>
+      <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Bilingual talent — English and Spanish fluency</div></div>
+      <div class="stat"><div class="stat-num">60%</div><div class="stat-label">Cost advantage vs. equivalent U.S. headcount</div></div>
+      <div class="stat"><div class="stat-num">2×</div><div class="stat-label">LATAM market access via San Salvador corridor</div></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">Hub Capabilities</div>
+    <h2>An Execution Environment Engineered for the Demands of Global Operations.</h2>
+    <p class="section-body">The Hub is not a single-function center. It operates across the full spectrum of enterprise execution needs — from software engineering and AI development to operations management, financial analysis, and strategic coordination. Every function is staffed to institutional standards and integrated into your existing workflows without disruption.</p>
+    <div class="cards">
+      <div class="card">
+        <div class="card-icon">💻</div>
+        <h3>Engineering & AI Development</h3>
+        <p>Senior software engineers and AI practitioners building and maintaining your custom infrastructure. Full-stack, cloud-native, and bilingual.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">📋</div>
+        <h3>Operations & Process Management</h3>
+        <p>Dedicated operations teams running your critical processes — with documented SOPs, performance metrics, and executive reporting built in from day one.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">📈</div>
+        <h3>Financial Analysis & Reporting</h3>
+        <p>Institutional-grade financial analysts providing the reporting, reconciliation, and intelligence support that your finance team needs to move faster.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🤝</div>
+        <h3>U.S.–LATAM Strategic Coordination</h3>
+        <p>A bilingual coordination layer that bridges your U.S. operations with Latin American market execution — eliminating the cultural and communication gaps that stall expansion.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">For Salvadoran Leaders</div>
+    <h2>Institutionalize Your Enterprise. Compete at a Global Standard.</h2>
+    <p class="section-body">For Salvadoran business leaders, Cresca OS represents a direct pathway to the operational infrastructure that global competition demands. We bring Silicon Valley-grade systems thinking and AI capability to enterprises in El Salvador — helping family businesses formalize, growth-stage companies scale, and established enterprises compete internationally. The digital transformation of the Salvadoran private sector is not a future event. It begins now.</p>
+    <div class="cta-block">
+      <div class="cta-block-text">
+        <h3>Begin your digital transformation.</h3>
+        <p>We work with a select group of Salvadoran enterprises each year.</p>
+      </div>
+      <button class="cta-primary">Schedule an Executive Briefing</button>
+    </div>
+  </div>
+</div>
+
+<!-- PROPOSAL -->
+<div class="cos-page" id="page-proposal">
+  <div class="hero">
+    <div class="hero-eyebrow">Strategic Engagement</div>
+    <h1>This Is Not<br>a <span class="accent">Contact Form.</span><br>It's the First Step.</h1>
+    <p class="hero-sub">We accept a limited number of strategic engagements per quarter. Every new relationship begins with a complimentary Structural Audit — a two-week diagnostic that maps your operational architecture, quantifies your infrastructure gaps, and identifies the highest-leverage intervention points. No pitch deck. No generic proposal. Just institutional analysis, delivered with precision.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-label">What You Receive</div>
+    <h2>The Cresca OS Structural Audit: What $0 Buys You.</h2>
+    <p class="section-body">Every qualified engagement begins with a no-cost Structural Audit. In two weeks, our team analyzes your operational architecture and delivers a 20-page executive brief that includes: a documented map of your current infrastructure state, a quantified cost-of-inaction analysis, a prioritized infrastructure intervention roadmap, and a proposed engagement scope with projected ROI ranges. Most clients tell us it's the most useful strategic document they've received in years.</p>
+    <div class="cards">
+      <div class="card"><h3>Operational Architecture Map</h3><p>A clear diagram of how your enterprise actually runs — not how the org chart says it does. Every gap and redundancy documented.</p></div>
+      <div class="card"><h3>Cost-of-Inaction Analysis</h3><p>A precise quantification of what your current infrastructure is costing you in time, margin, and competitive position. Expressed in dollars.</p></div>
+      <div class="card"><h3>Infrastructure Intervention Roadmap</h3><p>A prioritized sequence of infrastructure builds, ranked by ROI potential and implementation complexity. Your decision-making framework, built for you.</p></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">Request Your Audit</div>
+    <h2>Tell Us About Your Enterprise.</h2>
+    <p class="section-body">Complete the brief below. We review every submission personally and respond within 48 business hours. If there is a strong operational fit, we will schedule a 45-minute executive call to discuss your situation before the audit begins.</p>
+
+    <div class="form-section">
+      <div class="form-grid">
+        <div class="form-group">
+          <label>First Name</label>
+          <input type="text" placeholder="Alexandra" />
+        </div>
+        <div class="form-group">
+          <label>Last Name</label>
+          <input type="text" placeholder="Chen" />
+        </div>
+        <div class="form-group">
+          <label>Title</label>
+          <input type="text" placeholder="Chief Operating Officer" />
+        </div>
+        <div class="form-group">
+          <label>Organization</label>
+          <input type="text" placeholder="Company Name" />
+        </div>
+        <div class="form-group">
+          <label>Industry</label>
+          <select>
+            <option value="">Select your industry</option>
+            <option>Logistics & Supply Chain</option>
+            <option>Financial Services</option>
+            <option>Manufacturing & Operations</option>
+            <option>Technology</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Annual Revenue Range</label>
+          <select>
+            <option value="">Select range</option>
+            <option>$10M – $50M</option>
+            <option>$50M – $250M</option>
+            <option>$250M – $1B</option>
+            <option>$1B+</option>
+          </select>
+        </div>
+        <div class="form-group form-full">
+          <label>Primary Operational Challenge</label>
+          <textarea placeholder="Describe the primary operational constraint limiting your growth or efficiency. Be specific — the more precise you are, the more valuable our initial analysis will be."></textarea>
+        </div>
+        <div class="form-group form-full">
+          <label>Work Email</label>
+          <input type="email" placeholder="you@company.com" />
+        </div>
+      </div>
+      <button class="cta-primary" style="width:100%; padding:15px; font-size:14px; margin-top:8px;">Request My Structural Audit →</button>
+      <p style="font-size:11px; color:#4A6A86; text-align:center; margin-top:14px; line-height:1.5;">We review every submission personally. Qualified applicants receive a response within 48 business hours. We do not share your information with third parties.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+function showPage(id, btn) {
+  document.querySelectorAll('.cos-page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.cos-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('page-' + id).classList.add('active');
+  btn.classList.add('active');
+  window.scrollTo(0, 0);
+}
+</script>
+</body>
+</html>

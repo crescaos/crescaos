@@ -1,0 +1,135 @@
+0: [Heading 1] TODO DIRECTO — Estrategia de Precios y Comisiones
+1: [Heading 2] Investigación de Mercado y Recomendaciones para El Salvador
+2: [First Paragraph] Versión 1.0 | Febrero 2026 | Confidencial – Solo para Uso Interno
+3: [Normal] 
+4: [Heading 2] 1. CONTEXTO DEL MERCADO
+5: [First Paragraph] El Salvador se encuentra en un momento histórico para el emprendimiento digital. San Salvador fue reconocida como el ecosistema de startups de más rápido crecimiento del mundo en 2025, con un objetivo de 4.2 millones de turistas para 2026. El mercado de transformación digital en América Latina alcanzará $107.23 billones en 2025, creciendo a un 17.69% anual.
+6: [Body Text] Lo que esto significa para Todo Directo: Estamos en el mercado correcto, en el momento correcto. Los negocios locales sienten la presión de turistas internacionales que esperan tecnología, reservas online y respuestas inmediatas. La demanda existe. El trabajo del representante es cerrar la brecha.
+7: [Body Text] Factor crítico de precios: A diferencia de US o Europa Occidental donde el gasto en software SaaS es alto, El Salvador es un mercado emergente con poder adquisitivo diferente. La investigación muestra que precios regionales bien calibrados generan 25% más ingreso por cliente versus precios globales uniformes. Nuestros precios actuales están bien calibrados para el mercado — no son demasiado baratos ni fuera de alcance.
+8: [Normal] 
+9: [Heading 2] 2. ANÁLISIS DE PRECIOS ACTUALES vs. MERCADO
+10: [Heading 3] ¿Están Bien Puestos Nuestros Precios?
+11: [First Paragraph] La respuesta corta: sí, y hay espacio para crecer con valor.
+12: [Body Text] Conclusión: Los precios están bien para penetración de mercado en El Salvador. No los bajes — deteriorarías tus márgenes y atraerías clientes que valoran poco el servicio. No los subas todavía sin agregar valor diferenciador.
+13: [Normal] 
+14: [Heading 2] 3. ANÁLISIS DE MÁRGENES Y RENTABILIDAD
+15: [Heading 3] ¿Cuánto Necesita Ganar Todo Directo por Cliente?
+16: [First Paragraph] Para operar rentablemente como empresa, necesitamos considerar:
+17: [Body Text] Costos de entrega estimados por producto (mensual):
+18: [Body Text] Márgenes brutos estimados:
+19: [Body Text] Esto es saludable. Las agencias especializadas logran márgenes del 25–40%. Estamos en rangos superiores gracias al modelo SaaS. El objetivo es escalar clientes activos, no aumentar precios prematuramente.
+20: [Normal] 
+21: [Heading 2] 4. EL PROBLEMA DE $0 RESIDUAL EN ALTOQUE
+22: [Heading 3] El Problema Actual
+23: [First Paragraph] AlToque Pro ($14.99/mes) y Premium ($29.99/mes) pagan $0 de residual mensual al representante. Esto crea tres problemas:
+24: [Compact] Los reps no tienen incentivo de retener estos clientes — si un cliente de AlToque considera cancelar, el rep no gana nada apoyando la retención.
+25: [Compact] Parece “barato” en la tabla de comisiones — desincentiva que los reps prioricen esta venta.
+26: [Compact] Perdemos el modelo de ingreso recurrente que hace valioso este negocio a largo plazo.
+27: [Heading 3] Solución Recomendada: Agregar Residual Pequeño a AlToque
+28: [Body Text] Agregar $1.50–$3.00/mes de residual es mínimo para la empresa pero psicológicamente significativo para el rep — especialmente cuando tienen 20–30 clientes activos de AlToque acumulados.
+29: [Normal] 
+30: [Heading 2] 5. ESTRUCTURA DE COMISIONES OPTIMIZADA
+31: [Heading 3] Principio: Incentivar Comportamientos Correctos
+32: [First Paragraph] Una estructura de comisiones efectiva debe: - Pagar más por productos con mayor margen para la empresa - Crear ingreso residual genuino para que los reps retengan clientes - Ser fácil de calcular mentalmente en el campo - Recompensar paquetes (stack selling)
+33: [Heading 3] Tabla de Comisiones Recomendada (Mejorada)
+34: [Body Text] *Para Vacation Rentals, se recomienda considerar un pequeño % de comisión mensual sobre las reservas completadas (ej. 0.5–1%) como incentivo de retención a futuro.
+35: [Heading 3] ¿Por Qué Esta Estructura Funciona?
+36: [First Paragraph] Para los reps: Hay ingreso inmediato (inicial) y flujo constante (residual). Construir un portafolio de 50 clientes activos genera ingreso pasivo significativo.
+37: [Body Text] Para Todo Directo: Los porcentajes están balanceados con los márgenes — nunca pagamos más del 30% del ingreso neto al rep, manteniendo la empresa rentable.
+38: [Body Text] Para los clientes: Los precios se justifican fácilmente con el ROI demostrable (ver Slide 13 del pitch deck).
+39: [Normal] 
+40: [Heading 2] 6. POTENCIAL DE INGRESO PARA REPRESENTANTES
+41: [Heading 3] Escenario Realista: Rep con 3 Meses de Trabajo
+42: [First Paragraph] Asumiendo un rep activo cerrando 15 tratos/mes durante 3 meses:
+43: [Body Text] Mes 1 (45 clientes totales): - 20 AlToque Pro: $449 inicial - 10 Web Plan Pro: $596 inicial - 8 Chatbot Básico: $600 inicial - 5 Automatización Básica: $500 inicial - 2 Vacation Rentals A: $600 inicial - Total inicial mes 1: $2,745 - Residual acumulado: $78 + $49 + $180 + $150 = $457/mes
+44: [Body Text] Mes 2 (30 clientes adicionales): - Cierres nuevos + residual acumulado mes 1 - Ingresos totales mes 2 estimados: ~$2,100 + $457 residual = $2,557
+45: [Body Text] Mes 3 (45 cierres adicionales acumulados): - Residual mes 3 acumulado (90 clientes activos): ~$1,200/mes solo de residual - Ingresos totales mes 3 estimados: ~$3,500+
+46: [Heading 3] Ingreso Residual Acumulado a 12 Meses
+47: [First Paragraph] Un rep que mantiene 100 clientes activos con mezcla de productos genera: - AlToque Pro (30 clientes): $45/mes - Web Pro (25 clientes): $122.50/mes - Chatbot Básico (25 clientes): $562.50/mes - Automatización Básica (20 clientes): $600/mes - Total residual mensual: ~$1,330/mes garantizado, sin cerrar nada nuevo
+48: [Normal] 
+49: [Heading 2] 7. ESTRATEGIA DE PRECIOS A FUTURO
+50: [Heading 3] Cuándo Subir Precios
+51: [First Paragraph] Basado en las mejores prácticas de SaaS, se recomienda revisar precios cuando:
+52: [Compact] El producto mejora — cada nueva función de IA justifica un aumento del 10–15%.
+53: [Compact] La demanda supera la capacidad — si hay lista de espera, el precio es demasiado bajo.
+54: [Compact] La competencia local aparece — en ese momento, el valor percibido (no el precio) es el diferenciador.
+55: [Compact] Anualmente — un aumento del 5–8% anual es normal, esperado y raramente causa cancelaciones.
+56: [Heading 3] El Modelo “10x Rule” para Justificar Precios
+57: [First Paragraph] El cliente debe percibir que el valor recibido es 10 veces el precio pagado. Ejemplos:
+58: [Compact] Chatbot Básico $150/mes → Ahorra 3 horas/día de personal = $450/mes en tiempo. ROI: 3x mínimo.
+59: [Compact] Web Plan Pro $49/mes → 1 reserva online = $50–$200 de ingreso. ROI: inmediato en 1 reserva.
+60: [Compact] Automatización $200/mes → 10 horas/semana ahorradas a $3/hora = $120/mes + errores eliminados. ROI: claro.
+61: [Heading 3] Estrategia de Precio Anual
+62: [First Paragraph] El descuento anual (2 meses gratis = 16.7% de descuento) es una palanca de cierre poderosa: - Reduce churn (el cliente decide cancelar solo 1 vez al año, no 12 veces) - Genera efectivo inmediato para la empresa - El rep recibe comisión del pago completo upfront
+63: [Body Text] Se recomienda siempre intentar el cierre anual primero, y solo ofrecer mensual si el cliente definitivamente rechaza el anual.
+64: [Normal] 
+65: [Heading 2] 8. REGLAS SIMPLES PARA EL REPRESENTANTE
+66: [First Paragraph] Para simplificar las comisiones en campo, memoriza estas reglas:
+67: [Body Text] Regla del 40/10: En Desarrollo Web, ganas 40% de la instalación y 10% mensual.
+68: [Body Text] Regla del 50/15: En Automatización y Chatbot, ganas 50% del primer mes y 15% todos los meses siguientes.
+69: [Body Text] Regla del 150%: En AlToque, ganas 1.5 veces la mensualidad en el primer mes (más residual 10% desde el 2do mes con nueva estructura).
+70: [Body Text] Regla Fija: En Vacation Rentals, $300 (Modelo A) o $600 (Modelo B) — siempre fijo.
+71: [Body Text] Regla de Paquetes: Cuando vendes dos o más productos juntos, tus comisiones se suman — nunca se reducen por el paquete.
+72: [Normal] 
+73: [Heading 2] 9. IMPLEMENTACIÓN SUGERIDA
+74: [Heading 3] Cambios Prioritarios (Implementar de Inmediato)
+75: [Compact] Agregar residual a AlToque ($1.50/mes Pro, $3.00/mes Premium) — costo mínimo, impacto motivacional alto.
+76: [Compact] Crear Reglas Simples tarjeta de bolsillo — los reps necesitan calcular su comisión en segundos, no con Excel.
+77: [Compact] Aclarar Vacation Rentals — separar “precio de instalación al cliente” de “comisión del rep” en todos los materiales.
+78: [Heading 3] Cambios a Mediano Plazo (Q2 2026)
+79: [Compact] Revisar precios al alza cuando se lancen nuevas funciones de IA — cada mejora justifica +$5–$10/mes.
+80: [Compact] Considerar % residual sobre comisión de reservas Vacation Rentals — 0.5–1% mensual sobre reservas completadas.
+81: [Compact] Crear plan “Enterprise” para negocios con múltiples sucursales — precio custom, comisión negociada.
+82: [Normal] 
+83: [First Paragraph] Documento elaborado para uso interno de Todo Directo. Versión 1.0 | Febrero 2026. Para preguntas sobre estructura de comisiones, contacta a tu supervisor de ventas.
+
+=== TABLES ===
+
+Table 0:
+  Row 0: ['Servicio', 'Nuestro Precio', 'Referencia Global', 'Posición']
+  Row 1: ['AlToque Pro', '$14.99/mes', '$24–$49/mes (Tidio, ManyChat)', 'Competitivo ✅']
+  Row 2: ['Desarrollo Web Plan Pro', '$49/mes', '$49–$89/mes (agencias regionales)', 'Competitivo ✅']
+  Row 3: ['Automatización Básica', '$200/mes', '$200–$400/mes (Make.com + mano de obra)', 'Justo ✅']
+  Row 4: ['Chatbot IA Básico', '$150/mes', '$100–$500/mes (Landbot, WotNot)', 'Competitivo ✅']
+  Row 5: ['Vacation Rentals (8-10%)', '8–10% comisión', 'Airbnb 15%', 'Ventaja clara ✅']
+
+Table 1:
+  Row 0: ['Producto', 'Costo de Plataforma/Infra', 'Costo de Soporte (estimado)', 'Total Costo/mes']
+  Row 1: ['AlToque Pro', '~$3/cliente', '~$2/cliente', '~$5/mes']
+  Row 2: ['Desarrollo Web Pro', '~$8/cliente', '~$5/cliente', '~$13/mes']
+  Row 3: ['Chatbot IA Básico', '~$25/cliente (API IA)', '~$10/cliente', '~$35/mes']
+  Row 4: ['Automatización Básica', '~$30/cliente', '~$15/cliente', '~$45/mes']
+
+Table 2:
+  Row 0: ['Producto', 'Precio Cliente', 'Costo Empresa', 'Comisión Rep', 'Margen Neto Empresa']
+  Row 1: ['AlToque Pro', '$14.99/mes', '~$5/mes', '$0 residual', '~$9.99/mes (~67%)']
+  Row 2: ['Web Plan Pro', '$49/mes', '~$13/mes', '$4.90/mes', '~$31/mes (~63%)']
+  Row 3: ['Chatbot Básico', '$150/mes', '~$35/mes', '$22.50/mes', '~$92/mes (~61%)']
+  Row 4: ['Automatización Básica', '$200/mes', '~$45/mes', '$30/mes', '~$125/mes (~63%)']
+
+Table 3:
+  Row 0: ['Plan', 'Precio', 'Comisión Inicial', 'Residual Recomendado', 'Margen Neto Empresa']
+  Row 1: ['AlToque Pro', '$14.99/mes', '$22.49', '$1.50/mes', '~$8.49/mes (57%)']
+  Row 2: ['AlToque Premium', '$29.99/mes', '$44.98', '$3.00/mes', '~$17.99/mes (60%)']
+
+Table 4:
+  Row 0: ['Producto / Plan', 'Precio al Cliente', 'Comisión Inicial', 'Residual Mensual', '% Inicial', '% Residual']
+  Row 1: ['ALTOQUE', '', '', '', '', '']
+  Row 2: ['AlToque Gratis', '$0', '$0', '$0', '—', '—']
+  Row 3: ['AlToque Pro', '$14.99/mes', '$22.49', '$1.50/mes', '150% 1er mes', '10%']
+  Row 4: ['AlToque Premium', '$29.99/mes', '$44.98', '$3.00/mes', '150% 1er mes', '10%']
+  Row 5: ['DESARROLLO WEB', '', '', '', '', '']
+  Row 6: ['Plan Chivo', '$99 inst. / $25/mes', '$39.60', '$2.50/mes', '40% inst.', '10%']
+  Row 7: ['Plan Pro', '$149 inst. / $49/mes', '$59.60', '$4.90/mes', '40% inst.', '10%']
+  Row 8: ['Plan Premium', '$299 inst. / $89/mes', '$119.60', '$8.90/mes', '40% inst.', '10%']
+  Row 9: ['VACATION RENTALS', '', '', '', '', '']
+  Row 10: ['Modelo A – Direct Booking', '$250–350 instalación', '$300 fijo', '$0*', '—', '—']
+  Row 11: ['Modelo B – Full Management', '$400–600 instalación', '$600 fijo', '$0*', '—', '—']
+  Row 12: ['AUTOMATIZACIÓN', '', '', '', '', '']
+  Row 13: ['Básica', '$200/mes', '$100 (1er mes)', '$30/mes', '50%', '15%']
+  Row 14: ['Pro', '$400/mes', '$200 (1er mes)', '$60/mes', '50%', '15%']
+  Row 15: ['Empresarial', 'Cotización', '10% del contrato', 'Negociable', '—', '—']
+  Row 16: ['CHATBOT IA', '', '', '', '', '']
+  Row 17: ['Básico', '$150/mes', '$75 (1er mes)', '$22.50/mes', '50%', '15%']
+  Row 18: ['Pro', '$300/mes', '$150 (1er mes)', '$45/mes', '50%', '15%']
+  Row 19: ['Personalizado', 'Cotización', '10% del contrato', 'Negociable', '—', '—']
