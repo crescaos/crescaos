@@ -1,0 +1,13 @@
+{
+  "name": "crescaos-backend",
+  "version": "1.0.0",
+  "description": "Cresca OS Backend API on Vercel",
+  "main": "api/webhook.js",
+  "scripts": {
+    "start": "vercel dev",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["cresca", "api", "ghl"],
+  "author": "Cresca OS",
+  "license": "ISC"
+}
