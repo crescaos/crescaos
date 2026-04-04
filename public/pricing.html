@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-
-<html class="dark scroll-smooth" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Pricing | Cresca OS</title>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Inter:wght@400;500;600&amp;family=Manrope:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<style type="text/tailwindcss">
+<html class="dark scroll-smooth" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Pricing | Cresca OS</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600&family=Manrope:wght@500;600;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <style type="text/tailwindcss">
         @layer utilities {
             .animate-slide-up { animation: slide-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
             .animate-fade-in { animation: fade-in 1s ease-out forwards; }
@@ -23,179 +23,54 @@
             from { opacity: 0; }
             to { opacity: 1; }
         }
-       .signature-texture {
-        background: linear-gradient(135deg, #0A84FF 0%, #00E68A 100%);
-      }
-      .glow-pulse {
-        box-shadow: 0 0 15px rgba(0, 230, 138, 0.4);
-      }
-      
-    
-      #neural-bg {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: -1;
-        opacity: 0.8; /* Amplified visibility */
-        pointer-events: none;
-      }
-
-      /* Seamless Translation CSS */
-      body { top: 0 !important; }
-      .goog-te-banner-frame { display: none !important; }
-      #goog-gt-tt { display: none !important; }
-      .goog-te-spinner-pos { display: none !important; }
-      #google_translate_element { display: none !important; }
-      font { background-color: transparent !important; box-shadow: none !important; }
-
-</style>
-<script>
-      
-
-      // Neural Network Particle Background
-      window.addEventListener('DOMContentLoaded', () => {
-        const canvas = document.getElementById('neural-bg');
-        if (!canvas) return;
-        const ctx = canvas.getContext('2d');
-        let particles = [];
-        const particleCount = 80; /* Increased particles */
-        const maxDistance = 160;
-
-        function resize() {
-          canvas.width = window.innerWidth;
-          canvas.height = window.innerHeight;
+        .signature-texture {
+            background: linear-gradient(135deg, #0A84FF 0%, #00E68A 100%);
         }
-
-        window.addEventListener('resize', resize);
-        resize();
-
-        class Particle {
-          constructor() {
-            this.x = Math.random() * canvas.width;
-            this.y = Math.random() * canvas.height;
-            this.vx = (Math.random() - 0.5) * 0.5;
-            this.vy = (Math.random() - 0.5) * 0.5;
-            this.radius = Math.random() * 2 + 0.5;
-          }
-
-          update() {
-            this.x += this.vx;
-            this.y += this.vy;
-
-            if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
-            if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
-          }
-
-          draw() {
-            ctx.beginPath();
-            ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-            ctx.fillStyle = 'rgba(0, 230, 138, 0.9)'; /* Brighter particles */
-            ctx.fill();
-          }
+        .glow-pulse {
+            box-shadow: 0 0 15px rgba(0, 230, 138, 0.4);
         }
-
-        for (let i = 0; i < particleCount; i++) {
-          particles.push(new Particle());
+        #neural-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.8;
+            pointer-events: none;
         }
-
-        function animate() {
-          ctx.clearRect(0, 0, canvas.width, canvas.height);
-          
-          for (let i = 0; i < particles.length; i++) {
-            particles[i].update();
-            particles[i].draw();
-
-            for (let j = i + 1; j < particles.length; j++) {
-              const dx = particles[i].x - particles[j].x;
-              const dy = particles[i].y - particles[j].y;
-              const distance = Math.sqrt(dx * dx + dy * dy);
-
-              if (distance < maxDistance) {
-                ctx.beginPath();
-                ctx.moveTo(particles[i].x, particles[i].y);
-                ctx.lineTo(particles[j].x, particles[j].y);
-                ctx.strokeStyle = `rgba(10, 132, 255, ${0.4 * (1 - distance / maxDistance)})`; /* Brighter connections */
-                ctx.lineWidth = 0.8;
-                ctx.stroke();
-              }
-            }
-          }
-          requestAnimationFrame(animate);
-        }
-
-        animate();
-      });
-
-    </script>
-<script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            colors: {
-              "on-tertiary-container": "#0085bd",
-              "surface-dim": "#0b1326",
-              "surface-container-low": "#131b2e",
-              "on-primary-fixed": "#002113",
-              "surface-container-lowest": "#060e20",
-              "outline-variant": "#45474b",
-              "on-background": "#dae2fd",
-              "primary-container": "#00150b",
-              "secondary-container": "#3a4a5f",
-              "on-tertiary-fixed-variant": "#004c6e",
-              "secondary": "#b7c8e1",
-              "on-surface": "#dae2fd",
-              "surface-container": "#171f33",
-              "on-surface-variant": "#c6c6cb",
-              "tertiary-fixed-dim": "#89ceff",
-              "on-tertiary": "#00344d",
-              "error-container": "#93000a",
-              "primary-fixed-dim": "#0A84FF",
-              "on-primary-container": "#00E68A",
-              "inverse-primary": "#006c49",
-              "surface-variant": "#2d3449",
-              "on-primary-fixed-variant": "#005236",
-              "surface-container-high": "#222a3d",
-              "secondary-fixed-dim": "#b7c8e1",
-              "on-secondary": "#213145",
-              "primary": "#0A84FF",
-              "surface": "#0F172A",
-              "error": "#ffb4ab",
-              "on-secondary-fixed-variant": "#38485d",
-              "tertiary-container": "#001320",
-              "tertiary-fixed": "#c9e6ff",
-              "primary-fixed": "#6ffbbe",
-              "secondary-fixed": "#d3e4fe",
-              "inverse-surface": "#dae2fd",
-              "background": "#0F172A",
-              "tertiary": "#89ceff",
-              "on-secondary-fixed": "#0b1c30",
-              "on-tertiary-fixed": "#001e2f",
-              "surface-tint": "#0A84FF",
-              "inverse-on-surface": "#283044",
-              "surface-container-highest": "#2d3449",
-              "on-primary": "#FFFFFF",
-              "surface-bright": "#31394d",
-              "outline": "#8f9095",
-              "on-error": "#690005",
-              "on-error-container": "#ffdad6",
-              "on-secondary-container": "#a9bad3",
-              "brand-green": "#00E68A"
+        body { top: 0 !important; }
+    </style>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-dim": "#0b1326",
+                        "surface-container-low": "#131b2e",
+                        "surface-container-lowest": "#060e20",
+                        "outline-variant": "#45474b",
+                        "on-background": "#dae2fd",
+                        "on-surface": "#dae2fd",
+                        "surface-container": "#171f33",
+                        "on-surface-variant": "#c6c6cb",
+                        "primary": "#0A84FF",
+                        "surface": "#0F172A",
+                        "error": "#ffb4ab",
+                        "background": "#0F172A",
+                        "brand-green": "#00E68A"
+                    },
+                    fontFamily: {
+                        "headline": ["Noto Serif"],
+                        "body": ["Inter"],
+                        "label": ["Manrope"]
+                    }
+                },
             },
-            fontFamily: {
-              "headline": ["Noto Serif"],
-              "body": ["Inter"],
-              "label": ["Manrope"]
-            },
-            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
-          },
-        },
-      }
+        }
     </script>
-<!-- Headless Translation Engine -->
-<meta content="Cresca OS replaces disconnected tools with one unified business automation system. We capture leads, respond instantly, and automate follow-ups." name="description"/><meta content="Cresca OS | Business Automation System for Service Businesses" property="og:title"/><meta content="Cresca OS replaces disconnected tools with one unified business automation system. We capture leads, respond instantly, and automate follow-ups." property="og:description"/><meta content="https://crescaos.com/og-image.jpg" property="og:image"/><meta content="https://crescaos.com/pricing" property="og:url"/><link href="/favicon.ico" rel="icon"/><link href="https://crescaos.com/pricing" rel="canonical"/>
+
     <!-- Meta Pixel Code -->
     <script>
     !function(f,b,e,v,n,t,s)
@@ -209,247 +84,210 @@
     fbq('init', '158599436040251');
     fbq('track', 'PageView');
     </script>
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=158599436040251&ev=PageView&noscript=1"
-    /></noscript>
-    <!-- End Meta Pixel Code -->
 </head>
 <body class="bg-background text-on-background font-body">
-<canvas id="neural-bg"></canvas>
-<!-- TopNavBar -->
-<nav class="fixed top-0 w-full z-50 bg-[#0b1326]/70 backdrop-blur-xl shadow-2xl shadow-[#060e20]/40 border-b border-outline-variant/10">
-<div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
-<a class="flex items-center gap-3 hover:opacity-80 transition-opacity" href="index.html">
-<div class="flex items-center gap-3">
-<svg class="w-8 h-8" fill="none" height="32" viewbox="0 0 48 48" width="32" xmlns="http://www.w3.org/2000/svg">
-<circle cx="24" cy="24" r="18" stroke="#0A84FF" stroke-width="3"></circle>
-<ellipse cx="24" cy="24" rx="13" ry="7.5" stroke="#00E68A" stroke-width="3" transform="rotate(60 24 24)"></ellipse>
-<ellipse cx="24" cy="24" rx="13" ry="7.5" stroke="#00E68A" stroke-width="3" transform="rotate(-60 24 24)"></ellipse>
-<circle cx="24" cy="6" fill="#0A84FF" r="2.5"></circle>
-<circle cx="24" cy="42" fill="#0A84FF" r="2.5"></circle>
-<circle cx="39.59" cy="15" fill="#00E68A" r="2.5"></circle>
-<circle cx="8.41" cy="15" fill="#FFFFFF" r="2.5"></circle>
-<circle cx="39.59" cy="33" fill="#FFFFFF" r="2.5"></circle>
-<circle cx="8.41" cy="33" fill="#00E68A" r="2.5"></circle>
-<circle cx="24" cy="24" fill="#FFFFFF" r="3.5"></circle>
-</svg>
-<div class="flex items-baseline font-serif text-2xl font-bold tracking-tighter">
-<span class="text-white">CRESCA</span><span class="text-[#00E68A] ml-px">OS</span>
-</div>
-</div>
-</a>
-<div class="hidden md:flex space-x-8">
-<a class="text-[#8f9095] hover:text-[#dae2fd] font-serif text-lg tracking-tight transition-all duration-200" href="solutions.html">Solutions</a>
-<a class="text-[#8f9095] hover:text-[#dae2fd] font-serif text-lg tracking-tight transition-all duration-200" href="industries.html">Industries</a>
-<a class="text-[#8f9095] hover:text-[#dae2fd] font-serif text-lg tracking-tight transition-all duration-200" href="pricing.html">Pricing</a>
-<a class="text-[#8f9095] hover:text-[#dae2fd] font-serif text-lg tracking-tight transition-all duration-200" href="about.html">About</a>
-<a class="text-[#8f9095] hover:text-[#dae2fd] font-serif text-lg tracking-tight transition-all duration-200" href="el-salvador.html">El Salvador</a>
-</div>
-<div class="flex items-center gap-6 mr-10 md:mr-0">
-<a href="/es/pricing.html" class="text-[#8f9095] font-label text-sm hover:text-[#dae2fd] transition-colors">ES</a><a class="hidden md:inline-flex bg-[#4edea3] text-[#003824] px-5 py-2 rounded-lg font-label font-bold scale-95 transition-transform duration-200 hover:scale-100 uppercase tracking-widest text-[10px]" href="book-audit.html">
-                    Book Audit
-                </a>
-</div>
-</div>
-<!-- Mobile Menu Button (Absolute positioned to top right for safety) -->
-<button class="md:hidden absolute top-5 right-6 text-on-surface focus:outline-none z-[60]" id="mobile-menu-btn">
-<span class="material-symbols-outlined text-3xl">menu</span>
-</button>
-<!-- Mobile Menu Overlay -->
-<div class="fixed inset-0 bg-[#080f22] z-[55] hidden flex-col pt-24 px-8 transform transition-transform duration-300 translate-x-full" id="mobile-menu">
-<div class="flex flex-col space-y-8 font-headline text-3xl">
-<a class="text-on-surface hover:text-primary transition-colors" href="solutions.html">Solutions</a>
-<a class="text-on-surface hover:text-primary transition-colors" href="industries.html">Industries</a>
-<a class="text-on-surface hover:text-primary transition-colors" href="pricing.html">Pricing</a>
-<a class="text-on-surface hover:text-primary transition-colors" href="about.html">About</a>
-<a class="text-on-surface hover:text-primary transition-colors" href="el-salvador.html">El Salvador</a>
-</div>
-<div class="mt-12">
-<a class="bg-primary text-on-primary px-6 py-3 rounded-lg font-label font-bold uppercase tracking-widest text-sm inline-block w-full text-center" href="book-audit.html">Book Your Free Audit</a>
-</div>
-</div>
-<script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const btn = document.getElementById('mobile-menu-btn');
-            const menu = document.getElementById('mobile-menu');
-            if(btn && menu) {
-                btn.addEventListener('click', () => {
-                    const isHidden = menu.classList.contains('translate-x-full');
-                    if (isHidden) {
-                        menu.classList.remove('hidden');
-                        // tiny delay to allow display:block to apply before animating transform
-                        setTimeout(() => {
-                            menu.classList.remove('translate-x-full');
-                            menu.classList.add('translate-x-0');
-                        }, 10);
-                        btn.innerHTML = '<span class="material-symbols-outlined text-3xl text-error">close</span>';
-                    } else {
-                        menu.classList.remove('translate-x-0');
-                        menu.classList.add('translate-x-full');
-                        setTimeout(() => menu.classList.add('hidden'), 300);
-                        btn.innerHTML = '<span class="material-symbols-outlined text-3xl">menu</span>';
-                    }
-                });
-            }
-        });
-    </script>
-</nav>
-<main class="pt-32 pb-24 relative overflow-hidden">
-<!-- Background Accents -->
-<div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-full pointer-events-none z-0">
-<div class="absolute top-[10%] left-[20%] w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px]"></div>
-<div class="absolute top-[40%] right-[10%] w-[600px] h-[600px] bg-brand-green/5 rounded-full blur-[150px]"></div>
-</div>
-<!-- Hero Section -->
-<header class="max-w-4xl mx-auto px-8 mb-20 text-center relative z-10">
-<span class="inline-block font-label text-brand-green tracking-[0.2em] mb-6 uppercase text-sm font-bold animate-fade-in">Pricing &amp; Plans</span>
-<h1 class="font-headline text-5xl md:text-6xl lg:text-7xl font-bold text-on-surface leading-tight tracking-tight mb-8 animate-slide-up">
-            One System to <span class="text-primary italic">Capture</span>, <span class="text-brand-green italic">Convert</span>, and Scale Your Business
-        </h1>
-<p class="font-body text-xl text-on-surface-variant leading-relaxed mb-12 animate-fade-in delay-200 shadow-sm">
-            Cresca OS is a fully managed business operating system that captures leads, responds instantly, automates follow-up, and organizes your operations â€” so you can grow without adding complexity or headcount.
-        </p>
-</header>
-<!-- 90-Day Guarantee Banner -->
-<section class="max-w-5xl mx-auto px-8 mb-24 relative z-10">
-<div class="bg-surface-container-low border border-outline-variant/20 rounded-2xl p-8 md:p-12 flex flex-col md:flex-row items-center gap-8 shadow-2xl relative overflow-hidden group hover:border-brand-green/30 transition-colors duration-500">
-<div class="absolute inset-0 bg-gradient-to-br from-brand-green/5 to-transparent pointer-events-none"></div>
-<div class="flex-shrink-0 bg-brand-green/10 p-6 rounded-full border border-brand-green/20">
-<span class="material-symbols-outlined text-brand-green text-5xl group-hover:scale-110 transition-transform duration-500">health_and_safety</span>
-</div>
-<div>
-<h3 class="font-headline text-2xl md:text-3xl font-bold text-white mb-3">90-Day ROI Guarantee</h3>
-<p class="text-on-surface-variant text-lg">If Cresca OS doesn't generate enough qualified opportunities or recovered revenue to cover your setup investment within 90 days, we'll refund it in full.</p>
-</div>
-</div>
-</section>
-<!-- Pricing Tiers Grid -->
-<section class="max-w-7xl mx-auto px-8 mb-32 relative z-10">
-<div class="text-center mb-16">
-<h2 class="font-headline text-4xl font-bold text-white mb-4">Choose Your Tier</h2>
-<p class="text-on-surface-variant text-lg">Transparent pricing for scaling service businesses.</p>
-</div>
-<div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
-<!-- Launch Tier -->
-<div class="bg-surface-container rounded-2xl p-8 border border-outline-variant/10 flex flex-col relative transition-all duration-300 hover:border-primary/30 hover:-translate-y-2 hover:shadow-2xl">
-<li class="flex items-start gap-3"><span class="material-symbols-outlined text-brand-green text-xl shrink-0 mt-0.5">architecture</span><span class="text-sm text-on-surface-variant">Custom integrations and lead routing across teams or locations</span></li>
-<li class="flex items-start gap-3"><span class="material-symbols-outlined text-brand-green text-xl shrink-0 mt-0.5">architecture</span><span class="text-sm text-on-surface-variant">Advanced reporting and performance management dashboards</span></li>
-<li class="flex items-start gap-3"><span class="material-symbols-outlined text-brand-green text-xl shrink-0 mt-0.5">architecture</span><span class="text-sm text-on-surface-variant">Dedicated optimization specialist and priority support</span></li>
-<li class="flex items-start gap-3"><span class="material-symbols-outlined text-brand-green text-xl shrink-0 mt-0.5">architecture</span><span class="text-sm text-on-surface-variant">Systems designed to support highly complex growth environments</span></li>
-</ul>
-<div class="bg-surface-dim p-4 rounded-lg border border-outline-variant/10 mb-8 mt-4">
-<p class="text-[11px] text-error text-center font-bold">Not every business is a fit for this level.</p>
-</div>
-</div>
-<div class="pt-6 border-t border-outline-variant/10 mt-auto">
-<p class="text-xs text-on-surface-variant italic"><span class="text-brand-green font-bold not-italic">Ideal for:</span> Companies with multiple locations, higher lead volume, or more complex workflows.</p>
-</div>
-</div>
-</div>
-</section>
-<!-- Everything Included & Why Us -->
-<section class="max-w-7xl mx-auto px-8 mb-32 relative z-10">
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
-<!-- Included -->
-<div class="bg-surface-container-low p-10 rounded-2xl border border-outline-variant/10">
-<span class="material-symbols-outlined text-primary text-4xl mb-6">layers</span>
-<h3 class="font-headline text-3xl font-bold text-white mb-6">Everything Included in Every Plan</h3>
-<p class="text-on-surface-variant mb-8 text-lg">Every Cresca OS plan includes the core infrastructure your business needs to operate efficiently and grow with consistency.</p>
-<ul class="space-y-4">
-<li class="flex items-start gap-3"><span class="material-symbols-outlined text-primary text-xl shrink-0">done_all</span><span class="text-on-surface">Full done-for-you implementation (live in under 14 days)</span></li>
-<li class="flex items-start gap-3"><span class="material-symbols-outlined text-primary text-xl shrink-0">done_all</span><span class="text-on-surface">Unlimited users â€” no per-user pricing</span></li>
-<li class="flex items-start gap-3"><span class="material-symbols-outlined text-primary text-xl shrink-0">done_all</span><span class="text-on-surface">Transparent usage-based billing for messaging</span></li>
-<li class="flex items-start gap-3"><span class="material-symbols-outlined text-primary text-xl shrink-0">done_all</span><span class="text-on-surface">Ongoing system monitoring and optimization</span></li>
-<li class="flex items-start gap-3"><span class="material-symbols-outlined text-primary text-xl shrink-0">done_all</span><span class="text-on-surface">Bilingual execution capability across English and Spanish</span></li>
-</ul>
-</div>
-<!-- Why Us -->
-<div class="bg-surface-container-low p-10 rounded-2xl border border-outline-variant/10">
-<span class="material-symbols-outlined text-brand-green text-4xl mb-6">bolt</span>
-<h3 class="font-headline text-3xl font-bold text-white mb-6">Why Cresca OS Outperforms DIY</h3>
-<p class="text-on-surface-variant mb-8 text-lg">We don't just sell you software. We build the engine that drives your business forward, saving you months of trial and error.</p>
-<ul class="space-y-4">
-<li class="flex items-start gap-3"><span class="material-symbols-outlined text-brand-green text-xl shrink-0">verified</span><span class="text-on-surface">We handle the entire system for you â€” no technical setup required</span></li>
-<li class="flex items-start gap-3"><span class="material-symbols-outlined text-brand-green text-xl shrink-0">verified</span><span class="text-on-surface">Faster deployment and consistent results vs. building your own</span></li>
-<li class="flex items-start gap-3"><span class="material-symbols-outlined text-brand-green text-xl shrink-0">verified</span><span class="text-on-surface">Unified system instead of multiple disconnected tools</span></li>
-<li class="flex items-start gap-3"><span class="material-symbols-outlined text-brand-green text-xl shrink-0">verified</span><span class="text-on-surface">Built to support real business operations, not just marketing tasks</span></li>
-<li class="flex items-start gap-3"><span class="material-symbols-outlined text-brand-green text-xl shrink-0">verified</span><span class="text-on-surface">Bilingual capability that supports a wider customer base</span></li>
-<li class="flex items-start gap-3"><span class="material-symbols-outlined text-brand-green text-xl shrink-0">verified</span><span class="text-on-surface">Ongoing optimization, not one-time setup</span></li>
-</ul>
-</div>
-</div>
-</section>
-<!-- Final CTA Section -->
-<section class="max-w-5xl mx-auto px-8 text-center relative z-10">
-<div class="bg-primary/5 border border-primary/20 p-12 md:p-20 rounded-[2rem] overflow-hidden relative">
-<div class="absolute inset-0 bg-[url('assets/hero_viz.png')] bg-cover bg-center opacity-5 mix-blend-overlay"></div>
-<div class="relative z-10">
-<h2 class="font-headline text-4xl md:text-5xl font-bold text-white mb-6">How Much Revenue Are You Losing Every Month?</h2>
-<p class="text-on-surface-variant text-xl mb-10 max-w-3xl mx-auto leading-relaxed">
-                    Book your free Business Systems Audit and we'll show you exactly where your current setup is costing you opportunities â€” and how Cresca OS can help you capture more leads, respond faster, and grow more efficiently.
-                </p>
-<p class="text-on-surface font-label font-bold tracking-widest uppercase text-sm mb-12">No pressure. No technical overwhelm. Just clarity.</p>
-<div class="flex flex-col sm:flex-row justify-center items-center gap-6">
-<a class="bg-primary hover:bg-primary/90 text-on-primary px-10 py-5 rounded-xl font-label font-bold tracking-widest uppercase transition-all shadow-[0_0_20px_rgba(10,132,255,0.3)] hover:scale-105 w-full sm:w-auto" href="book-audit.html">Book Your Free Audit Now</a>
-<a class="bg-surface-container border border-outline-variant/30 hover:bg-surface-container-high text-white px-10 py-5 rounded-xl font-label tracking-widest uppercase transition-colors w-full sm:w-auto" href="el-salvador.html">Request Custom Proposal</a>
-</div>
-<p class="mt-6 text-[10px] text-error uppercase tracking-widest font-bold">Limited audit availability each week. Reserve your spot today.</p>
-</div>
-</div>
-</section>
-</main>
-<footer class="bg-[#0b1326] w-full border-t border-[#45474b]/15 mt-32">
-<div class="grid grid-cols-2 md:grid-cols-4 gap-8 px-8 py-16 max-w-7xl mx-auto">
-<div class="col-span-2 md:col-span-1">
-<div class="flex items-center gap-2.5 mb-6">
-<svg class="w-6 h-6" fill="none" height="24" viewbox="0 0 48 48" width="24" xmlns="http://www.w3.org/2000/svg">
-<circle cx="24" cy="24" r="18" stroke="#0A84FF" stroke-width="3"></circle>
-<ellipse cx="24" cy="24" rx="13" ry="7.5" stroke="#00E68A" stroke-width="3" transform="rotate(60 24 24)"></ellipse>
-<ellipse cx="24" cy="24" rx="13" ry="7.5" stroke="#00E68A" stroke-width="3" transform="rotate(-60 24 24)"></ellipse>
-<circle cx="24" cy="6" fill="#0A84FF" r="2.5"></circle>
-<circle cx="24" cy="42" fill="#0A84FF" r="2.5"></circle>
-<circle cx="39.59" cy="15" fill="#00E68A" r="2.5"></circle>
-<circle cx="8.41" cy="15" fill="#FFFFFF" r="2.5"></circle>
-<circle cx="39.59" cy="33" fill="#FFFFFF" r="2.5"></circle>
-<circle cx="8.41" cy="33" fill="#00E68A" r="2.5"></circle>
-<circle cx="24" cy="24" fill="#FFFFFF" r="3.5"></circle>
-</svg>
-<div class="flex items-baseline font-serif text-xl font-bold tracking-tighter">
-<span class="text-white">CRESCA</span><span class="text-[#00E68A] ml-px">OS</span>
-</div>
-</div>
-<p class="font-sans text-sm text-[#8f9095] mb-8 leading-relaxed max-w-xs">
-                    Done-for-you business operating systems for high-growth service companies.
-                </p>
-</div>
-<div>
-<h6 class="text-[#4edea3] font-label text-xs uppercase tracking-widest mb-6 font-bold">Solutions</h6>
-<ul class="space-y-4">
-<li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="book-audit.html">Systems Audit</a></li>
-<li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="pricing.html">Pricing</a></li>
-<li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="industries.html">Industries</a></li>
-</ul>
-</div>
-<div>
-<h6 class="text-[#4edea3] font-label text-xs uppercase tracking-widest mb-6 font-bold">Markets</h6>
-<ul class="space-y-4">
-<li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="index.html">United States</a></li>
-<li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="el-salvador.html">El Salvador Hub</a></li>
-</ul>
-</div>
-<div>
-<h6 class="text-[#4edea3] font-label text-xs uppercase tracking-widest mb-6 font-bold">Company</h6>
-<ul class="space-y-4">
-<li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="about.html">About Us</a></li>
-<li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="book-audit.html">Book Audit</a></li>
-</ul>
-</div>
-</div>
-<div class="max-w-7xl mx-auto px-8 py-8 border-t border-[#45474b]/10 text-center">
-<p class="font-sans text-xs text-[#8f9095] opacity-80 uppercase tracking-widest">
-                Â© 2026 Cresca OS. All rights reserved.
-            </p>
-<p class="font-sans text-xs text-[#8f9095] mt-2"><a class="hover:text-[#4edea3] transition-colors" href="mailto:info@crescaos.com">info@crescaos.com</a></p></div>
-</footer>
-</body></html>
+    <canvas id="neural-bg"></canvas>
 
+    <nav class="fixed top-0 w-full z-50 bg-[#0b1326]/70 backdrop-blur-xl border-b border-outline-variant/10">
+        <div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
+            <a class="flex items-center gap-3 hover:opacity-80 transition-opacity" href="index.html">
+                <div class="flex items-center gap-3">
+                    <svg class="w-8 h-8" fill="none" height="32" viewbox="0 0 48 48" width="32" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="24" cy="24" r="18" stroke="#0A84FF" stroke-width="3"></circle>
+                        <ellipse cx="24" cy="24" rx="13" ry="7.5" stroke="#00E68A" stroke-width="3" transform="rotate(60 24 24)"></ellipse>
+                        <ellipse cx="24" cy="24" rx="13" ry="7.5" stroke="#00E68A" stroke-width="3" transform="rotate(-60 24 24)"></ellipse>
+                        <circle cx="24" cy="24" fill="#FFFFFF" r="3.5"></circle>
+                    </svg>
+                    <div class="flex items-baseline font-serif text-2xl font-bold tracking-tighter">
+                        <span class="text-white">CRESCA</span><span class="text-[#00E68A] ml-px">OS</span>
+                    </div>
+                </div>
+            </a>
+            <div class="hidden md:flex space-x-8">
+                <a class="text-[#8f9095] hover:text-[#dae2fd] transition-colors" href="solutions.html">Solutions</a>
+                <a class="text-[#8f9095] hover:text-[#dae2fd] transition-colors" href="industries.html">Industries</a>
+                <a class="text-white" href="pricing.html">Pricing</a>
+                <a class="text-[#8f9095] hover:text-[#dae2fd] transition-colors" href="about.html">About</a>
+                <a class="text-[#8f9095] hover:text-[#dae2fd] transition-colors" href="el-salvador.html">El Salvador</a>
+            </div>
+            <a href="book-audit.html" class="hidden md:inline-flex bg-brand-green text-[#003824] px-5 py-2 rounded-lg font-label font-bold uppercase tracking-widest text-[10px]">Book Audit</a>
+        </div>
+    </nav>
+
+    <main class="pt-32 pb-24 relative overflow-hidden">
+        <!-- Hero Section -->
+        <header class="max-w-4xl mx-auto px-8 mb-20 text-center relative z-10">
+            <span class="inline-block font-label text-brand-green tracking-[0.2em] mb-6 uppercase text-sm font-bold">Pricing & Plans</span>
+            <h1 class="font-headline text-5xl md:text-6xl font-bold text-white leading-tight mb-8 animate-slide-up">
+                One System to <span class="text-primary italic">Capture</span> and <span class="text-brand-green italic">Scale</span>
+            </h1>
+            <p class="text-xl text-on-surface-variant leading-relaxed mb-12 animate-fade-in">
+                Cresca OS is a fully managed operating system that replaces disconnected tools with one unified engine.
+            </p>
+        </header>
+
+        <!-- 90-Day Guarantee -->
+        <section class="max-w-5xl mx-auto px-8 mb-24 relative z-10">
+            <div class="bg-surface-container-low border border-outline-variant/20 rounded-2xl p-10 flex flex-col md:flex-row items-center gap-8 shadow-2xl">
+                <span class="material-symbols-outlined text-brand-green text-5xl">health_and_safety</span>
+                <div>
+                    <h3 class="font-headline text-2xl font-bold text-white mb-2">90-Day ROI Guarantee</h3>
+                    <p class="text-on-surface-variant">If Cresca OS doesn't pay for itself within 90 days, we'll refund your setup investment in full.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Grid -->
+        <section class="max-w-7xl mx-auto px-8 mb-32 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Lite -->
+                <div class="bg-surface-container p-10 rounded-[2rem] border border-outline-variant/10 flex flex-col h-full hover:border-primary/30 transition-all">
+                    <div class="mb-8">
+                        <h3 class="font-headline text-3xl font-bold text-white mb-4">Lite</h3>
+                        <div class="flex items-baseline gap-1 mb-4">
+                            <span class="text-5xl font-bold text-white tracking-tighter">$1.5k</span>
+                            <span class="text-on-surface-variant">/mo</span>
+                        </div>
+                    </div>
+                    <ul class="space-y-4 mb-10 flex-grow">
+                        <li class="flex gap-3 text-sm text-on-surface"><span class="material-symbols-outlined text-primary">check_circle</span> 1 Core Workflow</li>
+                        <li class="flex gap-3 text-sm text-on-surface"><span class="material-symbols-outlined text-primary">check_circle</span> Universal Inbox & CRM</li>
+                        <li class="flex gap-3 text-sm text-on-surface"><span class="material-symbols-outlined text-primary">check_circle</span> Automated Lead Capture</li>
+                    </ul>
+                    <a href="/api/checkout?plan=lite" class="w-full py-4 rounded-xl border border-primary/50 text-white font-label font-bold uppercase tracking-widest text-center hover:bg-primary transition-all">Start Now</a>
+                    <p class="text-[10px] text-center text-on-surface-variant mt-4 font-bold tracking-widest">Includes $500 Deposit</p>
+                </div>
+
+                <!-- Growth -->
+                <div class="bg-surface-container-high p-10 rounded-[2rem] border-2 border-brand-green/30 flex flex-col h-full relative transform scale-105 shadow-2xl">
+                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-brand-green text-[#003824] px-4 py-1 rounded-full font-label font-bold uppercase tracking-widest text-[10px]">Most Recommended</div>
+                    <div class="mb-8">
+                        <h3 class="font-headline text-3xl font-bold text-white mb-4">Growth</h3>
+                        <div class="flex items-baseline gap-1 mb-4">
+                            <span class="text-5xl font-bold text-white tracking-tighter">$3k</span>
+                            <span class="text-on-surface-variant">/mo</span>
+                        </div>
+                    </div>
+                    <ul class="space-y-4 mb-10 flex-grow">
+                        <li class="flex gap-3 text-sm text-on-surface font-semibold text-white"><span class="material-symbols-outlined text-brand-green">verified</span> Everything in Lite</li>
+                        <li class="flex gap-3 text-sm text-on-surface"><span class="material-symbols-outlined text-brand-green">check_circle</span> 3 Advanced Workflows</li>
+                        <li class="flex gap-3 text-sm text-on-surface"><span class="material-symbols-outlined text-brand-green">check_circle</span> AI-Powered Response</li>
+                    </ul>
+                    <a href="/api/checkout?plan=growth" class="w-full py-4 rounded-xl signature-texture text-[#003824] font-label font-bold uppercase tracking-widest text-center hover:opacity-90 glow-pulse">Step Up to Growth</a>
+                    <p class="text-[10px] text-center text-on-surface-variant mt-4 font-bold tracking-widest">Includes $500 Deposit</p>
+                </div>
+
+                <!-- Pro -->
+                <div class="bg-surface-container p-10 rounded-[2rem] border border-outline-variant/10 flex flex-col h-full hover:border-primary/30 transition-all">
+                    <div class="mb-8">
+                        <h3 class="font-headline text-3xl font-bold text-white mb-4">Pro</h3>
+                        <div class="flex items-baseline gap-1 mb-4">
+                            <span class="text-4xl font-bold text-white tracking-tighter">Custom Build</span>
+                        </div>
+                    </div>
+                    <ul class="space-y-4 mb-10 flex-grow">
+                        <li class="flex gap-3 text-sm text-on-surface font-semibold text-white"><span class="material-symbols-outlined text-primary">verified</span> Everything in Growth</li>
+                        <li class="flex gap-3 text-sm text-on-surface"><span class="material-symbols-outlined text-primary">check_circle</span> Unlimited Automations</li>
+                        <li class="flex gap-3 text-sm text-on-surface"><span class="material-symbols-outlined text-primary">check_circle</span> API Integrations</li>
+                    </ul>
+                    <a href="/api/checkout?plan=pro" class="w-full py-4 rounded-xl border border-primary/50 text-white font-label font-bold uppercase tracking-widest text-center hover:bg-primary transition-all">Contact Us</a>
+                    <p class="text-[10px] text-center text-on-surface-variant mt-4 font-bold tracking-widest">Includes $500 Deposit</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features List -->
+        <section class="max-w-5xl mx-auto px-8 mb-32">
+            <h3 class="font-headline text-3xl font-bold text-white mb-10 text-center">Included in All Plans</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="flex gap-4 p-6 bg-surface-container-low rounded-2xl border border-outline-variant/5">
+                    <span class="material-symbols-outlined text-primary">done_all</span>
+                    <span class="text-on-surface">Done-for-you implementation (live < 14 days)</span>
+                </div>
+                <div class="flex gap-4 p-6 bg-surface-container-low rounded-2xl border border-outline-variant/5">
+                    <span class="material-symbols-outlined text-primary">done_all</span>
+                    <span class="text-on-surface">Unlimited users — no per-seat pricing</span>
+                </div>
+                <div class="flex gap-4 p-6 bg-surface-container-low rounded-2xl border border-outline-variant/5">
+                    <span class="material-symbols-outlined text-primary">done_all</span>
+                    <span class="text-on-surface">Bilingual execution (English/Spanish)</span>
+                </div>
+                <div class="flex gap-4 p-6 bg-surface-container-low rounded-2xl border border-outline-variant/5">
+                    <span class="material-symbols-outlined text-primary">done_all</span>
+                    <span class="text-on-surface">Ongoing monitoring & optimization</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-surface-container-lowest border-t border-outline-variant/10 py-16 px-8 text-center">
+        <div class="flex items-center justify-center gap-3 mb-8">
+            <div class="font-serif text-2xl font-bold tracking-tighter">
+                <span class="text-white">CRESCA</span><span class="text-brand-green ml-px">OS</span>
+            </div>
+        </div>
+        <p class="text-on-surface-variant mb-8">Done-for-you business operating systems for service companies.</p>
+        <p class="text-xs text-outline tracking-widest uppercase">© 2026 Cresca OS. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Brain-like network background
+        const canvas = document.getElementById('neural-bg');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+        const particleCount = 60;
+
+        function resize() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resize);
+        resize();
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.vx = (Math.random() - 0.5) * 0.4;
+                this.vy = (Math.random() - 0.5) * 0.4;
+            }
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+                if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+                if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+            }
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, 1, 0, Math.PI * 2);
+                ctx.fillStyle = 'rgba(0, 230, 138, 0.5)';
+                ctx.fill();
+            }
+        }
+
+        for (let i = 0; i < particleCount; i++) particles.push(new Particle());
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach((p, i) => {
+                p.update();
+                p.draw();
+                for (let j = i + 1; j < particles.length; j++) {
+                    const dx = p.x - particles[j].x;
+                    const dy = p.y - particles[j].y;
+                    const d = Math.sqrt(dx * dx + dy * dy);
+                    if (d < 150) {
+                        ctx.beginPath();
+                        ctx.moveTo(p.x, p.y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.strokeStyle = `rgba(10, 132, 255, ${0.2 * (1 - d / 150)})`;
+                        ctx.stroke();
+                    }
+                }
+            });
+            requestAnimationFrame(animate);
+        }
+        animate();
+    </script>
+</body>
+</html>

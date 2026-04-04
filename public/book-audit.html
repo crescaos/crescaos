@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html class="dark scroll-smooth" lang="en"><head>
 <meta charset="utf-8"/>
@@ -400,20 +400,45 @@
 <div class="bg-surface-container p-8 md:p-12 rounded-[2rem] shadow-2xl shadow-primary/5 relative overflow-hidden border border-primary/20">
 <div class="absolute -top-24 -right-24 w-64 h-64 bg-primary/10 blur-[100px] rounded-full"></div>
 <div class="mb-10 text-center relative z-10">
-<h2 class="font-headline text-3xl font-bold text-white mb-3">Book Your Free Audit Now</h2>
-<div class="flex items-center justify-center gap-4 text-xs font-label uppercase tracking-widest text-primary font-bold">
-<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">bolt</span> Un 30s</span>
-<span class="w-1 h-1 rounded-full bg-primary/50"></span>
-<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">event_available</span> Instant</span>
-<span class="w-1 h-1 rounded-full bg-primary/50"></span>
-<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">waving_hand</span> No Obligation</span>
+<h2 class="font-headline text-3xl font-bold text-white mb-3">Choose Your Path to Scale</h2>
+<p class="text-on-surface-variant text-sm mb-6">Enter your information below to book your session.</p>
 </div>
-</div>
-<form class="space-y-8 relative z-10" data-netlify="true" method="POST" name="audit-booking" id="audit-form">
-<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<form class="space-y-8 relative z-10" id="audit-form">
+    <!-- Service Selection Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+        <label class="relative flex flex-col p-6 cursor-pointer bg-surface-container-low border-2 border-outline-variant/20 rounded-2xl hover:border-primary/50 transition-all group has-[:checked]:border-primary has-[:checked]:bg-primary/5">
+            <input type="radio" name="service_type" value="demo" class="hidden" checked onchange="updateServiceSelection('demo')">
+            <div class="flex items-center gap-3 mb-2">
+                <span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform">presentation_chart_line</span>
+                <span class="font-bold text-white">Free Demo</span>
+            </div>
+            <p class="text-xs text-on-surface-variant leading-relaxed">See how Cresca OS can transform your business workflows. Zero cost, 20-minute presentation.</p>
+            <div class="mt-4 flex items-center text-[10px] uppercase tracking-widest font-bold text-primary">
+                <span>Direct Booking</span>
+            </div>
+        </label>
+
+        <label class="relative flex flex-col p-6 cursor-pointer bg-surface-container-low border-2 border-outline-variant/20 rounded-2xl hover:border-error/50 transition-all group has-[:checked]:border-error has-[:checked]:bg-error/5">
+            <input type="radio" name="service_type" value="audit" class="hidden" onchange="updateServiceSelection('audit')">
+            <div class="flex items-center gap-3 mb-2">
+                <span class="material-symbols-outlined text-error group-hover:scale-110 transition-transform">query_stats</span>
+                <span class="font-bold text-white">Systems Audit</span>
+            </div>
+            <p class="text-xs text-on-surface-variant leading-relaxed">Deep-dive analysis of your current bottlenecks. Custom roadmap + $500 setup deposit.</p>
+            <div class="mt-4 flex items-center text-[10px] uppercase tracking-widest font-bold text-error">
+                <span>$500 Deposit Required</span>
+            </div>
+        </label>
+    </div>
+    <input type="hidden" id="selected-service" value="demo">
 <div class="space-y-2">
-<label class="block font-label text-sm text-on-surface-variant uppercase tracking-wider">Full Name</label>
-<input name="full_name" id="full_name" required class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant/15 px-0 py-3 text-on-surface placeholder:text-outline transition-all duration-200" placeholder="John Doe" type="text"/>
+<label class="block font-label text-sm text-on-surface-variant uppercase tracking-wider">First Name</label>
+<input name="firstName" id="firstName" required class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant/15 px-0 py-3 text-on-surface placeholder:text-outline transition-all duration-200" placeholder="John" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="block font-label text-sm text-on-surface-variant uppercase tracking-wider">Last Name</label>
+<input name="lastName" id="lastName" required class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant/15 px-0 py-3 text-on-surface placeholder:text-outline transition-all duration-200" placeholder="Doe" type="text"/>
+</div>
 </div>
 <div class="space-y-2">
 <label class="block font-label text-sm text-on-surface-variant uppercase tracking-wider">Company Email</label>
@@ -453,8 +478,8 @@
 </div>
 </div>
 <div class="pt-6">
-<button class="w-full signature-texture text-on-primary font-label font-bold py-5 rounded-xl text-lg flex items-center justify-center gap-3 transition-transform hover:scale-[1.02] shadow-[0_0_20px_rgba(10,132,255,0.3)] uppercase tracking-widest" type="submit">
-                                Book My Free Audit â†’
+                <button id="submit-button" class="w-full signature-texture text-on-primary font-label font-bold py-5 rounded-xl text-lg flex items-center justify-center gap-3 transition-transform hover:scale-[1.02] shadow-[0_0_20px_rgba(10,132,255,0.3)] uppercase tracking-widest" type="submit">
+                                Go to Booking →
                             </button>
 <p class="mt-6 text-center text-[10px] text-error font-label uppercase tracking-widest font-bold">
                                 Limited audit spots available each week.
@@ -467,43 +492,71 @@
 </section>
     </main>
     <script>
+        function updateServiceSelection(type) {
+            document.getElementById('selected-service').value = type;
+            const btn = document.getElementById('submit-button');
+            if (type === 'audit') {
+                btn.innerHTML = 'Payment & Audit Booking →';
+                btn.style.background = 'linear-gradient(135deg, #ffb4ab 0%, #93000a 100%)';
+            } else {
+                btn.innerHTML = 'Go to Calendar →';
+                btn.style.background = 'linear-gradient(135deg, #0A84FF 0%, #00E68A 100%)';
+            }
+        }
+
         document.getElementById('audit-form').addEventListener('submit', async (e) => {
             e.preventDefault();
             const form = e.target;
             const submitBtn = form.querySelector('button[type="submit"]');
-            const originalText = submitBtn.innerHTML;
             
             submitBtn.disabled = true;
-            submitBtn.innerHTML = '<span class="material-symbols-outlined animate-spin">sync</span> Processing...';
+            submitBtn.innerHTML = '<span class="material-symbols-outlined animate-spin">sync</span> Redirecting...';
 
             // 1. Prepare data
             const formData = new FormData(form);
             const data = Object.fromEntries(formData.entries());
-            data.source = 'Website Audit Form';
+            const bookingType = document.getElementById('selected-service').value;
+            data.source = bookingType === 'audit' ? 'Paid Audit Request' : 'Free Demo Request';
 
             try {
-                // 2. Send to Backend/GHL
-                await fetch('https://api.crescaos.com/api/webhook', {
+                // 2. Send to Backend/GHL Webhook
+                // Replace with your actual Netlify function URL
+                await fetch('/api/webhook', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(data)
                 });
 
-                // 3. Send to Netlify (optional, for backup)
-                await fetch('/', {
-                    method: 'POST',
-                    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-                    body: new URLSearchParams(formData).toString()
-                });
+                const email = document.getElementById('email').value;
+                const name = document.getElementById('firstName').value + ' ' + document.getElementById('lastName').value;
 
-                // 4. Redirect to Thank You Page
-                window.location.href = 'thank-you.html';
-            } catch (error) {
-                console.error('Submission error:', error);
-                // Fallback redirect even if webhook fails, so user isn't stuck
-                window.location.href = 'thank-you.html';
+                if (bookingType === 'audit') {
+                    // Track Meta 'InitiateCheckout'
+                    if (typeof fbq === 'function') {
+                        fbq('track', 'InitiateCheckout', {
+                            content_name: 'Business Systems Audit',
+                            value: 500.00,
+                            currency: 'USD'
+                        });
+                    }
+                    // Redirect to Stripe checkout for Audit
+                    window.location.href = `/api/checkout?type=audit&email=${encodeURIComponent(email)}&name=${encodeURIComponent(name)}`;
+                } else {
+                    // Direct to GHL Calendar for Demo
+                    window.location.href = "https://link.crescaos.com/widget/booking/OlqdoFrT1sgJ3f2nnaIa";
+                }
+
+            } catch (err) {
+                console.error('Submission failed:', err);
+                // Fallback to direct redirect even if webhook fails to ensure lead doesn't get stuck
+                if (bookingType === 'audit') {
+                    window.location.href = `/api/checkout?type=audit&email=${encodeURIComponent(data.email)}&name=${encodeURIComponent(data.firstName + ' ' + data.lastName)}`;
+                } else {
+                    window.location.href = "https://link.crescaos.com/widget/booking/OlqdoFrT1sgJ3f2nnaIa";
+                }
             }
         });
+    </script>
     </script>
     <footer class="bg-[#0b1326] w-full border-t border-[#45474b]/15 mt-32">
 <div class="grid grid-cols-2 md:grid-cols-4 gap-8 px-8 py-16 max-w-7xl mx-auto">
