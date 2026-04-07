@@ -6,6 +6,11 @@ const logger = require('../utils/logger');
  * Syncs the data directly to GoHighLevel (GHL).
  */
 module.exports = async (req, res) => {
+  // CORS Headers for Production
+  res.setHeader('Access-Control-Allow-Origin', '*'); 
+  res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+
   // CORS Preflight
   if (req.method === 'OPTIONS') {
     return res.status(200).end();
@@ -21,19 +26,65 @@ module.exports = async (req, res) => {
 
     // 1. Map Form Payload to GHL Contact Data
     const isESLead = payload.source === 'El Salvador Intake Form';
+    const isAuditWizard = payload.source === 'Growth Audit Wizard' || payload.source === 'Growth Audit Wizard (ES)';
+    
+    // Normalize names from the wizard (full_name) vs the form (firstName/lastName)
+    let firstName = payload.firstName || '';
+    let lastName = payload.lastName || '';
+    if (payload.full_name) {
+      const parts = payload.full_name.trim().split(' ');
+      firstName = parts[0];
+      lastName = parts.slice(1).join(' ');
+    }
+
     const contactData = {
       email: payload.email || null,
-      firstName: payload.full_name ? payload.full_name.split(' ')[0] : (payload.name ? payload.name.split(' ')[0] : 'Audit'),
-      lastName: payload.full_name ? payload.full_name.split(' ').slice(1).join(' ') : (payload.name ? payload.name.split(' ').slice(1).join(' ') : 'Lead'),
+      firstName: firstName || 'Audit',
+      lastName: lastName || 'Lead',
       phone: payload.phone || null,
-      companyName: payload.company || null,
-      tags: [isESLead ? 'es-lead' : 'website-audit'],
+      companyName: payload.company || payload.business_name || null,
+      tags: [isESLead ? 'es-lead' : 'growth-audit'],
       customFields: []
     };
 
     // 2. Format detailed note for ES Leads or standard Audit Leads
     let noteContent = `Source: ${payload.source || 'Website Form'}\n`;
-    if (isESLead) {
+    
+    if (isAuditWizard) {
+      if (payload.website) contactData.customFields.push({ key: 'website', value: payload.website });
+      
+      // Map to custom fields from environment
+      if (payload.monthly_leads) contactData.customFields.push({ id: process.env.GHL_FIELD_MONTHLY_LEADS, value: payload.monthly_leads });
+      if (payload.response_time) contactData.customFields.push({ id: process.env.GHL_FIELD_RESPONSE_TIME, value: payload.response_time });
+      if (payload.followup_freq) contactData.customFields.push({ id: process.env.GHL_FIELD_FOLLOWUP_FREQ, value: payload.followup_freq });
+      if (payload.booking_system) contactData.customFields.push({ id: process.env.GHL_FIELD_BOOKING_SYSTEM, value: payload.booking_system });
+      if (payload.missed_calls) contactData.customFields.push({ id: process.env.GHL_FIELD_MISSED_CALLS, value: payload.missed_calls });
+      if (payload.loss_percentage) contactData.customFields.push({ id: process.env.GHL_FIELD_LOSS_PERCENT, value: payload.loss_percentage });
+      if (payload.lost_revenue) contactData.customFields.push({ id: process.env.GHL_FIELD_LOST_REVENUE, value: payload.lost_revenue });
+      
+      // Optional Advanced Fields
+      if (payload.website) contactData.customFields.push({ id: process.env.GHL_FIELD_WEBSITE, value: payload.website });
+      if (payload.ad_spend) contactData.customFields.push({ id: process.env.GHL_FIELD_AD_SPEND, value: payload.ad_spend });
+
+      noteContent += `--- Growth Audit Results ---\n`;
+      if (payload.loss_percentage) noteContent += `Total Interaction Loss: ${payload.loss_percentage}%\n`;
+      if (payload.lost_revenue) noteContent += `Monthly Revenue Opportunity: $${payload.lost_revenue.toLocaleString()}\n`;
+      
+      if (payload.ad_spend) {
+        const adWaste = (parseFloat(payload.ad_spend) * (parseFloat(payload.loss_percentage) / 100)) || 0;
+        noteContent += `--- Marketing ROI Snapshot ---\n`;
+        noteContent += `Avg Monthly Ad Spend: $${payload.ad_spend}\n`;
+        noteContent += `Estimated Wasted Ad Spend: $${adWaste.toFixed(2)}/mo\n`;
+      }
+
+      noteContent += `\n--- Operational Profile ---\n`;
+      if (payload.monthly_leads) noteContent += `Monthly Leads: ${payload.monthly_leads}\n`;
+      if (payload.missed_calls) noteContent += `Missed Calls/Week: ${payload.missed_calls}\n`;
+      if (payload.response_time) noteContent += `Avg Response Time: ${payload.response_time}\n`;
+      if (payload.has_booking) noteContent += `Has Booking System: ${payload.has_booking}\n`;
+      if (payload.website) noteContent += `Website: ${payload.website}\n`;
+      
+    } else if (isESLead) {
       if (payload.plan) noteContent += `Selected Plan: ${payload.plan.toUpperCase()}\n`;
       noteContent += `Role: ${payload.role || 'N/A'}\n`;
       noteContent += `Employees: ${payload.employees || 'N/A'}\n`;
@@ -46,7 +97,7 @@ module.exports = async (req, res) => {
       if (payload.leads_monthly) noteContent += `Monthly Leads: ${payload.leads_monthly}\n`;
     }
     
-    // Attach the note to the contact data (most GHL versions accept 'note' or 'notes')
+    // Attach the note to the contact data
     contactData.notes = [noteContent];
 
     // 3. Upsert Contact in GHL
@@ -55,24 +106,18 @@ module.exports = async (req, res) => {
       const contactId = ghlContact.id || (ghlContact.contact && ghlContact.contact.id);
 
       // 4. Create Opportunity in the Sales Pipeline
-      const pipelineId = process.env.GHL_AUDIT_PIPELINE_ID || 'k9Ke4zv94rXG6WezViHR';
-      
-      // Stage Mapping
-      const DISCOVERY_CALL_STAGE = 'b621db30-363f-42e5-a0ed-4a00465d8363';
-      const AUDIT_REQUESTED_STAGE = '09bc05ae-3918-4010-8d29-b31f5078e26b';
-      
-      // For ES Leads, always use Discovery Call since no payment was made
-      const stageId = (isESLead || payload.service_type === 'demo') ? DISCOVERY_CALL_STAGE : AUDIT_REQUESTED_STAGE;
+      const pipelineId = process.env.GHL_PIPELINE_ID || 'mPu4ZjliPtVnfAADBj0h';
+      const stageId = process.env.GHL_STAGE_ID || '54daa97e-e0fd-45ba-b017-539e2e5e61df';
 
       if (contactId && pipelineId) {
         await ghl.createOpportunity(
           contactId,
           pipelineId,
           stageId,
-          `${isESLead ? 'ES' : (payload.service_type === 'demo' ? 'DEMO' : 'AUDIT')}: ${payload.company || payload.full_name || payload.name}`,
-          isESLead ? 0 : (payload.service_type === 'audit' ? 500 : 0)
+          `${isESLead ? 'ES' : (isAuditWizard ? 'AUDIT' : 'LEAD')}: ${payload.company || payload.full_name || payload.firstName}`,
+          isAuditWizard ? (payload.lost_revenue || 0) : 0
         );
-        logger.info('Opportunity created in GHL Sales Pipeline', { contactId, isESLead });
+        logger.info('Opportunity created in GHL Sales Pipeline', { contactId, isAuditWizard });
       }
     }
 
