@@ -1,15 +1,80 @@
 <!DOCTYPE html>
-<html class="dark scroll-smooth" lang="es">
-<head>
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>Solicita una AuditorÃ­a | Cresca OS</title>
-    <link href="https://fonts.googleapis.com" rel="preconnect"/>
-    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600&family=Manrope:wght@500;600;700&display=swap" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <style type="text/tailwindcss">
+
+<html class="dark scroll-smooth" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Auditoría de Crecimiento Gratuita | Cresca OS</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Inter:wght@400;500;600&amp;family=Manrope:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-tertiary-container": "#0085bd",
+              "surface-dim": "#0b1326",
+              "surface-container-low": "#131b2e",
+              "on-primary-fixed": "#002113",
+              "surface-container-lowest": "#060e20",
+              "outline-variant": "#45474b",
+              "on-background": "#dae2fd",
+              "primary-container": "#00150b",
+              "secondary-container": "#3a4a5f",
+              "on-tertiary-fixed-variant": "#004c6e",
+              "secondary": "#b7c8e1",
+              "on-surface": "#dae2fd",
+              "surface-container": "#171f33",
+              "on-surface-variant": "#c6c6cb",
+              "tertiary-fixed-dim": "#89ceff",
+              "on-tertiary": "#00344d",
+              "error-container": "#93000a",
+              "primary-fixed-dim": "#0A84FF",
+              "on-primary-container": "#00E68A",
+              "inverse-primary": "#006c49",
+              "surface-variant": "#2d3449",
+              "on-primary-fixed-variant": "#005236",
+              "surface-container-high": "#222a3d",
+              "secondary-fixed-dim": "#b7c8e1",
+              "on-secondary": "#213145",
+              "primary": "#0A84FF",
+              "surface": "#0F172A",
+              "error": "#ffb4ab",
+              "on-secondary-fixed-variant": "#38485d",
+              "tertiary-container": "#001320",
+              "tertiary-fixed": "#c9e6ff",
+              "primary-fixed": "#6ffbbe",
+              "secondary-fixed": "#d3e4fe",
+              "inverse-surface": "#dae2fd",
+              "background": "#0F172A",
+              "tertiary": "#89ceff",
+              "on-secondary-fixed": "#0b1c30",
+              "on-tertiary-fixed": "#001e2f",
+              "surface-tint": "#0A84FF",
+              "inverse-on-surface": "#283044",
+              "surface-container-highest": "#2d3449",
+              "on-primary": "#FFFFFF",
+              "surface-bright": "#31394d",
+              "outline": "#8f9095",
+              "on-error": "#690005",
+              "on-error-container": "#ffdad6",
+              "on-secondary-container": "#a9bad3",
+              "brand-green": "#00E68A"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Inter"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style type="text/tailwindcss">
         @layer utilities {
             .animate-slide-up { animation: slide-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
             .animate-fade-in { animation: fade-in 1s ease-out forwards; }
@@ -23,279 +88,407 @@
             from { opacity: 0; }
             to { opacity: 1; }
         }
-        #neural-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            opacity: 0.8;
-            pointer-events: none;
-        }
-        body { top: 0 !important; }
-    </style>
-    <script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        "surface-dim": "#0b1326",
-                        "surface-container-low": "#131b2e",
-                        "surface-container-lowest": "#060e20",
-                        "outline-variant": "#45474b",
-                        "on-background": "#dae2fd",
-                        "on-surface": "#dae2fd",
-                        "surface-container": "#171f33",
-                        "on-surface-variant": "#c6c6cb",
-                        "primary": "#0A84FF",
-                        "surface": "#0F172A",
-                        "error": "#ffb4ab",
-                        "background": "#0F172A",
-                        "brand-green": "#00E68A"
-                    },
-                    fontFamily: {
-                        "headline": ["Noto Serif"],
-                        "body": ["Inter"],
-                        "label": ["Manrope"]
-                    }
-                },
-            },
-        }
-    </script>
-    <style>
-        .signature-texture {
-            background: linear-gradient(135deg, #0A84FF 0%, #00E68A 100%);
-        }
-        input:focus, select:focus, textarea:focus {
-            outline: none !important;
-            border-bottom-color: #00E68A !important;
-            box-shadow: 0 2px 0 0 rgba(0, 230, 138, 0.2) !important;
-        }
-    </style>
-
-    <!-- Meta Pixel Code -->
-    <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '158599436040251');
-    fbq('track', 'PageView');
-    </script>
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=158599436040251&ev=PageView&noscript=1"
-    /></noscript>
-    <!-- End Meta Pixel Code -->
-</head>
-<body class="bg-background text-on-background font-body selection:bg-primary selection:text-on-primary">
-    <canvas id="neural-bg" style="position:fixed; top:0; left:0; width:100%; height:100%; z-index:-1; opacity:0.8; pointer-events:none;"></canvas>
     
-    <nav class="fixed top-0 w-full z-50 bg-[#0b1326]/70 backdrop-blur-xl border-b border-outline-variant/10">
-        <div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
-            <a class="flex items-center gap-3 hover:opacity-80 transition-opacity" href="index.html">
-                <div class="flex items-center gap-3">
-                    <svg class="w-8 h-8" fill="none" height="32" viewbox="0 0 48 48" width="32" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="24" cy="24" r="18" stroke="#0A84FF" stroke-width="3"></circle>
-                        <ellipse cx="24" cy="24" rx="13" ry="7.5" stroke="#00E68A" stroke-width="3" transform="rotate(60 24 24)"></ellipse>
-                        <ellipse cx="24" cy="24" rx="13" ry="7.5" stroke="#00E68A" stroke-width="3" transform="rotate(-60 24 24)"></ellipse>
-                        <circle cx="24" cy="24" fill="#FFFFFF" r="3.5"></circle>
-                    </svg>
-                    <div class="flex items-baseline font-serif text-2xl font-bold tracking-tighter">
-                        <span class="text-white">CRESCA</span><span class="text-[#00E68A] ml-px">OS</span>
-                    </div>
+      #neural-bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        opacity: 0.8;
+        pointer-events: none;
+      }
+
+      .signature-texture {
+        background: linear-gradient(135deg, #0A84FF 0%, #00E68A 100%);
+      }
+      
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+</style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary/30 selection:text-white overflow-x-hidden">
+    <!-- Neural Background Canvas -->
+    <canvas id="neural-bg"></canvas>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 w-full z-50 transition-all duration-300 border-b border-outline-variant/10 bg-surface/80 backdrop-blur-xl py-4">
+        <div class="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
+            <a class="flex items-center gap-3 group" href="/es/">
+                <div class="relative">
+                    <span class="material-symbols-outlined text-primary text-4xl group-hover:scale-110 transition-transform duration-300">webhook</span>
+                    <div class="absolute -inset-2 bg-primary/20 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 </div>
+                <span class="text-2xl font-headline font-bold text-white tracking-tight">Cresca <span class="italic text-primary font-bold">OS</span></span>
             </a>
-            <div class="hidden md:flex space-x-8">
-                <a class="text-[#8f9095] hover:text-[#dae2fd] font-serif text-lg tracking-tight transition-all duration-200" href="solutions.html">Soluciones</a>
-                <a class="text-[#8f9095] hover:text-[#dae2fd] font-serif text-lg tracking-tight transition-all duration-200" href="industries.html">Industrias</a>
-                <a class="text-[#8f9095] hover:text-[#dae2fd] font-serif text-lg tracking-tight transition-all duration-200" href="pricing.html">Precios</a>
-                <a class="text-[#8f9095] hover:text-[#dae2fd] font-serif text-lg tracking-tight transition-all duration-200" href="about.html">Nosotros</a>
-                <a class="text-[#8f9095] hover:text-[#dae2fd] font-serif text-lg tracking-tight transition-all duration-200" href="el-salvador.html">El Salvador</a>
+            <div class="hidden md:flex items-center gap-10">
+                <a class="text-sm font-label uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="/es/#servicios">Sistemas</a>
+                <a class="text-sm font-label uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="/es/#soluciones">Soluciones</a>
+                <a class="text-sm font-label uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="/es/#proceso">Proceso</a>
             </div>
-            <div class="flex items-center gap-6">
-                <a href="../book-audit.html" class="text-[#8f9095] font-label text-sm hover:text-[#dae2fd] transition-colors">EN</a>
-                <a class="hidden md:inline-flex bg-[#4edea3] text-[#003824] px-5 py-2 rounded-lg font-label font-bold scale-95 transition-transform duration-200 hover:scale-100 uppercase tracking-widest text-[10px]" href="book-audit.html">
-                    AUDITORÃA
-                </a>
-            </div>
+            <a class="signature-texture text-on-primary text-xs font-label uppercase tracking-[0.2em] px-8 py-3.5 rounded-full hover:scale-105 transition-all duration-300 shadow-lg shadow-primary/20 font-bold" href="/es/book-audit">Iniciar Auditoría</a>
         </div>
     </nav>
 
     <main class="pt-24 pb-0 relative overflow-hidden bg-surface">
+        <!-- Hero Section -->
         <section class="relative min-h-[40vh] flex flex-col items-center justify-center px-6 md:px-8 mt-12 mb-12 z-10 border-b border-outline-variant/5">
             <div class="absolute inset-0 z-0 bg-primary/5 blur-[120px] rounded-full w-[800px] h-[800px] left-1/2 -translate-x-1/2 pointer-events-none"></div>
-            <div class="relative z-10 max-w-5xl text-center">
+            <div class="relative z-10 max-w-5xl text-center" id="audit-header">
                 <div class="inline-flex items-center space-x-2 mb-6 px-4 py-1.5 rounded-full bg-surface-container-high border border-outline-variant/15">
                     <span class="flex h-2 w-2 rounded-full bg-brand-green animate-pulse"></span>
-                    <span class="text-xs font-label uppercase tracking-widest text-brand-green">Solicitud de ImplementaciÃ³n | El Salvador</span>
+                    <span class="text-xs font-label uppercase tracking-widest text-brand-green">Auditoría Gratuita en 60 Segundos</span>
                 </div>
                 <h1 class="font-headline text-5xl sm:text-6xl md:text-7xl font-bold text-white leading-tight tracking-tight mb-8 animate-slide-up">
-                    Comienza Tu TransformaciÃ³n <span class="text-primary italic">Operativa</span>.
+                    ¿Cuántos Prospectos Está <span class="text-error italic">Perdiendo</span> Cada Mes?
                 </h1>
                 <p class="font-body text-xl md:text-2xl text-on-surface-variant max-w-4xl mx-auto mb-6 leading-relaxed font-light px-4">
-                    CuÃ©ntanos sobre tu negocio y reserva una llamada con nuestro equipo para diseÃ±ar tu sistema a medida.
+                    La mayoría de los negocios de servicios pierden entre el 30% y 50% de sus prospectos por falta de seguimiento. 
+                    <span class="text-white font-medium">Descubra su número exacto en 60 segundos.</span>
                 </p>
             </div>
         </section>
 
-        <section class="py-20 px-6 md:px-12 max-w-7xl mx-auto relative z-10">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
-                <aside class="lg:col-span-5 space-y-12">
-                    <div>
-                        <h3 class="font-headline text-3xl font-bold text-white mb-6">Por QuÃ© Esta AuditorÃ­a es Diferente</h3>
-                        <ul class="space-y-4">
-                            <li class="flex items-start gap-4"><span class="material-symbols-outlined text-primary">psychology</span><span class="text-on-surface text-lg">No solo miramos tus herramientas â€” miramos cÃ³mo opera todo tu sistema.</span></li>
-                            <li class="flex items-start gap-4"><span class="material-symbols-outlined text-primary">psychology</span><span class="text-on-surface text-lg">Identificamos exactamente dÃ³nde se pierden o retrasan los leads.</span></li>
-                            <li class="flex items-start gap-4"><span class="material-symbols-outlined text-primary">psychology</span><span class="text-on-surface text-lg">Resaltamos brechas en el tiempo de respuesta y seguimiento.</span></li>
-                            <li class="flex items-start gap-4"><span class="material-symbols-outlined text-primary">psychology</span><span class="text-on-surface text-lg">Mostramos cÃ³mo un sistema unificado mejora la consistencia.</span></li>
-                            <li class="flex items-start gap-4"><span class="material-symbols-outlined text-primary">psychology</span><span class="text-on-surface text-lg">Obtienes ideas prÃ¡cticas que puedes aplicar de inmediato.</span></li>
-                        </ul>
-                    </div>
-                    <div class="bg-surface-container-low p-8 rounded-2xl border border-outline-variant/10 relative overflow-hidden">
-                        <div class="absolute top-0 right-0 w-2 h-full bg-brand-green"></div>
-                        <h3 class="font-headline text-2xl font-bold text-brand-green mb-6">PrÃ³ximos Pasos</h3>
-                        <ul class="space-y-4">
-                            <li class="flex gap-3"><span class="material-symbols-outlined text-brand-green text-xl mt-0.5">how_to_reg</span><span class="text-on-surface-variant font-medium">Completa este formulario de contacto.</span></li>
-                            <li class="flex gap-3"><span class="material-symbols-outlined text-brand-green text-xl mt-0.5">calendar_month</span><span class="text-on-surface-variant font-medium">Reserva tu llamada en el siguiente paso.</span></li>
-                            <li class="flex gap-3"><span class="material-symbols-outlined text-brand-green text-xl mt-0.5">forum</span><span class="text-on-surface-variant font-medium">Diseñamos tu hoja de ruta en la llamada.</span></li>
-                        </ul>
-                    </div>
-                </aside>
-
-                <section class="lg:col-span-7">
-                    <div class="bg-surface-container p-8 md:p-12 rounded-[2rem] border border-primary/20">
-                        <div class="mb-10 text-center relative z-10">
-                            <h2 class="font-headline text-3xl font-bold text-white mb-3">Reserva Tu AuditorÃ­a Gratis Ahora</h2>
-                            <div class="flex items-center justify-center gap-4 text-xs font-label uppercase tracking-widest text-primary font-bold">
-                                <span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">bolt</span> En 30s</span>
-                                <span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">event_available</span> InstantÃ¡nea</span>
-                                <span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">waving_hand</span> Sin Compromiso</span>
-                            </div>
+        <!-- Main Content & Audit Wizard -->
+        <section class="py-12 px-6 md:px-12 max-w-7xl mx-auto relative z-10">
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-surface-container p-8 md:p-12 rounded-[2rem] shadow-2xl shadow-primary/5 relative overflow-hidden border border-primary/20" id="audit-container">
+                    <div class="absolute -top-24 -right-24 w-64 h-64 bg-primary/10 blur-[100px] rounded-full"></div>
+                    
+                    <!-- Progress Bar -->
+                    <div class="mb-12 relative z-10" id="progress-container">
+                        <div class="flex justify-between text-[10px] uppercase tracking-[0.2em] font-bold text-on-surface-variant mb-4">
+                            <span id="step-label">Paso 1: Información de Contacto</span>
+                            <span id="step-count">33%</span>
                         </div>
-                        <form class="space-y-8 relative z-10" id="audit-form-es">
+                        <div class="h-1.5 w-full bg-surface-container-highest rounded-full overflow-hidden">
+                            <div class="h-full signature-texture transition-all duration-500 ease-out" id="progress-bar" style="width: 33%"></div>
+                        </div>
+                    </div>
+
+                    <form class="space-y-8 relative z-10" id="growth-audit-form">
+                        <!-- Paso 1: Info Contacto -->
+                        <div id="step-1" class="step-content space-y-8">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                <div class="space-y-2">
+                                    <label class="block font-label text-sm text-on-surface-variant uppercase tracking-wider">Idioma / Language</label>
+                                    <select id="languageSelector" class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant/15 px-0 py-3 text-on-surface transition-all duration-200 appearance-none cursor-pointer">
+                                        <option value="es">Español (ES)</option>
+                                        <option value="en">English</option>
+                                    </select>
+                                </div>
+                                <div class="space-y-2">
+                                    <label class="block font-label text-sm text-on-surface-variant uppercase tracking-wider">Ubicación del Negocio</label>
+                                    <select name="region" id="region" required class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant/15 px-0 py-3 text-on-surface transition-all duration-200 appearance-none cursor-pointer">
+                                        <option value="sv">El Salvador</option>
+                                        <option value="latam">Otro país de LATAM</option>
+                                        <option value="us_ca">EE.UU. / Canadá</option>
+                                    </select>
+                                </div>
+                            </div>
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                                 <div class="space-y-2">
                                     <label class="block font-label text-sm text-on-surface-variant uppercase tracking-wider">Nombre Completo</label>
-                                    <input name="full_name" required class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant/15 px-0 py-3 text-on-surface placeholder:text-outline transition-all duration-200" placeholder="Juan PÃ©rez" type="text"/>
+                                    <input name="full_name" required class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant/15 px-0 py-3 text-on-surface placeholder:text-outline transition-all duration-200" placeholder="Juan Pérez" type="text"/>
                                 </div>
                                 <div class="space-y-2">
-                                    <label class="block font-label text-sm text-on-surface-variant uppercase tracking-wider">Nombre de la Empresa</label>
-                                    <input name="company" required class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant/15 px-0 py-3 text-on-surface placeholder:text-outline transition-all duration-200" placeholder="Empresa S.A." type="text"/>
-                                </div>
-                            </div>
-
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                                <div class="space-y-2">
-                                    <label class="block font-label text-sm text-on-surface-variant uppercase tracking-wider">Correo de la Empresa</label>
+                                    <label class="block font-label text-sm text-on-surface-variant uppercase tracking-wider">Correo Corporativo</label>
                                     <input name="email" required class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant/15 px-0 py-3 text-on-surface placeholder:text-outline transition-all duration-200" placeholder="juan@empresa.com" type="email"/>
                                 </div>
-                                <div class="space-y-2">
-                                    <label class="block font-label text-sm text-on-surface-variant uppercase tracking-wider">TelÃ©fono / WhatsApp</label>
-                                    <input name="phone" required class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant/15 px-0 py-3 text-on-surface placeholder:text-outline transition-all duration-200" placeholder="+503 7000-0000" type="tel"/>
-                                </div>
                             </div>
-
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                                <div class="space-y-2">
-                                    <label class="block font-label text-sm text-on-surface-variant uppercase tracking-wider">Rol en la OrganizaciÃ³n</label>
-                                    <select name="role" required class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant/15 px-0 py-3 text-on-surface transition-all duration-200 appearance-none cursor-pointer">
-                                        <option value="" disabled selected>Selecciona tu rol</option>
-                                        <option value="CEO / Founder">DueÃ±o / CEO</option>
-                                        <option value="Operations Manager">Gerente de Operaciones</option>
-                                        <option value="Sales Director">Director Comercial</option>
-                                        <option value="Other">Otro</option>
-                                    </select>
-                                </div>
-                                <div class="space-y-2">
-                                    <label class="block font-label text-sm text-on-surface-variant uppercase tracking-wider">TamaÃ±o de la Empresa</label>
-                                    <select name="employees" required class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant/15 px-0 py-3 text-on-surface transition-all duration-200 appearance-none cursor-pointer">
-                                        <option value="" disabled selected>NÃºmero de empleados</option>
-                                        <option value="1-10">1 - 10 empleados</option>
-                                        <option value="11-50">11 - 50 empleados</option>
-                                        <option value="51-200">51 - 200 empleados</option>
-                                        <option value="201-500">201 - 500 empleados</option>
-                                        <option value="500+">500+ empleados</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                                <div class="space-y-2">
-                                    <label class="block font-label text-sm text-on-surface-variant uppercase tracking-wider">Ingresos Anuales (Opcional)</label>
-                                    <select name="revenue" class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant/15 px-0 py-3 text-on-surface transition-all duration-200 appearance-none cursor-pointer">
-                                        <option value="" disabled selected>Rango de ingresos</option>
-                                        <option value="<100k">Menos de $100k</option>
-                                        <option value="100k-500k">$100k - $500k</option>
-                                        <option value="500k-1M">$500k - $1M</option>
-                                        <option value="1M+">MÃ¡s de $1M</option>
-                                    </select>
-                                </div>
-                                <div class="space-y-2">
-                                    <label class="block font-label text-sm text-on-surface-variant uppercase tracking-wider">Sitio Web (Opcional)</label>
-                                    <input name="website" class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant/15 px-0 py-3 text-on-surface placeholder:text-outline transition-all duration-200" placeholder="www.tuempresa.com" type="text"/>
-                                </div>
-                            </div>
-
                             <div class="space-y-2">
-                                <label class="block font-label text-sm text-on-surface-variant uppercase tracking-wider">Â¿CuÃ¡les son tus mayores necesidades operativas?</label>
-                                <textarea name="needs" required class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant/15 px-0 py-3 text-on-surface placeholder:text-outline transition-all duration-200 resize-none" placeholder="CuÃ©ntanos sobre tus desafÃ­os actuales..." rows="4"></textarea>
+                                <label class="block font-label text-sm text-on-surface-variant uppercase tracking-wider">Sitio Web</label>
+                                    <input name="website" required class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant/15 px-0 py-3 text-on-surface placeholder:text-outline transition-all duration-200" placeholder="www.tunegocio.com" type="text"/>
                             </div>
-
                             <div class="pt-6">
-                                <button class="w-full signature-texture text-on-primary font-label font-bold py-5 rounded-xl text-lg flex items-center justify-center gap-3 transition-transform hover:scale-[1.02] uppercase tracking-widest" type="submit">
-                                    Continuar al Calendario â†’
+                                <button type="button" onclick="nextStep(2)" class="w-full signature-texture text-on-primary font-label font-bold py-5 rounded-xl text-lg flex items-center justify-center gap-3 transition-transform hover:scale-[1.02] shadow-[0_0_20px_rgba(10,132,255,0.3)] uppercase tracking-widest">
+                                    Siguiente Paso →
                                 </button>
-                                <div class="mt-4 flex items-center justify-center gap-2 text-[10px] text-on-surface-variant font-label uppercase tracking-widest font-bold">
-                                    <span class="material-symbols-outlined text-xs">lock</span> Tus datos estÃ¡n seguros y serÃ¡n procesados localmente.
+                            </div>
+                        </div>
+
+                        <!-- Paso 2: Preguntas Auditoría -->
+                        <div id="step-2" class="step-content hidden space-y-8">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                <div class="space-y-2">
+                                    <label class="block font-label text-sm text-on-surface-variant uppercase tracking-wider">Prospectos Nuevos al Mes</label>
+                                    <input name="monthly_leads" id="monthly_leads" type="number" required class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant/15 px-0 py-3 text-on-surface placeholder:text-outline transition-all duration-200" placeholder="ej. 100"/>
+                                </div>
+                                <div class="space-y-2">
+                                    <label class="block font-label text-sm text-on-surface-variant uppercase tracking-wider">Tiempo de Respuesta</label>
+                                    <select name="response_time" id="response_time" required class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant/15 px-0 py-3 text-on-surface transition-all duration-200 appearance-none cursor-pointer">
+                                        <option value="instantly">Menos de 5 minutos</option>
+                                        <option value="hour">Menos de 1 hora</option>
+                                        <option value="day">Dentro de 24 horas</option>
+                                        <option value="longer">Más de 24 horas</option>
+                                    </select>
                                 </div>
                             </div>
-                        </form>
-                    </div>
-                </section>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                <div class="space-y-2">
+                                    <label class="block font-label text-sm text-on-surface-variant uppercase tracking-wider">Llamadas Pérdidas por Semana</label>
+                                    <input name="missed_calls" id="missed_calls" type="number" required class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant/15 px-0 py-3 text-on-surface placeholder:text-outline transition-all duration-200" placeholder="ej. 5"/>
+                                </div>
+                                <div class="space-y-2">
+                                    <label class="block font-label text-sm text-on-surface-variant uppercase tracking-wider">¿Tiene Reserva Online?</label>
+                                    <select name="has_booking" id="has_booking" required class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant/15 px-0 py-3 text-on-surface transition-all duration-200 appearance-none cursor-pointer">
+                                        <option value="yes">Sí, agendan instantáneamente</option>
+                                        <option value="no">No, tenemos que devolver la llamada</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="pt-6">
+                                <button type="submit" class="w-full bg-brand-green text-[#003824] font-label font-bold py-5 rounded-xl text-lg flex items-center justify-center gap-3 transition-transform hover:scale-[1.02] shadow-[0_0_20px_rgba(0,230,138,0.3)] uppercase tracking-widest">
+                                    Calcular Resultados →
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Paso 3: Resultados -->
+                        <div id="step-3" class="step-content hidden space-y-12 text-center py-6">
+                            <div class="space-y-4">
+                                <h2 class="font-headline text-4xl font-bold text-white">Resultados de su Auditoría</h2>
+                                <p class="text-on-surface-variant">Basado en su perfil de negocio y estándares de la industria.</p>
+                            </div>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                <div class="bg-surface-container-low p-8 rounded-[2rem] border border-error/30 animate-fade-in">
+                                    <div class="text-error text-sm font-label uppercase tracking-widest font-bold mb-2">Pérdida Estimada de Prospectos</div>
+                                    <div class="text-6xl font-headline font-bold text-white mb-2" id="loss-percentage">0%</div>
+                                    <p class="text-on-surface-variant text-sm">Prospectos perdidos al mes por fricción en sus sistemas.</p>
+                                </div>
+                                <div class="bg-surface-container-low p-8 rounded-[2rem] border border-brand-green/30 animate-fade-in delay-200">
+                                    <div class="text-brand-green text-sm font-label uppercase tracking-widest font-bold mb-2">Oportunidad de Ingresos Mensuales</div>
+                                    <div class="text-6xl font-headline font-bold text-white mb-2" id="loss-value">$0</div>
+                                    <p class="text-on-surface-variant text-sm" id="loss-value-desc">Crecimiento potencial al automatizar respuesta.</p>
+                                </div>
+                            </div>
+
+                            <div class="bg-primary/10 border border-primary/20 p-8 rounded-[2rem] space-y-6">
+                                <h3 class="font-headline text-2xl font-bold text-white">Detengamos la Fuga de Ingresos.</h3>
+                                <p class="text-on-surface-variant text-lg max-w-2xl mx-auto">
+                                    Reserve una Sesión de Estrategia de 20 minutos para ver exactamente cómo Cresca OS puede automatizar su respuesta y capturar esos ingresos perdidos.
+                                </p>
+                                <div class="pt-4">
+                                    <a href="https://link.crescaos.com/widget/booking/OlqdoFrT1sgJ3f2nnaIa" class="inline-flex signature-texture text-on-primary font-label font-bold py-5 px-12 rounded-xl text-lg items-center gap-3 transition-transform hover:scale-[1.02] shadow-[0_0_20px_rgba(10,132,255,0.3)] uppercase tracking-widest">
+                                        Agendar Sesión de Estrategia →
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
         </section>
+
+        <!-- Footer -->
+        <footer class="py-20 px-6 md:px-12 max-w-7xl mx-auto border-t border-outline-variant/10">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                <div class="md:col-span-1 space-y-6">
+                    <a class="flex items-center gap-3" href="/es/">
+                        <span class="material-symbols-outlined text-primary text-3xl">webhook</span>
+                        <span class="text-xl font-headline font-bold text-white tracking-tight">Cresca <span class="italic text-primary">OS</span></span>
+                    </a>
+                    <p class="text-on-surface-variant text-sm leading-relaxed">Escalando empresas de alto rendimiento a través de sistemas operativos autónomos.</p>
+                </div>
+            </div>
+            <div class="pt-12 border-t border-outline-variant/5 flex flex-col md:flex-row justify-between items-center gap-6">
+                <p class="text-[10px] uppercase tracking-widest text-[#45474b]">© 2024 CRESCA OS. TODOS LOS DERECHOS RESERVADOS.</p>
+                <div class="flex gap-8">
+                    <a class="text-[10px] uppercase tracking-widest text-[#45474b] hover:text-primary transition-colors" href="#">Privacidad</a>
+                    <a class="text-[10px] uppercase tracking-widest text-[#45474b] hover:text-primary transition-colors" href="#">Términos</a>
+                </div>
+            </div>
+        </footer>
     </main>
+
     <script>
-        document.getElementById('audit-form-es').addEventListener('submit', async (e) => {
+        // Neural Network Particle Background
+        window.addEventListener('DOMContentLoaded', () => {
+            const canvas = document.getElementById('neural-bg');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            let particles = [];
+            const particleCount = 80;
+            const maxDistance = 160;
+
+            function resize() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            }
+            window.addEventListener('resize', resize);
+            resize();
+
+            class Particle {
+                constructor() {
+                    this.init();
+                }
+                init() {
+                    this.x = Math.random() * canvas.width;
+                    this.y = Math.random() * canvas.height;
+                    this.vx = (Math.random() - 0.5) * 0.3;
+                    this.vy = (Math.random() - 0.5) * 0.3;
+                    this.radius = Math.random() * 1.5;
+                }
+                update() {
+                    this.x += this.vx;
+                    this.y += this.vy;
+                    if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+                    if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+                }
+                draw() {
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                    ctx.fillStyle = '#0A84FF20';
+                    ctx.fill();
+                }
+            }
+
+            for (let i = 0; i < particleCount; i++) particles.push(new Particle());
+
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                for (let i = 0; i < particles.length; i++) {
+                    particles[i].update();
+                    particles[i].draw();
+                    for (let j = i + 1; j < particles.length; j++) {
+                        const dx = particles[i].x - particles[j].x;
+                        const dy = particles[i].y - particles[j].y;
+                        const distance = Math.sqrt(dx * dx + dy * dy);
+                        if (distance < maxDistance) {
+                            ctx.beginPath();
+                            ctx.moveTo(particles[i].x, particles[i].y);
+                            ctx.lineTo(particles[j].x, particles[j].y);
+                            ctx.strokeStyle = `rgba(10, 132, 255, ${0.1 * (1 - distance/maxDistance)})`;
+                            ctx.lineWidth = 0.5;
+                            ctx.stroke();
+                        }
+                    }
+                }
+                requestAnimationFrame(animate);
+            }
+            animate();
+        });
+
+        // Wizard Logic
+        function nextStep(step) {
+            document.querySelectorAll('.step-content').forEach(el => el.classList.add('hidden'));
+            document.getElementById(`step-${step}`).classList.remove('hidden');
+            
+            const progressBar = document.getElementById('progress-bar');
+            const stepLabel = document.getElementById('step-label');
+            const stepCount = document.getElementById('step-count');
+            
+            if (step === 2) {
+                progressBar.style.width = '66%';
+                stepLabel.innerText = 'Paso 2: Auditoría de Operaciones';
+                stepCount.innerText = '66%';
+            } else if (step === 3) {
+                progressBar.style.width = '100%';
+                stepLabel.innerText = 'Análisis Completado';
+                stepCount.innerText = '100%';
+                document.getElementById('progress-container').classList.add('opacity-50');
+            }
+        }
+
+        document.getElementById('languageSelector').addEventListener('change', function(e) {
+            if(e.target.value === 'en') {
+                window.location.href = '/book-audit.html';
+            }
+        });
+
+        document.getElementById('growth-audit-form').addEventListener('submit', async (e) => {
             e.preventDefault();
             const form = e.target;
-            const submitBtn = form.querySelector('button[type="submit"]');
-            
-            submitBtn.disabled = true;
-            submitBtn.innerHTML = '<span class="material-symbols-outlined animate-spin">sync</span> Procesando...';
-
             const formData = new FormData(form);
             const data = Object.fromEntries(formData.entries());
+
+            const region = data.region || 'sv';
+            let leadValue = 40; // Default for El Salvador
             
-            // Capturar Plan seleccionado de la URL
-            const urlParams = new URLSearchParams(window.location.search);
-            data.plan = urlParams.get('plan') || 'None';
-            data.source = 'El Salvador Intake Form';
+            if (region === 'us_ca') {
+                leadValue = 150; // US benchmark
+            } else if (region === 'latam') {
+                leadValue = 50; // Average LATAM
+            }
+
+            const leads = parseInt(data.monthly_leads) || 0;
+            const missedCalls = parseInt(data.missed_calls) || 0;
+            const responseTime = data.response_time;
+            const hasBooking = data.has_booking === 'yes';
+
+            let lossRate = 0.15; 
+            if (responseTime === 'hour') lossRate += 0.15;
+            if (responseTime === 'day') lossRate += 0.35;
+            if (responseTime === 'longer') lossRate += 0.50;
+            if (!hasBooking) lossRate += 0.12;
+            
+            const missedCallsImpact = (missedCalls * 4) / (leads||1); 
+            lossRate += (missedCallsImpact * 0.4);
+
+            const finalLossRate = Math.min(Math.round(lossRate * 100), 85);
+            const lostRevenue = Math.round(leads * (finalLossRate / 100) * leadValue);
+
+            document.getElementById('loss-percentage').innerText = `${finalLossRate}%`;
+            document.getElementById('loss-value').innerText = `$${lostRevenue.toLocaleString()}`;
+            
+            const lossValueDesc = document.getElementById('loss-value-desc');
+            if(lossValueDesc) {
+                lossValueDesc.innerText = `Crecimiento potencial al automatizar respuesta (Est. $${leadValue}/lead).`;
+            }
+
+            document.getElementById('audit-header').classList.add('hidden');
+            nextStep(3);
 
             try {
-                // 1. Enviar a GHL
-                await fetch('/api/webhook', {
+                data.source = 'Growth Audit Wizard (ES)';
+                data.loss_percentage = finalLossRate;
+                data.lost_revenue = lostRevenue;
+
+                await fetch('https://crm.crescaos.com/api/webhook', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(data)
                 });
-
-                // 2. RedirecciÃ³n Directa al Calendario para ES
-                window.location.href = 'https://link.crescaos.com/widget/booking/OlqdoFrT1sgJ3f2nnaIa';
-                
-            } catch (error) {
-                console.error('Submission error:', error);
-                // Si falla el webhook, igual mandamos al calendario para no perder al lead
-                window.location.href = 'https://link.crescaos.com/widget/booking/OlqdoFrT1sgJ3f2nnaIa';
+            } catch (err) {
+                console.error('Sincronización fallida:', err);
             }
         });
     </script>
-</body>
-</html>
 
+    <!-- Footer -->
+    <footer class="bg-[#0b1326] w-full border-t border-[#45474b]/15 mt-16">
+        <div class="max-w-7xl mx-auto px-8 py-12 text-center">
+            <div class="flex flex-col items-center gap-6">
+                <div class="flex items-baseline font-serif text-xl font-bold tracking-tighter">
+                    <span class="text-white">CRESCA</span><span class="text-[#00E68A] ml-px">OS</span>
+                </div>
+                <p class="font-sans text-[10px] text-[#8f9095] mt-2 tracking-widest uppercase opacity-60">
+                    © 2026 Cresca OS. < 5s Intelligence Operativa.
+                </p>
+                <div class="mt-4 pt-4 border-t border-[#45474b]/10 w-full max-w-lg mx-auto">
+                    <p class="font-sans text-xs text-[#8f9095] mb-2 font-bold">
+                        516-298-8323 | info@crescaos.com
+                    </p>
+                    <p class="font-sans text-[10px] text-[#8f9095] opacity-50 leading-relaxed uppercase tracking-tighter">
+                        31 Kirby Lane, Central Islip, NY 11550 <br>
+                        Al proporcionar su número de teléfono, acepta recibir SMS de Cresca OS. Pueden aplicarse tarifas de mensajes y datos. Responda STOP para cancelar. No se comparte información móvil con terceros para marketing.
+                    </p>
+                </div>
+                <div class="flex justify-center gap-6 text-[10px] uppercase tracking-widest text-[#8f9095] mt-4">
+                    <a href="../privacy.html" class="hover:text-[#00E68A] transition-colors">Política de Privacidad</a>
+                    <a href="../terms.html" class="hover:text-[#00E68A] transition-colors">Términos de Servicio</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- GHL Chat Widget -->
+    <script 
+      src="https://widgets.leadconnectorhq.com/loader.js"  
+      data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" 
+      data-widget-id="69d3ebd934c0448115bc10d9"> 
+    </script>
+</body></html>

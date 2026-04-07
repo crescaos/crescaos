@@ -1,14 +1,13 @@
-﻿<!DOCTYPE html>
-
+<!DOCTYPE html>
 <html class="dark scroll-smooth" lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Terms of Service | Cresca OS</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&amp;family=Inter:wght@300;400;600&amp;family=Manrope:wght@500;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<style type="text/tailwindcss">
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Terms of Service | Cresca OS</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&family=Inter:wght@300;400;600&family=Manrope:wght@500;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <style type="text/tailwindcss">
         @layer utilities {
             .animate-fade-in { animation: fade-in 1s ease-out forwards; }
         }
@@ -16,224 +15,125 @@
             from { opacity: 0; }
             to { opacity: 1; }
         }
-    
-      /* Seamless Translation CSS */
-      body { top: 0 !important; }
-      .goog-te-banner-frame { display: none !important; }
-      #goog-gt-tt { display: none !important; }
-      .goog-te-spinner-pos { display: none !important; }
-      #google_translate_element { display: none !important; }
-      font { background-color: transparent !important; box-shadow: none !important; }
-
-</style>
-<script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            colors: {
-              "surface": "#0F172A",
-              "surface-container-high": "#222a3d",
-              "background": "#0F172A",
-              "primary": "#0A84FF",
-              "on-surface": "#dae2fd",
-              "on-surface-variant": "#c6c6cb",
-              "brand-green": "#00E68A"
-            },
-            fontFamily: {
-              "headline": ["Noto Serif"],
-              "body": ["Inter"],
-              "label": ["Manrope"]
-            }
-          }
+        body { top: 0 !important; }
+        #neural-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.8;
+            pointer-events: none;
         }
-      }
-    </script>
-<style>
-      #neural-bg {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: -1;
-        opacity: 0.8;
-        pointer-events: none;
-      }
     </style>
-<script>
-      // Neural Network Particle Background
-      window.addEventListener('DOMContentLoaded', () => {
-        const canvas = document.getElementById('neural-bg');
-        if (!canvas) return;
-        const ctx = canvas.getContext('2d');
-        let particles = [];
-        const particleCount = 80;
-        const maxDistance = 160;
-
-        function resize() {
-          canvas.width = window.innerWidth;
-          canvas.height = window.innerHeight;
-        }
-
-        window.addEventListener('resize', resize);
-        resize();
-
-        class Particle {
-          constructor() {
-            this.x = Math.random() * canvas.width;
-            this.y = Math.random() * canvas.height;
-            this.vx = (Math.random() - 0.5) * 0.5;
-            this.vy = (Math.random() - 0.5) * 0.5;
-            this.radius = Math.random() * 2 + 0.5;
-          }
-          update() {
-            this.x += this.vx;
-            this.y += this.vy;
-            if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
-            if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
-          }
-          draw() {
-            ctx.beginPath();
-            ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-            ctx.fillStyle = 'rgba(0, 230, 138, 0.9)';
-            ctx.fill();
-          }
-        }
-
-        for (let i = 0; i < particleCount; i++) {
-          particles.push(new Particle());
-        }
-
-        function animate() {
-          ctx.clearRect(0, 0, canvas.width, canvas.height);
-          for (let i = 0; i < particles.length; i++) {
-            particles[i].update();
-            particles[i].draw();
-            for (let j = i + 1; j < particles.length; j++) {
-              const dx = particles[i].x - particles[j].x;
-              const dy = particles[i].y - particles[j].y;
-              const distance = Math.sqrt(dx * dx + dy * dy);
-              if (distance < maxDistance) {
-                ctx.beginPath();
-                ctx.moveTo(particles[i].x, particles[i].y);
-                ctx.lineTo(particles[j].x, particles[j].y);
-                ctx.strokeStyle = `rgba(10, 132, 255, ${0.4 * (1 - distance / maxDistance)})`;
-                ctx.lineWidth = 0.8;
-                ctx.stroke();
-              }
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface": "#0F172A",
+                        "surface-container-high": "#222a3d",
+                        "background": "#0F172A",
+                        "primary": "#0A84FF",
+                        "on-surface": "#dae2fd",
+                        "on-surface-variant": "#c6c6cb",
+                        "brand-green": "#00E68A"
+                    },
+                    fontFamily: {
+                        "headline": ["Noto Serif"],
+                        "body": ["Inter"],
+                        "label": ["Manrope"]
+                    }
+                }
             }
-          }
-          requestAnimationFrame(animate);
         }
-        animate();
-      });
     </script>
-<!-- Headless Translation Engine -->
-<meta content="Cresca OS replaces disconnected tools with one unified business automation system. We capture leads, respond instantly, and automate follow-ups." name="description"/><meta content="Cresca OS | Business Automation System for Service Businesses" property="og:title"/><meta content="Cresca OS replaces disconnected tools with one unified business automation system. We capture leads, respond instantly, and automate follow-ups." property="og:description"/><meta content="https://crescaos.com/og-image.jpg" property="og:image"/><meta content="https://crescaos.com/terms" property="og:url"/><link href="/favicon.ico" rel="icon"/><link href="https://crescaos.com/terms" rel="canonical"/>
-    <!-- Meta Pixel Code -->
-    <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '158599436040251');
-    fbq('track', 'PageView');
-    </script>
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=158599436040251&ev=PageView&noscript=1"
-    /></noscript>
-    <!-- End Meta Pixel Code -->
 </head>
 <body class="bg-background text-on-surface font-body relative min-h-screen flex flex-col">
-<canvas id="neural-bg"></canvas>
-<!-- TopNavBar -->
-<nav class="fixed top-0 w-full z-50 bg-[#0b1326]/70 backdrop-blur-xl shadow-2xl border-b border-gray-800">
-<div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
-<a class="flex items-center gap-2 group" href="index.html">
-<span class="material-symbols-outlined text-[#00E68A] text-3xl group-hover:rotate-180 transition-transform duration-700">change_circle</span>
-<span class="font-headline text-2xl font-bold tracking-tight text-white">CRESCA<span class="text-[#0A84FF]">OS</span></span>
-</a>
-<div class="hidden lg:flex items-center space-x-8">
-<a class="text-[#8f9095] hover:text-[#dae2fd] transition-all" href="index.html">Home</a>
-</div>
-<div>
-<a class="bg-[#4edea3] text-[#003824] px-5 py-2 rounded-lg font-label font-bold uppercase text-[10px]" href="book-audit.html">Book Audit</a>
-</div>
-</div>
-<!-- Mobile Menu Button (Absolute positioned to top right for safety) -->
-<button class="md:hidden absolute top-5 right-6 text-on-surface focus:outline-none z-[60]" id="mobile-menu-btn">
-<span class="material-symbols-outlined text-3xl">menu</span>
-</button>
-<!-- Mobile Menu Overlay -->
-<div class="fixed inset-0 bg-[#080f22] z-[55] hidden flex-col pt-24 px-8 transform transition-transform duration-300 translate-x-full" id="mobile-menu">
-<div class="flex flex-col space-y-8 font-headline text-3xl">
-<a class="text-on-surface hover:text-primary transition-colors" href="solutions.html">Solutions</a>
-<a class="text-on-surface hover:text-primary transition-colors" href="industries.html">Industries</a>
-<a class="text-on-surface hover:text-primary transition-colors" href="pricing.html">Pricing</a>
-<a class="text-on-surface hover:text-primary transition-colors" href="about.html">About</a>
-<a class="text-on-surface hover:text-primary transition-colors" href="el-salvador.html">El Salvador</a>
-</div>
-<div class="mt-12">
-<a class="bg-primary text-on-primary px-6 py-3 rounded-lg font-label font-bold uppercase tracking-widest text-sm inline-block w-full text-center" href="book-audit.html">Book Your Free Audit</a>
-</div>
-</div>
-<script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const btn = document.getElementById('mobile-menu-btn');
-            const menu = document.getElementById('mobile-menu');
-            if(btn && menu) {
-                btn.addEventListener('click', () => {
-                    const isHidden = menu.classList.contains('translate-x-full');
-                    if (isHidden) {
-                        menu.classList.remove('hidden');
-                        // tiny delay to allow display:block to apply before animating transform
-                        setTimeout(() => {
-                            menu.classList.remove('translate-x-full');
-                            menu.classList.add('translate-x-0');
-                        }, 10);
-                        btn.innerHTML = '<span class="material-symbols-outlined text-3xl text-error">close</span>';
-                    } else {
-                        menu.classList.remove('translate-x-0');
-                        menu.classList.add('translate-x-full');
-                        setTimeout(() => menu.classList.add('hidden'), 300);
-                        btn.innerHTML = '<span class="material-symbols-outlined text-3xl">menu</span>';
-                    }
-                });
-            }
-        });
+    <canvas id="neural-bg"></canvas>
+    
+    <nav class="fixed top-0 w-full z-50 bg-[#0b1326]/70 backdrop-blur-xl shadow-2xl border-b border-gray-800">
+        <div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
+            <a class="flex items-center gap-2 group" href="/index.html">
+                <span class="material-symbols-outlined text-[#00E68A] text-3xl group-hover:rotate-180 transition-transform duration-700">change_circle</span>
+                <span class="font-headline text-2xl font-bold tracking-tight text-white">CRESCA<span class="text-[#0A84FF]">OS</span></span>
+            </a>
+            <div class="hidden lg:flex items-center space-x-8">
+                <a class="text-[#8f9095] hover:text-[#dae2fd] transition-all" href="/index.html">Home</a>
+                <a class="text-[#8f9095] hover:text-[#dae2fd] transition-all" href="/solutions.html">Solutions</a>
+                <a class="text-[#8f9095] hover:text-[#dae2fd] transition-all" href="/pricing.html">Pricing</a>
+            </div>
+            <div>
+                <a class="bg-[#4edea3] text-[#003824] px-5 py-2 rounded-lg font-label font-bold uppercase text-[10px]" href="/book-audit.html">Book Audit</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow pt-32 pb-24 px-8 max-w-4xl mx-auto animate-fade-in w-full">
+        <div class="bg-surface-container-high/60 backdrop-blur-md p-12 rounded-3xl border border-gray-800 shadow-2xl">
+            <h1 class="font-headline text-4xl font-bold mb-8 text-white">Terms of Service</h1>
+            <div class="text-on-surface-variant space-y-8">
+                <p class="text-sm text-gray-500">Last updated: April 6, 2026</p>
+
+                <section>
+                    <h2 class="text-2xl font-bold text-white mb-4">1. Acceptance of Terms</h2>
+                    <p>By accessing or using Cresca OS services, you agree to be bound by these Terms of Service. These terms cover all software solutions and infrastructure consulting provided by our team.</p>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-bold text-white mb-4">2. Operational Services</h2>
+                    <p>Cresca OS provides business operating systems and automation services. Specific deliverables, project milestones, and pricing tiers are defined in individual proposal documents or master service agreements.</p>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-bold text-white mb-4">3. Limitation of Liability</h2>
+                    <p>Cresca OS shall not be liable for any indirect, incidental, or consequential damages resulting from the use of our services. We aim for 99.9% operational uptime but do not guarantee specific revenue outcomes beyond the 90-day ROI guarantee outlined during onboarding.</p>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-bold text-white mb-4">4. Text Messaging (SMS)</h2>
+                    <p class="mb-4">
+                        By opting into CRESCA OS text messaging services, you agree to receive recurring automated messages for appointment reminders and business operational updates. Consent is not a condition of purchase. Message and data rates may apply.
+                    </p>
+                    <ul class="list-disc list-inside space-y-4 ml-4 mb-4">
+                        <li><strong>Cancellation:</strong> You can cancel the SMS service at any time by texting "STOP". We will send a confirmation message to verify unsubscription.</li>
+                        <li><strong>Assistance:</strong> Reply with HELP at any time for direct assistance from our operational support team.</li>
+                        <li><strong>Carrier Disclaimer:</strong> Wireless carriers are not liable for delayed or undelivered messages.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-bold text-white mb-4">5. Intellectual Property</h2>
+                    <p>All system architectures and custom automation flows developed for the client are the property of the client upon final payment, unless otherwise governed by a specific licensing agreement.</p>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-[#0b1326] py-12 px-8 border-t border-gray-800 mt-auto">
+        <div class="max-w-7xl mx-auto text-center text-sm text-gray-500">
+            <p class="font-sans text-xs text-[#8f9095] mb-4 uppercase tracking-widest font-bold">
+                CRESCA OS | 31 Kirby Lane, Central Islip, NY 11550 | 516-298-8323
+            </p>
+            <p class="font-sans text-[10px] text-[#8f9095] opacity-70 leading-relaxed max-w-2xl mx-auto mb-8">
+                By providing your phone number, you agree to receive text messages from CRESCA OS for business updates and reminders. Message and data rates may apply. Message frequency varies. Text STOP to opt-out or HELP for help. View our <a href="/privacy.html" class="underline">Privacy Policy</a> and <a href="/terms.html" class="underline">Terms of Service</a>. We do not share or sell your mobile information for marketing purposes.
+            </p>
+            <div class="flex flex-col md:flex-row justify-between items-center border-t border-gray-800/10 pt-8">
+                <p>© 2026 Cresca OS. All rights reserved.</p>
+                <div class="flex gap-6 mt-4 md:mt-0">
+                    <a class="hover:text-white transition-colors underline" href="/privacy.html">Privacy Policy</a>
+                    <a class="hover:text-white transition-colors underline" href="/terms.html">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script 
+      src="https://widgets.leadconnectorhq.com/loader.js"  
+      data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" 
+      data-widget-id="69d3ebd934c0448115bc10d9"> 
     </script>
-</nav>
-<!-- Content -->
-<main class="flex-grow pt-32 pb-24 px-8 max-w-4xl mx-auto animate-fade-in w-full">
-<div class="bg-surface-container-high/60 backdrop-blur-md p-12 rounded-3xl border border-gray-800 shadow-2xl">
-<h1 class="font-headline text-4xl font-bold mb-8 text-white">Terms of Service</h1>
-<div class="text-on-surface-variant space-y-6">
-<p>Effective Date: March 26, 2026</p>
-<h2 class="text-xl font-bold text-white mt-8">1. Acceptance of Terms</h2>
-<p>By accessing or using Cresca OS services, you agree to be bound by these Terms of Service.</p>
-<h2 class="text-xl font-bold text-white mt-8">2. Operational Services</h2>
-<p>Cresca OS provides infrastructure and software solutions. Specific deliverables, timelines, and costs are outlined in individual project proposals and Enterprise Agreements.</p>
-<h2 class="text-xl font-bold text-white mt-8">3. Limitation of Liability</h2>
-<p>Cresca OS shall not be liable for any indirect, incidental, special, consequential, or punitive damages resulting from your use of the service.</p>
-<p class="mt-8 italic text-sm text-gray-500">Note: This is a structural page. Detailed legal documentation is provided during the onboarding process.</p>
-</div>
-</div>
-</main>
-<!-- Footer -->
-<footer class="bg-[#060e20] py-12 px-8 border-t border-gray-800 mt-auto">
-<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
-<p>Â© 2026 Cresca OS. All rights reserved.</p>
-<div class="flex gap-6 mt-4 md:mt-0">
-<a class="hover:text-white transition-colors" href="privacy.html">Privacy Policy</a>
-<a class="hover:text-white transition-colors" href="terms.html">Terms of Service</a>
-</div>
-</div>
-</footer>
 </body>
 </html>
-
