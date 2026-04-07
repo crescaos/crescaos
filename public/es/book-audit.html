@@ -116,12 +116,24 @@
     <!-- Navigation -->
     <nav class="fixed top-0 left-0 w-full z-50 transition-all duration-300 border-b border-outline-variant/10 bg-surface/80 backdrop-blur-xl py-4">
         <div class="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
-            <a class="flex items-center gap-3 group" href="/es/">
-                <div class="relative">
-                    <span class="material-symbols-outlined text-primary text-4xl group-hover:scale-110 transition-transform duration-300">webhook</span>
-                    <div class="absolute -inset-2 bg-primary/20 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            <a class="flex items-center gap-3 hover:opacity-80 transition-opacity" href="/es/">
+                <div class="flex items-center gap-3">
+                    <svg class="w-8 h-8" fill="none" height="32" viewbox="0 0 48 48" width="32" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="24" cy="24" r="18" stroke="#0A84FF" stroke-width="3"></circle>
+                        <ellipse cx="24" cy="24" rx="13" ry="7.5" stroke="#00E68A" stroke-width="3" transform="rotate(60 24 24)"></ellipse>
+                        <ellipse cx="24" cy="24" rx="13" ry="7.5" stroke="#00E68A" stroke-width="3" transform="rotate(-60 24 24)"></ellipse>
+                        <circle cx="24" cy="6" fill="#0A84FF" r="2.5"></circle>
+                        <circle cx="24" cy="42" fill="#0A84FF" r="2.5"></circle>
+                        <circle cx="39.59" cy="15" fill="#00E68A" r="2.5"></circle>
+                        <circle cx="8.41" cy="15" fill="#FFFFFF" r="2.5"></circle>
+                        <circle cx="39.59" cy="33" fill="#FFFFFF" r="2.5"></circle>
+                        <circle cx="8.41" cy="33" fill="#00E68A" r="2.5"></circle>
+                        <circle cx="24" cy="24" fill="#FFFFFF" r="3.5"></circle>
+                    </svg>
+                    <div class="flex items-baseline font-serif text-2xl font-bold tracking-tighter">
+                        <span class="text-white">CRESCA</span><span class="text-[#00E68A] ml-px">OS</span>
+                    </div>
                 </div>
-                <span class="text-2xl font-headline font-bold text-white tracking-tight">Cresca <span class="italic text-primary font-bold">OS</span></span>
             </a>
             <div class="hidden md:flex items-center gap-10">
                 <a class="text-sm font-label uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="/es/#servicios">Sistemas</a>
@@ -283,25 +295,7 @@
             </div>
         </section>
 
-        <!-- Footer -->
-        <footer class="py-20 px-6 md:px-12 max-w-7xl mx-auto border-t border-outline-variant/10">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
-                <div class="md:col-span-1 space-y-6">
-                    <a class="flex items-center gap-3" href="/es/">
-                        <span class="material-symbols-outlined text-primary text-3xl">webhook</span>
-                        <span class="text-xl font-headline font-bold text-white tracking-tight">Cresca <span class="italic text-primary">OS</span></span>
-                    </a>
-                    <p class="text-on-surface-variant text-sm leading-relaxed">Escalando empresas de alto rendimiento a través de sistemas operativos autónomos.</p>
-                </div>
-            </div>
-            <div class="pt-12 border-t border-outline-variant/5 flex flex-col md:flex-row justify-between items-center gap-6">
-                <p class="text-[10px] uppercase tracking-widest text-[#45474b]">© 2024 CRESCA OS. TODOS LOS DERECHOS RESERVADOS.</p>
-                <div class="flex gap-8">
-                    <a class="text-[10px] uppercase tracking-widest text-[#45474b] hover:text-primary transition-colors" href="#">Privacidad</a>
-                    <a class="text-[10px] uppercase tracking-widest text-[#45474b] hover:text-primary transition-colors" href="#">Términos</a>
-                </div>
-            </div>
-        </footer>
+
     </main>
 
     <script>
@@ -447,7 +441,7 @@
                 data.loss_percentage = finalLossRate;
                 data.lost_revenue = lostRevenue;
 
-                await fetch('https://crm.crescaos.com/api/webhook', {
+                await fetch('/api/webhook', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(data)
