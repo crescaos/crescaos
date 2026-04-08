@@ -26,7 +26,7 @@ class GHLClient {
         url: `${this.baseUrl}${endpoint}`,
         headers: {
           'Authorization': `Bearer ${this.accessToken}`,
-          'Version': '2021-07-02',
+          'Version': '2021-07-28',
           'Content-Type': 'application/json'
         }
       };
