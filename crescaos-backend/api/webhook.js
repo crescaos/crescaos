@@ -38,14 +38,15 @@ module.exports = async (req, res) => {
     }
 
     const contactData = {
-      email: payload.email || null,
       firstName: firstName || 'Audit',
       lastName: lastName || 'Lead',
-      phone: payload.phone || null,
-      companyName: payload.company || payload.business_name || null,
       tags: [isESLead ? 'es-lead' : 'growth-audit'],
       customFields: []
     };
+    
+    if (payload.email) contactData.email = payload.email.toLowerCase();
+    if (payload.phone) contactData.phone = payload.phone;
+    if (payload.company || payload.business_name) contactData.companyName = payload.company || payload.business_name;
 
     // 2. Format detailed note for ES Leads or standard Audit Leads
     let noteContent = `Source: ${payload.source || 'Website Form'}\n`;

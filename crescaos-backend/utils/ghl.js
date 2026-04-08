@@ -21,16 +21,19 @@ class GHLClient {
     }
 
     try {
-      const response = await axios({
+      const config = {
         method,
         url: `${this.baseUrl}${endpoint}`,
         headers: {
           'Authorization': `Bearer ${this.accessToken}`,
           'Version': '2021-07-02',
           'Content-Type': 'application/json'
-        },
-        data
-      });
+        }
+      };
+      if (data) {
+        config.data = data;
+      }
+      const response = await axios(config);
       return response.data;
     } catch (error) {
       logger.error(`GHL API Error [${endpoint}]:`, error.response ? error.response.data : error.message);
