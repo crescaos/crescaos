@@ -16,6 +16,9 @@ exports.handler = async (event) => {
 
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ['card'],
+      phone_number_collection: {
+        enabled: true,
+      },
       customer_email: email || undefined,
       line_items: [
         {
