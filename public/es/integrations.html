@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+
+<html class="dark scroll-smooth" lang="es"><head><title>Cresca OS | Business Automation System for Service Businesses</title>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&amp;family=Inter:wght@300;400;600&amp;family=Manrope:wght@500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style type="text/tailwindcss">
+        @layer utilities {
+            .animate-slide-up { animation: slide-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+            .animate-fade-in { animation: fade-in 1s ease-out forwards; }
+            .delay-200 { animation-delay: 200ms; }
+        }
+        @keyframes slide-up {
+            from { transform: translateY(30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes fade-in {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    
+      /* Seamless Translation CSS */
+      body { top: 0 !important; }
+      .goog-te-banner-frame { display: none !important; }
+      #goog-gt-tt { display: none !important; }
+      .goog-te-spinner-pos { display: none !important; }
+      #google_translate_element { display: none !important; }
+      font { background-color: transparent !important; box-shadow: none !important; }
+
+</style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-tertiary-container": "#0085bd",
+              "surface-dim": "#0b1326",
+              "surface-container-low": "#131b2e",
+              "on-primary-fixed": "#002113",
+              "surface-container-lowest": "#060e20",
+              "outline-variant": "#45474b",
+              "on-background": "#dae2fd",
+              "primary-container": "#00150b",
+              "secondary-container": "#3a4a5f",
+              "on-tertiary-fixed-variant": "#004c6e",
+              "secondary": "#b7c8e1",
+              "on-surface": "#dae2fd",
+              "surface-container": "#171f33",
+              "on-surface-variant": "#c6c6cb",
+              "tertiary-fixed-dim": "#89ceff",
+              "on-tertiary": "#00344d",
+              "error-container": "#93000a",
+              "primary-fixed-dim": "#0A84FF",
+              "on-primary-container": "#00E68A",
+              "inverse-primary": "#006c49",
+              "surface-variant": "#2d3449",
+              "on-primary-fixed-variant": "#005236",
+              "surface-container-high": "#222a3d",
+              "secondary-fixed-dim": "#b7c8e1",
+              "on-secondary": "#213145",
+              "primary": "#0A84FF",
+              "surface": "#0F172A",
+              "error": "#ffb4ab",
+              "on-secondary-fixed-variant": "#38485d",
+              "tertiary-container": "#001320",
+              "tertiary-fixed": "#c9e6ff",
+              "primary-fixed": "#6ffbbe",
+              "secondary-fixed": "#d3e4fe",
+              "inverse-surface": "#dae2fd",
+              "background": "#0F172A",
+              "tertiary": "#89ceff",
+              "on-secondary-fixed": "#0b1c30",
+              "on-tertiary-fixed": "#001e2f",
+              "surface-tint": "#0A84FF",
+              "inverse-on-surface": "#283044",
+              "surface-container-highest": "#2d3449",
+              "on-primary": "#FFFFFF",
+              "surface-bright": "#31394d",
+              "outline": "#8f9095",
+              "on-error": "#690005",
+              "on-error-container": "#ffdad6",
+              "on-secondary-container": "#a9bad3",
+              "brand-green": "#00E68A"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Inter"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .signature-texture {
+        background: linear-gradient(135deg, #0A84FF 0%, #00E68A 100%);
+      }
+      .glass-card {
+        background: rgba(23, 31, 51, 0.6);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+      }
+      .glow-pulse {
+        box-shadow: 0 0 15px rgba(0, 230, 138, 0.4);
+      }
+      
+      #neural-bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        opacity: 0.8; /* Amplified visibility */
+        pointer-events: none;
+      }
+    </style>
+<script>
+      
+
+      // Neural Network Particle Background
+      window.addEventListener('DOMContentLoaded', () => {
+        const canvas = document.getElementById('neural-bg');
+        if (!canvas) return;
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+        const particleCount = 80; /* Increased particles */
+        const maxDistance = 160;
+
+        function resize() {
+          canvas.width = window.innerWidth;
+          canvas.height = window.innerHeight;
+        }
+
+        window.addEventListener('resize', resize);
+        resize();
+
+        class Particle {
+          constructor() {
+            this.x = Math.random() * canvas.width;
+            this.y = Math.random() * canvas.height;
+            this.vx = (Math.random() - 0.5) * 0.5;
+            this.vy = (Math.random() - 0.5) * 0.5;
+            this.radius = Math.random() * 2 + 0.5;
+          }
+
+          update() {
+            this.x += this.vx;
+            this.y += this.vy;
+
+            if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+            if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+          }
+
+          draw() {
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+            ctx.fillStyle = 'rgba(0, 230, 138, 0.9)'; /* Brighter particles */
+            ctx.fill();
+          }
+        }
+
+        for (let i = 0; i < particleCount; i++) {
+          particles.push(new Particle());
+        }
+
+        function animate() {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          
+          for (let i = 0; i < particles.length; i++) {
+            particles[i].update();
+            particles[i].draw();
+
+            for (let j = i + 1; j < particles.length; j++) {
+              const dx = particles[i].x - particles[j].x;
+              const dy = particles[i].y - particles[j].y;
+              const distance = Math.sqrt(dx * dx + dy * dy);
+
+              if (distance < maxDistance) {
+                ctx.beginPath();
+                ctx.moveTo(particles[i].x, particles[i].y);
+                ctx.lineTo(particles[j].x, particles[j].y);
+                ctx.strokeStyle = `rgba(10, 132, 255, ${0.4 * (1 - distance / maxDistance)})`; /* Brighter connections */
+                ctx.lineWidth = 0.8;
+                ctx.stroke();
+              }
+            }
+          }
+          requestAnimationFrame(animate);
+        }
+
+        animate();
+      });
+    </script>
+<!-- Headless Translation Engine -->
+<meta content="Cresca OS replaces disconnected tools with one unified business automation system. We capture leads, respond instantly, and automate follow-ups." name="description"/><meta content="Cresca OS | Business Automation System for Service Businesses" property="og:title"/><meta content="Cresca OS replaces disconnected tools with one unified business automation system. We capture leads, respond instantly, and automate follow-ups." property="og:description"/><meta content="https://crescaos.com/og-image.jpg" property="og:image"/><meta content="https://crescaos.com/" property="og:url"/><link href="/favicon.ico" rel="icon"/><link href="https://crescaos.com/" rel="canonical"/>
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '158599436040251');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=158599436040251&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+    <!-- Cresca OS Organization Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Cresca OS",
+      "url": "https://crescaos.com",
+      "logo": "https://crescaos.com/og-image.jpg",
+      "description": "Cresca OS reemplaza tus herramientas desconectadas con un sistema unificado que captura leads, responde al instante, agenda citas y da seguimiento automáticamente.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "31 Kirby Lane",
+        "addressLocality": "Central Islip",
+        "addressRegion": "NY",
+        "postalCode": "11550",
+        "addressCountry": "US"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+1-516-298-8323",
+        "contactType": "customer service",
+        "email": "info@crescaos.com"
+      },
+      "sameAs": [
+        "https://facebook.com/crescaos",
+        "https://linkedin.com/company/crescaos"
+      ]
+    }
+    </script>
+    
+    <!-- Cresca OS Service Schema (LATAM/El Salvador focus) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org/",
+      "@type": "Service",
+      "serviceType": "Sistema de Automatización de Negocios",
+      "provider": {
+        "@type": "Organization",
+        "name": "Cresca OS"
+      },
+      "areaServed": [
+        {
+          "@type": "Country",
+          "name": "El Salvador"
+        },
+        {
+          "@type": "Region",
+          "name": "Latin America"
+        }
+      ],
+      "description": "Un sistema integral de ingresos para empresas de servicios. Nosotros capturamos leads, respondemos al instante y automatizamos el seguimiento en España y Latinoamérica."
+    }
+    </script>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "\u00bfQu\u00e9 es Cresca OS?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Cresca OS es un sistema operativo empresarial integral para empresas de servicios. En lugar de usar m\u00faltiples herramientas desconectadas, proporcionamos un sistema unificado que gestiona la captura de leads, respuesta instant\u00e1nea con IA, seguimiento automatizado y agendamiento de citas\u2014todo construido y administrado por nosotros."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "\u00bfCu\u00e1nto cuesta Cresca OS?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Ofrecemos diferentes niveles basados en el tama\u00f1o de su empresa y volumen de leads. A diferencia del software tradicional, no cobramos tarifas por usuario, lo que significa que su equipo de ventas puede crecer sin que aumenten sus costos de tecnolog\u00eda. Consulte nuestra p\u00e1gina de Precios."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "\u00bfCu\u00e1nto tiempo tarda la implementaci\u00f3n?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Nuestra configuraci\u00f3n completa se realiza en menos de 14 d\u00edas. Esto incluye nuestra Auditor\u00eda de Sistemas inicial, dise\u00f1o de flujos de trabajo personalizados y el lanzamiento del sistema para que comience a agendar citas r\u00e1pidamente."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "\u00bfNecesito habilidades t\u00e9cnicas?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "En absoluto. Cresca OS es un servicio operativo completamente \"hecho para usted\" (done-for-you). Nosotros construimos, implementamos y administramos la infraestructura tecnol\u00f3gica, permitiendo que usted y su equipo se enfoquen exclusivamente en cerrar ventas."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "\u00bfEn qu\u00e9 se diferencia Cresca OS de un CRM normal?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "La mayor\u00eda de los CRMs solo le dan acceso y le dejan adivinar c\u00f3mo configurarlo. Cresca OS aporta experiencia real en la industria para construir un sistema integral que funciona desde el primer d\u00eda. Es un sistema de crecimiento gestionado, no solo un software."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "\u00bfCu\u00e1l es el mejor CRM para negocios de servicios?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "El mejor CRM es aquel que evita que los clientes potenciales se pierdan. Para empresas de servicios, un sistema operativo como Cresca OS es m\u00e1s efectivo que un CRM tradicional porque unifica nativamente la captura de leads, el seguimiento r\u00e1pido y las reservas de calendario."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "\u00bfC\u00f3mo automatizar el seguimiento de clientes potenciales?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "El seguimiento efectivo requiere una respuesta inmediata (en menos de 60 segundos) y contacto consistente a trav\u00e9s de m\u00faltiples canales. Cresca OS automatiza toda esta secuencia, interactuando de forma natural hasta que el lead agenda una cita o se da de baja."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "\u00bfPor qu\u00e9 mi negocio pierde clientes potenciales?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Muchos negocios no se dan cuenta de esto, pero el problema real rara vez es el volumen de leads\u2014es la velocidad de seguimiento. Los estudios muestran que esperar m\u00e1s de cinco minutos para responder reduce dr\u00e1sticamente las conversiones. Las herramientas desconectadas ralentizan la respuesta."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "\u00bfQu\u00e9 es un sistema operativo empresarial para empresas de servicios?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Es un entorno centralizado que reemplaza herramientas fragmentadas. Mientras una empresa t\u00edpica usa cinco aplicaciones distintas para formularios, calendarios y correos, un sistema operativo unifica todo para automatizar el viaje del cliente desde el primer clic hasta el contrato firmado."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "\u00bfC\u00f3mo conseguir m\u00e1s citas sin contratar m\u00e1s personal?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Implementando la automatizaci\u00f3n empresarial. Un sistema que responde instant\u00e1neamente a consultas, nutre leads antiguos y programa citas autom\u00e1ticamente, permite que su equipo existente se enfoque en generar ingresos en lugar de hacer tareas administrativas."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "\u00bfCresca OS funciona para empresas solares?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "S\u00ed. Cresca OS fue dise\u00f1ado con profunda experiencia en la industria solar. Entendemos las etapas espec\u00edficas del proceso, los largos ciclos de ventas y las complejas secuencias de seguimiento necesarias para convertir un prospecto en una instalaci\u00f3n."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "\u00bfCresca OS funciona para empresas de limpieza?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Absolutamente. Para empresas de limpieza comercial y residencial, la velocidad de respuesta es cr\u00edtica. Cresca OS automatiza el proceso de cotizaci\u00f3n, responde al instante a las solicitudes y mantiene al equipo de limpieza programado de manera eficiente."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "\u00bfCon qu\u00e9 herramientas se integra Cresca OS?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Cresca OS centraliza la comunicaci\u00f3n integr\u00e1ndose con las herramientas que su empresa ya utiliza, incluyendo Meta Ads, Google Ads, Stripe, Zapier, QuickBooks, Twilio, y muchas m\u00e1s."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "\u00bfPuede Cresca OS reemplazar varias herramientas?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "S\u00ed. Cresca OS frecuentemente reemplaza herramientas especializadas para marketing por SMS, correos electr\u00f3nicos, calendarios, webchat y gesti\u00f3n de ventas, agrup\u00e1ndolas en un sistema unificado y rentable."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "\u00bfCresca OS es un servicio pre-configurado o autogestionado?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Es estrictamente \"hecho para usted\" (done-for-you). En lugar de darle un software y dejar que lo configure usted mismo, nuestro equipo construye, optimiza y mantiene sus automatizaciones de captura y seguimiento."
+            }
+        }
+    ]
+}
+    </script>
+    
+    <!-- HowTo Schema -->
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "C\u00f3mo funciona Cresca OS - Automatizaci\u00f3n para empresas de servicios",
+    "description": "Descubra c\u00f3mo Cresca OS unifica sus herramientas en un solo sistema operativo para capturar clientes potenciales, responder al instante y automatizar reservas.",
+    "step": [
+        {
+            "@type": "HowToStep",
+            "name": "Captura el lead",
+            "text": "Agregue instant\u00e1neamente consultas de formularios web, Meta Ads, Google Ads y llamadas entrantes en una bandeja de entrada centralizada."
+        },
+        {
+            "@type": "HowToStep",
+            "name": "Responde al instante con IA",
+            "text": "Involucre a cada lead entrante en menos de 60 segundos a trav\u00e9s de SMS y Webchat utilizando nuestra inteligencia artificial conversacional para calificar la intenci\u00f3n."
+        },
+        {
+            "@type": "HowToStep",
+            "name": "Califica y enruta el lead",
+            "text": "Etiquete autom\u00e1ticamente a los leads en funci\u00f3n de sus respuestas, asign\u00e1ndolos a la etapa correcta del embudo y al representante de ventas correspondiente."
+        },
+        {
+            "@type": "HowToStep",
+            "name": "Agenda la cita autom\u00e1ticamente",
+            "text": "Dirija a los prospectos calificados a un calendario de autoservicio para reservar consultas sin necesidad de programaci\u00f3n manual."
+        },
+        {
+            "@type": "HowToStep",
+            "name": "Da seguimiento y reactiva oportunidades",
+            "text": "Implemente campa\u00f1as de seguimiento multicanal alcanzando a leads antiguos de 7 a 12 veces, transformando datos fr\u00edos en citas agendadas."
+        },
+        {
+            "@type": "HowToStep",
+            "name": "Gestiona todo en un solo sistema",
+            "text": "Realice un seguimiento de todas las conversiones, etapas del embudo y el historial de comunicaci\u00f3n en una plataforma \u00fanica y gestionada por nosotros."
+        }
+    ]
+}
+    </script>
+</head>
+<body class="bg-background text-on-background font-body relative">
+<canvas id="neural-bg"></canvas>
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#0b1326]/70 backdrop-blur-xl shadow-2xl shadow-[#060e20]/40 border-b border-outline-variant/10">
+<div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
+<a class="flex items-center gap-3 hover:opacity-80 transition-opacity" href="/es/index.html">
+<div class="flex items-center gap-3">
+<svg class="w-8 h-8" fill="none" height="32" viewbox="0 0 48 48" width="32" xmlns="http://www.w3.org/2000/svg">
+<circle cx="24" cy="24" r="18" stroke="#0A84FF" stroke-width="3"></circle>
+<ellipse cx="24" cy="24" rx="13" ry="7.5" stroke="#00E68A" stroke-width="3" transform="rotate(60 24 24)"></ellipse>
+<ellipse cx="24" cy="24" rx="13" ry="7.5" stroke="#00E68A" stroke-width="3" transform="rotate(-60 24 24)"></ellipse>
+<circle cx="24" cy="6" fill="#0A84FF" r="2.5"></circle>
+<circle cx="24" cy="42" fill="#0A84FF" r="2.5"></circle>
+<circle cx="39.59" cy="15" fill="#00E68A" r="2.5"></circle>
+<circle cx="8.41" cy="15" fill="#FFFFFF" r="2.5"></circle>
+<circle cx="39.59" cy="33" fill="#FFFFFF" r="2.5"></circle>
+<circle cx="8.41" cy="33" fill="#00E68A" r="2.5"></circle>
+<circle cx="24" cy="24" fill="#FFFFFF" r="3.5"></circle>
+</svg>
+<div class="flex items-baseline font-serif text-2xl font-bold tracking-tighter">
+<span class="text-white">CRESCA</span><span class="text-[#00E68A] ml-px">OS</span>
+</div>
+</div>
+</a>
+<div class="hidden md:flex space-x-8">
+<a class="text-[#8f9095] hover:text-[#dae2fd] font-serif text-lg tracking-tight transition-all duration-200" href="/es/solutions.html">Soluciones</a>
+<a class="text-[#8f9095] hover:text-[#dae2fd] font-serif text-lg tracking-tight transition-all duration-200" href="/es/industries.html">Industrias</a>
+<a class="text-[#8f9095] hover:text-[#dae2fd] font-serif text-lg tracking-tight transition-all duration-200" href="/es/pricing.html">Precios</a>
+<a class="text-[#8f9095] hover:text-[#dae2fd] font-serif text-lg tracking-tight transition-all duration-200" href="/es/integrations.html">Integraciones</a>
+<a class="text-[#8f9095] hover:text-[#dae2fd] font-serif text-lg tracking-tight transition-all duration-200" href="/es/about.html">Nosotros</a>
+<a class="text-[#8f9095] hover:text-[#dae2fd] font-serif text-lg tracking-tight transition-all duration-200" href="/es/el-salvador.html">El Salvador</a>
+</div>
+<div class="flex items-center gap-6 mr-10 md:mr-0">
+<a href="/index.html" class="text-[#00E68A] font-label text-sm hover:text-[#dae2fd] transition-colors font-bold">EN</a><a class="hidden md:inline-flex bg-[#4edea3] text-[#003824] px-5 py-2 rounded-lg font-label font-bold scale-95 transition-transform duration-200 hover:scale-100 uppercase tracking-widest text-[10px]" href="/es/book-audit.html">
+                    Reservar AuditorÃ­a
+                </a>
+</div>
+</div>
+<!-- Mobile Menu Button (Absolute positioned to top right for safety) -->
+<button class="md:hidden absolute top-5 right-6 text-on-surface focus:outline-none z-[60]" id="mobile-menu-btn">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+<!-- Mobile Menu Overlay -->
+<div class="fixed inset-0 bg-[#080f22] z-[55] hidden flex-col pt-24 px-8 transform transition-transform duration-300 translate-x-full" id="mobile-menu">
+<div class="flex flex-col space-y-8 font-headline text-3xl">
+<a class="text-on-surface hover:text-primary transition-colors" href="/es/solutions.html">Soluciones</a>
+<a class="text-on-surface hover:text-primary transition-colors" href="/es/industries.html">Industrias</a>
+<a class="text-on-surface hover:text-primary transition-colors" href="/es/pricing.html">Precios</a>
+<a class="text-on-surface hover:text-primary transition-colors" href="/es/integrations.html">Integraciones</a>
+<a class="text-on-surface hover:text-primary transition-colors" href="/es/about.html">Nosotros</a>
+<a class="text-on-surface hover:text-primary transition-colors" href="/es/el-salvador.html">El Salvador</a>
+</div>
+<div class="mt-12">
+<a class="bg-primary text-on-primary px-6 py-3 rounded-lg font-label font-bold uppercase tracking-widest text-sm inline-block w-full text-center" href="/es/book-audit.html">Reserva Tu AuditorÃ­a Gratis</a>
+</div>
+</div>
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const btn = document.getElementById('mobile-menu-btn');
+            const menu = document.getElementById('mobile-menu');
+            if(btn && menu) {
+                btn.addEventListener('click', () => {
+                    const isHidden = menu.classList.contains('translate-x-full');
+                    if (isHidden) {
+                        menu.classList.remove('hidden');
+                        // tiny delay to allow display:block to apply before animating transform
+                        setTimeout(() => {
+                            menu.classList.remove('translate-x-full');
+                            menu.classList.add('translate-x-0');
+                        }, 10);
+                        btn.innerHTML = '<span class="material-symbols-outlined text-3xl text-error">close</span>';
+                    } else {
+                        menu.classList.remove('translate-x-0');
+                        menu.classList.add('translate-x-full');
+                        setTimeout(() => menu.classList.add('hidden'), 300);
+                        btn.innerHTML = '<span class="material-symbols-outlined text-3xl">menu</span>';
+                    }
+                });
+            }
+        });
+    </script>
+</nav>
+<main class="pt-24 pb-0">
+  <section class="relative min-h-[60vh] flex flex-col items-center justify-center px-6 md:px-8 mt-12 mb-20 z-10">
+    <div class="relative z-10 max-w-6xl text-center">
+      <span class="text-xs font-label tracking-[0.2em] text-primary uppercase font-bold mb-6 block">Unified Architecture</span>
+      <h1 class="font-headline text-5xl sm:text-6xl md:text-7xl font-bold text-on-background leading-[1.1] tracking-tight mb-8 animate-slide-up">
+        Trabaja con las herramientas que su empresa ya utiliza
+      </h1>
+      <p class="font-body text-xl md:text-2xl text-on-surface-variant max-w-4xl mx-auto mb-12 leading-relaxed font-light px-4">
+        Cresca OS se conecta con las plataformas que impulsan su marketing, comunicación, ventas y operaciones — para que pueda centralizar su crecimiento sin reconstruir toda su infraestructura tecnológica.
+      </p>
+    </div>
+  </section>
+
+  <!-- Integrations Content -->
+  <section class="py-24 px-6 md:px-8 relative z-10 bg-surface-container-lowest border-y border-outline-variant/5">
+    <div class="max-w-5xl mx-auto">
+      
+      <div class="mb-20">
+        <h2 class="font-headline text-3xl font-bold text-white mb-6">Por qué importan las integraciones</h2>
+        <p class="text-on-surface-variant text-lg font-light leading-relaxed">Las herramientas desconectadas generan pérdida de leads, tiempos de respuesta lentos y trabajo administrativo duplicado. Cuando sus anuncios de Facebook no se comunican directamente con su CRM, y su app de citas no sincroniza con su facturación, su equipo pierde horas capturando datos manualmente — y usted pierde ventas ante competidores más ágiles. Cresca OS elimina estas brechas conectando cada parte del recorrido de su cliente en un solo sistema automatizado.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
+        <div class="bg-surface-container rounded-2xl p-8 border border-outline-variant/10 hover:border-primary/30 transition-colors">
+          <div class="w-12 h-12 rounded-xl bg-[#1877F2]/10 flex items-center justify-center mb-6">
+            <span class="material-symbols-outlined text-[#1877F2] text-2xl">campaign</span>
+          </div>
+          <h3 class="font-headline font-bold text-xl text-white mb-2">Publicidad y Generación de Leads</h3>
+          <p class="text-brand-green/80 text-sm font-label font-bold tracking-widest uppercase mb-4">Meta Ads (Facebook/Instagram), Google Ads, TikTok Ads, Formularios Web</p>
+          <p class="text-on-surface-variant text-sm font-light leading-relaxed">En el momento en que un cliente potencial completa un formulario desde cualquier canal publicitario, Cresca OS lo captura y activa una secuencia de seguimiento en cuestión de segundos — para que usted siempre sea el primero en responder.</p>
+        </div>
+        <div class="bg-surface-container rounded-2xl p-8 border border-outline-variant/10 hover:border-primary/30 transition-colors">
+          <div class="w-12 h-12 rounded-xl bg-[#F22F46]/10 flex items-center justify-center mb-6">
+            <span class="material-symbols-outlined text-[#F22F46] text-2xl">sms</span>
+          </div>
+          <h3 class="font-headline font-bold text-xl text-white mb-2">Comunicación</h3>
+          <p class="text-brand-green/80 text-sm font-label font-bold tracking-widest uppercase mb-4">Twilio, WhatsApp, Google Workspace, Outlook</p>
+          <p class="text-on-surface-variant text-sm font-light leading-relaxed">Consolide todos sus mensajes de SMS, correo electrónico y redes sociales en una sola bandeja de entrada unificada. Su equipo verá el historial completo de conversaciones de cada contacto — sin tener que alternar entre cinco aplicaciones diferentes.</p>
+        </div>
+        <div class="bg-surface-container rounded-2xl p-8 border border-outline-variant/10 hover:border-primary/30 transition-colors">
+          <div class="w-12 h-12 rounded-xl bg-[#635BFF]/10 flex items-center justify-center mb-6">
+            <span class="material-symbols-outlined text-[#635BFF] text-2xl">payments</span>
+          </div>
+          <h3 class="font-headline font-bold text-xl text-white mb-2">Pagos y Finanzas</h3>
+          <p class="text-brand-green/80 text-sm font-label font-bold tracking-widest uppercase mb-4">Stripe, QuickBooks, PayPal</p>
+          <p class="text-on-surface-variant text-sm font-light leading-relaxed">Automatice la facturación, cobre depósitos y realice el seguimiento de pagos directamente dentro de su embudo de ventas. Lleve a sus clientes desde el contrato firmado hasta el pago cobrado sin salir del sistema.</p>
+        </div>
+        <div class="bg-surface-container rounded-2xl p-8 border border-outline-variant/10 hover:border-primary/30 transition-colors">
+          <div class="w-12 h-12 rounded-xl bg-[#FF4F00]/10 flex items-center justify-center mb-6">
+            <span class="material-symbols-outlined text-[#FF4F00] text-2xl">electric_bolt</span>
+          </div>
+          <h3 class="font-headline font-bold text-xl text-white mb-2">Automatización y Conexiones Personalizadas</h3>
+          <p class="text-brand-green/80 text-sm font-label font-bold tracking-widest uppercase mb-4">Zapier, Make (Integromat), Webhooks</p>
+          <p class="text-on-surface-variant text-sm font-light leading-relaxed">Conecte Cresca OS con más de 5,000 aplicaciones adicionales. Si su empresa utiliza una herramienta que no soportamos de forma nativa, podemos construir el puente — asegurando que cada parte de su operación permanezca conectada.</p>
+        </div>
+      </div>
+      
+      <div class="bg-surface-container-high rounded-2xl p-10 border border-brand-green/20">
+        <h2 class="font-headline text-2xl font-bold text-white mb-4">Resultado Central</h2>
+        <p class="text-on-surface-variant text-lg font-light leading-relaxed">Cresca OS puede consolidar múltiples herramientas desconectadas en un solo sistema unificado — reduciendo su gasto mensual en software — o integrarse limpiamente con su infraestructura actual sin necesidad de una migración completa. De cualquier manera, todas las herramientas trabajan juntas y ningún lead se pierde en el proceso.</p>
+      </div>
+
+    </div>
+  </section>
+  
+  <section class="py-24 px-6 md:px-8 mt-12 bg-background border-y border-outline-variant/10 relative z-10">
+    <div class="max-w-4xl mx-auto relative z-10">
+      <div class="text-center mb-16">
+        <h2 class="font-headline text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">Preguntas Frecuentes de Integración</h2>
+      </div>
+      <div class="space-y-4">
+        <details class="group bg-surface-container rounded-2xl border border-outline-variant/10 hover:border-primary/30 transition-colors duration-300">
+          <summary class="flex justify-between items-center font-headline font-bold text-lg text-white cursor-pointer list-none p-6 outline-none">
+            ¿Cómo conecta Cresca OS con mis anuncios de Facebook y Google?
+            <span class="transition group-open:rotate-180">
+              <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+            </span>
+          </summary>
+          <p class="text-on-surface-variant text-sm font-light leading-relaxed mt-2 p-6 pt-0 animate-fade-in group-open:block hidden">
+            Nos conectamos directamente con sus cuentas de Meta Ads y Google Ads. Cuando un cliente potencial completa un formulario o hace clic desde cualquier anuncio, Cresca OS captura su información en tiempo real e inicia de inmediato una secuencia de respuesta, eliminando el retraso que normalmente destruye la conversión.
+          </p>
+        </details>
+        <details class="group bg-surface-container rounded-2xl border border-outline-variant/10 hover:border-primary/30 transition-colors duration-300">
+          <summary class="flex justify-between items-center font-headline font-bold text-lg text-white cursor-pointer list-none p-6 outline-none">
+            ¿Qué pasa si uso una herramienta que no está en su lista de integraciones?
+            <span class="transition group-open:rotate-180">
+              <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+            </span>
+          </summary>
+          <p class="text-on-surface-variant text-sm font-light leading-relaxed mt-2 p-6 pt-0 animate-fade-in group-open:block hidden">
+            Podemos conectarnos prácticamente con cualquier plataforma a través de Zapier, Make o webhooks personalizados. Si su empresa utiliza una herramienta especializada para su industria, nuestro equipo de implementación evaluará el mejor método de conexión durante su proceso de incorporación.
+          </p>
+        </details>
+        <details class="group bg-surface-container rounded-2xl border border-outline-variant/10 hover:border-primary/30 transition-colors duration-300">
+          <summary class="flex justify-between items-center font-headline font-bold text-lg text-white cursor-pointer list-none p-6 outline-none">
+            ¿Tengo que dejar de usar mis herramientas actuales para trabajar con Cresca OS?
+            <span class="transition group-open:rotate-180">
+              <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+            </span>
+          </summary>
+          <p class="text-on-surface-variant text-sm font-light leading-relaxed mt-2 p-6 pt-0 animate-fade-in group-open:block hidden">
+            No. Trabajamos con su configuración actual y le asesoramos sobre el camino más sólido operativamente — ya sea una migración completa a un sistema unificado o una integración en capas con sus herramientas actuales. Nunca imponemos un enfoque de reemplazo forzado.
+          </p>
+        </details>
+        <details class="group bg-surface-container rounded-2xl border border-outline-variant/10 hover:border-primary/30 transition-colors duration-300">
+          <summary class="flex justify-between items-center font-headline font-bold text-lg text-white cursor-pointer list-none p-6 outline-none">
+            ¿Puede Cresca OS recibir leads de múltiples plataformas publicitarias al mismo tiempo?
+            <span class="transition group-open:rotate-180">
+              <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+            </span>
+          </summary>
+          <p class="text-on-surface-variant text-sm font-light leading-relaxed mt-2 p-6 pt-0 animate-fade-in group-open:block hidden">
+            Sí. Cresca OS está diseñado para gestionar el flujo de leads desde múltiples canales — Meta, Google, TikTok y fuentes web orgánicas — simultáneamente, dirigiendo cada lead al embudo correcto, activando la secuencia de seguimiento adecuada y registrando cada punto de contacto de forma automática.
+          </p>
+        </details>
+      </div>
+    </div>
+  </section>
+<!-- Final CTA Section -->
+  <section class="py-24 px-6 md:px-8 mt-12 bg-background border-t border-outline-variant/10 relative z-10 overflow-hidden">
+    <div class="absolute inset-0 pointer-events-none z-0 flex justify-center">
+      <div class="w-[600px] h-[600px] bg-primary/5 rounded-full blur-[100px] translate-y-1/4"></div>
+    </div>
+    <div class="max-w-4xl mx-auto flex flex-col items-center justify-center text-center relative z-10">
+      <h2 class="font-headline text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">¿Listo para unificar sus herramientas?</h2>
+      <p class="font-body text-xl text-on-surface-variant mb-12 max-w-2xl font-light">Deje de perder clientes por sistemas desconectados. Permítanos construir su motor de automatización.</p>
+      <a class="signature-texture text-on-primary px-10 py-5 rounded-xl font-label font-bold tracking-widest text-sm uppercase shadow-[0_0_30px_rgba(0,230,138,0.3)] transition-all duration-300 hover:scale-105" href="/es/book-audit.html">
+        Agenda su Auditoria de Sistemas
+      </a>
+    </div>
+  </section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#0b1326] w-full border-t border-[#45474b]/15 mt-32">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8 px-8 py-16 max-w-7xl mx-auto">
+<div class="col-span-2 md:col-span-1">
+<div class="flex items-center gap-2.5 mb-6">
+<svg class="w-6 h-6" fill="none" height="24" viewbox="0 0 48 48" width="24" xmlns="http://www.w3.org/2000/svg">
+<circle cx="24" cy="24" r="18" stroke="#0A84FF" stroke-width="3"></circle>
+<ellipse cx="24" cy="24" rx="13" ry="7.5" stroke="#00E68A" stroke-width="3" transform="rotate(60 24 24)"></ellipse>
+<ellipse cx="24" cy="24" rx="13" ry="7.5" stroke="#00E68A" stroke-width="3" transform="rotate(-60 24 24)"></ellipse>
+<circle cx="24" cy="6" fill="#0A84FF" r="2.5"></circle>
+<circle cx="24" cy="42" fill="#0A84FF" r="2.5"></circle>
+<circle cx="39.59" cy="15" fill="#00E68A" r="2.5"></circle>
+<circle cx="8.41" cy="15" fill="#FFFFFF" r="2.5"></circle>
+<circle cx="39.59" cy="33" fill="#FFFFFF" r="2.5"></circle>
+<circle cx="8.41" cy="33" fill="#00E68A" r="2.5"></circle>
+<circle cx="24" cy="24" fill="#FFFFFF" r="3.5"></circle>
+</svg>
+<div class="flex items-baseline font-serif text-xl font-bold tracking-tighter">
+<span class="text-white">CRESCA</span><span class="text-[#00E68A] ml-px">OS</span>
+</div>
+</div>
+<p class="font-sans text-sm text-[#8f9095] mb-8 leading-relaxed max-w-xs">
+                    &lt; 5s Operations Intelligence for the next generation of scalable businesses.
+                </p>
+</div>
+<div>
+<h6 class="text-[#4edea3] font-label text-xs uppercase tracking-widest mb-6 font-bold">Soluciones</h6>
+<ul class="space-y-4">
+<li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="/es/book-audit.html">AuditorÃ­a de Sistemas</a></li>
+<li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="/es/pricing.html">Precios</a></li>
+<li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="/es/industries.html">Industrias</a></li>
+<li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="/es/integrations.html">Integraciones</a></li>
+</ul>
+</div>
+<div>
+<h6 class="text-[#4edea3] font-label text-xs uppercase tracking-widest mb-6 font-bold">Mercados</h6>
+<ul class="space-y-4">
+<li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="/es/about.html">Estrategia EE.UU.</a></li>
+<li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="/es/el-salvador.html">Hub El Salvador</a></li>
+<li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="/es/industries.html">Industria Solar</a></li>
+</ul>
+</div>
+<div>
+<h6 class="text-[#4edea3] font-label text-xs uppercase tracking-widest mb-6 font-bold">Empresa</h6>
+<ul class="space-y-4">
+<li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="/es/about.html">Nosotros</a></li>
+<li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="/es/privacy.html">PolÃ­tica de Privacidad</a></li>
+<li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="/es/terms.html">TÃ&copy;rminos de Servicio</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-8 py-8 border-t border-[#45474b]/10 text-center">
+<p class="font-sans text-xs text-[#8f9095] opacity-80 uppercase tracking-widest">
+                Â&copy; 2026 Cresca OS. &lt; 5s Operations Intelligence.
+            </p>
+<p class="font-sans text-xs text-[#8f9095] mt-2">
+                    <a class="hover:text-[#4edea3] transition-colors" href="mailto:info@crescaos.com">info@crescaos.com</a> | 516-298-8323
+                </p>
+                <div class="mt-6 pt-6 border-t border-[#45474b]/5">
+                    <p class="font-sans text-[10px] text-[#8f9095] opacity-70 leading-relaxed max-w-2xl mx-auto uppercase tracking-tighter">
+                        31 Kirby Lane, Central Islip, NY 11550 <br>
+                        Al proporcionar su número de teléfono, acepta recibir comunicaciones por SMS de Cresca OS. Pueden aplicarse cargos por mensajes y datos. Responda STOP para darse de baja. La información móvil no se compartirá con terceros o afiliados con fines de marketing.
+                    </p>
+                </div>
+                <div class="flex justify-center gap-6 mt-4 text-[10px] uppercase tracking-widest text-[#8f9095] opacity-60">
+                    <a href="/es/privacy.html" class="hover:text-white transition-colors">Política de Privacidad</a>
+                    <a href="/es/terms.html" class="hover:text-white transition-colors">Términos de Servicio</a>
+                </div>
+
+</footer>
+
+    <!-- GHL Chat Widget -->
+    <script 
+      src="https://widgets.leadconnectorhq.com/loader.js"  
+      data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" 
+      data-widget-id="69d3ebd934c0448115bc10d9"> 
+    </script>
+
+</body></html>
+

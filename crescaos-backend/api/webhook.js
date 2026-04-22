@@ -98,13 +98,23 @@ module.exports = async (req, res) => {
       if (payload.leads_monthly) noteContent += `Monthly Leads: ${payload.leads_monthly}\n`;
     }
     
-    // Attach the note to the contact data
-    contactData.notes = [noteContent];
-
     // 3. Upsert Contact in GHL
     if (contactData.email) {
       const ghlContact = await ghl.upsertContact(contactData);
       const contactId = ghlContact.id || (ghlContact.contact && ghlContact.contact.id);
+
+      // 3b. Create Note on the contact (GHL API v2 requires a separate /notes call)
+      if (contactId && noteContent) {
+        try {
+          await ghl.request('POST', `/contacts/${contactId}/notes`, {
+            userId: '',
+            body: noteContent
+          });
+          logger.info('Note added to GHL contact', { contactId });
+        } catch (noteErr) {
+          logger.warn('Note creation failed (non-critical)', noteErr.message);
+        }
+      }
 
       // 4. Create Opportunity in the Sales Pipeline
       const pipelineId = process.env.GHL_PIPELINE_ID || 'mPu4ZjliPtVnfAADBj0h';

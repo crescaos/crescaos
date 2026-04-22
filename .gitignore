@@ -3,8 +3,14 @@
 .tmp
 tmp/
 .agent
-CRESCA*
+CRESCA*/
+!crescaos-backend/
+Crescafiles/
+Marketing assets/
 *.docx
 *.pptx
 *.xlsx
 Cresca Os website copy
+node_modules/
+scratch/
+package-lock.json

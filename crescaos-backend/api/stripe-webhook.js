@@ -55,7 +55,7 @@ module.exports = async (req, res) => {
         'lite': process.env.GHL_SALE_LITE_ID || 'a0296611-9844-4c19-b344-e4d028c70c69',
         'growth': process.env.GHL_SALE_GROWTH_ID || 'bb4b9701-abc6-42cd-8690-0f4df07bd8ea',
         'pro': process.env.GHL_SALE_PRO_ID || '9176acb4-3c14-46bf-b196-34682e4b0c34',
-        'discovery': process.env.GHL_DISCOVERY_STAGE_ID || 'b621db30-363f-42e5-a0ed-4a00465d8363' // Discovery Call
+        'discovery': process.env.GHL_AUDIT_STAGE_ID || 'b621db30-363f-42e5-a0ed-4a00465d8363' // Discovery Call (matches Netlify: GHL_AUDIT_STAGE_ID)
       };
 
       const pipelineId = process.env.GHL_AUDIT_PIPELINE_ID || 'k9Ke4zv94rXG6WezViHR';
