@@ -5,7 +5,7 @@ exports.handler = async (event) => {
   
   try {
     // Public Booking Link for your GHL Calendar
-    const SUCCESS_URL = "https://link.crescaos.com/widget/booking/OlqdoFrT1sgJ3f2nnaIa";
+    const SUCCESS_URL = "https://crm.crescaos.com/widget/booking/OlqdoFrT1sgJ3f2nnaIa";
     const CANCEL_URL = "https://crescaos.com/pricing";
 
     let targetPlan = plan || 'none';
