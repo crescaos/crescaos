@@ -6,10 +6,12 @@ const logger = require('./logger');
  */
 class GHLClient {
   constructor() {
-    this.accessToken = process.env.GHL_ACCESS_TOKEN;
-    this.locationId = process.env.GHL_LOCATION_ID;
     this.baseUrl = 'https://services.leadconnectorhq.com';
   }
+
+  // Read credentials at request time, not import time
+  get accessToken() { return process.env.GHL_ACCESS_TOKEN; }
+  get locationId()  { return process.env.GHL_LOCATION_ID; }
 
   /**
    * Helper to make authenticated requests to GHL

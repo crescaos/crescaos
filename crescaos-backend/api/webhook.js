@@ -120,15 +120,19 @@ module.exports = async (req, res) => {
       const pipelineId = process.env.GHL_PIPELINE_ID || 'mPu4ZjliPtVnfAADBj0h';
       const stageId = process.env.GHL_STAGE_ID || '54daa97e-e0fd-45ba-b017-539e2e5e61df';
 
+      logger.info('Attempting opportunity creation', { contactId, pipelineId, stageId });
+
       if (contactId && pipelineId) {
-        await ghl.createOpportunity(
-          contactId,
-          pipelineId,
-          stageId,
-          `${isESLead ? 'ES' : (isAuditWizard ? 'AUDIT' : 'LEAD')}: ${payload.company || payload.full_name || payload.firstName}`,
-          isAuditWizard ? (payload.lost_revenue || 0) : 0
-        );
-        logger.info('Opportunity created in GHL Sales Pipeline', { contactId, isAuditWizard });
+        try {
+          const oppTitle = `${isESLead ? 'ES' : (isAuditWizard ? 'AUDIT' : 'LEAD')}: ${payload.company || payload.full_name || payload.firstName}`;
+          const oppValue = isAuditWizard ? (payload.lost_revenue || 0) : 0;
+          const opp = await ghl.createOpportunity(contactId, pipelineId, stageId, oppTitle, oppValue);
+          logger.info('Opportunity created in GHL', { contactId, pipelineId, stageId, oppId: opp && (opp.id || (opp.opportunity && opp.opportunity.id)) });
+        } catch (oppErr) {
+          logger.error('Opportunity creation failed', { contactId, pipelineId, stageId, error: oppErr.response ? JSON.stringify(oppErr.response.data) : oppErr.message });
+        }
+      } else {
+        logger.warn('Skipped opportunity — missing contactId or pipelineId', { contactId, pipelineId });
       }
     }
 
