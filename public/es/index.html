@@ -531,6 +531,14 @@
                         btn.innerHTML = '<span class="material-symbols-outlined text-3xl">menu</span>';
                     }
                 });
+                // Close menu on resize to desktop
+                window.addEventListener('resize', () => {
+                    if (window.innerWidth >= 768 && menu && !menu.classList.contains('translate-x-full')) {
+                        menu.classList.add('translate-x-full');
+                        menu.classList.add('hidden');
+                        btn.innerHTML = '<span class="material-symbols-outlined text-3xl">menu</span>';
+                    }
+                });
             }
         });
     </script>
@@ -637,7 +645,7 @@
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-24">
 <div class="border-t-2 border-primary pt-6">
 <h4 class="font-headline text-2xl font-bold text-white mb-3">Configuración Hecha para Ti</h4>
-<p class="text-on-surface-variant text-sm">Construimos y lanzamos tu sistema por ti. No se requiere trabajo tÃ&copy;cnico de tu parte.</p>
+<p class="text-on-surface-variant text-sm">Construimos y lanzamos tu sistema por ti. No se requiere trabajo tí&copy;cnico de tu parte.</p>
 </div>
 <div class="border-t-2 border-brand-green pt-6">
 <h4 class="font-headline text-2xl font-bold text-white mb-3">Diseñado para Negocios Reales</h4>
@@ -645,7 +653,7 @@
 </div>
 <div class="border-t-2 border-primary pt-6">
 <h4 class="font-headline text-2xl font-bold text-white mb-3">Sistema Todo en Uno</h4>
-<p class="text-on-surface-variant text-sm">Sin más cambios entre herramientas ni pÃ&copy;rdida de información crítica.</p>
+<p class="text-on-surface-variant text-sm">Sin más cambios entre herramientas ni pí&copy;rdida de información crítica.</p>
 </div>
 <div class="border-t-2 border-brand-green pt-6">
 <h4 class="font-headline text-2xl font-bold text-white mb-3">Optimización Continua</h4>
@@ -690,8 +698,8 @@
 </div>
 <!-- Why Cresca OS -->
 <div class="bg-surface-container-low p-10 md:p-12 rounded-[2rem] border border-outline-variant/10 shadow-2xl">
-<span class="text-xs font-label tracking-[0.2em] text-primary uppercase font-bold mb-6 block">Por QuÃ&copy; Cresca OS</span>
-<h2 class="font-headline text-4xl md:text-4xl font-bold mb-10 text-white leading-tight">El Sistema DetrÃ¡s de Tu Crecimiento</h2>
+<span class="text-xs font-label tracking-[0.2em] text-primary uppercase font-bold mb-6 block">Por Quí&copy; Cresca OS</span>
+<h2 class="font-headline text-4xl md:text-4xl font-bold mb-10 text-white leading-tight">El Sistema Detrás de Tu Crecimiento</h2>
 <ul class="space-y-6">
 <li class="flex items-start gap-4">
 <span class="material-symbols-outlined text-primary mt-0.5 shrink-0">task_alt</span>
@@ -703,11 +711,11 @@
 </li>
 <li class="flex items-start gap-4">
 <span class="material-symbols-outlined text-primary mt-0.5 shrink-0">task_alt</span>
-<span class="text-on-surface text-lg"><strong>Diseñado para empresas de servicios</strong> — no software genÃ&copy;rico</span>
+<span class="text-on-surface text-lg"><strong>Diseñado para empresas de servicios</strong> — no software gení&copy;rico</span>
 </li>
 <li class="flex items-start gap-4">
 <span class="material-symbols-outlined text-primary mt-0.5 shrink-0">task_alt</span>
-<span class="text-on-surface text-lg"><strong>Respuesta más rÃ¡pida</strong> y mejor seguimiento integrado</span>
+<span class="text-on-surface text-lg"><strong>Respuesta más rápida</strong> y mejor seguimiento integrado</span>
 </li>
 <li class="flex items-start gap-4">
 <span class="material-symbols-outlined text-primary mt-0.5 shrink-0">task_alt</span>
@@ -725,7 +733,7 @@
 <div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/80 to-surface/40 group-hover:bg-surface/50 transition-colors duration-500"></div>
 <span class="material-symbols-outlined text-primary text-[60px] mb-6 relative z-10 opacity-90 drop-shadow-[0_0_15px_rgba(10,132,255,0.5)]">public</span>
 <h3 class="font-headline text-3xl md:text-5xl font-bold text-white mb-6 relative z-10 tracking-tight">Estrategia EE.UU.</h3>
-<p class="text-on-surface-variant text-lg md:text-xl max-w-md relative z-10 font-light leading-relaxed">Arquitectura de nivel ejecutivo, anÃ¡lisis de mercado e ingeniería con cumplimiento normativo desde NorteamÃ&copy;rica.</p>
+<p class="text-on-surface-variant text-lg md:text-xl max-w-md relative z-10 font-light leading-relaxed">Arquitectura de nivel ejecutivo, análisis de mercado e ingeniería con cumplimiento normativo desde Norteamí&copy;rica.</p>
 <div class="mt-12 flex items-center gap-3 relative z-10 bg-surface-container bg-opacity-80 backdrop-blur-md border border-outline-variant/20 rounded-full px-6 py-2">
 <span class="w-2.5 h-2.5 rounded-full bg-primary animate-pulse shadow-[0_0_10px_rgba(10,132,255,0.8)]"></span>
 <span class="font-label text-[10px] md:text-xs uppercase tracking-[0.2em] text-white">NEW YORK / LOS ANGELES</span>

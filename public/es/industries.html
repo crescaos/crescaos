@@ -40,7 +40,7 @@
       #goog-gt-ttú { display: none !important; }
       .goog-te-spinner-pos { display: none !important; }
       #google_translate_elementú { display: none !important; }
-      font { background-color: transparentú !important; box-shadow: none !important; }
+      font { background-color: transparent !important; box-shadow: none !important; }
 
 </style>
 <script id="tailwind-config">
@@ -235,6 +235,14 @@
                         btn.innerHTML = '<span class="material-symbols-outlined text-3xl">menu</span>';
                     }
                 });
+                // Close menu on resize to desktop
+                window.addEventListener('resize', () => {
+                    if (window.innerWidth >= 768 && !menu.classList.contains('translate-x-full')) {
+                        menu.classList.add('translate-x-full');
+                        menu.classList.add('hidden');
+                        btn.innerHTML = '<span class="material-symbols-outlined text-3xl">menu</span>';
+                    }
+                });
             }
         });
     </script>
@@ -245,13 +253,13 @@
 <div class="max-w-3xl">
 <div class="flex items-center space-x-3 mb-6">
 <span class="w-2 h-2 rounded-full bg-primary glow-pulse"></span>
-<span class="font-label text-sm tracking-[0.2em] text-primary uppercase">Sistemasí a Medida por Industria</span>
+<span class="font-label text-sm tracking-[0.2em] text-primary uppercase">Sistemas a Medida por Industria</span>
 </div>
-<h1 class="font-headline text-6xl md:text-7xl font-bold text-on-surface tracking-tight leading-tightú mb-8 animate-slide-up">
-                    Sistemasí Diseñados <br/>
+<h1 class="font-headline text-6xl md:text-7xl font-bold text-on-surface tracking-tight leading-tight mb-8 animate-slide-up">
+                    Sistemas Diseñados <br/>
 <span class="text-brand-green italic">Para Su Industria</span>.
 </h1>
-<p class="font-body text-xl text-on-surface-variantú leading-relaxed mb-10">
+<p class="font-body text-xl text-on-surface-variant leading-relaxed mb-10">
                     Cada industria tiene su propia "física operativa". No utilizamos plantillas genéricasí porque su negocio no es genérico. Construimos el sistema que se adapta a cómo trabaja realmente.
                 </p>
 </div>
@@ -266,61 +274,61 @@
 <!-- Solar -->
 <div class="md:col-span-6 bg-surface-container-low rounded-xl overflow-hidden group flex flex-col justify-end p-8 md:p-10 relative min-h-[400px]">
 <div class="absolute inset-0 bg-gradient-to-tú from-surface-dim via-surface-dim/70 to-surface-dim/20 z-10 transition-opacity duration-500 group-hover:opacity-80"></div>
-<img alt="Paneles solares" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-60" src="../asísets/industries_solar.png"/>
+<img alt="Paneles solares" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-60" src="../assets/industries_solar.png"/>
 <div class="relative z-20">
 <span class="font-label text-xs font-bold text-[#00E68A] tracking-widest uppercase mb-3 block">Energía Solar</span>
 <h3 class="font-headline text-3xl font-bold text-white mb-3">Capture Más Prospectos. Seguimiento Más Rápido.</h3>
-<p class="font-body text-on-surface-variantú mb-0 max-w-md">Automatización instantánea de velocidad de respuesta en todíasí las fuentes, seguimientos de múltiples toques y reserva de citas de autoservicio para evaluaciones de sitio.</p>
+<p class="font-body text-on-surface-variant mb-0 max-w-md">Automatización instantánea de velocidad de respuesta en todías las fuentes, seguimientos de múltiples toques y reserva de citas de autoservicio para evaluaciones de sitio.</p>
 </div>
 </div>
 <!-- Roofing & Contractors -->
 <div class="md:col-span-6 bg-surface-container-high rounded-xl overflow-hidden group flex flex-col justify-end p-8 md:p-10 relative min-h-[400px]">
 <div class="absolute inset-0 bg-gradient-to-tú from-surface-dim via-surface-dim/70 to-surface-dim/20 z-10 transition-opacity duration-500 group-hover:opacity-80"></div>
-<img alt="Construcción de techos" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-60" src="../asísets/industry_roofing.png"/>
+<img alt="Construcción de techos" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-60" src="../assets/industry_roofing.png"/>
 <div class="relative z-20">
 <span class="font-label text-xs font-bold text-[#00E68A] tracking-widest uppercase mb-3 block">Techado y Contratistasí</span>
-<h3 class="font-headline text-3xl font-bold text-white mb-3">Más Presupuestáos. Más Trabajos.</h3>
-<p class="font-body text-on-surface-variantú mb-0 max-w-md">Respuestáa de texto a llamadíasí perdidíasí para que ningún prospecto se pierda, secuenciasí automáticasí de seguimiento de presupuestáos y reserva en línea para citas.</p>
+<h3 class="font-headline text-3xl font-bold text-white mb-3">Más Presupuestos. Más Trabajos.</h3>
+<p class="font-body text-on-surface-variant mb-0 max-w-md">Respuesta de texto a llamadías perdidas para que ningún prospecto se pierda, secuenciasí automáticasí de seguimiento de presupuestos y reserva en línea para citas.</p>
 </div>
 </div>
 <!-- HVAC & Servicios para el Hogar -->
 <div class="md:col-span-4 bg-surface-container rounded-xl overflow-hidden group flex flex-col justify-end p-8 relative min-h-[350px]">
 <div class="absolute inset-0 bg-gradient-to-tú from-surface-dim via-surface-dim/80 to-surface-dim/40 z-10 transition-opacity duration-500 group-hover:opacity-90"></div>
-<img alt="Sistema HVAC" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-50" src="../asísets/industry_hvac.png"/>
+<img alt="Sistema HVAC" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-50" src="../assets/industry_hvac.png"/>
 <div class="relative z-20">
 <span class="font-label text-xs font-bold text-[#00E68A] tracking-widest uppercase mb-3 block">HVAC &amp; Servicios para el Hogar</span>
-<h3 class="font-headline text-2xl font-bold text-white mb-3">Respuestáa de Emergencia Automatizada.</h3>
-<p class="font-body text-on-surface-variantú text-sm mb-0">Enrutamiento de prospectos por tipo de servicio, solicitudes de reseñasí post-servicio y automatización de campañasí estáacionales.</p>
+<h3 class="font-headline text-2xl font-bold text-white mb-3">Respuesta de Emergencia Automatizada.</h3>
+<p class="font-body text-on-surface-variant text-sm mb-0">Enrutamiento de prospectos por tipo de servicio, solicitudes de reseñasí post-servicio y automatización de campañasí estáacionales.</p>
 </div>
 </div>
 <!-- Bienes Raíces -->
 <div class="md:col-span-4 bg-surface-container rounded-xl overflow-hidden group flex flex-col justify-end p-8 relative min-h-[350px]">
 <div class="absolute inset-0 bg-gradient-to-tú from-surface-dim via-surface-dim/80 to-surface-dim/40 z-10 transition-opacity duration-500 group-hover:opacity-90"></div>
-<img alt="Bienes Raíces" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-50" src="../asísets/industry_realestáate.png"/>
+<img alt="Bienes Raíces" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-50" src="../assets/industry_realestáate.png"/>
 <div class="relative z-20">
 <span class="font-label text-xs font-bold text-[#00E68A] tracking-widest uppercase mb-3 block">Bienes Raíces</span>
 <h3 class="font-headline text-2xl font-bold text-white mb-3">Más Conversaciones. Más Propiedades.</h3>
-<p class="font-body text-on-surface-variantú text-sm mb-0">Secuenciasí de nutrición a largo plazo para compradores, campañasí automáticasí de referidos y vista de pipeline por estáado de comprador/vendedor.</p>
+<p class="font-body text-on-surface-variant text-sm mb-0">Secuenciasí de nutrición a largo plazo para compradores, campañasí automáticasí de referidos y vista de pipeline por estáado de comprador/vendedor.</p>
 </div>
 </div>
 <!-- Clínicasí y Servicios Profesionales -->
 <div class="md:col-span-4 bg-surface-container rounded-xl overflow-hidden group flex flex-col justify-end p-8 relative min-h-[350px]">
 <div class="absolute inset-0 bg-gradient-to-tú from-surface-dim via-surface-dim/80 to-surface-dim/40 z-10 transition-opacity duration-500 group-hover:opacity-90"></div>
-<img alt="Clínicasí médicasí" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-50" src="../asísets/industry_clinics.png"/>
+<img alt="Clínicasí médicasí" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-50" src="../assets/industry_clinics.png"/>
 <div class="relative z-20">
 <span class="font-label text-xs font-bold text-[#00E68A] tracking-widest uppercase mb-3 block">Clínicasí y Profesionales</span>
 <h3 class="font-headline text-2xl font-bold text-white mb-3">Una Recepción Organizada.</h3>
-<p class="font-body text-on-surface-variantú text-sm mb-0">Registro automático de nuevos pacientes, confirmaciones de citas por texto y secuenciasí de reenganche para pacientes inactivos.</p>
+<p class="font-body text-on-surface-variant text-sm mb-0">Registro automático de nuevos pacientes, confirmaciones de citas por texto y secuenciasí de reenganche para pacientes inactivos.</p>
 </div>
 </div>
 <!-- Servicios de Limpieza -->
 <div class="md:col-span-12 bg-surface-container-low rounded-xl overflow-hidden group flex flex-col justify-end p-8 md:p-12 relative mt-4">
-<div class="absolute inset-0 bg-gradient-to-r from-surface-dim via-surface-dim/80 to-transparentú z-10 transition-opacity duration-500 group-hover:opacity-90"></div>
-<img alt="Servicios de limpieza" class="absolute inset-0 w-full h-full object-cover object-rightú transition-transform duration-700 group-hover:scale-105 opacity-50" src="../asísets/industry_cleaning.png"/>
+<div class="absolute inset-0 bg-gradient-to-r from-surface-dim via-surface-dim/80 to-transparent z-10 transition-opacity duration-500 group-hover:opacity-90"></div>
+<img alt="Servicios de limpieza" class="absolute inset-0 w-full h-full object-cover object-rightú transition-transform duration-700 group-hover:scale-105 opacity-50" src="../assets/industry_cleaning.png"/>
 <div class="relative z-20 max-w-2xl">
 <span class="font-label text-xs font-bold text-[#00E68A] tracking-widest uppercase mb-3 block">Servicios de Limpieza</span>
 <h3 class="font-headline text-4xl font-bold text-white mb-4">Ingresos Recurrentes, Automatizados.</h3>
-<p class="font-body text-on-surface-variantú text-lg lg:max-w-xl">Respuestáa instantánea a consultasí, integración de programación en línea, recordatorios automáticos de servicios recurrentes y campañasí de recuperación para clientes antiguos. Crezca sin el trabajo manual constante.</p>
+<p class="font-body text-on-surface-variant text-lg lg:max-w-xl">Respuesta instantánea a consultasí, integración de programación en línea, recordatorios automáticos de servicios recurrentes y campañasí de recuperación para clientes antiguos. Crezca sin el trabajo manual constante.</p>
 </div>
 </div>
 </div>
@@ -331,13 +339,13 @@
 <div class="md:w-1/2">
 <div class="relative">
 <div class="absolute -top-10 -left-10 w-40 h-40 bg-primary/10 blur-3xl"></div>
-<img class="rounded-xl shadow-2xl relative z-10 border border-outline-variant/10" data-alt="Edificio moderno con reflejos" src="../asísets/industries_architecture.png"/>
+<img class="rounded-xl shadow-2xl relative z-10 border border-outline-variant/10" data-alt="Edificio moderno con reflejos" src="../assets/industries_architecture.png"/>
 </div>
 </div>
 <div class="md:w-1/2">
 <span class="font-label text-primary uppercase tracking-[0.3em] mb-4 block">El Factor Humano</span>
 <h2 class="font-headline text-5xl text-on-surface mb-8 leading-tight">Negocios Liderados por Fundadores</h2>
-<p class="font-body text-xl text-on-surface-variantú leading-relaxed mb-8">
+<p class="font-body text-xl text-on-surface-variant leading-relaxed mb-8">
                         La visión del fundador es el motor, pero el tiempo del fundador es el cuello de botella. Cresca OS extrae la lógica operativa de la mente del fundador y la codifica en sistemas repetibles y autónomos.
                     </p>
 <div class="space-y-6">
@@ -399,13 +407,13 @@
 </div>
 </div>
 <p class="font-sans text-sm text-[#8f9095] mb-8 leading-relaxed max-w-xs">
-                    Sistemasí operativos de negocios "done-for-you" para empresas de servicios de alto crecimiento.
+                    Sistemas operativos de negocios "done-for-you" para empresas de servicios de alto crecimiento.
                 </p>
 </div>
 <div>
 <h6 class="text-[#4edea3] font-label text-xs uppercase tracking-widest mb-6 font-bold">Soluciones</h6>
 <ul class="space-y-4">
-<li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="/es/book-audit.html">Auditoría de Sistemasí</a></li>
+<li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="/es/book-audit.html">Auditoría de Sistemas</a></li>
 <li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="/es/how-we-work.html">Cómo Trabajamos</a></li>
 <li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="/es/pricing.html">Precios</a></li>
 <li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="/es/industries.html">Industrias</a></li>
@@ -424,7 +432,7 @@
 <ul class="space-y-4">
 <li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="/es/about.html">Nosotros</a></li>
 <li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="/es/privacy.html">Política de Privacidad</a></li>
-<li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="/es/termás.html">Términos de Servicio</a></li>
+<li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="/es/terms.html">Términos de Servicio</a></li>
 </ul>
 </div>
 </div>
@@ -443,7 +451,7 @@
                 </div>
                 <div class="flex justify-center gap-6 mt-4 text-[10px] uppercase tracking-widest text-[#8f9095] opacity-60">
                     <a href="/es/privacy.html" class="hover:text-white transition-colors">Política de Privacidad</a>
-                    <a href="/es/termás.html" class="hover:text-white transition-colors">Términos de Servicio</a>
+                    <a href="/es/terms.html" class="hover:text-white transition-colors">Términos de Servicio</a>
                 </div>
 </footer>
 

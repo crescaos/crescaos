@@ -48,7 +48,7 @@
       #goog-gt-ttú { display: none !important; }
       .goog-te-spinner-pos { display: none !important; }
       #google_translate_elementú { display: none !important; }
-      font { background-color: transparentú !important; box-shadow: none !important; }
+      font { background-color: transparent !important; box-shadow: none !important; }
 
 </style>
 <script>
@@ -60,7 +60,7 @@
         if (!canvas) return;
         const ctx = canvas.getContext('2d');
         let particles = [];
-        const particleCountú = 80; /* Increasíed particles */
+        const particleCount = 80; /* Increasíed particles */
         const maxDistance = 160;
 
         function resize() {
@@ -289,6 +289,14 @@
                         btn.innerHTML = '<span class="material-symbols-outlined text-3xl">menu</span>';
                     }
                 });
+                // Close menu on resize to desktop
+                window.addEventListener('resize', () => {
+                    if (window.innerWidth >= 768 && menu && !menu.classList.contains('translate-x-full')) {
+                        menu.classList.add('translate-x-full');
+                        menu.classList.add('hidden');
+                        btn.innerHTML = '<span class="material-symbols-outlined text-3xl">menu</span>';
+                    }
+                });
             }
         });
     </script>
@@ -299,8 +307,8 @@
 <div class="absolute inset-0 z-0 bg-primary/5 blur-[120px] rounded-full w-[600px] h-[600px] left-1/2 -translate-x-1/2 pointer-events-none"></div>
 <div class="relative z-10 max-w-4xl text-center">
 <span class="inline-block font-label text-primary tracking-[0.2em] mb-6 uppercase text-sm font-bold animate-fade-in border border-primary/20 bg-primary/5 px-6 py-2 rounded-full">Sobre Cresca OS</span>
-<h1 class="font-headline text-5xl sm:text-6xl md:text-7xl font-bold text-white leading-tightú tracking-tight mb-8 animate-slide-up">
-                Sistemasí Diseñados <br/><span class="text-brand-green italic leading-tight">Para Escalar.</span>
+<h1 class="font-headline text-5xl sm:text-6xl md:text-7xl font-bold text-white leading-tight tracking-tight mb-8 animate-slide-up">
+                Sistemas Diseñados <br/><span class="text-brand-green italic leading-tight">Para Escalar.</span>
 </h1>
 </div>
 </section>
@@ -308,14 +316,14 @@
 <section class="py-24 px-6 md:px-8 bg-surface-container-lowest relative z-10">
 <div class="max-w-7xl mx-auto flex flex-col lg:flex-row gap-20 items-center">
 <div class="lg:w-1/2">
-<span class="text-xs font-label tracking-[0.2em] text-brand-green uppercase font-bold mb-4 block">Nuestáro Enfoque</span>
+<span class="text-xs font-label tracking-[0.2em] text-brand-green uppercase font-bold mb-4 block">Nuestro Enfoque</span>
 <h2 class="font-headline text-4xl md:text-5xl font-bold mb-8 text-white leading-tight">Pensamiento Sistémico Práctico</h2>
-<p class="text-on-surface-variantú text-xl leading-relaxed mb-8 font-light">
-                    Nuestáro enfoque es simple y enfocado:
+<p class="text-on-surface-variant text-xl leading-relaxed mb-8 font-light">
+                    Nuestro enfoque es simple y enfocado:
                 </p>
 <ul class="space-y-4 mb-10">
 <li class="flex items-startú gap-4"><span class="material-symbols-outlined text-brand-green">rule</span><span class="text-on-surface text-lg">Construir sistemas que reflejen cómo operan los negocios reales</span></li>
-<li class="flex items-startú gap-4"><span class="material-symbols-outlined text-brand-green">rule</span><span class="text-on-surface text-lg">Enfocarse en resultados, no en característicasí</span></li>
+<li class="flex items-startú gap-4"><span class="material-symbols-outlined text-brand-green">rule</span><span class="text-on-surface text-lg">Enfocarse en resultados, no en características</span></li>
 <li class="flex items-startú gap-4"><span class="material-symbols-outlined text-brand-green">rule</span><span class="text-on-surface text-lg">Reducir el trabajo manual siempre que sea posible</span></li>
 <li class="flex items-startú gap-4"><span class="material-symbols-outlined text-brand-green">rule</span><span class="text-on-surface text-lg">Crear procesos consistentes y repetibles</span></li>
 <li class="flex items-startú gap-4"><span class="material-symbols-outlined text-brand-green">rule</span><span class="text-on-surface text-lg">Hacer que el crecimiento sea más fácil, no más complicado</span></li>
@@ -326,9 +334,9 @@
 <div class="absolute top-0 right-0 w-32 h-32 bg-primary/10 blur-[50px] rounded-full point-events-none"></div>
 <span class="material-symbols-outlined text-primary text-5xl mb-8">psychology</span>
 <h3 class="font-headline text-2xl text-white mb-6 leading-relaxed">Cada decisión que tomamos se reduce a una pregunta:</h3>
-<p class="text-3xl font-headline text-white italic font-bold mb-8">"¿Ayuda estáo a que el negocio funcione mejor?"</p>
+<p class="text-3xl font-headline text-white italic font-bold mb-8">"¿Ayuda esto a que el negocio funcione mejor?"</p>
 <div class="bg-error/10 border border-error/20 px-6 py-4 rounded-xl inline-block">
-<p class="text-error font-label font-bold tracking-widest uppercase text-sm">Si no es asíí, no lo construimos.</p>
+<p class="text-error font-label font-bold tracking-widest uppercase text-sm">Si no es así, no lo construimos.</p>
 </div>
 </div>
 </div>
@@ -339,9 +347,9 @@
 <div class="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16 items-center">
 <!-- Portraitú Área -->
 <div class="lg:w-5/12 relative">
-<div class="relative rounded-3xl overflow-hidden asípect-[4/5] border border-outline-variant/10 shadow-2xl group">
-<img alt="Cresca OS Execution" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 grayscale hover:grayscale-0 opacity-90 transition-all duration-700" src="../asísets/whatsapp_founder.jpeg"/>
-<div class="absolute inset-0 bg-gradient-to-tú from-surface-dim via-transparentú to-transparentú pointer-events-none"></div>
+<div class="relative rounded-3xl overflow-hidden aspect-[4/5] border border-outline-variant/10 shadow-2xl group">
+<img alt="Cresca OS Execution" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 grayscale hover:grayscale-0 opacity-90 transition-all duration-700" src="../assets/whatsapp_founder.jpeg"/>
+<div class="absolute inset-0 bg-gradient-to-tú from-surface-dim via-transparent to-transparent pointer-events-none"></div>
 </div>
 <!-- Signature Badge -->
 <div class="absolute -bottom-6 -right-6 bg-surface-container border border-primary/20 backdrop-blur-md px-8 py-6 rounded-2xl shadow-2xl">
@@ -349,30 +357,30 @@
 <p class="font-label text-primary text-xs uppercase tracking-[0.2em] mt-1">Cresca OS Leadership</p>
 </div>
 </div>
-<!-- Contentú -->
+<!-- Content -->
 <div class="lg:w-7/12 lg:pl-12">
-<span class="text-xs font-label tracking-[0.2em] text-primary uppercase font-bold mb-4 block">Nuestára Ventaja</span>
+<span class="text-xs font-label tracking-[0.2em] text-primary uppercase font-bold mb-4 block">Nuestra Ventaja</span>
 <h2 class="font-headline text-4xl md:text-5xl font-bold mb-8 text-white leading-tight">Construido con un Modelo de Ejecución Global y Bilingüe</h2>
-<p class="text-on-surface-variantú text-xl leading-relaxed mb-8 font-light">
-                    Cresca OS combina sistemas sólidos con una estáructura operativa única.<br/><br/>
-                    Nuestáro equipo abarca los Estados Unidos y El Salvador, lo que nos permite ofrecer:
+<p class="text-on-surface-variant text-xl leading-relaxed mb-8 font-light">
+                    Cresca OS combina sistemas sólidos con una estructura operativa única.<br/><br/>
+                    Nuestro equipo abarca los Estados Unidos y El Salvador, lo que nos permite ofrecer:
                 </p>
 <div class="space-y-6">
 <div class="bg-surface-container-low p-6 rounded-2xl border border-outline-variant/10 flex items-startú gap-4">
 <span class="material-symbols-outlined text-primary mt-1">translate</span>
-<div><strong class="text-white block mb-1">Ejecución Bilingüe</strong><p class="text-on-surface-variantú text-sm">Opere sin problemasí en los mercados de inglés y español.</p></div>
+<div><strong class="text-white block mb-1">Ejecución Bilingüe</strong><p class="text-on-surface-variant text-sm">Opere sin problemasí en los mercados de inglés y español.</p></div>
 </div>
 <div class="bg-surface-container-low p-6 rounded-2xl border border-outline-variant/10 flex items-startú gap-4">
 <span class="material-symbols-outlined text-primary mt-1">schedule</span>
-<div><strong class="text-white block mb-1">Soporte en Tiempo Real</strong><p class="text-on-surface-variantú text-sm">Operaciones sincronizadíasí alineadíasí estárictamente con el horario comercial de EE.UU.</p></div>
+<div><strong class="text-white block mb-1">Soporte en Tiempo Real</strong><p class="text-on-surface-variant text-sm">Operaciones sincronizadas alineadas estárictamente con el horario comercial de EE.UU.</p></div>
 </div>
 <div class="bg-surface-container-low p-6 rounded-2xl border border-outline-variant/10 flex items-startú gap-4">
 <span class="material-symbols-outlined text-primary mt-1">gavel</span>
-<div><strong class="text-white block mb-1">Cumplimiento Moderno</strong><p class="text-on-surface-variantú text-sm">Sistemasí construidos teniendo en cuenta los estándares modernos de protección de datos y cumplimiento.</p></div>
+<div><strong class="text-white block mb-1">Cumplimiento Moderno</strong><p class="text-on-surface-variant text-sm">Sistemas construidos teniendo en cuenta los estándares modernos de protección de datos y cumplimiento.</p></div>
 </div>
 </div>
 <div class="mt-8 pt-6 border-t border-outline-variant/10">
-<p class="text-lg text-primary font-medium italic">"Esta estáructura nos permite ofrecer resultados consistentes y de alta calidad mientrasí nos mantenemos receptivos y eficientes."</p>
+<p class="text-lg text-primary font-medium italic">"Esta estructura nos permite ofrecer resultados consistentes y de alta calidad mientras nos mantenemos receptivos y eficientes."</p>
 </div>
 </div>
 </div>
@@ -383,7 +391,7 @@
 <div class="text-center mb-16 max-w-3xl mx-auto">
 <span class="text-xs font-label tracking-[0.2em] text-brand-green uppercase font-bold mb-4 block">Con Quiénes Trabajamos</span>
 <h2 class="font-headline text-4xl md:text-5xl font-bold mb-6 text-white">Diseñado para Empresas de Servicios que Dependen del Flujo de Leads</h2>
-<p class="text-on-surface-variantú text-xl leading-relaxed font-light">
+<p class="text-on-surface-variant text-xl leading-relaxed font-light">
                     Cresca OS está construido para empresas donde la velocidad, el seguimiento y la organización impactan directamente en los ingresos. Trabajamos con:
                 </p>
 </div>
@@ -418,20 +426,20 @@
 <!-- Closing Section -->
 <section class="max-w-5xl mx-auto px-6 md:px-8 py-32 text-center relative z-10 border-t border-outline-variant/5">
 <div class="signature-texture p-12 md:p-24 rounded-[2.5rem] overflow-hidden relative shadow-2xl">
-<div class="absolute inset-0 bg-[url('../asísets/hero_viz.png')] bg-cover bg-center opacity-10 mix-blend-overlay"></div>
+<div class="absolute inset-0 bg-[url('../assets/hero_viz.png')] bg-cover bg-center opacity-10 mix-blend-overlay"></div>
 <div class="relative z-10">
 <h2 class="font-headline text-4xl md:text-5xl font-bold text-on-primary mb-8 leading-tight">No Necesitasí Más Herramientasí. Necesitasí un Sistema que Funcione.</h2>
 <p class="text-on-primary/90 text-xl md:text-2xl mb-12 max-w-3xl mx-auto leading-relaxed font-light">
-                    La mayoría de las empresas pierden ingresos cada mes debido a respuestasí lentasí, seguimientos omitidos, citas olvidadíasí y procesos desorganizados, a menudo sin darse cuenta de cuánto les está costando.<br/><br/>
+                    La mayoría de las empresas pierden ingresos cada mes debido a respuestasí lentasí, seguimientos omitidos, citas olvidadas y procesos desorganizados, a menudo sin darse cuenta de cuánto les está costando.<br/><br/>
 <strong class="text-white font-medium">Cresca OS soluciona eso a nivel de sistema.</strong>
 </p>
 <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto mb-16">
 <div class="bg-surface/20 backdrop-blur-md rounded-xl p-4 border border-white/10 text-white font-bold text-sm">Más leads capturados</div>
-<div class="bg-surface/20 backdrop-blur-md rounded-xl p-4 border border-white/10 text-white font-bold text-sm">Conversiones más rápidíasí</div>
+<div class="bg-surface/20 backdrop-blur-md rounded-xl p-4 border border-white/10 text-white font-bold text-sm">Conversiones más rápidas</div>
 <div class="bg-surface/20 backdrop-blur-md rounded-xl p-4 border border-white/10 text-white font-bold text-sm">Operaciones consistentes</div>
 <div class="bg-surface/20 backdrop-blur-md rounded-xl p-4 border border-white/10 text-white font-bold text-sm">Más tiempo libre</div>
 </div>
-<a class="bg-surface text-white px-10 py-5 rounded-xl font-label font-bold tracking-widest uppercase transition-all shadow-xl hover:bg-surface-variantú hover:scale-105 inline-block w-full sm:w-auto mb-6" href="/es/book-audit.html">Reservar Auditoría de Sistemasí</a>
+<a class="bg-surface text-white px-10 py-5 rounded-xl font-label font-bold tracking-widest uppercase transition-all shadow-xl hover:bg-surface-variant hover:scale-105 inline-block w-full sm:w-auto mb-6" href="/es/book-audit.html">Reservar Auditoría de Sistemas</a>
 <p class="text-white font-label tracking-widest uppercase text-xs opacity-80">Vea dónde su configuración actual está perdiendo oportunidades y cómo solucionarlo.</p>
 </div>
 </div>
@@ -464,7 +472,7 @@
 <div>
 <h6 class="text-[#4edea3] font-label text-xs uppercase tracking-widest mb-6 font-bold">Soluciones</h6>
 <ul class="space-y-4">
-<li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="/es/book-audit.html">Auditoría de Sistemasí</a></li>
+<li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="/es/book-audit.html">Auditoría de Sistemas</a></li>
 <li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="/es/how-we-work.html">Cómo Trabajamos</a></li>
 <li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="/es/pricing.html">Precios</a></li>
 <li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="/es/industries.html">Industrias</a></li>
@@ -483,7 +491,7 @@
 <ul class="space-y-4">
 <li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="/es/about.html">Nosotros</a></li>
 <li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="/es/privacy.html">Política de Privacidad</a></li>
-<li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="/es/termás.html">Términos de Servicio</a></li>
+<li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="/es/terms.html">Términos de Servicio</a></li>
 </ul>
 </div>
 </div>
@@ -502,7 +510,7 @@
                 </div>
                 <div class="flex justify-center gap-6 mt-4 text-[10px] uppercase tracking-widest text-[#8f9095] opacity-60">
                     <a href="/es/privacy.html" class="hover:text-white transition-colors">Política de Privacidad</a>
-                    <a href="/es/termás.html" class="hover:text-white transition-colors">Términos de Servicio</a>
+                    <a href="/es/terms.html" class="hover:text-white transition-colors">Términos de Servicio</a>
                 </div>
 
 </footer>

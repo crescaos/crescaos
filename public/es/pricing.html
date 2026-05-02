@@ -264,6 +264,14 @@
                         btn.innerHTML = '<span class="material-symbols-outlined text-3xl">menu</span>';
                     }
                 });
+                // Close menu on resize to desktop
+                window.addEventListener('resize', () => {
+                    if (window.innerWidth >= 768 && menu && !menu.classList.contains('translate-x-full')) {
+                        menu.classList.add('translate-x-full');
+                        menu.classList.add('hidden');
+                        btn.innerHTML = '<span class="material-symbols-outlined text-3xl">menu</span>';
+                    }
+                });
             }
         });
     </script>
@@ -422,7 +430,5 @@
       data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" 
       data-widget-id="69d3ebd934c0448115bc10d9"> 
     </script>
-</body></html>script>
-
 </body></html>
 

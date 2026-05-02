@@ -316,6 +316,14 @@
                         btn.innerHTML = '<span class="material-symbols-outlined text-3xl">menu</span>';
                     }
                 });
+                // Close menu on resize to desktop
+                window.addEventListener('resize', () => {
+                    if (window.innerWidth >= 768 && menu && !menu.classList.contains('translate-x-full')) {
+                        menu.classList.add('translate-x-full');
+                        menu.classList.add('hidden');
+                        btn.innerHTML = '<span class="material-symbols-outlined text-3xl">menu</span>';
+                    }
+                });
             }
         });
     </script>
