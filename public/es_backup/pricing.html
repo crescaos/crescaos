@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 
-<html class="dark scroll-smooth" lang="es"><head>
+<<html class="dark scroll-smooth" lang="es"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Nosotros | Cresca OS</title>
-<meta content="Cresca OS reemplaza herramientas desconectadas con un sistema unificado de automatización empresarial. Capturamos leads, respondemos al instante y automatizamos el seguimiento." name="description"/><meta content="Cresca OS | Sistema de Automatización para Negocios de Servicios" property="og:title"/><meta content="Cresca OS reemplaza herramientas desconectadas con un sistema unificado de automatización empresarial. Capturamos leads, respondemos al instante y automatizamos el seguimiento." property="og:description"/><meta content="https://crescaos.com/og-image.jpg" property="og:image"/><meta content="https://crescaos.com/es/about.html" property="og:url"/><link href="/favicon.ico" rel="icon"/><link href="https://crescaos.com/es/about.html" rel="canonical"/>
-<link rel="alternate" hreflang="en" href="https://crescaos.com/about.html" />
-<link rel="alternate" hreflang="es" href="https://crescaos.com/es/about.html" />
-<link rel="alternate" hreflang="x-default" href="https://crescaos.com/about.html" />
+<title>Precios | Cresca OS</title>
+<meta content="Cresca OS reemplaza herramientas desconectadas con un sistema unificado de automatización empresarial. Capturamos leads, respondemos al instante y automatizamos el seguimiento." name="description"/><meta content="Cresca OS | Sistema de Automatización para Negocios de Servicios" property="og:title"/><meta content="Cresca OS reemplaza herramientas desconectadas con un sistema unificado de automatización empresarial. Capturamos leads, respondemos al instante y automatizamos el seguimiento." property="og:description"/><meta content="https://crescaos.com/og-image.jpg" property="og:image"/><meta content="https://crescaos.com/es/pricing.html" property="og:url"/><link href="/favicon.ico" rel="icon"/><link href="https://crescaos.com/es/pricing.html" rel="canonical"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Inter:wght@400;500;600&amp;family=Manrope:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
@@ -34,7 +31,6 @@
         box-shadow: 0 0 15px rgba(0, 230, 138, 0.4);
       }
       
-    
       #neural-bg {
         position: fixed;
         top: 0;
@@ -42,39 +38,24 @@
         width: 100%;
         height: 100%;
         z-index: -1;
-        opacity: 0.8; /* Amplified visibility */
+        opacity: 0.8;
         pointer-events: none;
       }
-
-      /* Seamless Translation CSS */
-      body { top: 0 !important; }
-      .goog-te-banner-frame { display: none !important; }
-      #goog-gt-tt { display: none !important; }
-      .goog-te-spinner-pos { display: none !important; }
-      #google_translate_element { display: none !important; }
-      font { background-color: transparent !important; box-shadow: none !important; }
-
 </style>
 <script>
-      
-
-      // Neural Network Particle Background
       window.addEventListener('DOMContentLoaded', () => {
         const canvas = document.getElementById('neural-bg');
         if (!canvas) return;
         const ctx = canvas.getContext('2d');
         let particles = [];
-        const particleCount = 80; /* Increased particles */
+        const particleCount = 80;
         const maxDistance = 160;
-
         function resize() {
           canvas.width = window.innerWidth;
           canvas.height = window.innerHeight;
         }
-
         window.addEventListener('resize', resize);
         resize();
-
         class Particle {
           constructor() {
             this.x = Math.random() * canvas.width;
@@ -83,44 +64,36 @@
             this.vy = (Math.random() - 0.5) * 0.5;
             this.radius = Math.random() * 2 + 0.5;
           }
-
           update() {
             this.x += this.vx;
             this.y += this.vy;
-
             if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
             if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
           }
-
           draw() {
             ctx.beginPath();
             ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-            ctx.fillStyle = 'rgba(0, 230, 138, 0.9)'; /* Brighter particles */
+            ctx.fillStyle = 'rgba(0, 230, 138, 0.9)';
             ctx.fill();
           }
         }
-
         for (let i = 0; i < particleCount; i++) {
           particles.push(new Particle());
         }
-
         function animate() {
           ctx.clearRect(0, 0, canvas.width, canvas.height);
-          
           for (let i = 0; i < particles.length; i++) {
             particles[i].update();
             particles[i].draw();
-
             for (let j = i + 1; j < particles.length; j++) {
               const dx = particles[i].x - particles[j].x;
               const dy = particles[i].y - particles[j].y;
               const distance = Math.sqrt(dx * dx + dy * dy);
-
               if (distance < maxDistance) {
                 ctx.beginPath();
                 ctx.moveTo(particles[i].x, particles[i].y);
                 ctx.lineTo(particles[j].x, particles[j].y);
-                ctx.strokeStyle = `rgba(10, 132, 255, ${0.4 * (1 - distance / maxDistance)})`; /* Brighter connections */
+                ctx.strokeStyle = `rgba(10, 132, 255, ${0.4 * (1 - distance / maxDistance)})`;
                 ctx.lineWidth = 0.8;
                 ctx.stroke();
               }
@@ -128,10 +101,8 @@
           }
           requestAnimationFrame(animate);
         }
-
         animate();
       });
-
     </script>
 <script id="tailwind-config">
       tailwind.config = {
@@ -198,8 +169,6 @@
         },
       }
     </script>
-<!-- Headless Translation Engine -->
-<meta content="Cresca OS replaces disconnected tools with one unified business automation system. We capture leads, respond instantly, and automate follow-ups." name="description"/><meta content="Cresca OS | Business Automation System for Service Businesses" property="og:title"/><meta content="Cresca OS replaces disconnected tools with one unified business automation system. We capture leads, respond instantly, and automate follow-ups." property="og:description"/><meta content="https://crescaos.com/og-image.jpg" property="og:image"/><meta content="https://crescaos.com/about" property="og:url"/><link href="/favicon.ico" rel="icon"/><link href="https://crescaos.com/about" rel="canonical"/>
     <!-- Meta Pixel Code -->
     <script>
     !function(f,b,e,v,n,t,s)
@@ -221,14 +190,20 @@
 <body class="bg-background text-on-background font-body">
 <canvas id="neural-bg"></canvas>
 <!-- TopNavBar -->
-<nav class="fixed top-0 w-full z-50 bg-[#0b1326]/70 backdrop-blur-xl border-b border-outline-variant/10">
-<div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto relative">
+<nav class="fixed top-0 w-full z-50 bg-[#0b1326]/70 backdrop-blur-xl shadow-2xl shadow-[#060e20]/40 border-b border-outline-variant/10">
+<div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
 <a class="flex items-center gap-3 hover:opacity-80 transition-opacity" href="/es/index.html">
 <div class="flex items-center gap-3">
-<svg class="w-8 h-8" fill="none" height="32" viewBox="0 0 48 48" width="32" xmlns="http://www.w3.org/2000/svg">
+<svg class="w-8 h-8" fill="none" height="32" viewbox="0 0 48 48" width="32" xmlns="http://www.w3.org/2000/svg">
 <circle cx="24" cy="24" r="18" stroke="#0A84FF" stroke-width="3"></circle>
 <ellipse cx="24" cy="24" rx="13" ry="7.5" stroke="#00E68A" stroke-width="3" transform="rotate(60 24 24)"></ellipse>
 <ellipse cx="24" cy="24" rx="13" ry="7.5" stroke="#00E68A" stroke-width="3" transform="rotate(-60 24 24)"></ellipse>
+<circle cx="24" cy="6" fill="#0A84FF" r="2.5"></circle>
+<circle cx="24" cy="42" fill="#0A84FF" r="2.5"></circle>
+<circle cx="39.59" cy="15" fill="#00E68A" r="2.5"></circle>
+<circle cx="8.41" cy="15" fill="#FFFFFF" r="2.5"></circle>
+<circle cx="39.59" cy="33" fill="#FFFFFF" r="2.5"></circle>
+<circle cx="8.41" cy="33" fill="#00E68A" r="2.5"></circle>
 <circle cx="24" cy="24" fill="#FFFFFF" r="3.5"></circle>
 </svg>
 <div class="flex items-baseline font-serif text-2xl font-bold tracking-tighter">
@@ -240,29 +215,26 @@
 <a class="text-[#8f9095] hover:text-[#dae2fd] font-serif text-lg tracking-tight transition-all duration-200" href="/es/solutions.html">Soluciones</a>
 <a class="text-[#8f9095] hover:text-[#dae2fd] font-serif text-lg tracking-tight transition-all duration-200" href="/es/industries.html">Industrias</a>
 <a class="text-[#8f9095] hover:text-[#dae2fd] font-serif text-lg tracking-tight transition-all duration-200" href="/es/pricing.html">Precios</a>
-<a class="text-[#8f9095] hover:text-[#dae2fd] font-serif text-lg tracking-tight transition-all duration-200" href="/es/how-we-work.html">Cómo Trabajamos</a>
 <a class="text-[#8f9095] hover:text-[#dae2fd] font-serif text-lg tracking-tight transition-all duration-200" href="/es/integrations.html">Integraciones</a>
-<a class="text-white font-serif text-lg tracking-tight transition-all duration-200 border-b-2 border-brand-green" href="/es/about.html">Nosotros</a>
+<a class="text-[#8f9095] hover:text-[#dae2fd] font-serif text-lg tracking-tight transition-all duration-200" href="/es/about.html">Nosotros</a>
 <a class="text-[#8f9095] hover:text-[#dae2fd] font-serif text-lg tracking-tight transition-all duration-200" href="/es/el-salvador.html">El Salvador</a>
 </div>
 <div class="flex items-center gap-6 mr-10 md:mr-0">
-<a href="/about.html" class="text-[#00E68A] font-label text-sm hover:text-[#dae2fd] transition-colors font-bold">EN</a>
-<a class="hidden md:inline-flex bg-[#4edea3] text-[#003824] px-5 py-2 rounded-lg font-label font-bold scale-95 transition-transform duration-200 hover:scale-100 uppercase tracking-widest text-[10px]" href="/es/book-audit.html">
+<a href="/pricing.html" class="text-[#00E68A] font-label text-sm hover:text-[#dae2fd] transition-colors font-bold">EN</a><a class="hidden md:inline-flex bg-[#4edea3] text-[#003824] px-5 py-2 rounded-lg font-label font-bold scale-95 transition-transform duration-200 hover:scale-100 uppercase tracking-widest text-[10px]" href="/es/book-audit.html">
                     Reservar Auditoría
                 </a>
 </div>
 </div>
-<!-- Mobile Menu Button -->
+<!-- Mobile Menu Button (Absolute positioned to top right for safety) -->
 <button class="md:hidden absolute top-5 right-6 text-on-surface focus:outline-none z-[60]" id="mobile-menu-btn">
 <span class="material-symbols-outlined text-3xl">menu</span>
 </button>
 <!-- Mobile Menu Overlay -->
-<div class="fixed inset-0 bg-[#080f22] z-[55] hidden flex-col pt-24 px-8 transform transition-transform duration-300 translate-x-full" id="mobile-menu">
+<div class="fixed inset-0 bg-[#080f22] z-[55] hidden md:hidden flex-col pt-24 px-8 transform transition-transform duration-300 translate-x-full" id="mobile-menu">
 <div class="flex flex-col space-y-8 font-headline text-3xl">
 <a class="text-on-surface hover:text-primary transition-colors" href="/es/solutions.html">Soluciones</a>
 <a class="text-on-surface hover:text-primary transition-colors" href="/es/industries.html">Industrias</a>
 <a class="text-on-surface hover:text-primary transition-colors" href="/es/pricing.html">Precios</a>
-<a class="text-on-surface hover:text-primary transition-colors" href="/es/how-we-work.html">Cómo Trabajamos</a>
 <a class="text-on-surface hover:text-primary transition-colors" href="/es/integrations.html">Integraciones</a>
 <a class="text-on-surface hover:text-primary transition-colors" href="/es/about.html">Nosotros</a>
 <a class="text-on-surface hover:text-primary transition-colors" href="/es/el-salvador.html">El Salvador</a>
@@ -280,7 +252,6 @@
                     const isHidden = menu.classList.contains('translate-x-full');
                     if (isHidden) {
                         menu.classList.remove('hidden');
-                        // tiny delay to allow display:block to apply before animating transform
                         setTimeout(() => {
                             menu.classList.remove('translate-x-full');
                             menu.classList.add('translate-x-0');
@@ -305,150 +276,85 @@
         });
     </script>
 </nav>
-<main class="pt-24 pb-0 relative overflow-hidden bg-surface">
+<main class="pt-32 pb-24 relative overflow-hidden">
+<!-- Background Accents -->
+<div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-full pointer-events-none z-0">
+<div class="absolute top-[10%] left-[20%] w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px]"></div>
+<div class="absolute top-[40%] right-[10%] w-[600px] h-[600px] bg-brand-green/5 rounded-full blur-[150px]"></div>
+</div>
 <!-- Hero Section -->
-<section class="relative min-h-[50vh] flex flex-col items-center justify-center px-6 md:px-8 mt-12 mb-20 z-10 border-b border-outline-variant/5">
-<div class="absolute inset-0 z-0 bg-primary/5 blur-[120px] rounded-full w-[600px] h-[600px] left-1/2 -translate-x-1/2 pointer-events-none"></div>
-<div class="relative z-10 max-w-4xl text-center">
-<span class="inline-block font-label text-primary tracking-[0.2em] mb-6 uppercase text-sm font-bold animate-fade-in border border-primary/20 bg-primary/5 px-6 py-2 rounded-full">Sobre Cresca OS</span>
-<h1 class="font-headline text-5xl sm:text-6xl md:text-7xl font-bold text-white leading-tight tracking-tight mb-8 animate-slide-up">
-                Sistemas Diseñados <br/><span class="text-brand-green italic leading-tight">Para Escalar.</span>
-</h1>
+<header class="max-w-4xl mx-auto px-8 mb-20 text-center relative z-10">
+<span class="inline-block font-label text-brand-green tracking-[0.2em] mb-6 uppercase text-sm font-bold animate-fade-in">Precios y Planes</span>
+<h1 class="font-headline text-5xl md:text-6xl lg:text-7xl font-bold text-on-surface leading-tight tracking-tight mb-8 animate-slide-up">
+            Un Sistema para <span class="text-primary italic">Capturar</span>, <span class="text-brand-green italic">Convertir</span> y Escalar Su Negocio
+        </h1>
+<p class="font-body text-xl text-on-surface-variant leading-relaxed mb-12 animate-fade-in delay-200">
+            Cresca OS es un sistema operativo empresarial totalmente gestionado que captura leads, responde al instante, automatiza el seguimiento y organiza sus operaciones, para que pueda crecer sin añadir complejidad ni personal adicional.
+        </p>
+</header>
+<!-- 90-Day Guarantee Banner -->
+<section class="max-w-5xl mx-auto px-8 mb-24 relative z-10">
+<div class="bg-surface-container-low border border-outline-variant/20 rounded-2xl p-8 md:p-12 flex flex-col md:flex-row items-center gap-8 shadow-2xl relative overflow-hidden group hover:border-brand-green/30 transition-colors duration-500">
+<div class="absolute inset-0 bg-gradient-to-br from-brand-green/5 to-transparent pointer-events-none"></div>
+<div class="flex-shrink-0 bg-brand-green/10 p-6 rounded-full border border-brand-green/20">
+<span class="material-symbols-outlined text-brand-green text-5xl group-hover:scale-110 transition-transform duration-500">health_and_safety</span>
+</div>
+<div>
+<h3 class="font-headline text-2xl md:text-3xl font-bold text-white mb-3">Garantía de ROI a 90 Días</h3>
+<p class="text-on-surface-variant text-lg">Si Cresca OS no genera suficientes oportunidades cualificadas o ingresos recuperados para cubrir su inversión inicial en 90 días, le reembolsaremos el importe íntegro.</p>
+</div>
 </div>
 </section>
-<!-- Our Approach -->
-<section class="py-24 px-6 md:px-8 bg-surface-container-lowest relative z-10">
-<div class="max-w-7xl mx-auto flex flex-col lg:flex-row gap-20 items-center">
-<div class="lg:w-1/2">
-<span class="text-xs font-label tracking-[0.2em] text-brand-green uppercase font-bold mb-4 block">Nuestro Enfoque</span>
-<h2 class="font-headline text-4xl md:text-5xl font-bold mb-8 text-white leading-tight">Pensamiento Sistémico Práctico</h2>
-<p class="text-on-surface-variant text-xl leading-relaxed mb-8 font-light">
-                    Nuestro enfoque es simple y enfocado:
-                </p>
-<ul class="space-y-4 mb-10">
-<li class="flex items-start gap-4"><span class="material-symbols-outlined text-brand-green">rule</span><span class="text-on-surface text-lg">Construir sistemas que reflejen cómo operan los negocios reales</span></li>
-<li class="flex items-start gap-4"><span class="material-symbols-outlined text-brand-green">rule</span><span class="text-on-surface text-lg">Enfocarse en resultados, no en características</span></li>
-<li class="flex items-start gap-4"><span class="material-symbols-outlined text-brand-green">rule</span><span class="text-on-surface text-lg">Reducir el trabajo manual siempre que sea posible</span></li>
-<li class="flex items-start gap-4"><span class="material-symbols-outlined text-brand-green">rule</span><span class="text-on-surface text-lg">Crear procesos consistentes y repetibles</span></li>
-<li class="flex items-start gap-4"><span class="material-symbols-outlined text-brand-green">rule</span><span class="text-on-surface text-lg">Hacer que el crecimiento sea más fácil, no más complicado</span></li>
+<!-- Features Included -->
+<section class="max-w-7xl mx-auto px-8 mb-24 relative z-10">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+<div class="bg-surface-container-low p-10 rounded-2xl border border-outline-variant/10">
+<span class="material-symbols-outlined text-primary text-4xl mb-6">layers</span>
+<h3 class="font-headline text-3xl font-bold text-white mb-6">Todo Incluido en Cada Plan</h3>
+<p class="text-on-surface-variant mb-8 text-lg">Cada plan de Cresca OS incluye la infraestructura principal que su negocio necesita para operar de manera eficiente y crecer con consistencia.</p>
+<ul class="space-y-4">
+<li class="flex items-start gap-3"><span class="material-symbols-outlined text-primary text-xl shrink-0">done_all</span><span class="text-on-surface">Implementación completa "llave en mano" (listo en menos de 14 días)</span></li>
+<li class="flex items-start gap-3"><span class="material-symbols-outlined text-primary text-xl shrink-0">done_all</span><span class="text-on-surface">Usuarios ilimitados — sin cargos por usuario adicional</span></li>
+<li class="flex items-start gap-3"><span class="material-symbols-outlined text-primary text-xl shrink-0">done_all</span><span class="text-on-surface">Facturación transparente basada en el uso de mensajería</span></li>
+<li class="flex items-start gap-3"><span class="material-symbols-outlined text-primary text-xl shrink-0">done_all</span><span class="text-on-surface">Monitoreo y optimización continua del sistema</span></li>
+<li class="flex items-start gap-3"><span class="material-symbols-outlined text-primary text-xl shrink-0">done_all</span><span class="text-on-surface">Capacidad de ejecución bilingüe en inglés y español</span></li>
 </ul>
 </div>
-<div class="lg:w-1/2">
-<div class="bg-surface-container p-12 rounded-3xl border border-outline-variant/10 shadow-2xl relative overflow-hidden group hover:border-primary/30 transition-all duration-500">
-<div class="absolute top-0 right-0 w-32 h-32 bg-primary/10 blur-[50px] rounded-full point-events-none"></div>
-<span class="material-symbols-outlined text-primary text-5xl mb-8">psychology</span>
-<h3 class="font-headline text-2xl text-white mb-6 leading-relaxed">Cada decisión que tomamos se reduce a una pregunta:</h3>
-<p class="text-3xl font-headline text-white italic font-bold mb-8">"¿Ayuda esto a que el negocio funcione mejor?"</p>
-<div class="bg-error/10 border border-error/20 px-6 py-4 rounded-xl inline-block">
-<p class="text-error font-label font-bold tracking-widest uppercase text-sm">Si no es así, no lo construimos.</p>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Our Advantage & Portrait -->
-<section class="py-32 px-6 md:px-8 relative z-10 border-y border-outline-variant/5">
-<div class="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16 items-center">
-<!-- Portrait Área -->
-<div class="lg:w-5/12 relative">
-<div class="relative rounded-3xl overflow-hidden aspect-[4/5] border border-outline-variant/10 shadow-2xl group">
-<img alt="Cresca OS Execution" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 grayscale hover:grayscale-0 opacity-90 transition-all duration-700" src="../assets/whatsapp_founder.jpeg"/>
-<div class="absolute inset-0 bg-gradient-to-t from-surface-dim via-transparent to-transparent pointer-events-none"></div>
-</div>
-<!-- Signature Badge -->
-<div class="absolute -bottom-6 -right-6 bg-surface-container border border-primary/20 backdrop-blur-md px-8 py-6 rounded-2xl shadow-2xl">
-<h4 class="font-headline text-white text-xl font-bold">La Ejecución Primero.</h4>
-<p class="font-label text-primary text-xs uppercase tracking-[0.2em] mt-1">Cresca OS Leadership</p>
-</div>
-</div>
-<!-- Content -->
-<div class="lg:w-7/12 lg:pl-12">
-<span class="text-xs font-label tracking-[0.2em] text-primary uppercase font-bold mb-4 block">Nuestra Ventaja</span>
-<h2 class="font-headline text-4xl md:text-5xl font-bold mb-8 text-white leading-tight">Construido con un Modelo de Ejecución Global y Bilingüe</h2>
-<p class="text-on-surface-variant text-xl leading-relaxed mb-8 font-light">
-                    Cresca OS combina sistemas sólidos con una estructura operativa única.<br/><br/>
-                    Nuestro equipo abarca los Estados Unidos y El Salvador, lo que nos permite ofrecer:
-                </p>
-<div class="space-y-6">
-<div class="bg-surface-container-low p-6 rounded-2xl border border-outline-variant/10 flex items-start gap-4">
-<span class="material-symbols-outlined text-primary mt-1">translate</span>
-<div><strong class="text-white block mb-1">Ejecución Bilingüe</strong><p class="text-on-surface-variant text-sm">Opere sin problemasí en los mercados de inglés y español.</p></div>
-</div>
-<div class="bg-surface-container-low p-6 rounded-2xl border border-outline-variant/10 flex items-start gap-4">
-<span class="material-symbols-outlined text-primary mt-1">schedule</span>
-<div><strong class="text-white block mb-1">Soporte en Tiempo Real</strong><p class="text-on-surface-variant text-sm">Operaciones sincronizadas alineadas estárictamente con el horario comercial de EE.UU.</p></div>
-</div>
-<div class="bg-surface-container-low p-6 rounded-2xl border border-outline-variant/10 flex items-start gap-4">
-<span class="material-symbols-outlined text-primary mt-1">gavel</span>
-<div><strong class="text-white block mb-1">Cumplimiento Moderno</strong><p class="text-on-surface-variant text-sm">Sistemas construidos teniendo en cuenta los estándares modernos de protección de datos y cumplimiento.</p></div>
-</div>
-</div>
-<div class="mt-8 pt-6 border-t border-outline-variant/10">
-<p class="text-lg text-primary font-medium italic">"Esta estructura nos permite ofrecer resultados consistentes y de alta calidad mientras nos mantenemos receptivos y eficientes."</p>
-</div>
+<!-- Why Us -->
+<div class="bg-surface-container-low p-10 rounded-2xl border border-outline-variant/10">
+<span class="material-symbols-outlined text-brand-green text-4xl mb-6">bolt</span>
+<h3 class="font-headline text-3xl font-bold text-white mb-6">Por Qué Cresca OS Supera al DIY</h3>
+<p class="text-on-surface-variant mb-8 text-lg">No solo le vendemos software. Construimos el motor que impulsa su negocio, ahorrándole meses de prueba y error.</p>
+<ul class="space-y-4">
+<li class="flex items-start gap-3"><span class="material-symbols-outlined text-brand-green text-xl shrink-0">verified</span><span class="text-on-surface">Nos encargamos de todo el sistema — sin necesidad de configuración técnica</span></li>
+<li class="flex items-start gap-3"><span class="material-symbols-outlined text-brand-green text-xl shrink-0">verified</span><span class="text-on-surface">Despliegue más rápido y resultados consistentes vs. construirlo por su cuenta</span></li>
+<li class="flex items-start gap-3"><span class="material-symbols-outlined text-brand-green text-xl shrink-0">verified</span><span class="text-on-surface">Sistema unificado en lugar de múltiples herramientas desconectadas</span></li>
+<li class="flex items-start gap-3"><span class="material-symbols-outlined text-brand-green text-xl shrink-0">verified</span><span class="text-on-surface">Construido para soportar operaciones comerciales reales, no solo marketing</span></li>
+<li class="flex items-start gap-3"><span class="material-symbols-outlined text-brand-green text-xl shrink-0">verified</span><span class="text-on-surface">Capacidad bilingüe que soporta una base de clientes más amplia</span></li>
+<li class="flex items-start gap-3"><span class="material-symbols-outlined text-brand-green text-xl shrink-0">verified</span><span class="text-on-surface">Optimización continua, no solo configuración inicial</span></li>
+</ul>
 </div>
 </div>
 </section>
-<!-- Who We Work With -->
-<section class="py-32 px-6 md:px-8 bg-surface-container-lowest relative z-10">
-<div class="max-w-7xl mx-auto">
-<div class="text-center mb-16 max-w-3xl mx-auto">
-<span class="text-xs font-label tracking-[0.2em] text-brand-green uppercase font-bold mb-4 block">Con Quiénes Trabajamos</span>
-<h2 class="font-headline text-4xl md:text-5xl font-bold mb-6 text-white">Diseñado para Empresas de Servicios que Dependen del Flujo de Leads</h2>
-<p class="text-on-surface-variant text-xl leading-relaxed font-light">
-                    Cresca OS está construido para empresas donde la velocidad, el seguimiento y la organización impactan directamente en los ingresos. Trabajamos con:
-                </p>
-</div>
-<!-- Grid -->
-<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-<div class="bg-surface-container p-8 rounded-2xl border border-outline-variant/10 flex items-center gap-4 hover:border-primary/30 transition-colors">
-<span class="material-symbols-outlined text-brand-green text-3xl">solar_power</span>
-<h3 class="font-headline text-lg font-bold text-white">Energía Solar y Renovable</h3>
-</div>
-<div class="bg-surface-container p-8 rounded-2xl border border-outline-variant/10 flex items-center gap-4 hover:border-primary/30 transition-colors">
-<span class="material-symbols-outlined text-brand-green text-3xl">construction</span>
-<h3 class="font-headline text-lg font-bold text-white">Contratistasí y Servicios para el Hogar</h3>
-</div>
-<div class="bg-surface-container p-8 rounded-2xl border border-outline-variant/10 flex items-center gap-4 hover:border-primary/30 transition-colors">
-<span class="material-symbols-outlined text-brand-green text-3xl">cleaning_services</span>
-<h3 class="font-headline text-lg font-bold text-white">Limpieza y Restáauración</h3>
-</div>
-<div class="bg-surface-container p-8 rounded-2xl border border-outline-variant/10 flex items-center gap-4 hover:border-primary/30 transition-colors">
-<span class="material-symbols-outlined text-brand-green text-3xl">real_estate_agent</span>
-<h3 class="font-headline text-lg font-bold text-white">Bienes Raíces y Gestión de Propiedades</h3>
-</div>
-<div class="bg-surface-container md:col-span-2 p-8 rounded-2xl border border-outline-variant/10 flex items-center justify-center gap-4 hover:border-primary/30 transition-colors">
-<span class="material-symbols-outlined text-brand-green text-3xl">local_hospital</span>
-<h3 class="font-headline text-lg font-bold text-white">Clínicas, Dentistas y Servicios Profesionales</h3>
-</div>
-</div>
-<div class="mt-12 text-center bg-surface-dim p-8 rounded-2xl max-w-4xl mx-auto border border-brand-green/20">
-<p class="text-xl text-white font-medium">Si su negocio depende de capturar y convertir oportunidades, sin agregar más complejidad, <span class="text-brand-green font-bold">Cresca OS está construido para usted.</span></p>
-</div>
-</div>
-</section>
-<!-- Closing Section -->
-<section class="max-w-5xl mx-auto px-6 md:px-8 py-32 text-center relative z-10 border-t border-outline-variant/5">
-<div class="signature-texture p-12 md:p-24 rounded-[2.5rem] overflow-hidden relative shadow-2xl">
-<div class="absolute inset-0 bg-[url('../assets/hero_viz.png')] bg-cover bg-center opacity-10 mix-blend-overlay"></div>
+<!-- Final CTA Section -->
+<section class="max-w-5xl mx-auto px-8 text-center relative z-10">
+<div class="bg-primary/5 border border-primary/20 p-12 md:p-20 rounded-[2rem] overflow-hidden relative">
 <div class="relative z-10">
-<h2 class="font-headline text-4xl md:text-5xl font-bold text-on-primary mb-8 leading-tight">No necesitas más herramientas. Necesitas un sistema que funcione.</h2>
-<p class="text-on-primary/90 text-xl md:text-2xl mb-12 max-w-3xl mx-auto leading-relaxed font-light">
-                    La mayoría de las empresas pierden ingresos cada mes debido a respuestas lentas, seguimientos omitidos, citas olvidadas y procesos desorganizados, a menudo sin darse cuenta de cuánto les está costando.<br/><br/>
-<strong class="text-white font-medium">Cresca OS soluciona eso a nivel de sistema.</strong>
-</p>
-<div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto mb-16">
-<div class="bg-surface/20 backdrop-blur-md rounded-xl p-4 border border-white/10 text-white font-bold text-sm">Más leads capturados</div>
-<div class="bg-surface/20 backdrop-blur-md rounded-xl p-4 border border-white/10 text-white font-bold text-sm">Conversiones más rápidas</div>
-<div class="bg-surface/20 backdrop-blur-md rounded-xl p-4 border border-white/10 text-white font-bold text-sm">Operaciones consistentes</div>
-<div class="bg-surface/20 backdrop-blur-md rounded-xl p-4 border border-white/10 text-white font-bold text-sm">Más tiempo libre</div>
+<h2 class="font-headline text-4xl md:text-5xl font-bold text-white mb-6">¿Cuántos Ingresos Está Perdiendo Cada Mes?</h2>
+<p class="text-on-surface-variant text-xl mb-10 max-w-3xl mx-auto leading-relaxed">
+                    Reserve su Auditoría de Sistemas de Negocio gratuita y le mostraremos exactamente dónde su configuración actual le está costando oportunidades, y cómo Cresca OS puede ayudarle a capturar más leads, responder más rápido y crecer de manera más eficiente.
+                </p>
+<p class="text-on-surface font-label font-bold tracking-widest uppercase text-sm mb-12">Sin presión. Sin agobios técnicos. Solo claridad.</p>
+<div class="flex flex-col sm:flex-row justify-center items-center gap-6">
+<a class="bg-primary hover:bg-primary/90 text-on-primary px-10 py-5 rounded-xl font-label font-bold tracking-widest uppercase transition-all shadow-[0_0_20px_rgba(10,132,255,0.3)] hover:scale-105 w-full sm:w-auto" href="/es/book-audit.html">Reservar Mi Auditoría Gratis</a>
+<a class="bg-surface-container border border-outline-variant/30 hover:bg-surface-container-high text-white px-10 py-5 rounded-xl font-label tracking-widest uppercase transition-colors w-full sm:w-auto" href="/es/el-salvador.html">Solicitar Propuesta Personalizada</a>
 </div>
-<a class="bg-surface text-white px-10 py-5 rounded-xl font-label font-bold tracking-widest uppercase transition-all shadow-xl hover:bg-surface-variant hover:scale-105 inline-block w-full sm:w-auto mb-6" href="/es/book-audit.html">Reservar Auditoría de Sistemas</a>
-<p class="text-white font-label tracking-widest uppercase text-xs opacity-80">Vea dónde su configuración actual está perdiendo oportunidades y cómo solucionarlo.</p>
+<p class="mt-6 text-[10px] text-error uppercase tracking-widest font-bold">Disponibilidad limitada de auditorías por semana. Reserve su lugar hoy mismo.</p>
 </div>
 </div>
 </section>
 </main>
+<!-- Footer -->
 <footer class="bg-[#0b1326] w-full border-t border-[#45474b]/15 mt-32">
 <div class="grid grid-cols-2 md:grid-cols-4 gap-8 px-8 py-16 max-w-7xl mx-auto">
 <div class="col-span-2 md:col-span-1">
@@ -470,14 +376,13 @@
 </div>
 </div>
 <p class="font-sans text-sm text-[#8f9095] mb-8 leading-relaxed max-w-xs">
-                    Sistemas operativos de negocios "Hechos para Ti" para empresas de servicios de alto crecimiento.
+                    &lt; 5s Operations Intelligence para la próxima generación de negocios escalables.
                 </p>
 </div>
 <div>
 <h6 class="text-[#4edea3] font-label text-xs uppercase tracking-widest mb-6 font-bold">Soluciones</h6>
 <ul class="space-y-4">
 <li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="/es/book-audit.html">Auditoría de Sistemas</a></li>
-<li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="/es/how-we-work.html">Cómo Trabajamos</a></li>
 <li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="/es/pricing.html">Precios</a></li>
 <li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="/es/industries.html">Industrias</a></li>
 <li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="/es/integrations.html">Integraciones</a></li>
@@ -486,8 +391,9 @@
 <div>
 <h6 class="text-[#4edea3] font-label text-xs uppercase tracking-widest mb-6 font-bold">Mercados</h6>
 <ul class="space-y-4">
-<li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="/es/index.html">Estrategia EE.UU.</a></li>
+<li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="/es/about.html">Estrategia EE.UU.</a></li>
 <li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="/es/el-salvador.html">Hub El Salvador</a></li>
+<li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="/es/industries.html">Industria Solar</a></li>
 </ul>
 </div>
 <div>
@@ -501,7 +407,7 @@
 </div>
 <div class="max-w-7xl mx-auto px-8 py-8 border-t border-[#45474b]/10 text-center">
 <p class="font-sans text-xs text-[#8f9095] opacity-80 uppercase tracking-widest">
-                &copy; 2026 Cresca OS. Todos los derechos reservados.
+                &copy; 2026 Cresca OS. &lt; 5s Operations Intelligence.
             </p>
 <p class="font-sans text-xs text-[#8f9095] mt-2">
                     <a class="hover:text-[#4edea3] transition-colors" href="mailto:info@crescaos.com">info@crescaos.com</a> | 516-298-8323
@@ -516,15 +422,13 @@
                     <a href="/es/privacy.html" class="hover:text-white transition-colors">Política de Privacidad</a>
                     <a href="/es/terms.html" class="hover:text-white transition-colors">Términos de Servicio</a>
                 </div>
-
+            </div>
 </footer>
-
     <!-- GHL Chat Widget -->
     <script 
       src="https://widgets.leadconnectorhq.com/loader.js"  
       data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" 
       data-widget-id="69d3ebd934c0448115bc10d9"> 
     </script>
-
 </body></html>
 
