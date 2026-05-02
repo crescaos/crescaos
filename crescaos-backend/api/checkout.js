@@ -5,8 +5,11 @@ exports.handler = async (event) => {
   
   try {
     // Public Booking Link for your GHL Calendar
-    const SUCCESS_URL = "https://crm.crescaos.com/widget/booking/OlqdoFrT1sgJ3f2nnaIa";
-    const CANCEL_URL = "https://crescaos.com/pricing";
+    const SUCCESS_URL = process.env.STRIPE_SUCCESS_URL || "https://crm.crescaos.com/widget/booking/OlqdoFrT1sgJ3f2nnaIa";
+    const CANCEL_URL = process.env.STRIPE_CANCEL_URL || "https://crescaos.com/pricing";
+
+    if (!process.env.STRIPE_SUCCESS_URL) console.warn('Missing STRIPE_SUCCESS_URL env var, using fallback');
+    if (!process.env.STRIPE_CANCEL_URL) console.warn('Missing STRIPE_CANCEL_URL env var, using fallback');
 
     let targetPlan = plan || 'none';
     const country = event.headers['x-country']; // Geo-located automatically by Netlify 

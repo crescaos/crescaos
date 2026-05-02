@@ -1,27 +1,35 @@
 const ghl = require('../utils/ghl');
 const logger = require('../utils/logger');
 
+const headers = {
+  'Access-Control-Allow-Origin': '*',
+  'Access-Control-Allow-Methods': 'POST, OPTIONS',
+  'Access-Control-Allow-Headers': 'Content-Type'
+};
+
 /**
  * Handles incoming leads from the "Book Audit" form.
  * Syncs the data directly to GoHighLevel (GHL).
  */
-module.exports = async (req, res) => {
-  // CORS Headers for Production
-  res.setHeader('Access-Control-Allow-Origin', '*'); 
-  res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-
+exports.handler = async (event, context) => {
   // CORS Preflight
-  if (req.method === 'OPTIONS') {
-    return res.status(200).end();
+  if (event.httpMethod === 'OPTIONS') {
+    return { statusCode: 200, headers, body: '' };
   }
 
-  if (req.method !== 'POST') {
-    return res.status(405).json({ error: 'Method Not Allowed' });
+  if (event.httpMethod !== 'POST') {
+    return { statusCode: 405, headers, body: JSON.stringify({ error: 'Method Not Allowed' }) };
+  }
+
+  let payload;
+  try {
+    payload = event.body ? JSON.parse(event.body) : {};
+  } catch (parseError) {
+    logger.error('Failed to parse event body', parseError);
+    return { statusCode: 400, headers, body: JSON.stringify({ error: 'Invalid JSON body' }) };
   }
 
   try {
-    const payload = req.body;
     logger.info('Incoming Audit Form Submission', { payload });
 
     // 1. Map Form Payload to GHL Contact Data
@@ -117,8 +125,14 @@ module.exports = async (req, res) => {
       }
 
       // 4. Create Opportunity in the Sales Pipeline
+      // TODO: Ensure GHL_PIPELINE_ID and GHL_STAGE_ID are set in environment
+      // Fallback values kept temporarily to avoid breakage, but should be removed eventually.
       const pipelineId = process.env.GHL_PIPELINE_ID || 'mPu4ZjliPtVnfAADBj0h';
       const stageId = process.env.GHL_STAGE_ID || '54daa97e-e0fd-45ba-b017-539e2e5e61df';
+      
+      if (!process.env.GHL_PIPELINE_ID || !process.env.GHL_STAGE_ID) {
+         logger.warn('Missing GHL_PIPELINE_ID or GHL_STAGE_ID env variables, using hardcoded fallbacks temporarily');
+      }
 
       logger.info('Attempting opportunity creation', { contactId, pipelineId, stageId });
 
@@ -136,14 +150,22 @@ module.exports = async (req, res) => {
       }
     }
 
-    return res.status(200).json({
-      success: true,
-      message: 'Lead received and synced to GHL.'
-    });
+    return {
+      statusCode: 200,
+      headers,
+      body: JSON.stringify({
+        success: true,
+        message: 'Lead received and synced to GHL.'
+      })
+    };
 
   } catch (err) {
     logger.error('Failed to sync Audit Lead to GHL', err);
     // return 200 to prevent form errors on the frontend, but log the failure
-    return res.status(200).json({ success: true, warning: 'Synced with delay' });
+    return {
+      statusCode: 200,
+      headers,
+      body: JSON.stringify({ success: true, warning: 'Synced with delay' })
+    };
   }
 };

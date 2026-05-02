@@ -2,34 +2,44 @@ const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 const ghl = require('../utils/ghl');
 const logger = require('../utils/logger');
 
+const headers = {
+  'Access-Control-Allow-Origin': '*',
+  'Access-Control-Allow-Methods': 'POST, OPTIONS',
+  'Access-Control-Allow-Headers': 'Content-Type, stripe-signature'
+};
+
 /**
  * Handles incoming webhooks from Stripe after successful checkout.
  */
-module.exports = async (req, res) => {
+exports.handler = async (event, context) => {
   // CORS Preflight
-  if (req.method === 'OPTIONS') return res.status(200).end();
-  if (req.method !== 'POST') return res.status(405).end();
+  if (event.httpMethod === 'OPTIONS') return { statusCode: 200, headers, body: '' };
+  if (event.httpMethod !== 'POST') return { statusCode: 405, headers, body: '' };
 
-  const signature = req.headers['stripe-signature'];
+  const signature = event.headers['stripe-signature'] || event.headers['Stripe-Signature'];
   const endpointSecret = process.env.STRIPE_WEBHOOK_SECRET;
 
-  let event;
+  let stripeEvent;
 
   try {
     // 1. Verify Webhook Authenticity
-    event = stripe.webhooks.constructEvent(
-      req.body, // In Netlify, we need raw body. If parsed, use Buffer.from(JSON.stringify(req.body))
+    // In Netlify, event.body is already a string (raw body) if it's text/plain or application/json.
+    // However, if the body is base64 encoded by Netlify, we need to decode it.
+    const rawBody = event.isBase64Encoded ? Buffer.from(event.body, 'base64').toString('utf8') : event.body;
+
+    stripeEvent = stripe.webhooks.constructEvent(
+      rawBody,
       signature,
       endpointSecret
     );
   } catch (err) {
     logger.error('Stripe Webhook Verification Failed', err.message);
-    return res.status(400).send(`Webhook Error: ${err.message}`);
+    return { statusCode: 400, headers, body: `Webhook Error: ${err.message}` };
   }
 
-    // 2. Process the Event
-  if (event.type === 'checkout.session.completed') {
-    const session = event.data.object;
+  // 2. Process the Event
+  if (stripeEvent.type === 'checkout.session.completed') {
+    const session = stripeEvent.data.object;
     
     logger.info('Processing Successful Stripe Checkout', { sessionId: session.id });
 
@@ -39,8 +49,8 @@ module.exports = async (req, res) => {
     // 3. Extract Customer Info
     const contactData = {
       email: session.customer_details.email,
-      firstName: session.customer_details.name.split(' ')[0] || session.metadata.customer_name.split(' ')[0] || '',
-      lastName: session.customer_details.name.split(' ').slice(1).join(' ') || session.metadata.customer_name.split(' ').slice(1).join(' ') || '',
+      firstName: session.customer_details.name.split(' ')[0] || (session.metadata.customer_name && session.metadata.customer_name.split(' ')[0]) || '',
+      lastName: session.customer_details.name.split(' ').slice(1).join(' ') || (session.metadata.customer_name && session.metadata.customer_name.split(' ').slice(1).join(' ')) || '',
       phone: session.customer_details.phone || '',
       tags: ['stripe-purchase', plan !== 'none' ? plan : '', isAudit ? 'paid-audit' : ''].filter(Boolean)
     };
@@ -51,6 +61,7 @@ module.exports = async (req, res) => {
       const contactId = contact.id || (contact.contact ? contact.contact.id : null);
 
       // 5. Dynamic Map Plan to GHL Stage
+      // TODO: Move these fallbacks to strict environment variables
       const stageMapping = {
         'lite': process.env.GHL_SALE_LITE_ID || 'a0296611-9844-4c19-b344-e4d028c70c69',
         'growth': process.env.GHL_SALE_GROWTH_ID || 'bb4b9701-abc6-42cd-8690-0f4df07bd8ea',
@@ -58,7 +69,13 @@ module.exports = async (req, res) => {
         'discovery': process.env.GHL_AUDIT_STAGE_ID || 'b621db30-363f-42e5-a0ed-4a00465d8363' // Discovery Call (matches Netlify: GHL_AUDIT_STAGE_ID)
       };
 
+      if (!process.env.GHL_SALE_LITE_ID) logger.warn('Missing GHL_SALE_LITE_ID env var, using fallback');
+      if (!process.env.GHL_SALE_GROWTH_ID) logger.warn('Missing GHL_SALE_GROWTH_ID env var, using fallback');
+      if (!process.env.GHL_SALE_PRO_ID) logger.warn('Missing GHL_SALE_PRO_ID env var, using fallback');
+      if (!process.env.GHL_AUDIT_STAGE_ID) logger.warn('Missing GHL_AUDIT_STAGE_ID env var, using fallback');
+
       const pipelineId = process.env.GHL_AUDIT_PIPELINE_ID || 'k9Ke4zv94rXG6WezViHR';
+      if (!process.env.GHL_AUDIT_PIPELINE_ID) logger.warn('Missing GHL_AUDIT_PIPELINE_ID env var, using fallback');
       
       // If it's an audit or no specific plan, move to Discovery Call stage
       const stageId = (isAudit || plan === 'none') ? stageMapping['discovery'] : (stageMapping[plan] || stageMapping['lite']);
@@ -76,9 +93,9 @@ module.exports = async (req, res) => {
 
     } catch (error) {
       logger.error('Failed to sync Stripe purchase to GHL', error);
-      return res.status(500).json({ error: 'Failed to process purchase automation' });
+      return { statusCode: 500, headers, body: JSON.stringify({ error: 'Failed to process purchase automation' }) };
     }
   }
 
-  res.status(200).json({ received: true });
+  return { statusCode: 200, headers, body: JSON.stringify({ received: true }) };
 };

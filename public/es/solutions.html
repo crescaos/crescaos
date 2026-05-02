@@ -242,7 +242,7 @@
 <body class="bg-surface text-on-surface font-body selection:bg-primary selection:text-on-primary">
 <canvas id="neural-bg"></canvas>
 <!-- TopNavBar -->
-<nav class="fixed top-0 w-full z-50 bg-[#0b1326]/70 backdrop-blur-xl shadow-2xl shadow-[#060e20]/40 border-b border-outline-variant/10 transition-all duration-200">
+<nav class="fixed top-0 w-full z-50 bg-[#0b1326]/70 backdrop-blur-xl shadow-2xl shadow-[#060e20]/40 border-b border-outline-variant/10">
 <div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
 <a class="flex items-center gap-3 hover:opacity-80 transition-opacity" href="/es/index.html">
 <div class="flex items-center gap-3">
@@ -263,16 +263,17 @@
 </div>
 </div>
 </a>
-<div class="hidden md:flex items-center space-x-8 font-serif text-lg tracking-tight">
-<a class="text-[#8f9095] hover:text-[#dae2fd] transition-all duration-200" href="/es/solutions.html">Soluciones</a>
-<a class="text-[#8f9095] hover:text-[#dae2fd] transition-all duration-200" href="/es/industries.html">Industrias</a>
-<a class="text-[#8f9095] hover:text-[#dae2fd] transition-all duration-200" href="/es/pricing.html">Precios</a>
-<a class="text-[#8f9095] hover:text-[#dae2fd] transition-all duration-200" href="/es/about.html">Nosotros</a>
-<a class="text-[#8f9095] hover:text-[#dae2fd] transition-all duration-200" href="/es/el-salvador.html">El Salvador</a>
+<div class="hidden md:flex space-x-8">
+<a class="text-[#8f9095] hover:text-[#dae2fd] font-serif text-lg tracking-tight transition-all duration-200" href="/es/solutions.html">Soluciones</a>
+<a class="text-[#8f9095] hover:text-[#dae2fd] font-serif text-lg tracking-tight transition-all duration-200" href="/es/industries.html">Industrias</a>
+<a class="text-[#8f9095] hover:text-[#dae2fd] font-serif text-lg tracking-tight transition-all duration-200" href="/es/pricing.html">Precios</a>
+<a class="text-[#8f9095] hover:text-[#dae2fd] font-serif text-lg tracking-tight transition-all duration-200" href="/es/integrations.html">Integraciones</a>
+<a class="text-[#8f9095] hover:text-[#dae2fd] font-serif text-lg tracking-tight transition-all duration-200" href="/es/about.html">Nosotros</a>
+<a class="text-[#8f9095] hover:text-[#dae2fd] font-serif text-lg tracking-tight transition-all duration-200" href="/es/el-salvador.html">El Salvador</a>
 </div>
 <div class="flex items-center gap-6 mr-10 md:mr-0">
 <a href="/solutions.html" class="text-[#00E68A] font-label text-sm hover:text-[#dae2fd] transition-colors font-bold">EN</a><a class="hidden md:inline-flex bg-[#4edea3] text-[#003824] px-5 py-2 rounded-lg font-label font-bold scale-95 transition-transform duration-200 hover:scale-100 uppercase tracking-widest text-[10px]" href="/es/book-audit.html">
-                    Book Audit
+                    Reservar Auditoría
                 </a>
 </div>
 </div>
@@ -286,6 +287,7 @@
 <a class="text-on-surface hover:text-primary transition-colors" href="/es/solutions.html">Soluciones</a>
 <a class="text-on-surface hover:text-primary transition-colors" href="/es/industries.html">Industrias</a>
 <a class="text-on-surface hover:text-primary transition-colors" href="/es/pricing.html">Precios</a>
+<a class="text-on-surface hover:text-primary transition-colors" href="/es/integrations.html">Integraciones</a>
 <a class="text-on-surface hover:text-primary transition-colors" href="/es/about.html">Nosotros</a>
 <a class="text-on-surface hover:text-primary transition-colors" href="/es/el-salvador.html">El Salvador</a>
 </div>
@@ -302,7 +304,6 @@
                     const isHidden = menu.classList.contains('translate-x-full');
                     if (isHidden) {
                         menu.classList.remove('hidden');
-                        // tiny delay to allow display:block to apply before animating transform
                         setTimeout(() => {
                             menu.classList.remove('translate-x-full');
                             menu.classList.add('translate-x-0');
@@ -328,10 +329,10 @@
 <span class="font-label text-sm tracking-[0.2em] text-primary uppercase">Infraestructura e IA</span>
 </div>
 <h1 class="font-headline text-6xl md:text-7xl font-bold text-on-surface leading-[1.1] tracking-tight mb-8 animate-slide-up">
-                    Real Business <span class="text-primaryitalic">Outcomes</span>. Backed by the <span class="text-brand-green italic">Right Systems</span>.
+                    Resultados Reales. <span class="text-primary italic">Respaldados</span> por los <span class="text-brand-green italic">Sistemas Correctos</span>.
                 </h1>
 <p class="font-body text-xl text-on-surface-variant leading-relaxed mb-10 max-w-3xl animate-fade-in delay-200">
-                    Cresca OS doesn't just give you a "tool." We deliver the infrastructure that creates specific, measurable growth outcomes for your service business â€” so you can focus on the work, not the workflow.
+                    Cresca OS no solo le entrega una "herramienta". Proporcionamos la infraestructura que genera resultados de crecimiento específicos y medibles para su negocio de servicios, para que pueda concentrarse en el trabajo, no en el flujo de trabajo.
                 </p>
 </div>
 </header>
@@ -340,18 +341,18 @@
 <!-- Category 1: Custom CRM -->
 <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
 <div class="lg:col-span-5 flex flex-col justify-center py-8">
-<h2 class="font-headline text-4xl font-bold mb-6 text-on-surface">Captura Más Leads. Responde al Instante.</h2>
+<h2 class="font-headline text-4xl font-bold mb-6 text-on-surface">Capture Más Leads. Responda al Instante.</h2>
 <p class="text-on-surface-variant text-lg leading-relaxed mb-8">
-                        The faster you respond, the higher you convert. Cresca OS ensures that every lead from your website, social media, or phone is captured and answered in seconds â€” not hours.
+                        Cuanto más rápido responda, más convertirá. Cresca OS garantiza que cada cliente potencial de su sitio web, redes sociales o teléfono sea capturado y respondido en segundos, no en horas.
                     </p>
 <ul class="space-y-4 mb-8">
 <li class="flex items-start space-x-3">
 <span class="material-symbols-outlined text-[#00E68A] mt-0.5">check_circle</span>
-<span class="text-on-surface">Captura Unificada de Leads (Web, Chat, Phone)</span>
+<span class="text-on-surface">Captura Unificada de Leads (Web, Chat, Teléfono)</span>
 </li>
 <li class="flex items-start space-x-3">
 <span class="material-symbols-outlined text-[#00E68A] mt-0.5">check_circle</span>
-<span class="text-on-surface">Instant "Speed-to-Lead" Auto-Response</span>
+<span class="text-on-surface">Respuesta Automática Instantánea "Speed-to-Lead"</span>
 </li>
 </ul>
 </div>
@@ -364,8 +365,8 @@
 <span class="font-label text-xs text-outline tracking-widest uppercase">Scalable Systems</span>
 </div>
 <div>
-<h3 class="font-headline text-2xl mb-4">Resultado: Nunca Pierdas una Consulta</h3>
-<p class="text-on-surface-variant mb-6">Real-time tracking of every touchpoint in your customer journey without the administrative overhead of manual logging.</p>
+<h3 class="font-headline text-2xl mb-4">Resultado: No Pierda Ninguna Oportunidad</h3>
+<p class="text-on-surface-variant mb-6">Seguimiento en tiempo real de cada punto de contacto en el recorrido de su cliente sin la carga administrativa del registro manual.</p>
 <div class="h-1 w-full bg-surface-container-low rounded-full overflow-hidden">
 <div class="h-full bg-primary w-2/3"></div>
 </div>
@@ -380,9 +381,9 @@
 <div class="grid md:grid-cols-2 gap-12">
 <div>
 <div class="editorial-gradient h-1 w-16 mb-8"></div>
-<h4 class="font-label text-sm uppercase tracking-widest text-primary mb-4">Elimina el Seguimiento Manual</h4>
+<h4 class="font-label text-sm uppercase tracking-widest text-primary mb-4">Elimine el Seguimiento Manual</h4>
 <p class="text-on-surface-variant leading-relaxed">
-                                We build automated scheduling and follow-up systems that do the "chasing" for you. Your team only steps in when a lead is ready to talk or an appointment is booked.
+                                Construimos sistemas automatizados de programación y seguimiento que hacen el "seguimiento" por usted. Su equipo solo interviene cuando un cliente potencial está listo para hablar o se ha agendado una cita.
                             </p>
 </div>
 <div class="space-y-6">
@@ -404,19 +405,19 @@
 <span class="material-symbols-outlined text-primary text-4xl mb-6">analytics</span>
 <h3 class="font-headline text-3xl font-bold mb-4">Dashboards de Inteligencia Operativa</h3>
 <p class="text-on-surface-variant mb-8 flex-grow">
-                        Real-time visibility across your enterprise. Custom reporting layers that surface the signals executives need â€” without the noise of off-the-shelf BI tools.
+                        Visibilidad en tiempo real en toda su empresa. Capas de informes personalizados que resaltan las señales que los ejecutivos necesitan, sin el ruido de las herramientas de BI convencionales.
                     </p>
 </div>
 <div class="bg-surface-container-highest/30 backdrop-blur-md p-10 rounded-xl border border-outline-variant/20 flex flex-col">
 <span class="material-symbols-outlined text-primary text-4xl mb-6">database</span>
 <h3 class="font-headline text-3xl font-bold mb-4">Datos de Negocio Seguros</h3>
 <p class="text-on-surface-variant mb-8 flex-grow">
-                        Data infrastructure designed so your organization retains full governance. No vendor lock-in. No third-party data exposure. Your intelligence stays yours.
+                        Infraestructura de datos diseñada para que su organización mantenga el control total. Sin dependencia de proveedores. Sin exposición de datos a terceros. Su inteligencia sigue siendo suya.
                     </p>
 <div class="flex flex-wrap gap-2">
 <span class="bg-surface px-3 py-1 text-xs font-label text-outline-variant border border-outline-variant/30 rounded">Control Total</span>
 <span class="bg-surface px-3 py-1 text-xs font-label text-outline-variant border border-outline-variant/30 rounded">Sin Ataduras</span>
-<span class="bg-surface px-3 py-1 text-xs font-label text-outline-variant border border-outline-variant/30 rounded">Sovereign Control</span>
+<span class="bg-surface px-3 py-1 text-xs font-label text-outline-variant border border-outline-variant/30 rounded">Control Soberano</span>
 </div>
 </div>
 </div>
@@ -430,7 +431,7 @@
 <div class="relative z-10 max-w-2xl">
 <h2 class="font-headline text-4xl font-bold mb-6">Sistemas para Impulsar el Crecimiento</h2>
 <p class="text-on-surface-variant text-lg leading-relaxed mb-10">
-                        Operational efficiency is only half the battle. Our growth systems integrate sales intelligence and customer lifecycle automation to ensure your pipeline is as efficient as your operations.
+                        La eficiencia operativa es solo la mitad de la batalla. Nuestros sistemas de crecimiento integran inteligencia de ventas y automatización del ciclo de vida del cliente para garantizar que su embudo sea tan eficiente como sus operaciones.
                     </p>
 <div class="grid grid-cols-2 gap-8">
 <div>
@@ -439,7 +440,7 @@
 </div>
 <div>
 <div class="text-3xl font-bold text-primary mb-1">0%</div>
-<div class="text-xs font-label uppercase tracking-widest text-outline">Data Loss</div>
+<div class="text-xs font-label uppercase tracking-widest text-outline">Pérdida de Datos</div>
 </div>
 </div>
 </div>
@@ -450,11 +451,11 @@
 <div class="bg-primary-container border border-primary/20 py-16 px-8 rounded-xl">
 <h2 class="font-headline text-4xl font-bold text-on-surface mb-6">¿Listo para Ver Estos Resultados en Tu Negocio?</h2>
 <p class="text-on-surface-variant max-w-xl mx-auto mb-10 text-lg">
-                    Reserva una Auditoría de Sistemas gratuita de 15 minutos. We'll show you exactly where leads are leaking and how to fix it.
+                    Reserva una Auditoría de Sistemas gratuita de 30 minutos. Te mostraremos exactamente dónde se pierden tus leads y cómo solucionarlo.
                 </p>
 <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
 <a class="bg-primary text-on-primary px-10 py-4 rounded-lg font-label font-bold text-sm tracking-widest uppercase hover:scale-105 transition-transform block" href="/es/book-audit.html">
-                        Book Your Free Audit â†’
+                        Reservar Mi Auditoría Gratis →
 </a>
 </div>
 </div>
@@ -481,7 +482,7 @@
 </div>
 </div>
 <p class="font-sans text-sm text-[#8f9095] mb-8 leading-relaxed max-w-xs">
-                    Done-for-you business operating systems for high-growth service companies.
+                    < 5s Operations Intelligence para la próxima generación de negocios escalables.
                 </p>
 </div>
 <div>
@@ -490,26 +491,29 @@
 <li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="/es/book-audit.html">Auditoría de Sistemas</a></li>
 <li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="/es/pricing.html">Precios</a></li>
 <li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="/es/industries.html">Industrias</a></li>
+<li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="/es/integrations.html">Integraciones</a></li>
 </ul>
 </div>
 <div>
 <h6 class="text-[#4edea3] font-label text-xs uppercase tracking-widest mb-6 font-bold">Mercados</h6>
 <ul class="space-y-4">
-<li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="/es/index.html">United States</a></li>
+<li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="/es/about.html">Estrategia EE.UU.</a></li>
 <li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="/es/el-salvador.html">Hub El Salvador</a></li>
+<li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="/es/industries.html">Industria Solar</a></li>
 </ul>
 </div>
 <div>
 <h6 class="text-[#4edea3] font-label text-xs uppercase tracking-widest mb-6 font-bold">Empresa</h6>
 <ul class="space-y-4">
-<li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="/es/about.html">About Us</a></li>
-<li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="/es/book-audit.html">Reservar Auditoría</a></li>
+<li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="/es/about.html">Nosotros</a></li>
+<li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="/es/privacy.html">Política de Privacidad</a></li>
+<li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="/es/terms.html">Términos de Servicio</a></li>
 </ul>
 </div>
 </div>
 <div class="max-w-7xl mx-auto px-8 py-8 border-t border-[#45474b]/10 text-center">
 <p class="font-sans text-xs text-[#8f9095] opacity-80 uppercase tracking-widest">
-                Â&copy; 2026 Cresca OS. All rights reserved.
+                &copy; 2026 Cresca OS. < 5s Operations Intelligence.
             </p>
 <p class="font-sans text-xs text-[#8f9095] mt-2">
                     <a class="hover:text-[#4edea3] transition-colors" href="mailto:info@crescaos.com">info@crescaos.com</a> | 516-298-8323
@@ -524,7 +528,7 @@
                     <a href="/es/privacy.html" class="hover:text-white transition-colors">Política de Privacidad</a>
                     <a href="/es/terms.html" class="hover:text-white transition-colors">Términos de Servicio</a>
                 </div>
-
+            </div>
 </footer>
 
     <!-- GHL Chat Widget -->
