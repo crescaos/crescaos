@@ -67,14 +67,14 @@
                 <a class="text-[#8f9095] hover:text-[#dae2fd] transition-all" href="/es/how-we-work.html">Cómo Trabajamos</a>
                 <a class="text-[#8f9095] hover:text-[#dae2fd] transition-all" href="/es/integrations.html">Integraciones</a>
             </div>
-            <div class="flex items-center gap-6">
+            <div class="flex items-center gap-4 lg:gap-6 mr-2 lg:mr-0">
                 <a href="/privacy.html" data-lang-switch="en" class="text-[#00E68A] font-label text-sm hover:text-[#dae2fd] transition-colors font-bold">EN</a>
-                <a class="bg-[#4edea3] text-[#003824] px-5 py-2 rounded-lg font-label font-bold uppercase text-[10px]" href="/es/diagnostic.html">Reservar Auditoría</a>
+                <a class="hidden lg:inline-flex bg-[#4edea3] text-[#003824] px-5 py-2 rounded-lg font-label font-bold uppercase text-[10px]" href="/es/diagnostic.html">Reservar Auditoría</a>
+                <!-- Mobile Menu Button -->
+                <button class="lg:hidden text-on-surface focus:outline-none z-[10000]" id="mobile-menu-btn">
+                    <span class="material-symbols-outlined text-3xl">menu</span>
+                </button>
             </div>
-            <!-- Mobile Menu Button -->
-            <button class="lg:hidden absolute top-5 right-6 text-on-surface focus:outline-none z-[10000]" id="mobile-menu-btn">
-                <span class="material-symbols-outlined text-3xl">menu</span>
-            </button>
         </div>
         <!-- Mobile Menu Overlay -->
         <div class="fixed inset-0 bg-[#0b1326]/95 z-[9999] backdrop-blur-2xl hidden flex-col pt-24 px-8 transform transition-transform duration-300 translate-x-full" id="mobile-menu">
