@@ -3,7 +3,12 @@
 <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>Pricing | Cresca OS</title>
+    <title>Managed Infrastructure Investment | Pricing Plans | Cresca OS</title>
+    <meta name="description" content="Transparent, fixed-fee pricing for your managed revenue operating infrastructure. Choose the tier that fits your revenue goals and stop losing leads today.">
+    <link rel="canonical" href="https://crescaos.com/pricing" />
+    <link rel="alternate" hreflang="en" href="https://crescaos.com/pricing" />
+    <link rel="alternate" hreflang="es" href="https://crescaos.com/es/pricing" />
+    <link rel="alternate" hreflang="x-default" href="https://crescaos.com/pricing" />
     <link href="https://fonts.googleapis.com" rel="preconnect"/>
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600&family=Manrope:wght@500;600;700&display=swap" rel="stylesheet"/>
@@ -94,82 +99,118 @@
                 <div class="flex items-center gap-3">
                     <svg class="w-8 h-8" fill="none" height="32" viewbox="0 0 48 48" width="32" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="24" cy="24" r="18" stroke="#0A84FF" stroke-width="3"></circle>
-                        <ellipse cx="24" cy="24" rx="13" ry="7.5" stroke="#00E68A" stroke-width="3" transform="rotate(60 24 24)"></ellipse>
-                        <ellipse cx="24" cy="24" rx="13" ry="7.5" stroke="#00E68A" stroke-width="3" transform="rotate(-60 24 24)"></ellipse>
-                        <circle cx="24" cy="24" fill="#FFFFFF" r="3.5"></circle>
+                        <path d="M24 14V34M14 24H34" stroke="#00E68A" stroke-linecap="round" stroke-width="3"></path>
                     </svg>
-                    <div class="flex items-baseline font-serif text-2xl font-bold tracking-tighter">
-                        <span class="text-white">CRESCA</span><span class="text-[#00E68A] ml-px">OS</span>
-                    </div>
+                    <span class="text-xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-white/70">Cresca OS</span>
                 </div>
             </a>
-            <div class="hidden md:flex space-x-8">
-                <a class="text-[#8f9095] hover:text-[#dae2fd] transition-colors" href="solutions.html">Solutions</a>
-                <a class="text-[#8f9095] hover:text-[#dae2fd] transition-colors" href="industries.html">Industries</a>
-                <a class="text-white" href="pricing.html">Pricing</a>
-                <a class="text-[#8f9095] hover:text-[#dae2fd] transition-colors" href="how-we-work.html">How We Work</a>
-                <a class="text-[#8f9095] hover:text-[#dae2fd] transition-colors" href="about.html">About</a>
-                <a class="text-[#8f9095] hover:text-[#dae2fd] transition-colors" href="el-salvador.html">El Salvador</a>
+            <div class="hidden md:flex items-center gap-8">
+                <a class="text-sm font-medium text-on-surface-variant hover:text-white transition-colors" href="index.html">Infrastructure</a>
+                <a class="text-sm font-medium text-white underline decoration-primary decoration-2 underline-offset-4" href="pricing.html">Investment</a>
+                <a class="text-sm font-medium text-on-surface-variant hover:text-white transition-colors" href="how-we-work.html">How We Work</a>
+                <a class="text-sm font-medium text-on-surface-variant hover:text-white transition-colors" href="el-salvador.html">El Salvador</a>
+                <a class="px-5 py-2.5 rounded-full bg-white text-surface-lowest text-sm font-bold hover:bg-on-surface transition-all transform hover:scale-105" href="#pricing">Audit My Revenue</a>
             </div>
-            <a href="book-audit.html" class="hidden md:inline-flex bg-brand-green text-[#003824] px-5 py-2 rounded-lg font-label font-bold uppercase tracking-widest text-[10px]">Book Audit</a>
         </div>
+    </nav>
+            <div class="flex items-center gap-6 mr-10 md:mr-0">
+                <a href="/es/pricing.html" data-lang-switch="es" class="flex items-center gap-1 text-[#00E68A] font-label text-xs hover:text-[#dae2fd] transition-colors font-bold border border-[#00E68A]/30 rounded-full px-2 py-1 bg-[#00E68A]/5"><span class="material-symbols-outlined text-[16px]">language</span> ES</a>
+                <a href="diagnostic.html" class="hidden md:inline-flex bg-[#4edea3] text-[#003824] px-5 py-2 rounded-lg font-label font-bold scale-95 transition-transform duration-200 hover:scale-100 uppercase tracking-widest text-[10px]">Get Your Score</a>
+            </div>
+        </div>
+        <!-- Mobile Menu Button -->
+        <button class="md:hidden absolute top-5 right-6 text-on-surface focus:outline-none z-[60]" id="mobile-menu-btn">
+            <span class="material-symbols-outlined text-3xl">menu</span>
+        </button>
+        <!-- Mobile Menu Overlay -->
+        <div class="fixed inset-0 bg-[#080f22] z-[55] hidden flex-col pt-24 px-8 transform transition-transform duration-300 translate-x-full" id="mobile-menu">
+            <div class="flex justify-between items-center mb-8">
+                <a href="/es/pricing.html" data-lang-switch="es" class="flex items-center gap-1 text-[#00E68A] font-label text-sm hover:text-[#dae2fd] transition-colors font-bold border border-[#00E68A]/30 rounded-full px-3 py-1.5 bg-[#00E68A]/5"><span class="material-symbols-outlined text-[18px]">language</span> ESPAÑOL</a>
+            </div>
+            <div class="flex flex-col space-y-8 font-headline text-3xl">
+                <a class="text-on-surface hover:text-primary transition-colors" href="solutions.html">Infrastructure</a>
+                <a class="text-on-surface hover:text-primary transition-colors" href="industries.html">Industries</a>
+                <a class="text-on-surface hover:text-primary transition-colors" href="pricing.html">Investment</a>
+                <a class="text-on-surface hover:text-primary transition-colors" href="how-we-work.html">How We Work</a>
+                <a class="text-on-surface hover:text-primary transition-colors" href="about.html">About</a>
+                <a class="text-on-surface hover:text-primary transition-colors" href="el-salvador.html">El Salvador</a>
+            </div>
+            <div class="mt-12">
+                <a class="bg-primary text-on-primary px-6 py-3 rounded-lg font-label font-bold uppercase tracking-widest text-sm inline-block w-full text-center" href="diagnostic.html">Get Your Free Score</a>
+            </div>
+        </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const btn = document.getElementById('mobile-menu-btn');
+                const menu = document.getElementById('mobile-menu');
+                if(btn && menu) {
+                    btn.addEventListener('click', () => {
+                        const isHidden = menu.classList.contains('translate-x-full');
+                        if (isHidden) {
+                            menu.classList.remove('hidden');
+                            setTimeout(() => {
+                                menu.classList.remove('translate-x-full');
+                                menu.classList.add('translate-x-0');
+                            }, 10);
+                            btn.innerHTML = '<span class="material-symbols-outlined text-3xl text-error">close</span>';
+                        } else {
+                            menu.classList.remove('translate-x-0');
+                            menu.classList.add('translate-x-full');
+                            setTimeout(() => menu.classList.add('hidden'), 300);
+                            btn.innerHTML = '<span class="material-symbols-outlined text-3xl">menu</span>';
+                        }
+                    });
+                }
+            });
+        </script>
     </nav>
 
     
-<main class="pt-32 pb-24 relative overflow-hidden">
+    <main class="pt-32 pb-24 px-6">
         <!-- Hero Section -->
-        <header class="max-w-4xl mx-auto px-8 mb-20 text-center relative z-10">
-            <h1 class="font-headline text-5xl md:text-6xl font-bold text-white leading-tight mb-8 animate-slide-up">
-                Scalable Systems for <span class="text-brand-green italic">Every Stage</span> of Growth.
+        <section class="max-w-4xl mx-auto text-center mb-20 animate-slide-up">
+            <span class="px-4 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-bold tracking-widest uppercase mb-6 inline-block">Managed Infrastructure Investment</span>
+            <h1 class="text-5xl md:text-6xl font-headline font-bold mb-8 leading-tight">
+                Predictable Growth Powered by <span class="text-brand-green">Revenue Operating Infrastructure</span>
             </h1>
-            <p class="text-xl md:text-2xl text-on-surface-variant max-w-4xl mx-auto mb-8 font-light leading-relaxed animate-fade-in">
-                No per-user fees. No hidden tech costs. One managed system that pays for itself.
+            <p class="text-xl text-on-surface-variant max-w-2xl mx-auto mb-12 leading-relaxed">
+                Stop paying for disconnected tools. Invest in a managed infrastructure that captures, routes, and reports every lead automatically. No hidden fees. Fully managed for you.
             </p>
-            <div class="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 bg-surface-container bg-opacity-60 backdrop-blur-md border border-outline-variant/10 rounded-full px-8 py-3 font-label text-[10px] md:text-xs uppercase tracking-[0.2em] text-outline text-center mb-8 animate-fade-in delay-200">
-                <span>Built for solar, cleaning, and home services</span>
-            </div>
-            <p class="text-lg text-on-surface font-light italic mb-12 animate-fade-in delay-200">
-                Most businesses lose 30–60% of their leads to slow follow-up. We fix that — from first contact to booked appointment.
-            </p>
-            <div class="flex flex-col sm:flex-row gap-6 justify-center items-center animate-fade-in delay-200">
-                <a class="signature-texture text-on-primary px-10 py-5 rounded-xl font-label font-bold tracking-widest text-sm uppercase shadow-[0_0_30px_rgba(0,230,138,0.3)] transition-all duration-300 hover:scale-105 block w-full sm:w-auto text-center" href="book-audit.html">
-                    Book Your Free Revenue Audit
+            <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+                <a class="signature-texture text-on-primary px-10 py-5 rounded-xl font-label font-bold tracking-widest text-sm uppercase shadow-[0_0_30px_rgba(0,230,138,0.3)] transition-all duration-300 hover:scale-105 block w-full sm:w-auto text-center" href="diagnostic.html">
+                    Audit My Revenue Leakage
                 </a>
                 <a class="bg-surface-container-high border border-outline-variant/30 text-white px-10 py-5 rounded-xl font-label tracking-widest text-sm uppercase transition-all duration-200 hover:bg-surface-bright block w-full sm:w-auto text-center" href="#pricing">
-                    See Pricing & Get Started
+                    See Infrastructure Tiers
                 </a>
             </div>
-        </header>
+        </section>
 
         <!-- Problem Agitation & Solution -->
         <section class="max-w-6xl mx-auto px-8 mb-32 relative z-10">
             <div class="grid md:grid-cols-2 gap-12 items-stretch">
                 <div class="bg-surface-container-lowest border border-error/20 p-8 md:p-12 rounded-3xl">
-                    <span class="text-error font-label tracking-[0.2em] uppercase text-xs font-bold mb-4 block">The Real Problem</span>
-                    <h2 class="font-headline text-3xl font-bold text-white mb-8">Most Businesses Don’t Have a Lead Problem. They Have a Follow-Up Problem.</h2>
+                    <span class="text-error font-label tracking-[0.2em] uppercase text-xs font-bold mb-4 block">The Revenue Leak</span>
+                    <h2 class="font-headline text-3xl font-bold text-white mb-8">You Don't Have a Lead Problem. You Have an Infrastructure Problem.</h2>
                     <ul class="space-y-4 text-on-surface-variant mb-10">
-                        <li class="flex gap-4 items-start"><span class="text-error mt-1">✗</span> Leads go cold because no one responds fast enough</li>
-                        <li class="flex gap-4 items-start"><span class="text-error mt-1">✗</span> Missed calls and texts turn into lost revenue every week</li>
-                        <li class="flex gap-4 items-start"><span class="text-error mt-1">✗</span> Follow-ups are inconsistent or completely forgotten</li>
-                        <li class="flex gap-4 items-start"><span class="text-error mt-1">✗</span> Your team is overwhelmed trying to keep up manually</li>
-                        <li class="flex gap-4 items-start"><span class="text-error mt-1">✗</span> Your competitors aren’t better — they’re just faster</li>
+                        <li class="flex gap-4 items-start"><span class="text-error mt-1">✗</span> Leads drop off because follow-up takes 10+ minutes</li>
+                        <li class="flex gap-4 items-start"><span class="text-error mt-1">✗</span> Disconnected tools create data silos and missed jobs</li>
+                        <li class="flex gap-4 items-start"><span class="text-error mt-1">✗</span> CRM is a "graveyard" of dead leads with no movement</li>
+                        <li class="flex gap-4 items-start"><span class="text-error mt-1">✗</span> Operators lack visibility into what's actually converting</li>
                     </ul>
-                    <p class="text-white font-medium border-l-4 border-error pl-4 italic">Every missed response is a missed job — and money left on the table.</p>
+                    <p class="text-white font-medium border-l-4 border-error pl-4 italic">Every minute of delay is revenue leaking out of your business.</p>
                 </div>
                 <div class="bg-surface-container border border-outline-variant/10 p-8 md:p-12 rounded-3xl relative overflow-hidden">
                     <div class="absolute top-0 right-0 w-32 h-32 bg-brand-green/5 rounded-bl-full"></div>
                     <span class="text-brand-green font-label tracking-[0.2em] uppercase text-xs font-bold mb-4 block relative z-10">The Solution</span>
-                    <h3 class="font-headline text-3xl font-bold text-white mb-6 relative z-10">We Build & Operate Your Complete Customer Acquisition Engine</h3>
-                    <p class="text-on-surface-variant mb-8 text-lg font-light relative z-10">CRESCA OS installs and fully manages a revenue system that works 24/7 for your business:</p>
+                    <h3 class="font-headline text-3xl font-bold text-white mb-6 relative z-10">A Managed Revenue Operating Infrastructure</h3>
+                    <p class="text-on-surface-variant mb-8 text-lg font-light relative z-10">Cresca OS installs the foundation that captures, routes, and monitors every lead 24/7:</p>
                     <ul class="space-y-4 text-on-surface-variant mb-10 relative z-10">
-                        <li class="flex gap-3 items-start"><span class="material-symbols-outlined text-brand-green mt-0.5">check_circle</span> Captures every lead from every source — web, ads, Google</li>
-                        <li class="flex gap-3 items-start"><span class="material-symbols-outlined text-brand-green mt-0.5">check_circle</span> Responds in under 60 seconds via SMS, email & AI</li>
-                        <li class="flex gap-3 items-start"><span class="material-symbols-outlined text-brand-green mt-0.5">check_circle</span> Follows up automatically 7–12 times</li>
-                        <li class="flex gap-3 items-start"><span class="material-symbols-outlined text-brand-green mt-0.5">check_circle</span> Keeps your pipeline organized and always active</li>
+                        <li class="flex gap-3 items-start"><span class="material-symbols-outlined text-brand-green mt-0.5">hub</span> <strong>Capture:</strong> Lead intake across all channels instantly.</li>
+                        <li class="flex gap-3 items-start"><span class="material-symbols-outlined text-brand-green mt-0.5">route</span> <strong>Route:</strong> Intelligent assignment and instant AI booking.</li>
+                        <li class="flex gap-3 items-start"><span class="material-symbols-outlined text-brand-green mt-0.5">monitor_heart</span> <strong>Monitor:</strong> Real-time tracking of every lead's journey.</li>
+                        <li class="flex gap-3 items-start"><span class="material-symbols-outlined text-brand-green mt-0.5">analytics</span> <strong>Report:</strong> Clear visibility into ROI and operator efficiency.</li>
                     </ul>
-                    <div class="bg-surface-container-low p-6 rounded-xl border border-brand-green/20 relative z-10">
-                        <p class="text-sm text-on-surface italic leading-relaxed">"This isn’t software you log into and manage yourself. This is a fully managed customer acquisition system — built, operated, and optimized by our team so you close more jobs."</p>
-                    </div>
                 </div>
             </div>
         </section>
@@ -212,7 +253,7 @@
                 <!-- Tier 1 -->
                 <div class="bg-surface-container p-10 rounded-[2rem] border border-outline-variant/10 flex flex-col h-full hover:border-primary/30 transition-all">
                     <div class="mb-6">
-                        <h3 class="font-headline text-3xl font-bold text-white mb-2">Capture System</h3>
+                        <h3 class="font-headline text-3xl font-bold text-white mb-2">Foundation</h3>
                         <p class="text-sm text-on-surface-variant mb-6 h-10">Best for businesses generating 20+ leads but losing too many to slow follow-up.</p>
                         <div class="flex items-baseline gap-1">
                             <span class="text-4xl font-bold text-white tracking-tighter">$2,000</span>
@@ -234,8 +275,8 @@
                         <li class="flex gap-3"><span class="material-symbols-outlined text-primary text-[20px] shrink-0">check</span> Ongoing system monitoring and support</li>
                     </ul>
                     <div class="space-y-4 mt-auto">
-                        <a href="/api/checkout?plan=capture" class="w-full block py-4 rounded-xl border border-primary/50 text-white font-label font-bold uppercase tracking-widest text-center hover:bg-primary transition-all text-xs">Get Started with Capture</a>
-                        <a href="book-audit.html" class="w-full block py-2 text-on-surface-variant hover:text-white font-label font-bold uppercase tracking-widest text-center transition-all text-[10px]">Or Book Free Audit First</a>
+                        <a href="/api/checkout?plan=capture" class="w-full block py-4 rounded-xl border border-primary/50 text-white font-label font-bold uppercase tracking-widest text-center hover:bg-primary transition-all text-xs">Get Started with Foundation</a>
+                        <a href="diagnostic.html" class="w-full block py-2 text-on-surface-variant hover:text-white font-label font-bold uppercase tracking-widest text-center transition-all text-[10px]">Or Get Your Score First</a>
                     </div>
                 </div>
 
@@ -246,7 +287,7 @@
                         <h3 class="font-headline text-3xl font-bold text-white mb-2">Growth System</h3>
                         <p class="text-sm text-on-surface-variant mb-6 h-10">For teams ready to scale and want a full acquisition system running automatically.</p>
                         <div class="flex items-baseline gap-1">
-                            <span class="text-5xl font-bold text-white tracking-tighter">$3,500</span>
+                            <span class="text-5xl font-bold text-white tracking-tighter">$4,500</span>
                             <span class="text-on-surface-variant">/mo</span>
                         </div>
                         <p class="text-xs text-on-surface-variant mt-2 mb-6">One-time setup starting at $3,000</p>
@@ -257,8 +298,8 @@
                         </div>
                     </div>
                     <ul class="space-y-4 mb-10 flex-grow text-sm text-on-surface-variant">
-                        <li class="flex gap-3 text-white font-bold mb-4"><span class="material-symbols-outlined text-brand-green text-[20px] shrink-0">verified</span> Everything in Capture, plus:</li>
-                        <li class="flex gap-3"><span class="material-symbols-outlined text-brand-green text-[20px] shrink-0">check</span> AI-powered instant response (SMS, email, voice)</li>
+                        <li class="flex gap-3 text-white font-bold mb-4"><span class="material-symbols-outlined text-brand-green text-[20px] shrink-0">verified</span> Everything in Foundation, plus:</li>
+                        <li class="flex gap-3"><span class="material-symbols-outlined text-brand-green text-[20px] shrink-0">check</span> AI-assisted lead intelligence, routing, and response infrastructure</li>
                         <li class="flex gap-3"><span class="material-symbols-outlined text-brand-green text-[20px] shrink-0">check</span> Advanced multi-touch sequences (7–12 contacts)</li>
                         <li class="flex gap-3"><span class="material-symbols-outlined text-brand-green text-[20px] shrink-0">check</span> Missed call text-back & lead reactivation</li>
                         <li class="flex gap-3"><span class="material-symbols-outlined text-brand-green text-[20px] shrink-0">check</span> Full conversion tracking & continuous optimization</li>
@@ -266,7 +307,7 @@
                     </ul>
                     <div class="space-y-4 mt-auto">
                         <a href="/api/checkout?plan=growth" class="w-full block py-4 rounded-xl signature-texture text-surface-dim font-label font-bold uppercase tracking-widest text-center hover:opacity-90 glow-pulse text-xs">Get Started with Growth</a>
-                        <a href="book-audit.html" class="w-full block py-2 text-on-surface-variant hover:text-white font-label font-bold uppercase tracking-widest text-center transition-all text-[10px]">Or Book Free Audit First</a>
+                        <a href="diagnostic.html" class="w-full block py-2 text-on-surface-variant hover:text-white font-label font-bold uppercase tracking-widest text-center transition-all text-[10px]">Or Get Your Score First</a>
                     </div>
                 </div>
 
@@ -276,7 +317,7 @@
                         <h3 class="font-headline text-3xl font-bold text-white mb-2">Revenue Engine</h3>
                         <p class="text-sm text-on-surface-variant mb-6 h-10">Companies scaling aggressively that want a true done-for-you revenue machine.</p>
                         <div class="flex items-baseline gap-1">
-                            <span class="text-2xl font-bold text-white tracking-tighter">Starting at $6,000</span>
+                            <span class="text-2xl font-bold text-white tracking-tighter">Starting at $8,500</span>
                             <span class="text-on-surface-variant">/mo</span>
                         </div>
                         <p class="text-xs text-on-surface-variant mt-2 mb-6">Custom setup fee determined after audit</p>
@@ -287,7 +328,7 @@
                         </div>
                     </div>
                     <ul class="space-y-4 mb-10 flex-grow text-sm text-on-surface-variant">
-                        <li class="flex gap-3 text-white font-bold mb-4"><span class="material-symbols-outlined text-primary text-[20px] shrink-0">verified</span> Everything in Growth, plus:</li>
+                        <li class="flex gap-3 text-white font-bold mb-4"><span class="material-symbols-outlined text-primary text-[20px] shrink-0">verified</span> Everything in Growth System, plus:</li>
                         <li class="flex gap-3"><span class="material-symbols-outlined text-primary text-[20px] shrink-0">check</span> Advanced multi-channel AI automation</li>
                         <li class="flex gap-3"><span class="material-symbols-outlined text-primary text-[20px] shrink-0">check</span> Ad integration & lead flow optimization</li>
                         <li class="flex gap-3"><span class="material-symbols-outlined text-primary text-[20px] shrink-0">check</span> Custom workflows built to your business logic</li>
@@ -296,6 +337,34 @@
                     </ul>
                      <div class="space-y-4 mt-auto">
                         <a href="#apply" class="w-full block py-4 rounded-xl border border-primary/50 text-white font-label font-bold uppercase tracking-widest text-center hover:bg-primary transition-all text-xs">Apply for Revenue Engine</a>
+                    </div>
+                </div>
+
+                <!-- Tier 4 -->
+                <div class="bg-surface-container p-10 rounded-[2rem] border border-outline-variant/10 flex flex-col h-full hover:border-primary/30 transition-all">
+                    <div class="mb-6">
+                        <h3 class="font-headline text-3xl font-bold text-white mb-2">Enterprise</h3>
+                        <p class="text-sm text-on-surface-variant mb-6 h-10">Scalable infrastructure for multi-location businesses and large service fleets.</p>
+                        <div class="flex items-baseline gap-1">
+                            <span class="text-2xl font-bold text-white tracking-tighter">Custom Pricing</span>
+                        </div>
+                        <p class="text-xs text-on-surface-variant mt-2 mb-6">Designed after deep technical audit</p>
+                        
+                        <div class="bg-surface-container-lowest p-4 rounded-xl mb-6 border border-outline-variant/5">
+                            <span class="text-[10px] font-bold text-primary uppercase tracking-widest block mb-2">What to expect</span>
+                            <p class="text-sm text-on-surface">Full enterprise-grade integration, custom API routing, and dedicated fractional RevOps support.</p>
+                        </div>
+                    </div>
+                    <ul class="space-y-4 mb-10 flex-grow text-sm text-on-surface-variant">
+                        <li class="flex gap-3 text-white font-bold mb-4"><span class="material-symbols-outlined text-primary text-[20px] shrink-0">verified</span> Full Customization:</li>
+                        <li class="flex gap-3"><span class="material-symbols-outlined text-primary text-[20px] shrink-0">check</span> Multi-tenant CRM architecture</li>
+                        <li class="flex gap-3"><span class="material-symbols-outlined text-primary text-[20px] shrink-0">check</span> Custom Supabase/System Memory tracking</li>
+                        <li class="flex gap-3"><span class="material-symbols-outlined text-primary text-[20px] shrink-0">check</span> BI/Reporting dashboard integration</li>
+                        <li class="flex gap-3"><span class="material-symbols-outlined text-primary text-[20px] shrink-0">check</span> Strategic RevOps consulting & scaling</li>
+                        <li class="flex gap-3"><span class="material-symbols-outlined text-primary text-[20px] shrink-0">check</span> 24/7 Priority engineering support</li>
+                    </ul>
+                     <div class="space-y-4 mt-auto">
+                        <a href="diagnostic.html" class="w-full block py-4 rounded-xl border border-primary/50 text-white font-label font-bold uppercase tracking-widest text-center hover:bg-primary transition-all text-xs">Request Enterprise Audit</a>
                     </div>
                 </div>
             </div>
@@ -350,8 +419,8 @@
                                 <div class="flex gap-4 items-start mb-4">
                                     <span class="material-symbols-outlined text-primary text-4xl shrink-0">verified_user</span>
                                     <div>
-                                        <h4 class="text-xl font-bold text-white mb-2">Guarantee 1 — 90-Day ROI Guarantee <span class="block sm:inline text-xs mt-1 sm:mt-0 font-normal text-on-surface-variant uppercase tracking-widest">(All Plans)</span></h4>
-                                        <p class="text-on-surface-variant text-base leading-relaxed">If you don’t generate enough qualified opportunities to cover your setup investment within 90 days, we refund your setup fee in full.</p>
+                                        <h4 class="text-xl font-bold text-white mb-2">Guarantee 1 — 90-Day ROI Commitment <span class="block sm:inline text-xs mt-1 sm:mt-0 font-normal text-on-surface-variant uppercase tracking-widest">(All Plans)</span></h4>
+                                        <p class="text-on-surface-variant text-base leading-relaxed">For qualified clients, if the implementation does not identify or help recover enough qualified opportunity value to justify the setup fee within 90 days, we will review the account and make it right.</p>
                                     </div>
                                 </div>
                             </div>
@@ -396,8 +465,8 @@
             </div>
             
             <div class="flex flex-col gap-6 justify-center items-center">
-                <a class="signature-texture text-on-primary px-12 py-6 rounded-xl font-label font-bold tracking-widest text-sm sm:text-base uppercase shadow-[0_0_30px_rgba(0,230,138,0.3)] transition-all duration-300 hover:scale-105 block w-full sm:w-auto text-center" href="book-audit.html">
-                    Book Your Free Revenue Audit
+                <a class="signature-texture text-on-primary px-12 py-6 rounded-xl font-label font-bold tracking-widest text-sm sm:text-base uppercase shadow-[0_0_30px_rgba(0,230,138,0.3)] transition-all duration-300 hover:scale-105 block w-full sm:w-auto text-center" href="diagnostic.html">
+                    Get Your Free Revenue Score
                     <span class="block text-[10px] sm:text-xs font-normal opacity-80 mt-1 normal-case tracking-normal">No pitch. No pressure. Just clarity.</span>
                 </a>
                 <a class="bg-surface-container-high border border-outline-variant/30 text-white px-10 py-5 rounded-xl font-label tracking-widest text-sm uppercase transition-all duration-200 hover:bg-surface-bright block w-full sm:w-auto text-center" href="#pricing">
@@ -498,5 +567,6 @@
       data-widget-id="69d3ebd934c0448115bc10d9"> 
     </script>
 
+    <script src="/js/language-manager.js"></script>
 </body>
 </html>

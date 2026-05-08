@@ -35,26 +35,36 @@ exports.handler = async (event, context) => {
     // 1. Map Form Payload to GHL Contact Data
     const isESLead = payload.source === 'El Salvador Intake Form';
     const isAuditWizard = payload.source === 'Growth Audit Wizard' || payload.source === 'Growth Audit Wizard (ES)';
+    const isDiagnostic = payload.source === 'Diagnostic Funnel';
     
-    // Normalize names from the wizard (full_name) vs the form (firstName/lastName)
+    // Normalize names from the wizard (full_name) vs the form (firstName/lastName) vs Diagnostic (name)
     let firstName = payload.firstName || '';
     let lastName = payload.lastName || '';
     if (payload.full_name) {
       const parts = payload.full_name.trim().split(' ');
       firstName = parts[0];
       lastName = parts.slice(1).join(' ');
+    } else if (payload.name) {
+      const parts = payload.name.trim().split(' ');
+      firstName = parts[0];
+      lastName = parts.slice(1).join(' ');
     }
+
+    const tags = [];
+    if (isESLead) tags.push('es-lead');
+    else if (isDiagnostic) tags.push('cresca:diagnostic_completed', payload.language === 'es' ? 'cresca:lang_es' : 'cresca:lang_en');
+    else tags.push('growth-audit');
 
     const contactData = {
       firstName: firstName || 'Audit',
       lastName: lastName || 'Lead',
-      tags: [isESLead ? 'es-lead' : 'growth-audit'],
+      tags: tags,
       customFields: []
     };
     
     if (payload.email) contactData.email = payload.email.toLowerCase();
     if (payload.phone) contactData.phone = payload.phone;
-    if (payload.company || payload.business_name) contactData.companyName = payload.company || payload.business_name;
+    if (payload.company || payload.business_name || payload.businessName) contactData.companyName = payload.company || payload.business_name || payload.businessName;
 
     // 2. Format detailed note for ES Leads or standard Audit Leads
     let noteContent = `Source: ${payload.source || 'Website Form'}\n`;
@@ -100,6 +110,28 @@ exports.handler = async (event, context) => {
       if (payload.revenue) noteContent += `Annual Revenue: ${payload.revenue}\n`;
       if (payload.website) noteContent += `Website: ${payload.website}\n`;
       if (payload.needs) noteContent += `Biggest Needs: ${payload.needs}\n`;
+    } else if (isDiagnostic) {
+      noteContent += `--- Diagnostic Funnel Results ---\n`;
+      if (payload.score) noteContent += `Score: ${payload.score} / 100 (${payload.score_tier || 'N/A'})\n`;
+      if (payload.monthlyLoss) noteContent += `Monthly Revenue Loss: $${payload.monthlyLoss.toLocaleString()}\n`;
+      if (payload.businessType) noteContent += `Business Type: ${payload.businessType}\n`;
+      if (payload.revenue) noteContent += `Revenue Stage: ${payload.revenue}\n`;
+      if (payload.bottleneck) noteContent += `Bottleneck: ${payload.bottleneck}\n`;
+      if (payload.responseTime) noteContent += `Response Time: ${payload.responseTime}\n`;
+
+      const track = [];
+      if (payload.utm_source) track.push(`UTM Source: ${payload.utm_source}`);
+      if (payload.utm_medium) track.push(`UTM Medium: ${payload.utm_medium}`);
+      if (payload.utm_campaign) track.push(`UTM Campaign: ${payload.utm_campaign}`);
+      if (payload.utm_content) track.push(`UTM Content: ${payload.utm_content}`);
+      if (payload.utm_term) track.push(`UTM Term: ${payload.utm_term}`);
+      if (payload.source_page) track.push(`Source Page: ${payload.source_page}`);
+      if (payload.referrer) track.push(`Referrer: ${payload.referrer}`);
+      if (payload.landing_page) track.push(`Landing Page: ${payload.landing_page}`);
+      
+      if (track.length > 0) {
+        noteContent += `\n--- Tracking Attribution ---\n` + track.join('\n') + `\n`;
+      }
     } else {
       if (payload.website) contactData.customFields.push({ key: 'website', value: payload.website });
       if (payload.bottleneck) noteContent += `Bottleneck: ${payload.bottleneck}\n`;
@@ -125,13 +157,12 @@ exports.handler = async (event, context) => {
       }
 
       // 4. Create Opportunity in the Sales Pipeline
-      // TODO: Ensure GHL_PIPELINE_ID and GHL_STAGE_ID are set in environment
-      // Fallback values kept temporarily to avoid breakage, but should be removed eventually.
-      const pipelineId = process.env.GHL_PIPELINE_ID || 'mPu4ZjliPtVnfAADBj0h';
-      const stageId = process.env.GHL_STAGE_ID || '54daa97e-e0fd-45ba-b017-539e2e5e61df';
+      // Ensure GHL_PIPELINE_ID and GHL_STAGE_ID are set in environment
+      const pipelineId = process.env.GHL_PIPELINE_ID;
+      const stageId = process.env.GHL_STAGE_ID;
       
-      if (!process.env.GHL_PIPELINE_ID || !process.env.GHL_STAGE_ID) {
-         logger.warn('Missing GHL_PIPELINE_ID or GHL_STAGE_ID env variables, using hardcoded fallbacks temporarily');
+      if (!pipelineId || !stageId) {
+         logger.warn('Missing GHL_PIPELINE_ID or GHL_STAGE_ID env variables, skipping opportunity creation');
       }
 
       logger.info('Attempting opportunity creation', { contactId, pipelineId, stageId });

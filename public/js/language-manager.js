@@ -64,7 +64,47 @@
     // 3. Initialize
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', checkLanguage);
+        document.addEventListener('DOMContentLoaded', preserveUTMs);
     } else {
         checkLanguage();
+        preserveUTMs();
+    }
+
+    // 4. UTM Preserver Logic
+    function preserveUTMs() {
+        const queryString = window.location.search;
+        if (!queryString) return; // No parameters to preserve
+
+        const urlParams = new URLSearchParams(queryString);
+        
+        // Find all links that point to the diagnostic funnel
+        const diagnosticLinks = document.querySelectorAll('a[href*="/diagnostic.html"]');
+        
+        diagnosticLinks.forEach(link => {
+            try {
+                // Parse the link's href
+                const linkUrl = new URL(link.href, window.location.origin);
+                
+                // Add all current URL params to the link
+                for (const [key, value] of urlParams) {
+                    if (!linkUrl.searchParams.has(key)) {
+                        linkUrl.searchParams.append(key, value);
+                    }
+                }
+                
+                // Update the href relative or absolute as appropriate
+                // Keep relative path if it was relative
+                if (link.getAttribute('href').startsWith('/')) {
+                    link.setAttribute('href', linkUrl.pathname + linkUrl.search + linkUrl.hash);
+                } else if (!link.getAttribute('href').startsWith('http')) {
+                    // if it was like "diagnostic.html"
+                    link.setAttribute('href', linkUrl.pathname.split('/').pop() + linkUrl.search + linkUrl.hash);
+                } else {
+                    link.href = linkUrl.toString();
+                }
+            } catch (e) {
+                console.error("Error preserving UTMs for link:", link.href, e);
+            }
+        });
     }
 })();

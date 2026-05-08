@@ -1,7 +1,11 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html class="dark scroll-smooth" lang="en">
 <head>
     <title>How We Work | Cresca OS | 14-Day Deployment</title>
+    <link rel="canonical" href="https://crescaos.com/how-we-work.html" />
+    <link rel="alternate" hreflang="en" href="https://crescaos.com/how-we-work.html" />
+    <link rel="alternate" hreflang="es" href="https://crescaos.com/es/how-we-work.html" />
+    <link rel="alternate" hreflang="x-default" href="https://crescaos.com/how-we-work.html" />
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <meta name="description" content="Discover how Cresca OS deploys your custom business operating system in just 14 days. From audit to launch, we build and operate your revenue engine.">
@@ -75,7 +79,7 @@
     <!-- Navigation -->
     <nav class="fixed top-0 w-full z-50 bg-[#0b1326]/70 backdrop-blur-xl border-b border-outline-variant/10">
         <div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
-            <a class="flex items-center gap-3" href="index.html">
+            <a class="flex items-center gap-3" href="/index.html">
                 <svg class="w-8 h-8" fill="none" height="32" viewBox="0 0 48 48" width="32" xmlns="http://www.w3.org/2000/svg">
                     <circle cx="24" cy="24" r="18" stroke="#0A84FF" stroke-width="3"></circle>
                     <ellipse cx="24" cy="24" rx="13" ry="7.5" stroke="#00E68A" stroke-width="3" transform="rotate(60 24 24)"></ellipse>
@@ -87,14 +91,45 @@
                 </div>
             </a>
             <div class="hidden md:flex space-x-8">
-                <a class="text-[#8f9095] hover:text-[#dae2fd] font-serif text-lg transition-all" href="solutions.html">Solutions</a>
-                <a class="text-[#8f9095] hover:text-[#dae2fd] font-serif text-lg transition-all" href="industries.html">Industries</a>
-                <a class="text-[#8f9095] hover:text-[#dae2fd] font-serif text-lg transition-all" href="pricing.html">Pricing</a>
-                <a class="text-white font-serif text-lg transition-all border-b-2 border-brand-green" href="how-we-work.html">How We Work</a>
-                <a class="text-[#8f9095] hover:text-[#dae2fd] font-serif text-lg transition-all" href="integrations.html">Integrations</a>
-                <a class="text-[#8f9095] hover:text-[#dae2fd] font-serif text-lg transition-all" href="about.html">About</a>
+                <a class="text-[#8f9095] hover:text-[#dae2fd] font-serif text-lg transition-all" href="/solutions.html">Solutions</a>
+                <a class="text-[#8f9095] hover:text-[#dae2fd] font-serif text-lg transition-all" href="/industries.html">Industries</a>
+                <a class="text-[#8f9095] hover:text-[#dae2fd] font-serif text-lg transition-all" href="/pricing.html">Pricing</a>
+                <a class="text-white font-serif text-lg transition-all border-b-2 border-brand-green" href="/how-we-work.html">How We Work</a>
+                <a class="text-[#8f9095] hover:text-[#dae2fd] font-serif text-lg transition-all" href="/integrations.html">Integrations</a>
+                <a class="text-[#8f9095] hover:text-[#dae2fd] font-serif text-lg transition-all" href="/about.html">About</a>
             </div>
-            <a class="hidden md:inline-flex bg-[#4edea3] text-[#003824] px-5 py-2 rounded-lg font-label font-bold uppercase tracking-widest text-[10px]" href="book-audit.html">Book Audit</a>
+            <div class="flex items-center gap-6 mr-10 md:mr-0">
+                <a href="/es/how-we-work.html" data-lang-switch="es" class="flex items-center gap-1 text-[#00E68A] font-label text-xs hover:text-[#dae2fd] transition-colors font-bold border border-[#00E68A]/30 rounded-full px-2 py-1 bg-[#00E68A]/5">
+                    <span class="material-symbols-outlined text-[16px]">language</span> ES
+                </a>
+                <a class="hidden md:inline-flex bg-[#4edea3] text-[#003824] px-5 py-2 rounded-lg font-label font-bold uppercase tracking-widest text-[10px]" href="/diagnostic.html">Book Audit</a>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button class="md:hidden absolute top-5 right-6 text-on-surface focus:outline-none z-[60]" id="mobile-menu-btn">
+            <span class="material-symbols-outlined text-3xl">menu</span>
+        </button>
+
+        <!-- Mobile Menu Overlay -->
+        <div class="fixed inset-0 bg-[#080f22] z-[55] hidden flex-col pt-24 px-8 transform transition-transform duration-300 translate-x-full" id="mobile-menu">
+            <div class="flex justify-between items-center mb-8">
+                <a href="/es/how-we-work.html" data-lang-switch="es" class="flex items-center gap-1 text-[#00E68A] font-label text-sm hover:text-[#dae2fd] transition-colors font-bold border border-[#00E68A]/30 rounded-full px-3 py-1.5 bg-[#00E68A]/5">
+                    <span class="material-symbols-outlined text-[18px]">language</span> ESPAÃ‘OL
+                </a>
+            </div>
+            <div class="flex flex-col space-y-8 font-headline text-3xl">
+                <a class="text-on-surface hover:text-primary transition-colors" href="/solutions.html">Solutions</a>
+                <a class="text-on-surface hover:text-primary transition-colors" href="/industries.html">Industries</a>
+                <a class="text-on-surface hover:text-primary transition-colors" href="/pricing.html">Pricing</a>
+                <a class="text-on-surface hover:text-primary transition-colors" href="/how-we-work.html">How We Work</a>
+                <a class="text-on-surface hover:text-primary transition-colors" href="/integrations.html">Integrations</a>
+                <a class="text-on-surface hover:text-primary transition-colors" href="/about.html">About</a>
+                <a class="text-on-surface hover:text-primary transition-colors" href="/el-salvador.html">El Salvador</a>
+            </div>
+            <div class="mt-12">
+                <a class="bg-primary text-on-primary px-6 py-3 rounded-lg font-label font-bold uppercase tracking-widest text-sm inline-block w-full text-center" href="/diagnostic.html">Book Your Free Audit</a>
+            </div>
         </div>
     </nav>
 
@@ -179,7 +214,7 @@
             <div class="max-w-4xl mx-auto glass-card p-12 rounded-3xl text-center shadow-2xl">
                 <h2 class="font-headline text-4xl font-bold text-white mb-6">Ready to stop the leaks?</h2>
                 <p class="text-on-surface-variant text-lg mb-10">Book your free Revenue Audit today and let's map out your 14-day deployment.</p>
-                <a class="signature-texture text-on-primary px-10 py-5 rounded-xl font-label font-bold tracking-widest uppercase inline-block hover:scale-105 transition-all shadow-lg" href="book-audit.html">Book Your Free Audit</a>
+                <a class="signature-texture text-on-primary px-10 py-5 rounded-xl font-label font-bold tracking-widest uppercase inline-block hover:scale-105 transition-all shadow-lg" href="diagnostic.html">Book Your Free Audit</a>
             </div>
         </section>
     </main>
@@ -200,7 +235,7 @@
             <div>
                 <h6 class="text-[#4edea3] font-label text-xs uppercase tracking-widest mb-6 font-bold">Solutions</h6>
                 <ul class="space-y-4">
-                    <li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="book-audit.html">Systems Audit</a></li>
+                    <li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="diagnostic.html">Systems Audit</a></li>
                     <li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="pricing.html">Pricing</a></li>
                     <li><a class="text-white hover:text-[#4edea3] transition-colors font-sans text-sm" href="how-we-work.html">How We Work</a></li>
                     <li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="industries.html">Industries</a></li>
@@ -265,6 +300,32 @@
             requestAnimationFrame(animate);
         }
         animate();
+
+        // Mobile Menu Logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const btn = document.getElementById('mobile-menu-btn');
+            const menu = document.getElementById('mobile-menu');
+            if(btn && menu) {
+                btn.addEventListener('click', () => {
+                    const isHidden = menu.classList.contains('translate-x-full');
+                    if (isHidden) {
+                        menu.classList.remove('hidden');
+                        setTimeout(() => {
+                            menu.classList.remove('translate-x-full');
+                            menu.classList.add('translate-x-0');
+                        }, 10);
+                        btn.innerHTML = '<span class="material-symbols-outlined text-3xl text-red-500">close</span>';
+                    } else {
+                        menu.classList.remove('translate-x-0');
+                        menu.classList.add('translate-x-full');
+                        setTimeout(() => menu.classList.add('hidden'), 300);
+                        btn.innerHTML = '<span class="material-symbols-outlined text-3xl">menu</span>';
+                    }
+                });
+            }
+        });
     </script>
+    <script src="/js/language-manager.js"></script>
 </body>
 </html>
+

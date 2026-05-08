@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 <html class="dark scroll-smooth" lang="en"><head><title>Industries We Serve | Cresca OS</title>
 <meta charset="utf-8"/>
@@ -191,11 +191,12 @@
 <a class="text-[#8f9095] hover:text-[#dae2fd] font-serif text-lg tracking-tight transition-all duration-200" href="about.html">About</a>
 <a class="text-[#8f9095] hover:text-[#dae2fd] font-serif text-lg tracking-tight transition-all duration-200" href="el-salvador.html">El Salvador</a>
 </div>
-<div class="flex items-center gap-6 mr-10 md:mr-0">
-<a href="/es/industries.html" class="text-[#8f9095] font-label text-sm hover:text-[#dae2fd] transition-colors">ES</a><a class="hidden md:inline-flex bg-[#4edea3] text-[#003824] px-5 py-2 rounded-lg font-label font-bold scale-95 transition-transform duration-200 hover:scale-100 uppercase tracking-widest text-[10px]" href="book-audit.html">
+                <a href="/es/industries.html" data-lang-switch="es" class="flex items-center gap-1 text-[#00E68A] font-label text-xs hover:text-[#dae2fd] transition-colors font-bold border border-[#00E68A]/30 rounded-full px-2 py-1 bg-[#00E68A]/5">
+                    <span class="material-symbols-outlined text-[16px]">language</span> ES
+                </a>
+                <a class="hidden md:inline-flex bg-[#4edea3] text-[#003824] px-5 py-2 rounded-lg font-label font-bold scale-95 transition-transform duration-200 hover:scale-100 uppercase tracking-widest text-[10px]" href="diagnostic.html">
                     Book Audit
                 </a>
-</div>
 </div>
 <!-- Mobile Menu Button (Absolute positioned to top right for safety) -->
 <button class="md:hidden absolute top-5 right-6 text-on-surface focus:outline-none z-[60]" id="mobile-menu-btn">
@@ -203,6 +204,11 @@
 </button>
 <!-- Mobile Menu Overlay -->
 <div class="fixed inset-0 bg-[#080f22] z-[55] hidden flex-col pt-24 px-8 transform transition-transform duration-300 translate-x-full" id="mobile-menu">
+            <div class="flex justify-between items-center mb-8">
+                <a href="/es/industries.html" data-lang-switch="es" class="flex items-center gap-1 text-[#00E68A] font-label text-sm hover:text-[#dae2fd] transition-colors font-bold border border-[#00E68A]/30 rounded-full px-3 py-1.5 bg-[#00E68A]/5">
+                    <span class="material-symbols-outlined text-[18px]">language</span> ESPAÃ‘OL
+                </a>
+            </div>
 <div class="flex flex-col space-y-8 font-headline text-3xl">
 <a class="text-on-surface hover:text-primary transition-colors" href="solutions.html">Solutions</a>
 <a class="text-on-surface hover:text-primary transition-colors" href="industries.html">Industries</a>
@@ -211,7 +217,7 @@
 <a class="text-on-surface hover:text-primary transition-colors" href="el-salvador.html">El Salvador</a>
 </div>
 <div class="mt-12">
-<a class="bg-primary text-on-primary px-6 py-3 rounded-lg font-label font-bold uppercase tracking-widest text-sm inline-block w-full text-center" href="book-audit.html">Book Your Free Audit</a>
+<a class="bg-primary text-on-primary px-6 py-3 rounded-lg font-label font-bold uppercase tracking-widest text-sm inline-block w-full text-center" href="diagnostic.html">Book Your Free Audit</a>
 </div>
 </div>
 <script>
@@ -372,8 +378,8 @@
                     Speak with a systems expert to see how Cresca OS can tailor a solution for your specific industry challenges.
                 </p>
 <div class="flex flex-col md:flex-row justify-center gap-4">
-<a class="bg-on-primary text-primary px-10 py-4 rounded-lg font-label font-bold text-lg hover:bg-surface-dim transition-colors block" href="book-audit.html">
-                        Book Your Free Industry Audit →
+<a class="bg-on-primary text-primary px-10 py-4 rounded-lg font-label font-bold text-lg hover:bg-surface-dim transition-colors block" href="diagnostic.html">
+                        Book Your Free Industry Audit â†’
 </a>
 </div>
 </div>
@@ -406,7 +412,7 @@
 <div>
 <h6 class="text-[#4edea3] font-label text-xs uppercase tracking-widest mb-6 font-bold">Solutions</h6>
 <ul class="space-y-4">
-<li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="book-audit.html">Systems Audit</a></li>
+<li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="diagnostic.html">Systems Audit</a></li>
 <li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="pricing.html">Pricing</a></li>
 <li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="industries.html">Industries</a></li>
 </ul>
@@ -422,7 +428,7 @@
 <h6 class="text-[#4edea3] font-label text-xs uppercase tracking-widest mb-6 font-bold">Company</h6>
 <ul class="space-y-4">
 <li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="about.html">About Us</a></li>
-<li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="book-audit.html">Book Audit</a></li>
+<li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="diagnostic.html">Book Audit</a></li>
 </ul>
 </div>
 </div>
@@ -453,5 +459,8 @@
       data-widget-id="69d3ebd934c0448115bc10d9"> 
     </script>
 
+    <!-- Language Management -->
+    <script src="/js/language-manager.js"></script>
 </body></html>
+
 
