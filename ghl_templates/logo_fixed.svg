@@ -1,0 +1,28 @@
+<svg width="240" height="60" viewBox="0 0 240 60" xmlns="http://www.w3.org/2000/svg">
+  <!-- Icon Section (48x48 inside a 60h space) -->
+  <g transform="translate(6, 6)">
+    <!-- Outer Ring -->
+    <circle cx="24" cy="24" r="18" fill="none" stroke="white" stroke-width="3" />
+    
+    <!-- Orbits -->
+    <ellipse cx="24" cy="24" rx="13" ry="7.5" fill="none" stroke="white" stroke-width="2" transform="rotate(30, 24, 24)" />
+    <ellipse cx="24" cy="24" rx="13" ry="7.5" fill="none" stroke="white" stroke-width="2" transform="rotate(-60, 24, 24)" />
+    
+    <!-- Connection Nodes -->
+    <circle cx="24" cy="6" r="2.5" fill="white" />
+    <circle cx="24" cy="42" r="2.5" fill="white" />
+    <circle cx="39.59" cy="15" r="2.5" fill="white" />
+    <circle cx="8.41" cy="15" r="2.5" fill="white" />
+    <circle cx="39.59" cy="33" r="2.5" fill="white" />
+    <circle cx="8.41" cy="33" r="2.5" fill="white" />
+    
+    <!-- Center Core -->
+    <circle cx="24" cy="24" r="3.5" fill="white" />
+  </g>
+  
+  <!-- Text Section -->
+  <g transform="translate(68, 38)">
+    <text font-family="'Inter', sans-serif" font-weight="600" font-size="32" letter-spacing="-0.03em" fill="white">CRESCA</text>
+    <text font-family="'Inter', sans-serif" font-weight="600" font-size="27" letter-spacing="-0.02em" fill="white" x="122" y="-1.5">OS</text>
+  </g>
+</svg>

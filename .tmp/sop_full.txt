@@ -1,0 +1,427 @@
+﻿TODO DIRECTO
+Servicios de Transformación Digital para Negocios en El Salvador
+MANUAL DE PROCEDIMIENTOS ESTÁNDAR DE OPERACIÓN
+Guía Completa para Representantes Comerciales
+Versión 2.0  |  Febrero 2026  |  Confidencial – Solo Uso Interno
+TABLA DE CONTENIDOS
+SECCIÓN 1: TU PORTAFOLIO – CINCO SOLUCIONES, UNA MISIÓN
+Nuestra misión es simple: digitalizar la economía salvadoreña. Ofrecemos cinco soluciones distintas adaptadas a las necesidades específicas de cada negocio, todo bajo una sola marca.
+1. AlToque App
+Aplicación web para negocios locales que venden por Facebook o WhatsApp. Organiza catálogo y pedidos de forma profesional.
+2. PR Vacation Rentals
+Plataforma para propietarios de inmuebles — alternativa local más rentable a Airbnb con comisiones menores.
+3. Desarrollo Web / App (WaaS)
+Sitio Web como Servicio para negocios de servicios que necesitan presencia en Google y sistema de reservas.
+4. Automatización de Procesos Comerciales
+Automatizamos tareas repetitivas: facturación, seguimientos, reportes y flujos de trabajo usando IA de última generación.
+5. Agentes Chatbot con IA
+Agentes de conversación que atienden clientes 24/7, responden preguntas, procesan reservas y califican prospectos.
+Resumen del Portafolio
+SECCIÓN 2: LA OPORTUNIDAD EN EL SALVADOR
+El Boom del Turismo
+El Salvador está experimentando un crecimiento turístico sin precedentes, con más de 3.9 millones de visitantes al año (objetivo 4.2M para 2026). San Salvador fue reconocida como el ecosistema de startups de más rápido crecimiento del mundo en 2025. Cada turista necesita servicios: rentar carros, reservar citas, pedir comida y encontrar alojamiento.
+Negocios Objetivo
+Rentas de Carros: Necesitan sistemas de reserva para turistas internacionales.
+Barberías y Salones: Necesitan gestión de citas.
+Floisterías y Regalos: Necesitan catálogos en línea.
+Restaurantes: Necesitan menús digitales y gestión de pedidos.
+Propietarios de Inmuebles: Necesitan mejor rentabilidad de su inversión.
+Cualquier negocio: Puede beneficiarse de la automatización y los chatbots.
+El Problema del Facebook Marketplace
+La mayoría de negocios locales operan solo en redes sociales. Cuando crecen, esto se convierte en una trampa: pierden pedidos, no pueden rastrear inventario y parecen poco profesionales ante turistas internacionales. Esa es la “Brecha Digital” que Todo Directo cierra.
+Por Qué la IA Importa
+No solo construimos sitios web — ofrecemos herramientas impulsadas por IA. Ofrecerle al dueño un “empleado de IA” que trabaja 24/7 es una ventaja competitiva enorme. El mercado de transformación digital en América Latina alcanzará $107 billones en 2025. Las posibilidades crecen cada mes.
+SECCIÓN 3: SISTEMA DE VENTA CONSULTIVA (SPIN)
+En Todo Directo no ‘empujamos’ productos. Diagnosticamos problemas. Usamos la metodología SPIN para que el dueño reconozca su problema antes de que ofrezcamos la solución.
+1. Pregunta de Situación
+Objetivo: Entender su proceso manual actual. Escucha activamente sin interrumpir.
+2. Pregunta de Problema
+Objetivo: Identificar el dolor de la pérdida de ingresos. Haz que lo cuantifique.
+3. Pregunta de Implicación
+Objetivo: Hacer el dolor financiero y concreto. Deja que el cliente haga el cálculo.
+4. Pregunta de Necesidad-Beneficio
+Objetivo: Que visualicen la solución. El prospecto describe su propio futuro ideal.
+5. Pregunta de Calificación (según tipo de negocio)
+Esta pregunta varía por tipo de negocio. Ejemplos:
+Propietario de inmueble: “¿Vive cerca de la propiedad o necesita administración completa?”
+Restaurante/tienda: “¿Cuántos productos vende? ¿Recibe pedidos por WhatsApp actualmente?”
+Negocio de servicios: “¿Acepta citas o reservas? ¿Los clientes lo buscan en Google?”
+Cualquier negocio: “¿Cuántas horas dedica su personal a tareas repetitivas por semana?”
+SECCIÓN 4: ÁRBOL DE DECISIÓN
+PASO 1: Identificar el Tipo de Negocio
+¿Es Propietario de Inmueble? → Ir a Vacation Rentals
+¿Vende Productos o Comida? → Ir a AlToque App
+¿Es Negocio de Servicios? → Ir a Desarrollo Web
+¿Tiene procesos repetitivos? → Agregar Automatización de Procesos
+¿Recibe muchas consultas de clientes? → Agregar Agente Chatbot con IA
+PASO 2: Preguntas de Calificación por Producto
+Para Propietarios de Inmuebles
+“¿Está esta propiedad en Airbnb o anunciada en algún lado?”
+“¿Vive cerca de la propiedad o necesita administración completa?”
+Vive cerca / quiere control → Modelo A (Direct Booking Edge) — $250–350 instalación, 8-10% comisión
+Vive en el extranjero / quiere ingreso pasivo → Modelo B (Administración Completa) — $400–600 instalación, 18-20% comisión
+Para Vendedores de Productos/Comida
+“¿Cuántos productos/artículos del menú vende?”
+“¿Actualmente recibe pedidos por Facebook/WhatsApp?”
+Menos de 20 productos → AlToque Chivo (Gratis)
+Negocio establecido, 20+ productos → AlToque Pro ($14.99/mes)
+Múltiples ubicaciones → AlToque Premium ($29.99/mes)
+Para Negocios de Servicios
+“¿Acepta citas/reservas?”
+“¿Los clientes lo buscan en Google?”
+Sin sitio web → Plan Chivo ($99 inst./$25/mes)
+Necesita reservas → Plan Pro ($149 inst./$49/mes)
+Quiere e-commerce → Plan Premium ($299 inst./$89/mes)
+Para Automatización y Chatbots (todos los tipos)
+“¿Cuántas horas dedica su personal a tareas repetitivas?”
+“¿Ha perdido clientes por no responder después de las 6pm?”
+Tareas repetitivas → Automatización de Procesos (desde $200/mes)
+Consultas fuera de horario → Agente Chatbot con IA (desde $150/mes)
+PASO 3: Verificar Oportunidades de Paquete (Stack)
+Restaurante/tienda → AlToque + Sitio Web + Chatbot
+Propiedad de renta → Plataforma de Renta + Sitio Web + Automatización
+Negocio de servicios → Web Pro + Chatbot IA
+SECCIÓN 5: EL PROCESO UNIVERSAL DE VENTAS EN 6 PASOS
+PASO 1: APERTURA / ACERCAMIENTO EN FRÍO
+Para locales:
+Para propietarios:
+Para automatización:
+PASO 2: DESCUBRIMIENTO
+Usa las 5 Preguntas SPIN de la Sección 3. Escucha activamente estas señales de compra:
+“Perdemos pedidos los fines de semana”
+“No puedo con los mensajes de WhatsApp”
+“Airbnb me cobra 15%”
+“Nadie nos encuentra en Google”
+“Respondo las mismas preguntas todo el día”
+PASO 3: EMPAREJAR CON PRODUCTO
+Usa el Árbol de Decisión (Sección 4) para identificar la solución correcta. Nunca ofrezcas un producto antes de entender el problema.
+PASO 4: DEMOSTRACIÓN
+AlToque: Demo en vivo en el teléfono, haz un pedido de prueba.
+Desarrollo Web: Muestra ejemplos en tablet.
+Vacation Rentals: Muestra el panel de control y el flujo de reservas.
+Automatización: Demo antes/después de un flujo automatizado.
+Chatbot IA: Demuestra respuestas automáticas en WhatsApp o sitio web.
+PASO 5: COTIZACIÓN Y CIERRE
+Abre el Cotizador Google Sheets de Todo Directo.
+Descuento anual: “Si paga el año hoy, le regalo 2 meses gratis.”
+Urgencia: “Puedo tener esto funcionando para usted la próxima semana.”
+ROI: “Si recupera solo 3 ventas perdidas por semana, esto se paga solo.”
+PASO 6: ENTREGA Y BIENVENIDA
+Cobra la cuota de instalación (Efectivo, Transferencia, Chivo Wallet).
+Llena el formulario de información del cliente.
+Establece expectativas sobre el plazo de implementación (ver tabla abajo).
+Envía reporte al equipo de Todo Directo para activación ese mismo día.
+Plazos de Implementación por Producto
+SECCIÓN 6: SCRIPTS DETALLADOS POR PRODUCTO
+PRODUCTO A: AlToque App
+Para quién es: Restaurantes, vendedores de comida, tiendas, vendedores de FB Marketplace.
+Funciones IA que destacar:
+Catálogo inteligente impulsado por IA
+Respuestas automáticas a preguntas frecuentes
+Analíticas: qué productos se venden mejor
+Sugerencias automáticas de productos relacionados
+PRODUCTO B: Desarrollo Web / App (WaaS)
+Para quién es: Negocios de servicios: barberías, rentas de carros, clínicas.
+Funciones IA que destacar:
+Chatbot IA para responder preguntas frecuentes
+Sistema de reservas inteligente (previene doble-reservas)
+Analíticas impulsadas por IA
+SEO automático para Google
+PRODUCTO C: PR Vacation Rentals
+Para quién es: Propietarios de casas de playa, condominios, cabañas.
+PRODUCTO D: Automatización de Procesos Comerciales
+Para quién es: Cualquier negocio que pierde tiempo en tareas repetitivas.
+PRODUCTO E: Agentes Chatbot con IA
+Para quién es: Cualquier negocio que recibe consultas de clientes o procesa pedidos/reservas.
+SECCIÓN 7: VENTA EN PAQUETES (STACK SELLING)
+Muchos negocios necesitan MÚLTIPLES soluciones. Siempre explora paquetes para maximizar tu comisión y el valor para el cliente.
+SECCIÓN 8: LA IA COMO TU DIFERENCIADOR
+La mayoría de competidores en El Salvador no ofrecen herramientas con IA. Esta es tu ventaja principal.
+La Promesa de Todo Directo
+Si la tecnología de IA existe, podemos construirla para tu negocio. No estamos limitados a un catálogo fijo. Si un cliente necesita un sistema de seguimiento de entregas IA, un agente de voz, o contratos automáticos — lo evaluamos y lo cotizamos. Esa flexibilidad es lo que nos diferencia de cualquier otro proveedor en El Salvador.
+SECCIÓN 9: GUÍA DE MANEJO DE OBJECIONES
+Cada objección es una señal de interés. No la temas — úsala. Un cliente que objeta está involucrado. Un cliente que no dice nada no está interesado.
+“Necesito pensarlo”
+Clave: Identifica la duda real. Si dice “precio”, tienes una objección de precio. Si dice “no sé si funcionará”, tienes una objección de confianza. Cada una tiene su respuesta.
+“No tengo dinero ahora mismo”
+“Ya tengo un sitio web / Facebook”
+“Mis clientes no usan tecnología”
+“No confío en la inteligencia artificial”
+“Ya tengo alguien que me ayuda”
+“Es muy caro”
+Guía de Retención: Cuándo un Cliente Quiere Cancelar
+Si un cliente activo menciona que quiere cancelar, sigue este proceso antes de aceptarlo:
+Llama personalmente — no mandes mensaje. El contacto humano marca la diferencia.
+Pregunta: “¿Qué no ha funcionado como esperaba?” Escucha sin defenderte.
+Identifica si es un problema técnico (escalarlo a soporte inmediatamente) o de valor percibido.
+Si es valor: recuerda los resultados logrados. “Desde que inició con nosotros, su chatbot ha respondido X consultas.”
+Ofrece una solución: mes gratis, cambio de plan, o nueva funcionalidad.
+Si cancela de todas formas, pide retroalimentación y mantente en contacto — pueden volver.
+SECCIÓN 10: ESTRUCTURA DE COMISIONES – TUS GANANCIAS
+Eres un representante 100% basado en comisiones. Ganas de dos formas:
+Comisiones por Cierre: Dinero inmediato cuando cierras un trato.
+Ingreso Residual: Pagos mensuales continuos mientras el cliente siga activo.
+DESARROLLO WEB / APP (WaaS)
+ALTOQUE APP
+PR VACATION RENTALS
+AUTOMATIZACIÓN DE PROCESOS
+AGENTES CHATBOT CON IA
+BONOS POR VOLUMEN
+SECCIÓN 11: HERRAMIENTAS Y RECURSOS DE VENTAS
+Tu Kit de Ventas
+Cotizador Google Sheets de Todo Directo: Calculadora dinámica de precios y comisiones.
+Pitch Deck PDF: Presentación de ventas de 16 diapositivas (actualizada Feb 2026).
+Cuentas de Demostración: Tienda demo de AlToque, sitios web de muestra, chatbot demo, panel de Vacation Rentals.
+Plantillas de Contrato: Formularios de acuerdo con el cliente.
+Este Documento SOP: Guárdalo en tu teléfono. Es tu manual de campo.
+SECCIÓN 12: GUÍA DE CAMPO – FLUJO DE TRABAJO DIARIO
+Planificación del Territorio
+Estructura del Día
+SECCIÓN 13: TARJETA DE REFERENCIA RÁPIDA
+Guarda esta página en tu teléfono. Es tu guía de bolsillo para el campo.
+Las 5 Preguntas de Descubrimiento (SPIN)
+Árbol de Decisión Rápido
+Frases de Cierre
+Eliminadores de Objeciones
+Documento elaborado por: Todo Directo – Equipo Comercial  |  Versión 2.0  |  Febrero 2026
+
+--- Table 1 ---
+“Empoderar la economía salvadoreña en crecimiento llevando herramientas digitales accesibles e impulsadas por inteligencia artificial a negocios locales, propietarios de inmuebles y emprendedores.”
+En Todo Directo, si la tecnología de IA existe, podemos construirla para tu negocio.
+
+--- Table 2 ---
+⚠️  NOTA PARA EL REPRESENTANTE: Estas cinco categorías son el punto de partida, no el límite. Si un cliente necesita algo que no está aquí, contáctanos. Nuestro enfoque: si la tecnología existe, lo podemos construir.
+
+--- Table 3 ---
+Producto/Servicio | Para Quién Es | Problema que Resuelve | Precio Inicial
+AlToque App | Restaurantes, Tiendas, FB Marketplace | Pedidos perdidos en WhatsApp; caos manual | Gratis / $14.99/mes
+PR Vacation Rentals | Propietarios de Inmuebles | Comisiones Airbnb +15%; sin soporte local | $250 Instalación
+Desarrollo Web (WaaS) | Barberías, Clínicas, Renta Carros | Invisibles en Google; sin reservas profesionales | $99 Instalación
+Automatización de Procesos | Cualquier negocio con tareas repetitivas | Tiempo perdido en tareas manuales | Desde $200/mes
+Agentes Chatbot con IA | Cualquier negocio con consultas de clientes | Sin respuesta fuera de horario; personal sobrecargado | Desde $150/mes
+
+--- Table 4 ---
+“¿Cómo maneja actualmente sus pedidos/reservas/consultas de clientes?”
+
+--- Table 5 ---
+“¿Cuántos clientes pierde en una semana porque está muy ocupado para responder rápido?”
+
+--- Table 6 ---
+“Si recuperara solo 5 ventas perdidas por semana, ¿cuánto dinero extra generaría al mes?”
+
+--- Table 7 ---
+“¿Qué significaría para su negocio si los clientes pudieran hacer pedidos 24/7, incluso cuando está cerrado?”
+
+--- Table 8 ---
+💡  CONSEJO: Escucha más de lo que hablas. El 70% de la conversación debe ser el cliente. Tu trabajo es hacer las preguntas correctas y tomar notas.
+
+--- Table 9 ---
+“Buenos días, ¿es usted el dueño/la dueña? Soy [nombre] de Todo Directo. Ayudamos a negocios como el suyo a no perder clientes por estar muy ocupados. ¿Tiene un minuto?”
+
+--- Table 10 ---
+“Hola, vi que tiene esta propiedad en Airbnb. ¿Sabía que podría ganar un 10% más por noche usando una plataforma local sin las comisiones altas?”
+
+--- Table 11 ---
+“Hola, soy [nombre] de Todo Directo. Trabajamos con negocios locales para recuperar las horas que pierden respondiendo mensajes repetitivos con IA.”
+
+--- Table 12 ---
+Siempre di: “Este sistema usa IA para responder automáticamente, incluso cuando usted está durmiendo.”
+
+--- Table 13 ---
+Producto | Plazo Estimado | Qué Necesitas del Cliente
+AlToque App | 24–48 horas | Fotos de productos, precios, WhatsApp
+Desarrollo Web – Plan Chivo | 5–7 días hábiles | Logo, fotos, descripción del negocio
+Desarrollo Web – Plan Pro/Premium | 7–10 días hábiles | Todo anterior + horarios, servicios
+Vacation Rentals | 5–7 días hábiles | Fotos propiedad, precios, disponibilidad
+Automatización de Procesos | 7–14 días hábiles | Flujos actuales, integraciones requeridas
+Chatbot IA | 5–10 días hábiles | Preguntas frecuentes, tono de marca
+
+--- Table 14 ---
+“Mira, sé que estás recibiendo pedidos por Facebook y WhatsApp todo el día. El problema es que cuando estás atendiendo un cliente, pierdes otros 3 que te escribieron. AlToque te crea un catálogo digital donde tus clientes pueden hacer pedidos 24/7. El pedido te llega organizado a WhatsApp, con nombre, dirección y todo listo.”
+
+--- Table 15 ---
+Plan | Precio | Qué Incluye
+AlToque Chivo | Gratis | Hasta 20 productos, catálogo básico
+AlToque Pro | $14.99/mes | Productos ilimitados, integración de pagos, sin marca de agua
+AlToque Premium | $29.99/mes | Múltiples usuarios, reportes, dominio personalizado
+
+--- Table 16 ---
+“Cuando alguien busca ‘barbería en [ciudad]’ en Google, ¿aparece tu negocio? Si no tienes sitio web, es como si no existieras para el turista que acaba de llegar a El Salvador. Te creamos tu página web profesional con sistema de reservas 24/7. Tus clientes reservan solos, el sistema manda recordatorio automático, y tú solo llegas a atenderlos.”
+
+--- Table 17 ---
+Plan | Instalación | Mensualidad | Qué Incluye
+Plan Chivo | $99 | $25/mes | Página de inicio, formulario de contacto, móvil-friendly
+Plan Pro | $149 | $49/mes | Todo anterior + reservas, recordatorios SMS
+Plan Premium | $299 | $89/mes | Todo anterior + e-commerce, soporte VIP
+
+--- Table 18 ---
+“Airbnb te cobra 15% de comisión por cada reserva, ¿verdad? Nosotros te creamos tu propia plataforma de reservas directas donde solo pagas 8-10% de comisión. Además, nuestro marketing está enfocado 100% en El Salvador. Atraímos turistas que buscan específicamente playas salvadoreñas.”
+
+--- Table 19 ---
+Modelo | Instalación | Comisión | Ideal Para
+Modelo A: Direct Booking Edge | $250–350 | 8–10% | Dueños que viven cerca de la propiedad
+Modelo B: Premium Sin Preocupaciones | $400–600 | 18–20% | Dueños ausentes, gestión completa incluida
+
+--- Table 20 ---
+“¿Cuántas horas a la semana dedica usted o su equipo a enviar los mismos mensajes, hacer los mismos reportes? Nosotros automatizamos todo eso. Les creamos flujos de trabajo que corren solos, sin errores, sin días libres. Lo que tomaba 10 horas a la semana ahora se hace automáticamente mientras usted se enfoca en hacer crecer su negocio.”
+
+--- Table 21 ---
+Plan | Precio | Qué Incluye
+Automatización Básica | Desde $200/mes | 1–3 flujos automatizados, soporte mensual
+Automatización Pro | Desde $400/mes | Hasta 8 flujos, integraciones de apps, reportes
+Automatización Empresarial | Precio personalizado | Sin límite, solución a medida, gestor dedicado
+
+--- Table 22 ---
+“¿Alguna vez ha perdido un cliente porque nadie respondió su mensaje a las 9pm de un domingo? Con un agente chatbot de IA de Todo Directo, eso nunca vuelve a pasar. El agente responde en segundos, a cualquier hora, en el tono de su marca, en español o inglés. Puede tomar reservas, calificar prospectos, y transferirlo a usted cuando sea necesario.”
+
+--- Table 23 ---
+Plan | Precio | Qué Incluye
+Chatbot Básico | Desde $150/mes | 1 canal (ej. WhatsApp), respuestas a FAQ
+Chatbot Pro | Desde $300/mes | Múltiples canales, pedidos/reservas, reportes
+Agente IA Personalizado | Precio personalizado | IA entrenada en la marca, lógica avanzada
+
+--- Table 24 ---
+Paquete | Qué Incluye | Por Qué Funciona
+Paquete Restaurante Completo | AlToque App + Web + Chatbot IA | Google + pedidos + atención 24/7
+Paquete Propietario de Inmueble | Renta + Web + Automatización | Vitrina + reservas + seguimientos automáticos
+Paquete Negocio de Servicios | Web Pro + Chatbot IA + Automatización | Reservas + atención auto + procesos sin fricciones
+Paquete Emprendedor Digital | AlToque App + Chatbot IA | Catálogo + respuesta instantánea a clientes
+
+--- Table 25 ---
+“Mira, con solo la app de pedidos vas a crecer bastante. Pero si además tienes tu chatbot respondiendo de noche, y tu sitio web apareciendo en Google — es como tener tres empleados extra trabajando por ti a la vez. Y te lo puedo hacer todo hoy a un precio especial.”
+
+--- Table 26 ---
+“La Inteligencia Artificial es como tener un empleado virtual que trabaja 24/7 sin vacaciones, sin errores de cansancio, y que aprende de cada interacción. Cada semana se vuelve mejor en su trabajo.”
+
+--- Table 27 ---
+Producto | Funciones de IA
+AlToque App | Catálogo Inteligente (sugiere productos), Analíticas IA
+Desarrollo Web | Chatbot IA (FAQ), Reservas Inteligentes, SEO automático
+Vacation Rentals | Precios Dinámicos IA (ajusta tarifas según demanda)
+Automatización | Flujos adaptativos, detección de errores en tiempo real
+Chatbot IA | Conversación natural en español e inglés, aprendizaje continuo
+
+--- Table 28 ---
+“Claro, entiendo. ¿Qué parte específicamente quiere pensar? ¿Es el precio, la funcionalidad, o algo más?”
+
+--- Table 29 ---
+“Entiendo. Por eso justamente necesita esto — para GANAR más. Si esperamos dos meses más, ¿cuántos clientes va a perder? Este sistema se paga solo en la primera semana.”
+
+--- Table 30 ---
+“Perfecto, ¿y le está trayendo clientes nuevos cada semana? El problema no es tener web, es tener un sistema completo que trabaja para usted.”
+
+--- Table 31 ---
+“Pero sus hijos sí. Y los turistas definitivamente sí. Si no está en línea, solo es visible para el 20% del mercado.”
+
+--- Table 32 ---
+“Totalmente válido. Por eso nuestros sistemas siempre tienen un humano de respaldo. Usted siempre tiene el control. El chatbot maneja lo repetitivo — usted maneja lo importante.”
+
+--- Table 33 ---
+“Excelente. Nuestro sistema no reemplaza a esa persona — la hace 3 veces más productiva quitando el trabajo repetitivo.”
+
+--- Table 34 ---
+“¿Cuánto le costaría contratar un empleado de tiempo completo para hacer lo que este sistema hace? Este trabaja 24/7 por una fracción de ese costo.”
+
+--- Table 35 ---
+⚠️  NUEVO: El ingreso residual es tu activo más valioso. Protege a tus clientes activos.
+
+--- Table 36 ---
+💡  LAS 4 REGLAS SIMPLES DE COMISIONES
+
+Regla 40/10: En Desarrollo Web, ganas 40% de la instalación y 10% mensual.
+Regla 50/15: En Automatización y Chatbot, ganas 50% del 1er mes y 15% mensual.
+Regla 150%: En AlToque, ganas 1.5 veces la mensualidad en el 1er mes + 10% mensual.
+Regla Fija: En Vacation Rentals, $300 (Modelo A) o $600 (Modelo B) — siempre fijo.
+
+--- Table 37 ---
+Paquete | Cuota de Instalación | Tu Comisión Inicial (40%) | Mensualidad Cliente | Tu Residual (10%)
+Plan Chivo | $99 | $39.60 | $25/mes | $2.50/mes
+Plan Pro | $149 | $59.60 | $49/mes | $4.90/mes
+Plan Premium | $299 | $119.60 | $89/mes | $8.90/mes
+
+--- Table 38 ---
+Paquete | Mensualidad | Tu Comisión 1er Mes (150%) | Plan Anual Upfront | Tu Residual (10%)
+Chivo (Gratis) | $0 | $0 | — | $0
+Pro | $14.99 | $22.49 | $37.50 | $1.50/mes
+Premium | $29.99 | $44.98 | $75.00 | $3.00/mes
+
+--- Table 39 ---
+Modelo | Cuota de Instalación al Cliente | Tu Comisión Fija | Residual
+Modelo A (Direct Booking) | $250–350 | $300 | N/A (% por reserva)
+Modelo B (Gestión Completa) | $400–600 | $600 | N/A (% por reserva)
+
+--- Table 40 ---
+Nota importante: El precio de instalación al cliente ($250–600) es diferente a tu comisión fija ($300 o $600). El representante puede ganar más que el precio bajo del rango si el cliente paga el máximo. Confirma con tu supervisor en cada caso.
+
+--- Table 41 ---
+Plan | Precio Cliente/mes | Tu Comisión Inicial (50%) | Residual Mensual (15%) | Tus Ganancias Mes 2+
+Básico | $200/mes | $100 (1er mes) | $30/mes | $30/mes
+Pro | $400/mes | $200 (1er mes) | $60/mes | $60/mes
+Empresarial | Cotización | 10% del contrato | Negociable | —
+
+--- Table 42 ---
+Plan | Precio Cliente/mes | Tu Comisión Inicial (50%) | Residual Mensual (15%) | Tus Ganancias Mes 2+
+Básico | $150/mes | $75 (1er mes) | $22.50/mes | $22.50/mes
+Pro | $300/mes | $150 (1er mes) | $45/mes | $45/mes
+Personalizado | Cotización | 10% del contrato | Negociable | —
+
+--- Table 43 ---
+Bono | Objetivo | Premio
+Bono Semanal | Cierra 5 tratos/semana | +$50
+Bono Mensual | Cierra 20 tratos/mes | +$200
+Bono Trimestral | Cierra 60 tratos en 3 meses | +$500
+
+--- Table 44 ---
+💰  POTENCIAL REAL: Un rep con 100 clientes activos genera ~$1,330/mes en residual puro — sin cerrar nada nuevo. Construye tu portafolio desde el día 1 y protégelo.
+
+--- Table 45 ---
+⚠️  IMPORTANTE: El Cotizador es una hoja de Google Sheets — necesitas conexión a internet para usarlo. En zonas sin señal (playas rurales), descarga una versión offline antes de salir a campo.
+
+--- Table 46 ---
+Día | Zona | Tipos de Negocio Objetivo
+Lunes–Martes | Corredor Turístico (El Tunco, El Zonte) | Surf shops, hostels, restaurantes de playa, propietarios de renta
+Miércoles–Jueves | Urbano (San Salvador) | Barberías, floisterías, rentas de carros, clínicas
+Viernes | Rural / Montaña | Cabañas, eco-lodges, fincas turísticas
+Sábado | Mercados locales | Emprendedores, vendedores, negocios en crecimiento
+
+--- Table 47 ---
+Hora | Actividad
+7:00 AM | Revisa tu pipeline en el Cotizador. Identifica los 3 prospectos más calientes del día anterior.
+8:00 AM–12:00 PM | Visitas de campo — bloque matutino. Los dueños están más disponibles en la mañana.
+12:00 PM | Actualiza el rastreador con los cierres de la mañana. Come.
+1:00–5:00 PM | Visitas de campo — bloque vespertino. Foco en demostraciones y cierres.
+5:30 PM | Envía contratos y formularios de onboarding. Actualiza el cotizador.
+6:00 PM | Reporta cierres al equipo de Todo Directo para activación. Planifica el día siguiente.
+
+--- Table 48 ---
+1. | ¿Cómo maneja pedidos/reservas actualmente?
+2. | ¿Cuántos clientes pierde por semana por estar ocupado?
+3. | Si recuperara 5 ventas por semana, ¿cuánto ganaría al mes?
+4. | ¿Qué significaría si clientes pudieran comprar 24/7?
+5. | [Pregunta de calificación — ver Sección 4 según tipo de negocio]
+
+--- Table 49 ---
+¿Quién Es el Prospecto? | Producto Principal | Tu Comisión
+Propietario – vive cerca | Vacation Rentals Modelo A | $300 fijo
+Propietario – vive lejos | Vacation Rentals Modelo B | $600 fijo
+Restaurante/tienda – empezando | AlToque Gratis | $0
+Restaurante/tienda – establecido | AlToque Pro (Anual) | $22.49 + residual
+Negocio de servicios – sin web | Web Plan Chivo | $39.60 + $2.50/mes
+Negocio de servicios – quiere reservas | Web Plan Pro | $59.60 + $4.90/mes
+Cualquiera – tareas repetitivas | Automatización Básica | $100 + $30/mes
+Cualquiera – no responde fuera horario | Chatbot IA Básico | $75 + $22.50/mes
+
+--- Table 50 ---
+“Si paga anual, le regalo 2 meses gratis.”
+“¿Cuándo quiere que esté listo? ¿La próxima semana?”
+“Si recupera solo 3 ventas perdidas por semana, esto se paga solo.”
+“Imáginese abrir su WhatsApp mañana y ver que su chatbot ya cerró 5 pedidos mientras usted dormía.”
+
+--- Table 51 ---
+Objección | Tu Respuesta
+“No tengo dinero” | Por eso necesita esto — para GANAR más.
+“Necesito pensarlo” | ¿Qué parte específicamente? ¿Precio o funcionalidad?
+“Ya tengo web” | ¿Le trae clientes nuevos cada semana?
+“No confío en la IA” | Usted siempre tiene el control — el chatbot maneja lo repetitivo.
+“Ya tengo alguien” | Perfecto — esto lo va a hacer 3x más productivo.
+“Es muy caro” | ¿Cuánto cuesta un empleado de tiempo completo? Este trabaja 24/7.

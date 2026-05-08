@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html class="dark scroll-smooth" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Privacy Policy | Cresca OS</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&family=Inter:wght@300;400;600&family=Manrope:wght@500;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .animate-fade-in { animation: fade-in 1s ease-out forwards; }
+        }
+        @keyframes fade-in {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        body { top: 0 !important; }
+        #neural-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.8;
+            pointer-events: none;
+        }
+    </style>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface": "#0F172A",
+                        "surface-container-high": "#222a3d",
+                        "background": "#0F172A",
+                        "primary": "#0A84FF",
+                        "on-surface": "#dae2fd",
+                        "on-surface-variant": "#c6c6cb",
+                        "brand-green": "#00E68A"
+                    },
+                    fontFamily: {
+                        "headline": ["Noto Serif"],
+                        "body": ["Inter"],
+                        "label": ["Manrope"]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface font-body relative min-h-screen flex flex-col">
+    <canvas id="neural-bg"></canvas>
+    
+    <!-- TopNavBar -->
+    <nav class="fixed top-0 w-full z-50 bg-[#0b1326]/70 backdrop-blur-xl shadow-2xl shadow-[#060e20]/40 border-b border-outline-variant/10">
+        <div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
+            <a class="flex items-center gap-3 hover:opacity-80 transition-opacity" href="/index.html">
+                <div class="flex items-center gap-3">
+                    <svg class="w-8 h-8" fill="none" height="32" viewbox="0 0 48 48" width="32" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="24" cy="24" r="18" stroke="#0A84FF" stroke-width="3"></circle>
+                        <ellipse cx="24" cy="24" rx="13" ry="7.5" stroke="#00E68A" stroke-width="3" transform="rotate(60 24 24)"></ellipse>
+                        <ellipse cx="24" cy="24" rx="13" ry="7.5" stroke="#00E68A" stroke-width="3" transform="rotate(-60 24 24)"></ellipse>
+                        <circle cx="24" cy="6" fill="#0A84FF" r="2.5"></circle>
+                        <circle cx="24" cy="42" fill="#0A84FF" r="2.5"></circle>
+                        <circle cx="39.59" cy="15" fill="#00E68A" r="2.5"></circle>
+                        <circle cx="8.41" cy="15" fill="#FFFFFF" r="2.5"></circle>
+                        <circle cx="39.59" cy="33" fill="#FFFFFF" r="2.5"></circle>
+                        <circle cx="8.41" cy="33" fill="#00E68A" r="2.5"></circle>
+                        <circle cx="24" cy="24" fill="#FFFFFF" r="3.5"></circle>
+                    </svg>
+                    <div class="flex items-baseline font-serif text-2xl font-bold tracking-tighter">
+                        <span class="text-white">CRESCA</span><span class="text-[#00E68A] ml-px">OS</span>
+                    </div>
+                </div>
+            </a>
+            <div class="hidden md:flex space-x-8">
+                <a class="text-[#8f9095] hover:text-[#dae2fd] font-serif text-lg tracking-tight transition-all duration-200" href="/solutions.html">Infrastructure</a>
+                <a class="text-[#8f9095] hover:text-[#dae2fd] font-serif text-lg tracking-tight transition-all duration-200" href="/pricing.html">Investment</a>
+            </div>
+            <div class="flex items-center gap-6">
+                <a href="/es/privacy.html" data-lang-switch="es" class="flex items-center gap-1 text-[#00E68A] font-label text-xs hover:text-[#dae2fd] transition-colors font-bold border border-[#00E68A]/30 rounded-full px-2 py-1 bg-[#00E68A]/5"><span class="material-symbols-outlined text-[16px]">language</span> ES</a>
+                <a class="hidden md:inline-flex bg-[#4edea3] text-[#003824] px-5 py-2 rounded-lg font-label font-bold scale-95 transition-transform duration-200 hover:scale-100 uppercase tracking-widest text-[10px]" href="/diagnostic.html">
+                    Get Your Score
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow pt-32 pb-24 px-8 max-w-4xl mx-auto animate-fade-in w-full">
+        <div class="bg-surface-container-high/60 backdrop-blur-md p-12 rounded-3xl border border-gray-800 shadow-2xl">
+            <h1 class="font-headline text-4xl font-bold mb-8 text-white">Privacy Policy</h1>
+            <div class="text-on-surface-variant space-y-8">
+                <p class="text-sm text-gray-500">Last updated: April 6, 2026</p>
+
+                <section>
+                    <h2 class="text-2xl font-bold text-white mb-4">1. Information We Collect</h2>
+                    <p>We collect information you provide directly to us when using Cresca OS services, including names, email addresses, phone numbers, and business operations data necessary for system implementation.</p>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-bold text-white mb-4">2. How We Use Your Information</h2>
+                    <p>Your information is used to provide, maintain, and improve our services, as well as to communicate with you regarding your infrastructure, support, and business updates.</p>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-bold text-white mb-4">3. Data Security</h2>
+                    <p>We implement robust security measures to protect your operational data. However, no digital transmission is entirely secure, and we cannot guarantee absolute security.</p>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-bold text-white mb-4">4. SMS Opt-In & Mobile Messaging</h2>
+                    <p class="mb-4">
+                        By providing your phone number and opting in to receive text messages, you consent to receive business updates, reminders, and promotional messages from CRESCA OS. Message frequency varies. Message and data rates may apply.
+                    </p>
+                    <p class="mb-4 font-bold text-white">
+                        No sharing of mobile information:
+                    </p>
+                    <p class="mb-4">
+                        We do not share, sell, or rent your mobile phone number or any other mobile information with third parties or affiliates for marketing or promotional purposes. All the above categories exclude text messaging originator opt-in data and consent; this information will not be shared with any third parties.
+                    </p>
+                    <ul class="list-disc list-inside space-y-2 ml-4">
+                        <li>Text <strong>STOP</strong> to opt-out at any time.</li>
+                        <li>Text <strong>HELP</strong> for assistance.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-bold text-white mb-4">5. Your Rights</h2>
+                    <p>You have the right to access, correct, or delete your personal information. For any privacy-related requests, contact us at <a href="mailto:info@crescaos.com" class="text-primary underline">info@crescaos.com</a>.</p>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-[#0b1326] py-12 px-8 border-t border-gray-800 mt-auto">
+        <div class="max-w-7xl mx-auto text-center text-sm text-gray-500">
+            <p class="font-sans text-xs text-[#8f9095] mb-4 uppercase tracking-widest font-bold">
+                CRESCA OS | 31 Kirby Lane, Central Islip, NY 11550 | 516-298-8323
+            </p>
+            <p class="font-sans text-[10px] text-[#8f9095] opacity-70 leading-relaxed max-w-2xl mx-auto mb-8">
+                By providing your phone number, you agree to receive text messages from CRESCA OS for business updates and reminders. Message and data rates may apply. Message frequency varies. Text STOP to opt-out or HELP for help. View our <a href="/privacy.html" class="underline">Privacy Policy</a> and <a href="/terms.html" class="underline">Terms of Service</a>. We do not share or sell your mobile information for marketing purposes.
+            </p>
+            <div class="flex flex-col md:flex-row justify-between items-center border-t border-gray-800/10 pt-8">
+                <p>&copy; 2026 Cresca OS. All rights reserved.</p>
+                <div class="flex gap-6 mt-4 md:mt-0">
+                    <a class="hover:text-white transition-colors underline" href="/privacy.html">Privacy Policy</a>
+                    <a class="hover:text-white transition-colors underline" href="/terms.html">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script 
+      src="https://widgets.leadconnectorhq.com/loader.js"  
+      data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" 
+      data-widget-id="69d3ebd934c0448115bc10d9"> 
+    </script>
+    <script src="/js/language-manager.js"></script>
+</body>
+</html>

@@ -1,0 +1,505 @@
+/* =============================================
+   CRESCA OS — FULL GHL WHITE-LABEL THEME
+   Source: crescaos.com brand palette
+   Version: 3.0 — Complete Dashboard Override
+   
+   Colors:
+   - Navy BG:     #080C14 (deepest), #0A1628, #0F172A, #111B2E (surface cards)
+   - Emerald:     #4EDEA3 (primary accent)
+   - Emerald Dim: #3BC48F (hover states)
+   - White:       #FFFFFF (headings)
+   - Light Gray:  #C8CDD5 (body text)
+   - Mid Gray:    #8F9095 (muted / secondary)
+   - Borders:     rgba(255,255,255,0.08)
+   ============================================= */
+
+/* --- GOOGLE FONT --- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* =============================================
+   1. GLOBAL FOUNDATION
+   ============================================= */
+*, *::before, *::after {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+}
+
+body,
+html,
+#app,
+.hl_v2-responsive-view,
+.hl_wrapper,
+.main-content,
+[class*="main-content"],
+[class*="page-wrapper"],
+[class*="content-wrapper"],
+.hl_v2-main-content {
+  background-color: #0A1628 !important;
+  color: #C8CDD5 !important;
+}
+
+/* =============================================
+   2. SIDEBAR / LEFT NAVIGATION
+   ============================================= */
+.hl_v2-side-menu,
+nav[class*="sidebar"],
+[class*="side-bar"],
+[class*="sidenav"],
+.location-sidebar,
+.sidebar--v2,
+aside {
+  background: linear-gradient(180deg, #080C14 0%, #0A1220 100%) !important;
+  border-right: 1px solid rgba(78, 222, 163, 0.1) !important;
+}
+
+/* Sidebar text — all white */
+.hl_v2-side-menu span,
+.hl_v2-side-menu a,
+.hl_v2-side-menu p,
+.hl_v2-side-menu label,
+.hl_v2-side-menu div,
+nav[class*="sidebar"] span,
+nav[class*="sidebar"] a {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+/* Sidebar icons */
+.hl_v2-side-menu svg,
+.hl_v2-side-menu i,
+nav[class*="sidebar"] svg,
+nav[class*="sidebar"] i {
+  color: rgba(255, 255, 255, 0.65) !important;
+  fill: rgba(255, 255, 255, 0.65) !important;
+}
+
+/* Sidebar ACTIVE & HOVER */
+.hl_v2-side-menu--item.active,
+.hl_v2-side-menu--item:hover,
+[class*="menu-item"].active,
+[class*="menu-item"]:hover,
+[class*="nav-item"].active,
+[class*="nav-item"]:hover {
+  background: rgba(78, 222, 163, 0.1) !important;
+  border-left: 3px solid #4EDEA3 !important;
+}
+
+.hl_v2-side-menu--item.active span,
+.hl_v2-side-menu--item.active i,
+.hl_v2-side-menu--item.active svg,
+.hl_v2-side-menu--item:hover span,
+.hl_v2-side-menu--item:hover i,
+.hl_v2-side-menu--item:hover svg {
+  color: #4EDEA3 !important;
+  fill: #4EDEA3 !important;
+}
+
+/* Sidebar sub-account dropdown */
+.hl_v2-side-menu .account-switcher,
+[class*="account-switch"],
+[class*="location-switch"] {
+  background: #0F172A !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  color: #FFFFFF !important;
+}
+
+/* =============================================
+   3. TOP HEADER / NAVBAR
+   ============================================= */
+header,
+.hl_header,
+[class*="topbar"],
+[class*="navbar"],
+[class*="top-header"],
+.n-layout-header {
+  background-color: #080C14 !important;
+  border-bottom: 1px solid rgba(78, 222, 163, 0.12) !important;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3) !important;
+}
+
+header *,
+.hl_header *,
+[class*="navbar"] * {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+/* =============================================
+   4. CARDS, PANELS, AND WIDGETS
+   ============================================= */
+.card,
+.hl_card,
+[class*="card"],
+.panel,
+[class*="panel"],
+.widget,
+[class*="widget"],
+.n-card,
+.box {
+  background-color: #111B2E !important;
+  border: 1px solid rgba(255, 255, 255, 0.06) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15) !important;
+  color: #C8CDD5 !important;
+}
+
+.card h1, .card h2, .card h3, .card h4, .card h5, .card h6,
+[class*="card"] h1, [class*="card"] h2, [class*="card"] h3,
+[class*="card"] h4, [class*="card"] h5, [class*="card"] h6 {
+  color: #FFFFFF !important;
+}
+
+.card p, [class*="card"] p,
+.card span, [class*="card"] span,
+.card div, [class*="card"] div {
+  color: #C8CDD5 !important;
+}
+
+/* =============================================
+   5. TABLES & DATA GRIDS
+   ============================================= */
+table,
+.table,
+[class*="table"],
+.n-data-table,
+[class*="data-table"] {
+  background-color: #111B2E !important;
+  color: #C8CDD5 !important;
+}
+
+th, thead th, thead td,
+[class*="table-header"],
+.n-data-table-th {
+  background-color: #0F172A !important;
+  color: #8F9095 !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+  text-transform: uppercase !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.5px !important;
+}
+
+td, tbody td,
+.n-data-table-td {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04) !important;
+  color: #C8CDD5 !important;
+}
+
+tr:hover td,
+tbody tr:hover {
+  background-color: rgba(78, 222, 163, 0.05) !important;
+}
+
+/* =============================================
+   6. FORMS, INPUTS, SELECTS
+   ============================================= */
+input,
+textarea,
+select,
+.form-control,
+[class*="form-control"],
+.n-input,
+.n-input__textarea-el,
+[class*="input-wrapper"],
+.hl-text-input {
+  background-color: #0F172A !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  color: #FFFFFF !important;
+  border-radius: 8px !important;
+}
+
+input:focus,
+textarea:focus,
+select:focus,
+.form-control:focus {
+  border-color: #4EDEA3 !important;
+  box-shadow: 0 0 0 3px rgba(78, 222, 163, 0.15) !important;
+  outline: none !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #8F9095 !important;
+}
+
+label, .form-label, [class*="form-label"] {
+  color: #C8CDD5 !important;
+}
+
+/* =============================================
+   7. BUTTONS
+   ============================================= */
+
+/* Primary — Emerald */
+.btn-primary,
+[class*="btn-primary"],
+[class*="hl_btn-primary"],
+button[type="submit"],
+.n-button--primary-type {
+  background-color: #4EDEA3 !important;
+  border-color: #4EDEA3 !important;
+  color: #003824 !important;
+  font-weight: 700 !important;
+  border-radius: 8px !important;
+  transition: all 0.2s ease !important;
+}
+
+.btn-primary:hover,
+[class*="btn-primary"]:hover,
+button[type="submit"]:hover {
+  background-color: #3BC48F !important;
+  box-shadow: 0 4px 16px rgba(78, 222, 163, 0.3) !important;
+  transform: translateY(-1px) !important;
+}
+
+/* Secondary / Outline */
+.btn-secondary,
+.btn-outline-primary,
+[class*="btn-secondary"],
+[class*="btn-outline"] {
+  background-color: transparent !important;
+  border: 1px solid rgba(78, 222, 163, 0.5) !important;
+  color: #4EDEA3 !important;
+}
+
+.btn-secondary:hover,
+.btn-outline-primary:hover {
+  background-color: rgba(78, 222, 163, 0.1) !important;
+}
+
+/* Default / Ghost */
+.btn-default,
+.btn-light,
+[class*="btn-default"],
+[class*="btn-light"] {
+  background-color: #0F172A !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  color: #C8CDD5 !important;
+}
+
+/* =============================================
+   8. DROPDOWNS & MENUS
+   ============================================= */
+.dropdown-menu,
+[class*="dropdown-menu"],
+[class*="popover"],
+.n-popover,
+.n-select-menu,
+[role="listbox"],
+[role="menu"] {
+  background-color: #111B2E !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4) !important;
+}
+
+.dropdown-item,
+[class*="dropdown-item"],
+[role="option"],
+[role="menuitem"] {
+  color: #C8CDD5 !important;
+}
+
+.dropdown-item:hover,
+[class*="dropdown-item"]:hover,
+[role="option"]:hover {
+  background-color: rgba(78, 222, 163, 0.1) !important;
+  color: #4EDEA3 !important;
+}
+
+/* =============================================
+   9. MODALS & DIALOGS
+   ============================================= */
+.modal-content,
+[class*="modal-content"],
+.n-modal,
+.n-dialog,
+[role="dialog"] > div {
+  background-color: #111B2E !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  color: #C8CDD5 !important;
+  border-radius: 16px !important;
+}
+
+.modal-header,
+[class*="modal-header"] {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
+  color: #FFFFFF !important;
+}
+
+.modal-footer,
+[class*="modal-footer"] {
+  border-top: 1px solid rgba(255, 255, 255, 0.06) !important;
+}
+
+/* =============================================
+   10. TABS & NAVIGATION PILLS
+   ============================================= */
+.nav-tabs,
+[class*="nav-tabs"],
+.n-tabs,
+[role="tablist"] {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+.nav-link,
+[class*="nav-link"],
+[role="tab"] {
+  color: #8F9095 !important;
+}
+
+.nav-link.active,
+[class*="nav-link"].active,
+[role="tab"][aria-selected="true"] {
+  color: #4EDEA3 !important;
+  border-bottom: 2px solid #4EDEA3 !important;
+  background-color: transparent !important;
+}
+
+/* =============================================
+   11. PIPELINE / KANBAN BOARD
+   ============================================= */
+[class*="pipeline"],
+[class*="kanban"] {
+  background-color: #0A1628 !important;
+}
+
+[class*="pipeline-stage"],
+[class*="kanban-column"] {
+  background-color: #0F172A !important;
+  border: 1px solid rgba(255, 255, 255, 0.06) !important;
+  border-radius: 12px !important;
+}
+
+[class*="pipeline-card"],
+[class*="kanban-card"],
+[class*="opportunity-card"] {
+  background-color: #111B2E !important;
+  border: 1px solid rgba(255, 255, 255, 0.06) !important;
+  border-radius: 10px !important;
+  color: #C8CDD5 !important;
+}
+
+[class*="pipeline-card"]:hover,
+[class*="kanban-card"]:hover {
+  border-color: rgba(78, 222, 163, 0.3) !important;
+  box-shadow: 0 4px 16px rgba(78, 222, 163, 0.08) !important;
+}
+
+/* =============================================
+   12. SCROLLBARS (PREMIUM TOUCH)
+   ============================================= */
+::-webkit-scrollbar {
+  width: 6px !important;
+  height: 6px !important;
+}
+
+::-webkit-scrollbar-track {
+  background: #080C14 !important;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(78, 222, 163, 0.25) !important;
+  border-radius: 4px !important;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(78, 222, 163, 0.4) !important;
+}
+
+/* =============================================
+   13. BADGES, TAGS, LABELS
+   ============================================= */
+.badge,
+[class*="badge"],
+.tag,
+[class*="tag"],
+.n-tag {
+  background-color: rgba(78, 222, 163, 0.12) !important;
+  color: #4EDEA3 !important;
+  border: 1px solid rgba(78, 222, 163, 0.2) !important;
+  border-radius: 6px !important;
+}
+
+/* =============================================
+   14. ALERTS & NOTIFICATIONS
+   ============================================= */
+.alert,
+[class*="alert"],
+.n-alert {
+  background-color: #0F172A !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  color: #C8CDD5 !important;
+  border-radius: 10px !important;
+}
+
+/* =============================================
+   15. PAGINATION
+   ============================================= */
+.pagination .page-link,
+[class*="pagination"] a,
+[class*="pagination"] button {
+  background-color: #0F172A !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  color: #C8CDD5 !important;
+}
+
+.pagination .active .page-link,
+[class*="pagination"] .active {
+  background-color: #4EDEA3 !important;
+  border-color: #4EDEA3 !important;
+  color: #003824 !important;
+}
+
+/* =============================================
+   16. TEXT LINKS & ANCHORS
+   ============================================= */
+a:not(.btn):not([class*="btn"]) {
+  color: #4EDEA3 !important;
+}
+
+a:not(.btn):not([class*="btn"]):hover {
+  color: #3BC48F !important;
+  text-decoration: underline !important;
+}
+
+/* =============================================
+   17. SECTION HEADERS & BREADCRUMBS
+   ============================================= */
+h1, h2, h3, h4, h5, h6 {
+  color: #FFFFFF !important;
+}
+
+.breadcrumb,
+[class*="breadcrumb"] {
+  background-color: transparent !important;
+  color: #8F9095 !important;
+}
+
+/* =============================================
+   18. TOOLTIP
+   ============================================= */
+.tooltip-inner,
+[class*="tooltip"],
+.n-tooltip {
+  background-color: #0F172A !important;
+  color: #FFFFFF !important;
+  border: 1px solid rgba(78, 222, 163, 0.2) !important;
+}
+
+/* =============================================
+   19. LOADING STATES & SPINNERS
+   ============================================= */
+[class*="spinner"],
+[class*="loading"],
+.n-spin {
+  color: #4EDEA3 !important;
+}
+
+/* =============================================
+   20. CHARTS — Force Dark Backgrounds
+   ============================================= */
+[class*="chart"],
+canvas {
+  filter: brightness(0.85) !important;
+}
+
+/* =============================================
+   END OF CRESCA OS THEME
+   ============================================= */

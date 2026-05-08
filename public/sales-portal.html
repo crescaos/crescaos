@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html class="dark scroll-smooth" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Internal Sales Portal | Cresca OS</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600&family=Manrope:wght@500;600;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface": "#0F172A",
+              "surface-container-lowest": "#060e20",
+              "surface-container-low": "#131b2e",
+              "surface-container": "#171f33",
+              "surface-container-high": "#222a3d",
+              "on-surface": "#dae2fd",
+              "on-surface-variant": "#c6c6cb",
+              "outline-variant": "#45474b",
+              "primary": "#0A84FF",
+              "on-primary": "#FFFFFF",
+              "brand-green": "#00E68A",
+              "error": "#ffb4ab",
+              "warning": "#ffd835"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Inter"],
+              "label": ["Manrope"]
+            }
+          }
+        }
+      }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .animate-fade-in { animation: fade-in 0.5s ease-out forwards; }
+            .animate-slide-up { animation: slide-up 0.5s ease-out forwards; }
+        }
+        @keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes slide-up { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+        .signature-texture { background: linear-gradient(135deg, #0A84FF 0%, #00E68A 100%); }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body min-h-screen">
+    
+    <!-- Login Overlay -->
+    <div id="login-overlay" class="fixed inset-0 z-50 bg-surface flex flex-col items-center justify-center animate-fade-in">
+        <div class="bg-surface-container border border-primary/20 p-12 rounded-[2rem] max-w-md w-full mx-6 shadow-2xl shadow-primary/10">
+            <div class="flex items-center justify-center gap-3 mb-8">
+                <span class="material-symbols-outlined text-primary text-4xl">webhook</span>
+                <span class="text-3xl font-headline font-bold text-white tracking-tight">Cresca <span class="italic text-primary">OS</span></span>
+            </div>
+            <h2 class="text-center text-on-surface-variant mb-6 font-label uppercase tracking-widest text-sm">Secure Portal Login</h2>
+            
+            <form id="login-form" class="space-y-6">
+                <div class="space-y-2">
+                    <label class="block font-label text-xs text-on-surface-variant uppercase tracking-wider">Access PIN / Password</label>
+                    <input type="password" id="password" class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant/15 px-0 py-3 text-on-surface focus:border-primary focus:ring-0 transition-all duration-200" placeholder="••••••••" required>
+                </div>
+                <div id="login-error" class="hidden text-error text-xs font-label uppercase tracking-widest">Invalid credentials</div>
+                <button type="submit" class="w-full signature-texture text-[#002113] font-label font-bold py-4 rounded-xl flex items-center justify-center gap-3 uppercase tracking-widest hover:scale-[1.02] transition-transform">
+                    Authenticate <span class="material-symbols-outlined">lock_open</span>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Main Dashboard -->
+    <div id="dashboard" class="hidden min-h-screen flex">
+        <!-- Sidebar -->
+        <aside class="w-64 bg-surface-container-low border-r border-outline-variant/10 flex flex-col">
+            <div class="p-6 border-b border-outline-variant/10">
+                <span class="text-xl font-headline font-bold text-white tracking-tight">Sales <span class="italic text-brand-green">Portal</span></span>
+            </div>
+            <nav class="flex-1 p-4 space-y-2">
+                <a href="#" class="flex items-center gap-3 px-4 py-3 rounded-lg bg-primary/10 text-primary font-label text-sm uppercase tracking-wider">
+                    <span class="material-symbols-outlined">inbox</span> Audit Leads
+                </a>
+                <a href="#" class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-white font-label text-sm uppercase tracking-wider transition-colors">
+                    <span class="material-symbols-outlined">settings</span> Rep Routing
+                </a>
+            </nav>
+            <div class="p-6 border-t border-outline-variant/10 text-xs text-on-surface-variant">
+                Logged in as <br><span class="text-white font-bold">Admin</span>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 p-10 overflow-y-auto">
+            <div class="max-w-6xl mx-auto space-y-8">
+                <header class="flex justify-between items-end">
+                    <div>
+                        <h1 class="text-3xl font-headline font-bold text-white mb-2">Growth Audit Leads</h1>
+                        <p class="text-on-surface-variant">Manage inbound audit submissions and assign to sales reps.</p>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="bg-surface-container-low px-4 py-2 border border-brand-green/30 rounded-lg flex items-center gap-2">
+                            <span class="h-2 w-2 rounded-full bg-brand-green animate-pulse"></span>
+                            <span class="font-label text-xs uppercase tracking-widest text-brand-green">Live Sync Active</span>
+                        </div>
+                    </div>
+                </header>
+
+                <!-- Data Table -->
+                <div class="bg-surface-container border border-outline-variant/10 rounded-2xl overflow-hidden shadow-xl">
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse">
+                            <thead>
+                                <tr class="border-b border-outline-variant/10 bg-surface-container-low">
+                                    <th class="p-4 font-label text-xs uppercase tracking-widest text-on-surface-variant">Lead Name</th>
+                                    <th class="p-4 font-label text-xs uppercase tracking-widest text-on-surface-variant">Region</th>
+                                    <th class="p-4 font-label text-xs uppercase tracking-widest text-on-surface-variant">System Friction</th>
+                                    <th class="p-4 font-label text-xs uppercase tracking-widest text-on-surface-variant">Lost Revenue Opp.</th>
+                                    <th class="p-4 font-label text-xs uppercase tracking-widest text-on-surface-variant">Assigned Rep</th>
+                                    <th class="p-4 font-label text-xs uppercase tracking-widest text-on-surface-variant text-right">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-outline-variant/5" id="leads-body">
+                                <!-- Mock Data row 1 -->
+                                <tr class="hover:bg-surface-container-high transition-colors">
+                                    <td class="p-4">
+                                        <div class="font-bold text-white">John Smith</div>
+                                        <div class="text-sm text-on-surface-variant">john@buildcorp.com</div>
+                                    </td>
+                                    <td class="p-4 text-sm text-primary">US / Canada</td>
+                                    <td class="p-4">
+                                        <div class="flex items-center gap-2">
+                                            <span class="material-symbols-outlined text-warning text-sm">warning</span> 
+                                            <span class="text-warning text-sm">52% Loss</span>
+                                        </div>
+                                    </td>
+                                    <td class="p-4 font-label font-bold text-brand-green">$15,600</td>
+                                    <td class="p-4">
+                                        <select class="bg-surface border border-outline-variant/20 rounded px-2 py-1 text-sm focus:border-brand-green focus:ring-0">
+                                            <option>Unassigned</option>
+                                            <option value="IpuOp20sjDgYA7gws2hl">Hector Lopez</option>
+                                            <option value="AYazlDyqINWNLq8UuOn4">Juan Carlos Monge</option>
+                                        </select>
+                                    </td>
+                                    <td class="p-4 text-right">
+                                        <button class="text-primary hover:text-white transition-colors"><span class="material-symbols-outlined border border-primary/30 p-1.5 rounded-md hover:bg-primary/20">arrow_forward</span></button>
+                                    </td>
+                                </tr>
+                                <!-- Mock Data row 2 -->
+                                <tr class="hover:bg-surface-container-high transition-colors">
+                                    <td class="p-4">
+                                        <div class="font-bold text-white">María García</div>
+                                        <div class="text-sm text-on-surface-variant">maria@limpieza.sv</div>
+                                    </td>
+                                    <td class="p-4 text-sm text-[#0085bd]">El Salvador</td>
+                                    <td class="p-4">
+                                        <div class="flex items-center gap-2">
+                                            <span class="material-symbols-outlined text-error text-sm">error</span> 
+                                            <span class="text-error text-sm">65% Loss</span>
+                                        </div>
+                                    </td>
+                                    <td class="p-4 font-label font-bold text-brand-green">$2,600</td>
+                                    <td class="p-4">
+                                        <select class="bg-surface border border-outline-variant/20 rounded px-2 py-1 text-sm focus:border-brand-green focus:ring-0">
+                                            <option>Unassigned</option>
+                                            <option value="IpuOp20sjDgYA7gws2hl">Hector Lopez</option>
+                                            <option value="AYazlDyqINWNLq8UuOn4">Juan Carlos Monge</option>
+                                        </select>
+                                    </td>
+                                    <td class="p-4 text-right">
+                                        <button class="text-primary hover:text-white transition-colors"><span class="material-symbols-outlined border border-primary/30 p-1.5 rounded-md hover:bg-primary/20">arrow_forward</span></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <script>
+        document.getElementById('login-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const pass = document.getElementById('password').value;
+            // Simple mock authentication for prototype
+            if(pass === 'CrescaTeam2026') {
+                document.getElementById('login-overlay').classList.add('hidden');
+                document.getElementById('dashboard').classList.remove('hidden');
+            } else {
+                document.getElementById('login-error').classList.remove('hidden');
+            }
+        });
+    </script>
+</body>
+</html>

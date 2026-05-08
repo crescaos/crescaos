@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+
+# AI Bots explicitly allowed for AEO optimization
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+Sitemap: https://crescaos.com/sitemap.xml

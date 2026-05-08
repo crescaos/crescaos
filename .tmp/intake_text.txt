@@ -1,0 +1,283 @@
+0: [None] 
+1: [None] FORMULARIO DE ORDEN DE SERVICIO
+2: [None] Completar con el cliente en el momento del cierre  •  Letra de imprenta, por favor
+3: [None] 
+4: [None] 
+5: [None] 
+6: [None] 
+7: [None] 
+8: [None] ¿Cómo prefiere que nos comuniquemos?
+9: [None] ☐  WhatsApp     ☐  Llamada telefónica     ☐  Correo electrónico     ☐  Mensaje de texto
+10: [None] 
+11: [None] Tipo de Negocio
+12: [None] ☐  Restaurante / Comida     ☐  Tienda / Productos     ☐  Barbería / Salón     ☐  Renta de Carros     ☐  Clínica / Salud     ☐  Hospedaje / Airbnb     ☐  Otro: _______________
+13: [None] 
+14: [None] 
+15: [None] 
+16: [None] 
+17: [None] 
+18: [None] 
+19: [None] 
+20: [None] 
+21: [None] 
+22: [None] Categorías de productos (marcar o escribir):
+23: [None] ☐  Comida / Menú     ☐  Ropa / Accesorios     ☐  Electrónica     ☐  Belleza / Cuidado     ☐  Artículos del hogar     ☐  Otro: _____________
+24: [None] 
+25: [None] ¿Ya tiene fotos de productos?
+26: [None] ☐  Sí, las enviaré por WhatsApp     ☐  Sí, las subiré por Google Drive     ☐  No, necesito ayuda con fotos
+27: [None] 
+28: [None] ¿Acepta pedidos con delivery / envío a domicilio?
+29: [None] ☐  Sí — Zona de entrega: _________________________     ☐  No, solo pick-up / retiro en local
+30: [None] 
+31: [None] Instrucciones especiales, horarios, o información adicional para el catálogo:
+32: [None] 
+33: [None] 
+34: [None] 
+35: [None] 
+36: [None] 
+37: [None] Servicios / Productos principales que debe mostrar el sitio:
+38: [None] 
+39: [None] 
+40: [None] ¿El sitio necesita sistema de reservas / citas?
+41: [None] ☐  Sí     ☐  No
+42: [None] 
+43: [None] ¿Cuántos empleados o 'slots' de servicio por día? (ej. 1 barbero, 2 sillas)
+44: [None] 
+45: [None] Horario de atención:
+46: [None] 
+47: [None] ¿Tiene logo? ¿Tiene colores o estilo de marca definido?
+48: [None] ☐  Sí, enviaré archivos     ☐  No, quiero que lo diseñen (costo adicional)     ☐  Usar colores sugeridos por el equipo
+49: [None] 
+50: [None] Descripción del negocio (para el texto de la página, en sus propias palabras):
+51: [None] 
+52: [None] 
+53: [None] 
+54: [None] 
+55: [None] Tipo de propiedad:
+56: [None] ☐  Casa completa     ☐  Cabaña     ☐  Condominio / Apartamento     ☐  Habitación privada     ☐  Eco-lodge / Finca     ☐  Otro: __________
+57: [None] 
+58: [None] 
+59: [None] Amenidades disponibles (marcar todas las que apliquen):
+60: [None] ☐  Piscina     ☐  WiFi     ☐  Aire acondicionado     ☐  Cocina equipada     ☐  Estacionamiento     ☐  Frente de playa
+61: [None] ☐  TV / Netflix     ☐  Parrilla / BBQ     ☐  Jacuzzi     ☐  Servicio de limpieza     ☐  Aire caliente/ducha caliente     ☐  Otro: __________
+62: [None] 
+63: [None] 
+64: [None] 
+65: [None] ¿Está actualmente en Airbnb u otra plataforma?
+66: [None] ☐  Sí — ¿Cuál?: ___________________________     ☐  No
+67: [None] 
+68: [None] Modelo contratado:
+69: [None] ☐  Modelo A – Direct Booking Edge (dueño administra)     ☐  Modelo B – Full Management (Todo Directo administra)
+70: [None] 
+71: [None] ¿Tiene fotos profesionales de la propiedad?
+72: [None] ☐  Sí, enviaré por WhatsApp o Drive     ☐  No, se necesitará sesión de fotos (coordinar con equipo)
+73: [None] 
+74: [None] Reglas de la casa, restricciones, o información especial para los huéspedes:
+75: [None] 
+76: [None] 
+77: [None] 
+78: [None] 
+79: [None] ¿Qué tareas repetitivas quiere automatizar? (marcar todas las que apliquen):
+80: [None] ☐  Confirmación de citas / reservas     ☐  Seguimiento post-venta     ☐  Envío de facturas / recibos
+81: [None] ☐  Reportes semanales / mensuales     ☐  Recordatorios de pago     ☐  Respuestas automáticas a preguntas frecuentes
+82: [None] ☐  Notificaciones internas al equipo     ☐  Calificación de prospectos     ☐  Otro: ____________________________
+83: [None] 
+84: [None] ¿Qué aplicaciones o herramientas usa actualmente? (marcar todas):
+85: [None] ☐  WhatsApp Business     ☐  Google Sheets / Excel     ☐  Gmail / correo     ☐  Instagram     ☐  Facebook
+86: [None] ☐  Alguna caja registradora o POS     ☐  Otra app de gestión: ___________________________     ☐  Ninguna
+87: [None] 
+88: [None] 
+89: [None] Describa el proceso que quiere automatizar (¿qué pasa hoy, paso a paso?):
+90: [None] 
+91: [None] ¿Cuál es el resultado ideal que espera de la automatización?
+92: [None] 
+93: [None] 
+94: [None] ¿En qué canal(es) quiere el chatbot? (marcar todos):
+95: [None] ☐  WhatsApp Business     ☐  Instagram Direct     ☐  Sitio web (chat en vivo)     ☐  Facebook Messenger
+96: [None] 
+97: [None] ¿Qué debe hacer el chatbot? (marcar todos):
+98: [None] ☐  Responder preguntas frecuentes     ☐  Tomar reservas / citas     ☐  Recibir pedidos
+99: [None] ☐  Calificar prospectos de venta     ☐  Dar información de precios     ☐  Escalar a humano cuando sea necesario
+100: [None] 
+101: [None] Liste las 5–10 preguntas más frecuentes que recibe de sus clientes:
+102: [None] 
+103: [None] 
+104: [None] Tono de comunicación del chatbot:
+105: [None] ☐  Formal / Profesional     ☐  Amigable / Casual     ☐  Directo y conciso     ☐  Entusiasta / Energético
+106: [None] 
+107: [None] ¿Hay horario de atención humana? (Para transferir al equipo en ese horario)
+108: [None] ☐  Sí — Horario: ________  a  ________     ☐  No, chatbot atiende 24/7
+109: [None] 
+110: [None] Información adicional sobre el negocio que el chatbot debe conocer:
+111: [None] 
+112: [None] 
+113: [None] 
+114: [None] ⓘ  Todos los archivos pueden enviarse vía WhatsApp, Google Drive, o correo a info@tododirecto.com. Indicar número de orden en el asunto.
+115: [None] 
+116: [None] 
+117: [None] 
+118: [None] 
+119: [None] 
+120: [None] 
+121: [None] 
+122: [None] ⓘ  Una copia de este formulario debe ser escaneada y enviada a info@tododirecto.com el mismo día del cierre. El original se queda con el representante.
+
+=== TABLES ===
+
+Table 0:
+  Row 0: ['', '', '', '', '']
+
+Table 1:
+  Row 0: ['■  A.  INFORMACIÓN DEL CLIENTE']
+
+Table 2:
+  Row 0: ['', '', '']
+
+Table 3:
+  Row 0: ['', '', '', '', '']
+
+Table 4:
+  Row 0: ['', '', '']
+
+Table 5:
+  Row 0: ['■  B.  SERVICIOS CONTRATADOS  —  Marcar todo lo que aplique']
+
+Table 6:
+  Row 0: ['☐  AlToque App\nPlan: ☐ Chivo (Gratis)   ☐ Pro $14.99/mes   ☐ Premium $29.99/mes', '☐  Desarrollo Web / App (WaaS)\nPlan: ☐ Chivo $99+$25/mes   ☐ Pro $149+$49/mes   ☐ Premium $299+$89/m']
+  Row 1: ['☐  PR Vacation Rentals\nModelo: ☐ Modelo A (Direct) $250–350   ☐ Modelo B (Full Mgmt) $400–600', '☐  Automatización de Procesos\nPlan: ☐ Básico $200/mes   ☐ Pro $400/mes   ☐ Empresarial (cotización)']
+  Row 2: ['☐  Agente Chatbot con IA\nPlan: ☐ Básico $150/mes   ☐ Pro $300/mes   ☐ Personalizado (cotización)', 'Modalidad de Pago:\n☐ Mensual   ☐ Anual (2 meses gratis)   ☐ Cuota única\nForma de Pago:\n☐ Efectivo   ']
+
+Table 7:
+  Row 0: ['Cuota de Instalación Cobrada\n$  _______________________', '', 'Mensualidad del Cliente\n$  _______________________', '', 'Fecha Primer Cobro\n______ / ______ / ______']
+
+Table 8:
+  Row 0: ['■  C.  INFORMACIÓN ESPECÍFICA POR PRODUCTO  —  Completar SOLO los servicios contratados']
+
+Table 9:
+  Row 0: ['01  AlToque App']
+
+Table 10:
+  Row 0: ['', '', '']
+
+Table 11:
+  Row 0: ['', '', '']
+
+Table 12:
+  Row 0: [' ']
+  Row 1: [' ']
+
+Table 13:
+  Row 0: ['02  Desarrollo Web / App (WaaS)']
+
+Table 14:
+  Row 0: ['', '', '']
+
+Table 15:
+  Row 0: ['', '', '']
+
+Table 16:
+  Row 0: ['', '', '']
+
+Table 17:
+  Row 0: [' ']
+  Row 1: [' ']
+
+Table 18:
+  Row 0: ['Capacidad diaria']
+  Row 1: [' ']
+
+Table 19:
+  Row 0: ['', '', '', '', '']
+
+Table 20:
+  Row 0: [' ']
+  Row 1: [' ']
+  Row 2: [' ']
+
+Table 21:
+  Row 0: ['03  PR Vacation Rentals']
+
+Table 22:
+  Row 0: ['', '', '']
+
+Table 23:
+  Row 0: ['', '', '']
+
+Table 24:
+  Row 0: ['', '', '', '', '']
+
+Table 25:
+  Row 0: ['', '', '']
+
+Table 26:
+  Row 0: ['', '', '']
+
+Table 27:
+  Row 0: [' ']
+  Row 1: [' ']
+
+Table 28:
+  Row 0: ['■  C.  INFORMACIÓN ESPECÍFICA POR PRODUCTO (continuación)  —  Página 3 de 3']
+
+Table 29:
+  Row 0: ['04  Automatización de Procesos Comerciales']
+
+Table 30:
+  Row 0: ['', '', '']
+
+Table 31:
+  Row 0: [' ']
+  Row 1: [' ']
+  Row 2: [' ']
+
+Table 32:
+  Row 0: [' ']
+  Row 1: [' ']
+
+Table 33:
+  Row 0: ['05  Agente Chatbot con IA']
+
+Table 34:
+  Row 0: [' ']
+  Row 1: [' ']
+  Row 2: [' ']
+  Row 3: [' ']
+
+Table 35:
+  Row 0: ['', '', '']
+
+Table 36:
+  Row 0: [' ']
+  Row 1: [' ']
+
+Table 37:
+  Row 0: ['■  D.  ARCHIVOS Y MATERIALES A ENTREGAR POR EL CLIENTE']
+
+Table 38:
+  Row 0: ['Material', '¿Listo?', 'Cómo lo enviará / Notas']
+  Row 1: ['Logo del negocio (PNG, JPG, o PDF)', '☐ Sí    ☐ No', '']
+  Row 2: ['Fotos del negocio / propiedad / productos', '☐ Sí    ☐ No', '']
+  Row 3: ['Descripción del negocio (texto)', '☐ Sí    ☐ No', '']
+  Row 4: ['Lista de servicios / menú / productos con precios', '☐ Sí    ☐ No', '']
+  Row 5: ['Colores de marca (si tiene)', '☐ Sí    ☐ No', '']
+  Row 6: ['Acceso a redes sociales (si aplica)', '☐ Sí    ☐ No', '']
+  Row 7: ['Credenciales de dominio web (si ya tiene)', '☐ Sí    ☐ No', '']
+  Row 8: ['Preguntas frecuentes para chatbot (lista escrita)', '☐ Sí    ☐ No', '']
+
+Table 39:
+  Row 0: ['■  E.  ACUERDO Y FIRMAS']
+
+Table 40:
+  Row 0: ['El cliente confirma que:\n☐  Comprende los servicios contratados y los precios acordados.\n☐  Autoriza']
+
+Table 41:
+  Row 0: ['\n\nFirma del Cliente\nNombre: _________________________________  Fecha: ____________', '', '\n\nFirma del Representante Todo Directo\nNombre: _________________________________  Fecha: ___________']
+
+Table 42:
+  Row 0: ['■  F.  USO INTERNO — EQUIPO TODO DIRECTO  (No llenar en campo)']
+
+Table 43:
+  Row 0: ['', '', '', '', '']
+
+Table 44:
+  Row 0: ['Estado del Proyecto\n☐ Pendiente de materiales del cliente\n☐ En desarrollo\n☐ En revisión con el clien', 'Notas Internas del Equipo\n']

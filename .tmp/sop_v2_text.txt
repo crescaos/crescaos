@@ -1,0 +1,511 @@
+0: [None] 
+1: [None] TODO DIRECTO
+2: [None] Servicios de Transformación Digital para Negocios en El Salvador
+3: [None] 
+4: [None] 
+5: [None] MANUAL DE PROCEDIMIENTOS ESTÁNDAR DE OPERACIÓN
+6: [None] Guía Completa para Representantes Comerciales
+7: [None] 
+8: [None] Versión 2.0  |  Febrero 2026  |  Confidencial – Solo Uso Interno
+9: [None] 
+10: [Heading 1] TABLA DE CONTENIDOS
+11: [None] 
+12: [Heading 1] SECCIÓN 1: TU PORTAFOLIO – CINCO SOLUCIONES, UNA MISIÓN
+13: [None] Nuestra misión es simple: digitalizar la economía salvadoreña. Ofrecemos cinco soluciones distintas adaptadas a las necesidades específicas de cada negocio, todo bajo una sola marca.
+14: [None] 
+15: [Heading 2] 1. AlToque App
+16: [None] Aplicación web para negocios locales que venden por Facebook o WhatsApp. Organiza catálogo y pedidos de forma profesional.
+17: [Heading 2] 2. PR Vacation Rentals
+18: [None] Plataforma para propietarios de inmuebles — alternativa local más rentable a Airbnb con comisiones menores.
+19: [Heading 2] 3. Desarrollo Web / App (WaaS)
+20: [None] Sitio Web como Servicio para negocios de servicios que necesitan presencia en Google y sistema de reservas.
+21: [Heading 2] 4. Automatización de Procesos Comerciales
+22: [None] Automatizamos tareas repetitivas: facturación, seguimientos, reportes y flujos de trabajo usando IA de última generación.
+23: [Heading 2] 5. Agentes Chatbot con IA
+24: [None] Agentes de conversación que atienden clientes 24/7, responden preguntas, procesan reservas y califican prospectos.
+25: [None] 
+26: [None] 
+27: [Heading 3] Resumen del Portafolio
+28: [None] 
+29: [Heading 1] SECCIÓN 2: LA OPORTUNIDAD EN EL SALVADOR
+30: [Heading 2] El Boom del Turismo
+31: [None] El Salvador está experimentando un crecimiento turístico sin precedentes, con más de 3.9 millones de visitantes al año (objetivo 4.2M para 2026). San Salvador fue reconocida como el ecosistema de startups de más rápido crecimiento del mundo en 2025. Cada turista necesita servicios: rentar carros, reservar citas, pedir comida y encontrar alojamiento.
+32: [None] 
+33: [Heading 2] Negocios Objetivo
+34: [List Paragraph] Rentas de Carros: Necesitan sistemas de reserva para turistas internacionales.
+35: [List Paragraph] Barberías y Salones: Necesitan gestión de citas.
+36: [List Paragraph] Floisterías y Regalos: Necesitan catálogos en línea.
+37: [List Paragraph] Restaurantes: Necesitan menús digitales y gestión de pedidos.
+38: [List Paragraph] Propietarios de Inmuebles: Necesitan mejor rentabilidad de su inversión.
+39: [List Paragraph] Cualquier negocio: Puede beneficiarse de la automatización y los chatbots.
+40: [None] 
+41: [Heading 2] El Problema del Facebook Marketplace
+42: [None] La mayoría de negocios locales operan solo en redes sociales. Cuando crecen, esto se convierte en una trampa: pierden pedidos, no pueden rastrear inventario y parecen poco profesionales ante turistas internacionales. Esa es la “Brecha Digital” que Todo Directo cierra.
+43: [None] 
+44: [Heading 2] Por Qué la IA Importa
+45: [None] No solo construimos sitios web — ofrecemos herramientas impulsadas por IA. Ofrecerle al dueño un “empleado de IA” que trabaja 24/7 es una ventaja competitiva enorme. El mercado de transformación digital en América Latina alcanzará $107 billones en 2025. Las posibilidades crecen cada mes.
+46: [None] 
+47: [Heading 1] SECCIÓN 3: SISTEMA DE VENTA CONSULTIVA (SPIN)
+48: [None] En Todo Directo no ‘empujamos’ productos. Diagnosticamos problemas. Usamos la metodología SPIN para que el dueño reconozca su problema antes de que ofrezcamos la solución.
+49: [None] 
+50: [Heading 2] 1. Pregunta de Situación
+51: [None] 
+52: [None] Objetivo: Entender su proceso manual actual. Escucha activamente sin interrumpir.
+53: [None] 
+54: [Heading 2] 2. Pregunta de Problema
+55: [None] 
+56: [None] Objetivo: Identificar el dolor de la pérdida de ingresos. Haz que lo cuantifique.
+57: [None] 
+58: [Heading 2] 3. Pregunta de Implicación
+59: [None] 
+60: [None] Objetivo: Hacer el dolor financiero y concreto. Deja que el cliente haga el cálculo.
+61: [None] 
+62: [Heading 2] 4. Pregunta de Necesidad-Beneficio
+63: [None] 
+64: [None] Objetivo: Que visualicen la solución. El prospecto describe su propio futuro ideal.
+65: [None] 
+66: [Heading 2] 5. Pregunta de Calificación (según tipo de negocio)
+67: [None] Esta pregunta varía por tipo de negocio. Ejemplos:
+68: [List Paragraph] Propietario de inmueble: “¿Vive cerca de la propiedad o necesita administración completa?”
+69: [List Paragraph] Restaurante/tienda: “¿Cuántos productos vende? ¿Recibe pedidos por WhatsApp actualmente?”
+70: [List Paragraph] Negocio de servicios: “¿Acepta citas o reservas? ¿Los clientes lo buscan en Google?”
+71: [List Paragraph] Cualquier negocio: “¿Cuántas horas dedica su personal a tareas repetitivas por semana?”
+72: [None] 
+73: [None] 
+74: [Heading 1] SECCIÓN 4: ÁRBOL DE DECISIÓN
+75: [Heading 2] PASO 1: Identificar el Tipo de Negocio
+76: [List Paragraph] ¿Es Propietario de Inmueble? → Ir a Vacation Rentals
+77: [List Paragraph] ¿Vende Productos o Comida? → Ir a AlToque App
+78: [List Paragraph] ¿Es Negocio de Servicios? → Ir a Desarrollo Web
+79: [List Paragraph] ¿Tiene procesos repetitivos? → Agregar Automatización de Procesos
+80: [List Paragraph] ¿Recibe muchas consultas de clientes? → Agregar Agente Chatbot con IA
+81: [None] 
+82: [Heading 2] PASO 2: Preguntas de Calificación por Producto
+83: [Heading 3] Para Propietarios de Inmuebles
+84: [List Paragraph] “¿Está esta propiedad en Airbnb o anunciada en algún lado?”
+85: [List Paragraph] “¿Vive cerca de la propiedad o necesita administración completa?”
+86: [None] Vive cerca / quiere control → Modelo A (Direct Booking Edge) — $250–350 instalación, 8-10% comisión
+87: [None] Vive en el extranjero / quiere ingreso pasivo → Modelo B (Administración Completa) — $400–600 instalación, 18-20% comisión
+88: [None] 
+89: [Heading 3] Para Vendedores de Productos/Comida
+90: [List Paragraph] “¿Cuántos productos/artículos del menú vende?”
+91: [List Paragraph] “¿Actualmente recibe pedidos por Facebook/WhatsApp?”
+92: [None] Menos de 20 productos → AlToque Chivo (Gratis)
+93: [None] Negocio establecido, 20+ productos → AlToque Pro ($14.99/mes)
+94: [None] Múltiples ubicaciones → AlToque Premium ($29.99/mes)
+95: [None] 
+96: [Heading 3] Para Negocios de Servicios
+97: [List Paragraph] “¿Acepta citas/reservas?”
+98: [List Paragraph] “¿Los clientes lo buscan en Google?”
+99: [None] Sin sitio web → Plan Chivo ($99 inst./$25/mes)
+100: [None] Necesita reservas → Plan Pro ($149 inst./$49/mes)
+101: [None] Quiere e-commerce → Plan Premium ($299 inst./$89/mes)
+102: [None] 
+103: [Heading 3] Para Automatización y Chatbots (todos los tipos)
+104: [List Paragraph] “¿Cuántas horas dedica su personal a tareas repetitivas?”
+105: [List Paragraph] “¿Ha perdido clientes por no responder después de las 6pm?”
+106: [None] Tareas repetitivas → Automatización de Procesos (desde $200/mes)
+107: [None] Consultas fuera de horario → Agente Chatbot con IA (desde $150/mes)
+108: [None] 
+109: [Heading 2] PASO 3: Verificar Oportunidades de Paquete (Stack)
+110: [List Paragraph] Restaurante/tienda → AlToque + Sitio Web + Chatbot
+111: [List Paragraph] Propiedad de renta → Plataforma de Renta + Sitio Web + Automatización
+112: [List Paragraph] Negocio de servicios → Web Pro + Chatbot IA
+113: [None] 
+114: [Heading 1] SECCIÓN 5: EL PROCESO UNIVERSAL DE VENTAS EN 6 PASOS
+115: [Heading 2] PASO 1: APERTURA / ACERCAMIENTO EN FRÍO
+116: [None] Para locales:
+117: [None] 
+118: [None] Para propietarios:
+119: [None] 
+120: [None] Para automatización:
+121: [None] 
+122: [Heading 2] PASO 2: DESCUBRIMIENTO
+123: [None] Usa las 5 Preguntas SPIN de la Sección 3. Escucha activamente estas señales de compra:
+124: [List Paragraph] “Perdemos pedidos los fines de semana”
+125: [List Paragraph] “No puedo con los mensajes de WhatsApp”
+126: [List Paragraph] “Airbnb me cobra 15%”
+127: [List Paragraph] “Nadie nos encuentra en Google”
+128: [List Paragraph] “Respondo las mismas preguntas todo el día”
+129: [None] 
+130: [Heading 2] PASO 3: EMPAREJAR CON PRODUCTO
+131: [None] Usa el Árbol de Decisión (Sección 4) para identificar la solución correcta. Nunca ofrezcas un producto antes de entender el problema.
+132: [None] 
+133: [Heading 2] PASO 4: DEMOSTRACIÓN
+134: [List Paragraph] AlToque: Demo en vivo en el teléfono, haz un pedido de prueba.
+135: [List Paragraph] Desarrollo Web: Muestra ejemplos en tablet.
+136: [List Paragraph] Vacation Rentals: Muestra el panel de control y el flujo de reservas.
+137: [List Paragraph] Automatización: Demo antes/después de un flujo automatizado.
+138: [List Paragraph] Chatbot IA: Demuestra respuestas automáticas en WhatsApp o sitio web.
+139: [None] 
+140: [None] 
+141: [Heading 2] PASO 5: COTIZACIÓN Y CIERRE
+142: [List Paragraph] Abre el Cotizador Google Sheets de Todo Directo.
+143: [List Paragraph] Descuento anual: “Si paga el año hoy, le regalo 2 meses gratis.”
+144: [List Paragraph] Urgencia: “Puedo tener esto funcionando para usted la próxima semana.”
+145: [List Paragraph] ROI: “Si recupera solo 3 ventas perdidas por semana, esto se paga solo.”
+146: [None] 
+147: [Heading 2] PASO 6: ENTREGA Y BIENVENIDA
+148: [List Paragraph] Cobra la cuota de instalación (Efectivo, Transferencia, Chivo Wallet).
+149: [List Paragraph] Llena el formulario de información del cliente.
+150: [List Paragraph] Establece expectativas sobre el plazo de implementación (ver tabla abajo).
+151: [List Paragraph] Envía reporte al equipo de Todo Directo para activación ese mismo día.
+152: [None] 
+153: [Heading 3] Plazos de Implementación por Producto
+154: [None] 
+155: [Heading 1] SECCIÓN 6: SCRIPTS DETALLADOS POR PRODUCTO
+156: [Heading 2] PRODUCTO A: AlToque App
+157: [None] Para quién es: Restaurantes, vendedores de comida, tiendas, vendedores de FB Marketplace.
+158: [None] 
+159: [Heading 3] Funciones IA que destacar:
+160: [List Paragraph] Catálogo inteligente impulsado por IA
+161: [List Paragraph] Respuestas automáticas a preguntas frecuentes
+162: [List Paragraph] Analíticas: qué productos se venden mejor
+163: [List Paragraph] Sugerencias automáticas de productos relacionados
+164: [None] 
+165: [None] 
+166: [Heading 2] PRODUCTO B: Desarrollo Web / App (WaaS)
+167: [None] Para quién es: Negocios de servicios: barberías, rentas de carros, clínicas.
+168: [None] 
+169: [Heading 3] Funciones IA que destacar:
+170: [List Paragraph] Chatbot IA para responder preguntas frecuentes
+171: [List Paragraph] Sistema de reservas inteligente (previene doble-reservas)
+172: [List Paragraph] Analíticas impulsadas por IA
+173: [List Paragraph] SEO automático para Google
+174: [None] 
+175: [None] 
+176: [Heading 2] PRODUCTO C: PR Vacation Rentals
+177: [None] Para quién es: Propietarios de casas de playa, condominios, cabañas.
+178: [None] 
+179: [None] 
+180: [Heading 2] PRODUCTO D: Automatización de Procesos Comerciales
+181: [None] Para quién es: Cualquier negocio que pierde tiempo en tareas repetitivas.
+182: [None] 
+183: [None] 
+184: [Heading 2] PRODUCTO E: Agentes Chatbot con IA
+185: [None] Para quién es: Cualquier negocio que recibe consultas de clientes o procesa pedidos/reservas.
+186: [None] 
+187: [None] 
+188: [Heading 1] SECCIÓN 7: VENTA EN PAQUETES (STACK SELLING)
+189: [None] Muchos negocios necesitan MÚLTIPLES soluciones. Siempre explora paquetes para maximizar tu comisión y el valor para el cliente.
+190: [None] 
+191: [None] 
+192: [None] 
+193: [Heading 1] SECCIÓN 8: LA IA COMO TU DIFERENCIADOR
+194: [None] La mayoría de competidores en El Salvador no ofrecen herramientas con IA. Esta es tu ventaja principal.
+195: [None] 
+196: [None] 
+197: [None] 
+198: [Heading 3] La Promesa de Todo Directo
+199: [None] Si la tecnología de IA existe, podemos construirla para tu negocio. No estamos limitados a un catálogo fijo. Si un cliente necesita un sistema de seguimiento de entregas IA, un agente de voz, o contratos automáticos — lo evaluamos y lo cotizamos. Esa flexibilidad es lo que nos diferencia de cualquier otro proveedor en El Salvador.
+200: [None] 
+201: [Heading 1] SECCIÓN 9: GUÍA DE MANEJO DE OBJECIONES
+202: [None] Cada objección es una señal de interés. No la temas — úsala. Un cliente que objeta está involucrado. Un cliente que no dice nada no está interesado.
+203: [None] 
+204: [Heading 2] “Necesito pensarlo”
+205: [None] 
+206: [None] Clave: Identifica la duda real. Si dice “precio”, tienes una objección de precio. Si dice “no sé si funcionará”, tienes una objección de confianza. Cada una tiene su respuesta.
+207: [None] 
+208: [Heading 2] “No tengo dinero ahora mismo”
+209: [None] 
+210: [Heading 2] “Ya tengo un sitio web / Facebook”
+211: [None] 
+212: [Heading 2] “Mis clientes no usan tecnología”
+213: [None] 
+214: [Heading 2] “No confío en la inteligencia artificial”
+215: [None] 
+216: [Heading 2] “Ya tengo alguien que me ayuda”
+217: [None] 
+218: [Heading 2] “Es muy caro”
+219: [None] 
+220: [Heading 2] Guía de Retención: Cuándo un Cliente Quiere Cancelar
+221: [None] 
+222: [None] Si un cliente activo menciona que quiere cancelar, sigue este proceso antes de aceptarlo:
+223: [List Paragraph] Llama personalmente — no mandes mensaje. El contacto humano marca la diferencia.
+224: [List Paragraph] Pregunta: “¿Qué no ha funcionado como esperaba?” Escucha sin defenderte.
+225: [List Paragraph] Identifica si es un problema técnico (escalarlo a soporte inmediatamente) o de valor percibido.
+226: [List Paragraph] Si es valor: recuerda los resultados logrados. “Desde que inició con nosotros, su chatbot ha respondido X consultas.”
+227: [List Paragraph] Ofrece una solución: mes gratis, cambio de plan, o nueva funcionalidad.
+228: [List Paragraph] Si cancela de todas formas, pide retroalimentación y mantente en contacto — pueden volver.
+229: [None] 
+230: [Heading 1] SECCIÓN 10: ESTRUCTURA DE COMISIONES – TUS GANANCIAS
+231: [None] Eres un representante 100% basado en comisiones. Ganas de dos formas:
+232: [List Paragraph] Comisiones por Cierre: Dinero inmediato cuando cierras un trato.
+233: [List Paragraph] Ingreso Residual: Pagos mensuales continuos mientras el cliente siga activo.
+234: [None] 
+235: [None] 
+236: [Heading 2] DESARROLLO WEB / APP (WaaS)
+237: [None] 
+238: [Heading 2] ALTOQUE APP
+239: [None] 
+240: [Heading 2] PR VACATION RENTALS
+241: [None] 
+242: [None] 
+243: [Heading 2] AUTOMATIZACIÓN DE PROCESOS
+244: [None] 
+245: [Heading 2] AGENTES CHATBOT CON IA
+246: [None] 
+247: [Heading 2] BONOS POR VOLUMEN
+248: [None] 
+249: [None] 
+250: [Heading 1] SECCIÓN 11: HERRAMIENTAS Y RECURSOS DE VENTAS
+251: [Heading 2] Tu Kit de Ventas
+252: [List Paragraph] Cotizador Google Sheets de Todo Directo: Calculadora dinámica de precios y comisiones.
+253: [List Paragraph] Pitch Deck PDF: Presentación de ventas de 16 diapositivas (actualizada Feb 2026).
+254: [List Paragraph] Cuentas de Demostración: Tienda demo de AlToque, sitios web de muestra, chatbot demo, panel de Vacation Rentals.
+255: [List Paragraph] Plantillas de Contrato: Formularios de acuerdo con el cliente.
+256: [List Paragraph] Este Documento SOP: Guárdalo en tu teléfono. Es tu manual de campo.
+257: [None] 
+258: [None] 
+259: [Heading 1] SECCIÓN 12: GUÍA DE CAMPO – FLUJO DE TRABAJO DIARIO
+260: [Heading 2] Planificación del Territorio
+261: [None] 
+262: [Heading 2] Estructura del Día
+263: [None] 
+264: [Heading 1] SECCIÓN 13: TARJETA DE REFERENCIA RÁPIDA
+265: [None] Guarda esta página en tu teléfono. Es tu guía de bolsillo para el campo.
+266: [None] 
+267: [Heading 2] Las 5 Preguntas de Descubrimiento (SPIN)
+268: [None] 
+269: [Heading 2] Árbol de Decisión Rápido
+270: [None] 
+271: [Heading 2] Frases de Cierre
+272: [None] 
+273: [Heading 2] Eliminadores de Objeciones
+274: [None] 
+275: [None] Documento elaborado por: Todo Directo – Equipo Comercial  |  Versión 2.0  |  Febrero 2026
+
+
+=== TABLES ===
+
+Table 0:
+  Row 0: ['“Empoderar la economía salvadoreña en crecimiento llevando herramientas digitale']
+
+Table 1:
+  Row 0: ['⚠️  NOTA PARA EL REPRESENTANTE: Estas cinco categorías son el punto de partida, ']
+
+Table 2:
+  Row 0: ['Producto/Servicio', 'Para Quién Es', 'Problema que Resuelve', 'Precio Inicial']
+  Row 1: ['AlToque App', 'Restaurantes, Tiendas, FB Marketplace', 'Pedidos perdidos en WhatsApp; caos manual', 'Gratis / $14.99/mes']
+  Row 2: ['PR Vacation Rentals', 'Propietarios de Inmuebles', 'Comisiones Airbnb +15%; sin soporte local', '$250 Instalación']
+  Row 3: ['Desarrollo Web (WaaS)', 'Barberías, Clínicas, Renta Carros', 'Invisibles en Google; sin reservas profesionales', '$99 Instalación']
+  Row 4: ['Automatización de Procesos', 'Cualquier negocio con tareas repetitivas', 'Tiempo perdido en tareas manuales', 'Desde $200/mes']
+  Row 5: ['Agentes Chatbot con IA', 'Cualquier negocio con consultas de clientes', 'Sin respuesta fuera de horario; personal sobrecargado', 'Desde $150/mes']
+
+Table 3:
+  Row 0: ['“¿Cómo maneja actualmente sus pedidos/reservas/consultas de clientes?”']
+
+Table 4:
+  Row 0: ['“¿Cuántos clientes pierde en una semana porque está muy ocupado para responder r']
+
+Table 5:
+  Row 0: ['“Si recuperara solo 5 ventas perdidas por semana, ¿cuánto dinero extra generaría']
+
+Table 6:
+  Row 0: ['“¿Qué significaría para su negocio si los clientes pudieran hacer pedidos 24/7, ']
+
+Table 7:
+  Row 0: ['💡  CONSEJO: Escucha más de lo que hablas. El 70% de la conversación debe ser el ']
+
+Table 8:
+  Row 0: ['“Buenos días, ¿es usted el dueño/la dueña? Soy [nombre] de Todo Directo. Ayudamo']
+
+Table 9:
+  Row 0: ['“Hola, vi que tiene esta propiedad en Airbnb. ¿Sabía que podría ganar un 10% más']
+
+Table 10:
+  Row 0: ['“Hola, soy [nombre] de Todo Directo. Trabajamos con negocios locales para recupe']
+
+Table 11:
+  Row 0: ['Siempre di: “Este sistema usa IA para responder automáticamente, incluso cuando ']
+
+Table 12:
+  Row 0: ['Producto', 'Plazo Estimado', 'Qué Necesitas del Cliente']
+  Row 1: ['AlToque App', '24–48 horas', 'Fotos de productos, precios, WhatsApp']
+  Row 2: ['Desarrollo Web – Plan Chivo', '5–7 días hábiles', 'Logo, fotos, descripción del negocio']
+  Row 3: ['Desarrollo Web – Plan Pro/Premium', '7–10 días hábiles', 'Todo anterior + horarios, servicios']
+  Row 4: ['Vacation Rentals', '5–7 días hábiles', 'Fotos propiedad, precios, disponibilidad']
+  Row 5: ['Automatización de Procesos', '7–14 días hábiles', 'Flujos actuales, integraciones requeridas']
+  Row 6: ['Chatbot IA', '5–10 días hábiles', 'Preguntas frecuentes, tono de marca']
+
+Table 13:
+  Row 0: ['“Mira, sé que estás recibiendo pedidos por Facebook y WhatsApp todo el día. El p']
+
+Table 14:
+  Row 0: ['Plan', 'Precio', 'Qué Incluye']
+  Row 1: ['AlToque Chivo', 'Gratis', 'Hasta 20 productos, catálogo básico']
+  Row 2: ['AlToque Pro', '$14.99/mes', 'Productos ilimitados, integración de pagos, sin marca de agua']
+  Row 3: ['AlToque Premium', '$29.99/mes', 'Múltiples usuarios, reportes, dominio personalizado']
+
+Table 15:
+  Row 0: ['“Cuando alguien busca ‘barbería en [ciudad]’ en Google, ¿aparece tu negocio? Si ']
+
+Table 16:
+  Row 0: ['Plan', 'Instalación', 'Mensualidad', 'Qué Incluye']
+  Row 1: ['Plan Chivo', '$99', '$25/mes', 'Página de inicio, formulario de contacto, móvil-friendly']
+  Row 2: ['Plan Pro', '$149', '$49/mes', 'Todo anterior + reservas, recordatorios SMS']
+  Row 3: ['Plan Premium', '$299', '$89/mes', 'Todo anterior + e-commerce, soporte VIP']
+
+Table 17:
+  Row 0: ['“Airbnb te cobra 15% de comisión por cada reserva, ¿verdad? Nosotros te creamos ']
+
+Table 18:
+  Row 0: ['Modelo', 'Instalación', 'Comisión', 'Ideal Para']
+  Row 1: ['Modelo A: Direct Booking Edge', '$250–350', '8–10%', 'Dueños que viven cerca de la propiedad']
+  Row 2: ['Modelo B: Premium Sin Preocupaciones', '$400–600', '18–20%', 'Dueños ausentes, gestión completa incluida']
+
+Table 19:
+  Row 0: ['“¿Cuántas horas a la semana dedica usted o su equipo a enviar los mismos mensaje']
+
+Table 20:
+  Row 0: ['Plan', 'Precio', 'Qué Incluye']
+  Row 1: ['Automatización Básica', 'Desde $200/mes', '1–3 flujos automatizados, soporte mensual']
+  Row 2: ['Automatización Pro', 'Desde $400/mes', 'Hasta 8 flujos, integraciones de apps, reportes']
+  Row 3: ['Automatización Empresarial', 'Precio personalizado', 'Sin límite, solución a medida, gestor dedicado']
+
+Table 21:
+  Row 0: ['“¿Alguna vez ha perdido un cliente porque nadie respondió su mensaje a las 9pm d']
+
+Table 22:
+  Row 0: ['Plan', 'Precio', 'Qué Incluye']
+  Row 1: ['Chatbot Básico', 'Desde $150/mes', '1 canal (ej. WhatsApp), respuestas a FAQ']
+  Row 2: ['Chatbot Pro', 'Desde $300/mes', 'Múltiples canales, pedidos/reservas, reportes']
+  Row 3: ['Agente IA Personalizado', 'Precio personalizado', 'IA entrenada en la marca, lógica avanzada']
+
+Table 23:
+  Row 0: ['Paquete', 'Qué Incluye', 'Por Qué Funciona']
+  Row 1: ['Paquete Restaurante Completo', 'AlToque App + Web + Chatbot IA', 'Google + pedidos + atención 24/7']
+  Row 2: ['Paquete Propietario de Inmueble', 'Renta + Web + Automatización', 'Vitrina + reservas + seguimientos automáticos']
+  Row 3: ['Paquete Negocio de Servicios', 'Web Pro + Chatbot IA + Automatización', 'Reservas + atención auto + procesos sin fricciones']
+  Row 4: ['Paquete Emprendedor Digital', 'AlToque App + Chatbot IA', 'Catálogo + respuesta instantánea a clientes']
+
+Table 24:
+  Row 0: ['“Mira, con solo la app de pedidos vas a crecer bastante. Pero si además tienes t']
+
+Table 25:
+  Row 0: ['“La Inteligencia Artificial es como tener un empleado virtual que trabaja 24/7 s']
+
+Table 26:
+  Row 0: ['Producto', 'Funciones de IA']
+  Row 1: ['AlToque App', 'Catálogo Inteligente (sugiere productos), Analíticas IA']
+  Row 2: ['Desarrollo Web', 'Chatbot IA (FAQ), Reservas Inteligentes, SEO automático']
+  Row 3: ['Vacation Rentals', 'Precios Dinámicos IA (ajusta tarifas según demanda)']
+  Row 4: ['Automatización', 'Flujos adaptativos, detección de errores en tiempo real']
+  Row 5: ['Chatbot IA', 'Conversación natural en español e inglés, aprendizaje continuo']
+
+Table 27:
+  Row 0: ['“Claro, entiendo. ¿Qué parte específicamente quiere pensar? ¿Es el precio, la fu']
+
+Table 28:
+  Row 0: ['“Entiendo. Por eso justamente necesita esto — para GANAR más. Si esperamos dos m']
+
+Table 29:
+  Row 0: ['“Perfecto, ¿y le está trayendo clientes nuevos cada semana? El problema no es te']
+
+Table 30:
+  Row 0: ['“Pero sus hijos sí. Y los turistas definitivamente sí. Si no está en línea, solo']
+
+Table 31:
+  Row 0: ['“Totalmente válido. Por eso nuestros sistemas siempre tienen un humano de respal']
+
+Table 32:
+  Row 0: ['“Excelente. Nuestro sistema no reemplaza a esa persona — la hace 3 veces más pro']
+
+Table 33:
+  Row 0: ['“¿Cuánto le costaría contratar un empleado de tiempo completo para hacer lo que ']
+
+Table 34:
+  Row 0: ['⚠️  NUEVO: El ingreso residual es tu activo más valioso. Protege a tus clientes ']
+
+Table 35:
+  Row 0: ['💡  LAS 4 REGLAS SIMPLES DE COMISIONES\n\nRegla 40/10: En Desarrollo Web, ganas 40%']
+
+Table 36:
+  Row 0: ['Paquete', 'Cuota de Instalación', 'Tu Comisión Inicial (40%)', 'Mensualidad Cliente', 'Tu Residual (10%)']
+  Row 1: ['Plan Chivo', '$99', '$39.60', '$25/mes', '$2.50/mes']
+  Row 2: ['Plan Pro', '$149', '$59.60', '$49/mes', '$4.90/mes']
+  Row 3: ['Plan Premium', '$299', '$119.60', '$89/mes', '$8.90/mes']
+
+Table 37:
+  Row 0: ['Paquete', 'Mensualidad', 'Tu Comisión 1er Mes (150%)', 'Plan Anual Upfront', 'Tu Residual (10%)']
+  Row 1: ['Chivo (Gratis)', '$0', '$0', '—', '$0']
+  Row 2: ['Pro', '$14.99', '$22.49', '$37.50', '$1.50/mes']
+  Row 3: ['Premium', '$29.99', '$44.98', '$75.00', '$3.00/mes']
+
+Table 38:
+  Row 0: ['Modelo', 'Cuota de Instalación al Cliente', 'Tu Comisión Fija', 'Residual']
+  Row 1: ['Modelo A (Direct Booking)', '$250–350', '$300', 'N/A (% por reserva)']
+  Row 2: ['Modelo B (Gestión Completa)', '$400–600', '$600', 'N/A (% por reserva)']
+
+Table 39:
+  Row 0: ['Nota importante: El precio de instalación al cliente ($250–600) es diferente a t']
+
+Table 40:
+  Row 0: ['Plan', 'Precio Cliente/mes', 'Tu Comisión Inicial (50%)', 'Residual Mensual (15%)', 'Tus Ganancias Mes 2+']
+  Row 1: ['Básico', '$200/mes', '$100 (1er mes)', '$30/mes', '$30/mes']
+  Row 2: ['Pro', '$400/mes', '$200 (1er mes)', '$60/mes', '$60/mes']
+  Row 3: ['Empresarial', 'Cotización', '10% del contrato', 'Negociable', '—']
+
+Table 41:
+  Row 0: ['Plan', 'Precio Cliente/mes', 'Tu Comisión Inicial (50%)', 'Residual Mensual (15%)', 'Tus Ganancias Mes 2+']
+  Row 1: ['Básico', '$150/mes', '$75 (1er mes)', '$22.50/mes', '$22.50/mes']
+  Row 2: ['Pro', '$300/mes', '$150 (1er mes)', '$45/mes', '$45/mes']
+  Row 3: ['Personalizado', 'Cotización', '10% del contrato', 'Negociable', '—']
+
+Table 42:
+  Row 0: ['Bono', 'Objetivo', 'Premio']
+  Row 1: ['Bono Semanal', 'Cierra 5 tratos/semana', '+$50']
+  Row 2: ['Bono Mensual', 'Cierra 20 tratos/mes', '+$200']
+  Row 3: ['Bono Trimestral', 'Cierra 60 tratos en 3 meses', '+$500']
+
+Table 43:
+  Row 0: ['💰  POTENCIAL REAL: Un rep con 100 clientes activos genera ~$1,330/mes en residua']
+
+Table 44:
+  Row 0: ['⚠️  IMPORTANTE: El Cotizador es una hoja de Google Sheets — necesitas conexión a']
+
+Table 45:
+  Row 0: ['Día', 'Zona', 'Tipos de Negocio Objetivo']
+  Row 1: ['Lunes–Martes', 'Corredor Turístico (El Tunco, El Zonte)', 'Surf shops, hostels, restaurantes de playa, propietarios de renta']
+  Row 2: ['Miércoles–Jueves', 'Urbano (San Salvador)', 'Barberías, floisterías, rentas de carros, clínicas']
+  Row 3: ['Viernes', 'Rural / Montaña', 'Cabañas, eco-lodges, fincas turísticas']
+  Row 4: ['Sábado', 'Mercados locales', 'Emprendedores, vendedores, negocios en crecimiento']
+
+Table 46:
+  Row 0: ['Hora', 'Actividad']
+  Row 1: ['7:00 AM', 'Revisa tu pipeline en el Cotizador. Identifica los 3 prospectos más calientes de']
+  Row 2: ['8:00 AM–12:00 PM', 'Visitas de campo — bloque matutino. Los dueños están más disponibles en la mañan']
+  Row 3: ['12:00 PM', 'Actualiza el rastreador con los cierres de la mañana. Come.']
+  Row 4: ['1:00–5:00 PM', 'Visitas de campo — bloque vespertino. Foco en demostraciones y cierres.']
+  Row 5: ['5:30 PM', 'Envía contratos y formularios de onboarding. Actualiza el cotizador.']
+  Row 6: ['6:00 PM', 'Reporta cierres al equipo de Todo Directo para activación. Planifica el día sigu']
+
+Table 47:
+  Row 0: ['1.', '¿Cómo maneja pedidos/reservas actualmente?']
+  Row 1: ['2.', '¿Cuántos clientes pierde por semana por estar ocupado?']
+  Row 2: ['3.', 'Si recuperara 5 ventas por semana, ¿cuánto ganaría al mes?']
+  Row 3: ['4.', '¿Qué significaría si clientes pudieran comprar 24/7?']
+  Row 4: ['5.', '[Pregunta de calificación — ver Sección 4 según tipo de negocio]']
+
+Table 48:
+  Row 0: ['¿Quién Es el Prospecto?', 'Producto Principal', 'Tu Comisión']
+  Row 1: ['Propietario – vive cerca', 'Vacation Rentals Modelo A', '$300 fijo']
+  Row 2: ['Propietario – vive lejos', 'Vacation Rentals Modelo B', '$600 fijo']
+  Row 3: ['Restaurante/tienda – empezando', 'AlToque Gratis', '$0']
+  Row 4: ['Restaurante/tienda – establecido', 'AlToque Pro (Anual)', '$22.49 + residual']
+  Row 5: ['Negocio de servicios – sin web', 'Web Plan Chivo', '$39.60 + $2.50/mes']
+  Row 6: ['Negocio de servicios – quiere reservas', 'Web Plan Pro', '$59.60 + $4.90/mes']
+  Row 7: ['Cualquiera – tareas repetitivas', 'Automatización Básica', '$100 + $30/mes']
+  Row 8: ['Cualquiera – no responde fuera horario', 'Chatbot IA Básico', '$75 + $22.50/mes']
+
+Table 49:
+  Row 0: ['“Si paga anual, le regalo 2 meses gratis.”\n“¿Cuándo quiere que esté listo? ¿La p']
+
+Table 50:
+  Row 0: ['Objección', 'Tu Respuesta']
+  Row 1: ['“No tengo dinero”', 'Por eso necesita esto — para GANAR más.']
+  Row 2: ['“Necesito pensarlo”', '¿Qué parte específicamente? ¿Precio o funcionalidad?']
+  Row 3: ['“Ya tengo web”', '¿Le trae clientes nuevos cada semana?']
+  Row 4: ['“No confío en la IA”', 'Usted siempre tiene el control — el chatbot maneja lo repetitivo.']
+  Row 5: ['“Ya tengo alguien”', 'Perfecto — esto lo va a hacer 3x más productivo.']
+  Row 6: ['“Es muy caro”', '¿Cuánto cuesta un empleado de tiempo completo? Este trabaja 24/7.']

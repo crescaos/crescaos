@@ -1,0 +1,228 @@
+﻿<!DOCTYPE html>
+<html class="dark" lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Â¡GraciasÃ­! | Cresca OS</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@700&family=Inter:wght@400;600&family=Manrope:wght@700&display=swap" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-dim": "#0b1326",
+                        "background": "#0F172A",
+                        "primary": "#0A84FF",
+                        "brand-green": "#00E68A"
+                    },
+                    fontFamily: {
+                        "headline": ["Noto Serif"],
+                        "body": ["Inter"],
+                        "label": ["Manrope"]
+                    }
+                },
+            },
+        }
+    </script>
+
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '158599436040251');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=158599436040251&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+</head>
+<body class="bg-background text-white font-body flex items-center justify-center min-h-screen overflow-hidden">
+    <canvas id="neural-bg" style="position:fixed; top:0; left:0; width:100%; height:100%; z-index:-1; opacity:0.8; pointer-events:none;"></canvas>
+    
+    <nav class="fixed top-0 w-full z-50 bg-[#0b1326]/70 backdrop-blur-xl shadow-2xl border-b border-gray-800">
+        <div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto relative">
+            <a class="flex items-center gap-2 group" href="/es/index.html">
+                <span class="material-symbols-outlined text-[#00E68A] text-3xl group-hover:rotate-180 transition-transform duration-700">change_circle</span>
+                <span class="font-headline text-2xl font-bold tracking-tight text-white">CRESCA<span class="text-[#0A84FF]">OS</span></span>
+            </a>
+            <div class="hidden lg:flex items-center space-x-8">
+                <a class="text-[#8f9095] hover:text-[#dae2fd] transition-all" href="/es/index.html">Inicio</a>
+                <a class="text-[#8f9095] hover:text-[#dae2fd] transition-all" href="/es/solutions.html">Soluciones</a>
+                <a class="text-[#8f9095] hover:text-[#dae2fd] transition-all" href="/es/pricing.html">Precios</a>
+                <a class="text-[#8f9095] hover:text-[#dae2fd] transition-all" href="/es/how-we-work.html">CÃ³mo Trabajamos</a>
+                <a class="text-[#8f9095] hover:text-[#dae2fd] transition-all" href="/es/integrations.html">Integraciones</a>
+            </div>
+            <div class="flex items-center gap-6">
+                <a href="/thank-you.html" class="text-[#00E68A] font-label text-sm hover:text-[#dae2fd] transition-colors font-bold">EN</a>
+                <a class="bg-[#4edea3] text-[#003824] px-5 py-2 rounded-lg font-label font-bold uppercase text-[10px]" href="/es/diagnostic.html">Reservar AuditorÃ­a</a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button class="lg:hidden absolute top-5 right-6 text-on-surface focus:outline-none z-[60]" id="mobile-menu-btn">
+                <span class="material-symbols-outlined text-3xl">menu</span>
+            </button>
+        </div>
+        <!-- Mobile Menu Overlay -->
+        <div class="fixed inset-0 bg-[#080f22] z-[55] hidden flex-col pt-24 px-8 transform transition-transform duration-300 translate-x-full" id="mobile-menu">
+            <div class="flex flex-col space-y-8 font-headline text-3xl">
+                <a class="text-on-surface hover:text-primary transition-colors" href="/es/index.html">Inicio</a>
+                <a class="text-on-surface hover:text-primary transition-colors" href="/es/solutions.html">Soluciones</a>
+                <a class="text-on-surface hover:text-primary transition-colors" href="/es/pricing.html">Precios</a>
+                <a class="text-on-surface hover:text-primary transition-colors" href="/es/how-we-work.html">CÃ³mo Trabajamos</a>
+                <a class="text-on-surface hover:text-primary transition-colors" href="/es/integrations.html">Integraciones</a>
+            </div>
+            <div class="mt-12">
+                <a class="bg-primary text-on-primary px-6 py-3 rounded-lg font-label font-bold uppercase tracking-widest text-sm inline-block w-full text-center" href="/es/diagnostic.html">Reserva Tu AuditorÃ­a Gratis</a>
+            </div>
+        </div>
+    </nav>    <div class="relative z-10 max-w-2xl w-full px-6 text-center">
+        <div class="mb-8 inline-flex items-center justify-center w-20 h-20 rounded-full bg-brand-green/20 border border-brand-green/30 animate-bounce">
+            <svg class="w-10 h-10 text-brand-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path>
+            </svg>
+        </div>
+        
+        <h1 class="font-headline text-5xl md:text-6xl font-bold mb-6 tracking-tight">Â¡Ã©xito!</h1>
+        <p class="text-xl md:text-2xl text-slate-400 mb-10 leading-relaxed">
+            Gracias por solicitar una auditorÃ­a de sistemas. Nuestro equipo revisarÃ¡ su informaciÃ³n y se comunicarÃ¡ con usted en menos de 24 horas para confirmar su horario.
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="index.html" class="bg-primary text-white font-label font-bold py-4 px-8 rounded-xl transition-transform hover:scale-105 uppercase tracking-widest text-sm">
+                Volver al Inicio
+            </a>
+            <a href="solutions.html" class="bg-white/5 border border-white/10 text-white font-label font-bold py-4 px-8 rounded-xl transition-transform hover:scale-105 uppercase tracking-widest text-sm backdrop-blur-sm">
+                Explorar Soluciones
+            </a>
+        </div>
+    </div>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            const canvas = document.getElementById('neural-bg');
+            const ctx = canvas.getContext('2d');
+            let particles = [];
+            const particleCount = 60;
+            const maxDistance = 180;
+
+            function resize() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            }
+            window.addEventListener('resize', resize);
+            resize();
+
+            class Particle {
+                constructor() {
+                    this.x = Math.random() * canvas.width;
+                    this.y = Math.random() * canvas.height;
+                    this.vx = (Math.random() - 0.5) * 0.4;
+                    this.vy = (Math.random() - 0.5) * 0.4;
+                    this.radius = Math.random() * 2 + 0.5;
+                }
+                update() {
+                    this.x += this.vx;
+                    this.y += this.vy;
+                    if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+                    if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+                }
+                draw() {
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                    ctx.fillStyle = 'rgba(0, 230, 138, 0.7)';
+                    ctx.fill();
+                }
+            }
+
+            for (let i = 0; i < particleCount; i++) particles.push(new Particle());
+
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                for (let i = 0; i < particles.length; i++) {
+                    particles[i].update();
+                    particles[i].draw();
+                    for (let j = i + 1; j < particles.length; j++) {
+                        const dx = particles[i].x - particles[j].x;
+                        const dy = particles[i].y - particles[j].y;
+                        const distance = Math.sqrt(dx * dx + dy * dy);
+                        if (distance < maxDistance) {
+                            ctx.beginPath();
+                            ctx.moveTo(particles[i].x, particles[i].y);
+                            ctx.lineTo(particles[j].x, particles[j].y);
+                            ctx.strokeStyle = `rgba(10, 132, 255, ${0.3 * (1 - distance / maxDistance)})`;
+                            ctx.lineWidth = 0.8;
+                            ctx.stroke();
+                        }
+                    }
+                }
+                requestAnimationFrame(animate);
+            }
+            animate();
+        });
+    </script>
+
+    <footer class="bg-[#0b1326] w-full border-t border-[#45474b]/15 mt-20 relative z-10">
+        <div class="max-w-7xl mx-auto px-8 py-12 text-center">
+            <p class="font-sans text-xs text-[#8f9095] mb-4 uppercase tracking-widest font-bold">
+                CRESCA OS | 31 Kirby Lane, Central Islip, NY 11550 | 516-298-8323
+            </p>
+            <p class="font-sans text-[10px] text-[#8f9095] opacity-70 leading-relaxed max-w-2xl mx-auto mb-8">
+                Al proporcionar su nÃºmero de telÃ©fono, acepta recibir mensajes de texto de CRESCA OS para actualizaciones comerciales y recordatorios. Pueden aplicarse cargos por mensajes y datos. La frecuencia de los mensajes varÃ­a. EnvÃ­e STOP para cancelar o HELP para obtener ayuda. Consulte nuestra <a href="/es/privacy.html" class="underline">PolÃ­tica de Privacidad</a> y los <a href="/es/terms.html" class="underline">TÃ©rminos de Servicio</a>. No compartimos ni vendemos su informaciÃ³n mÃ³vil con fines de marketing.
+            </p>
+            <p class="font-sans text-xs text-[#8f9095] opacity-50 uppercase tracking-widest">
+                &copy; 2026 Cresca OS. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <!-- GHL Chat Widget -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const btn = document.getElementById('mobile-menu-btn');
+            const menu = document.getElementById('mobile-menu');
+            if(btn && menu) {
+                btn.addEventListener('click', () => {
+                    const isHidden = menu.classList.contains('translate-x-full');
+                    if (isHidden) {
+                        menu.classList.remove('hidden');
+                        setTimeout(() => {
+                            menu.classList.remove('translate-x-full');
+                            menu.classList.add('translate-x-0');
+                        }, 10);
+                        btn.innerHTML = '<span class="material-symbols-outlined text-3xl text-error">close</span>';
+                    } else {
+                        menu.classList.remove('translate-x-0');
+                        menu.classList.add('translate-x-full');
+                        setTimeout(() => menu.classList.add('hidden'), 300);
+                        btn.innerHTML = '<span class="material-symbols-outlined text-3xl">menu</span>';
+                    }
+                });
+                window.addEventListener('resize', () => {
+                    if (window.innerWidth >= 1024 && !menu.classList.contains('translate-x-full')) {
+                        menu.classList.add('translate-x-full');
+                        menu.classList.add('hidden');
+                        btn.innerHTML = '<span class="material-symbols-outlined text-3xl">menu</span>';
+                    }
+                });
+            }
+        });
+    </script>
+    <script 
+      src="https://widgets.leadconnectorhq.com/loader.js"  
+      data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" 
+      data-widget-id="69d3ebd934c0448115bc10d9"> 
+    </script>
+
+</body>
+</html>
+

@@ -1,0 +1,420 @@
+
+=== README === (rows=15, cols=1)
+  A1: val='Todo Directo — Founder Financial Dashboard (El Salvador)'  fmt=General
+  A3: val='How to use'  fmt=General
+  A4: val="1) Fill the blue cells in 'Clients' (one row per client)."  fmt=General
+  A5: val='2) Maintain status as Active / Paused / Cancelled.'  fmt=General
+  A6: val="3) Update assumptions in 'Assumptions' (blue cells)."  fmt=General
+  A7: val="4) Review KPIs in 'MRR Summary' and profit in 'P&L'."  fmt=General
+  A9: val='Notes'  fmt=General
+  A10: val="• Installation fees are treated as cash this month (you can adjust in 'P&L' if you want t  fmt=General
+  A11: val="• Residual commissions are calculated monthly and shown in 'Commission Liability'."  fmt=General
+  A12: val='• This model is built for simple tracking first—upgrade to CRM when pipeline volume deman  fmt=General
+  A13: val='• Column S in Clients computes Effective MRR (adjusts Annual billing to monthly).'  fmt=General
+  A14: val="• The 'Monthly History' sheet should be updated each month by pasting KPI values."  fmt=General
+  A15: val='• Formula sheets (MRR Summary, Commission Liability, P&L) are protected to prevent accide  fmt=General
+
+=== Assumptions === (rows=13, cols=3)
+  A1: val='Assumptions (edit blue cells)'  fmt=General
+  A2: val='Assumption'  fmt=General
+  B2: val='Value'  fmt=General
+  C2: val='Notes'  fmt=General
+  A3: val='Reporting month (1st day)'  fmt=General
+  B3: val=datetime.datetime(2026, 2, 1, 0, 0)  fmt=m/d/yyyy
+  C3: val="Used to compute 'New this month' and churn metrics."  fmt=General
+  A4: val='Payment processing fee %'  fmt=General
+  B4: val=0.029  fmt=0.0%
+  C4: val='For card/Stripe-style fees; set 0% if mostly cash/transfer.'  fmt=General
+  A5: val='Payment processing fee fixed ($)'  fmt=General
+  B5: val=0.3  fmt="$"#,##0.00_);[Red]("$"#,##0.00)
+  C5: val='Per transaction (optional).'  fmt=General
+  A6: val='Monthly fixed overhead ($)'  fmt=General
+  B6: val=0  fmt="$"#,##0.00_);[Red]("$"#,##0.00)
+  C6: val='Office, internet, misc fixed costs.'  fmt=General
+  A7: val='Monthly tools/APIs base ($)'  fmt=General
+  B7: val=0  fmt="$"#,##0.00_);[Red]("$"#,##0.00)
+  C7: val='Base tool subscriptions not tied to clients.'  fmt=General
+  A8: val='Monthly payroll / contractors ($)'  fmt=General
+  B8: val=0  fmt="$"#,##0.00_);[Red]("$"#,##0.00)
+  C8: val='VA, support, ops (monthly).'  fmt=General
+  A9: val='Tax reserve % of pre-tax profit'  fmt=General
+  B9: val=0.2  fmt=0.0%
+  C9: val='Conservative default; adjust after accountant advice.'  fmt=General
+  A10: val='Churn % (for target modeling)'  fmt=General
+  B10: val=0.03  fmt=0.0%
+  C10: val='Used in Targets tab only.'  fmt=General
+  A11: val='Avg blended net margin % (for target modeling)'  fmt=General
+  B11: val=0.6  fmt=0.0%
+  C11: val='Used in Targets tab only.'  fmt=General
+  A12: val='Owner take-home % of net profit'  fmt=General
+  B12: val=0.5  fmt=0.0%
+  C12: val='Healthy early-stage range 30–50%.'  fmt=General
+
+=== Clients === (rows=202, cols=19)
+  A1: val='Clients (one row per client) — edit blue cells'  fmt=General
+  A2: val='Client ID'  fmt=General
+  B2: val='Client Name'  fmt=General
+  C2: val='Business Type'  fmt=General
+  D2: val='City'  fmt=General
+  E2: val='Rep'  fmt=General
+  F2: val='Country'  fmt=General
+  G2: val='Products (comma)'  fmt=General
+  H2: val='Status'  fmt=General
+  I2: val='Start Date'  fmt=General
+  J2: val='Cancel Date'  fmt=General
+  K2: val='Billing (Monthly/Annual)'  fmt=General
+  L2: val='Monthly Revenue ($)'  fmt=General
+  M2: val='Installation Fee ($)'  fmt=General
+  N2: val='Client Variable Cost ($/mo)'  fmt=General
+  O2: val='Residual Commission ($/mo)'  fmt=General
+  P2: val='Initial Commission Paid ($)'  fmt=General
+  Q2: val='Payment Method'  fmt=General
+  R2: val='Notes'  fmt=General
+  S2: val='Effective MRR ($)'  fmt=General
+  S3: val='=IF(K3="Annual",L3/12,L3)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S4: val='=IF(K4="Annual",L4/12,L4)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S5: val='=IF(K5="Annual",L5/12,L5)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S6: val='=IF(K6="Annual",L6/12,L6)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S7: val='=IF(K7="Annual",L7/12,L7)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S8: val='=IF(K8="Annual",L8/12,L8)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S9: val='=IF(K9="Annual",L9/12,L9)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S10: val='=IF(K10="Annual",L10/12,L10)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S11: val='=IF(K11="Annual",L11/12,L11)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S12: val='=IF(K12="Annual",L12/12,L12)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S13: val='=IF(K13="Annual",L13/12,L13)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S14: val='=IF(K14="Annual",L14/12,L14)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S15: val='=IF(K15="Annual",L15/12,L15)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S16: val='=IF(K16="Annual",L16/12,L16)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S17: val='=IF(K17="Annual",L17/12,L17)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S18: val='=IF(K18="Annual",L18/12,L18)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S19: val='=IF(K19="Annual",L19/12,L19)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S20: val='=IF(K20="Annual",L20/12,L20)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S21: val='=IF(K21="Annual",L21/12,L21)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S22: val='=IF(K22="Annual",L22/12,L22)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S23: val='=IF(K23="Annual",L23/12,L23)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S24: val='=IF(K24="Annual",L24/12,L24)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S25: val='=IF(K25="Annual",L25/12,L25)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S26: val='=IF(K26="Annual",L26/12,L26)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S27: val='=IF(K27="Annual",L27/12,L27)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S28: val='=IF(K28="Annual",L28/12,L28)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S29: val='=IF(K29="Annual",L29/12,L29)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S30: val='=IF(K30="Annual",L30/12,L30)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S31: val='=IF(K31="Annual",L31/12,L31)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S32: val='=IF(K32="Annual",L32/12,L32)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S33: val='=IF(K33="Annual",L33/12,L33)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S34: val='=IF(K34="Annual",L34/12,L34)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S35: val='=IF(K35="Annual",L35/12,L35)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S36: val='=IF(K36="Annual",L36/12,L36)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S37: val='=IF(K37="Annual",L37/12,L37)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S38: val='=IF(K38="Annual",L38/12,L38)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S39: val='=IF(K39="Annual",L39/12,L39)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S40: val='=IF(K40="Annual",L40/12,L40)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S41: val='=IF(K41="Annual",L41/12,L41)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S42: val='=IF(K42="Annual",L42/12,L42)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S43: val='=IF(K43="Annual",L43/12,L43)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S44: val='=IF(K44="Annual",L44/12,L44)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S45: val='=IF(K45="Annual",L45/12,L45)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S46: val='=IF(K46="Annual",L46/12,L46)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S47: val='=IF(K47="Annual",L47/12,L47)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S48: val='=IF(K48="Annual",L48/12,L48)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S49: val='=IF(K49="Annual",L49/12,L49)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S50: val='=IF(K50="Annual",L50/12,L50)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S51: val='=IF(K51="Annual",L51/12,L51)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S52: val='=IF(K52="Annual",L52/12,L52)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S53: val='=IF(K53="Annual",L53/12,L53)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S54: val='=IF(K54="Annual",L54/12,L54)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S55: val='=IF(K55="Annual",L55/12,L55)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S56: val='=IF(K56="Annual",L56/12,L56)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S57: val='=IF(K57="Annual",L57/12,L57)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S58: val='=IF(K58="Annual",L58/12,L58)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S59: val='=IF(K59="Annual",L59/12,L59)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S60: val='=IF(K60="Annual",L60/12,L60)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S61: val='=IF(K61="Annual",L61/12,L61)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S62: val='=IF(K62="Annual",L62/12,L62)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S63: val='=IF(K63="Annual",L63/12,L63)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S64: val='=IF(K64="Annual",L64/12,L64)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S65: val='=IF(K65="Annual",L65/12,L65)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S66: val='=IF(K66="Annual",L66/12,L66)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S67: val='=IF(K67="Annual",L67/12,L67)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S68: val='=IF(K68="Annual",L68/12,L68)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S69: val='=IF(K69="Annual",L69/12,L69)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S70: val='=IF(K70="Annual",L70/12,L70)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S71: val='=IF(K71="Annual",L71/12,L71)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S72: val='=IF(K72="Annual",L72/12,L72)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S73: val='=IF(K73="Annual",L73/12,L73)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S74: val='=IF(K74="Annual",L74/12,L74)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S75: val='=IF(K75="Annual",L75/12,L75)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S76: val='=IF(K76="Annual",L76/12,L76)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S77: val='=IF(K77="Annual",L77/12,L77)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S78: val='=IF(K78="Annual",L78/12,L78)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S79: val='=IF(K79="Annual",L79/12,L79)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S80: val='=IF(K80="Annual",L80/12,L80)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S81: val='=IF(K81="Annual",L81/12,L81)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S82: val='=IF(K82="Annual",L82/12,L82)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S83: val='=IF(K83="Annual",L83/12,L83)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S84: val='=IF(K84="Annual",L84/12,L84)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S85: val='=IF(K85="Annual",L85/12,L85)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S86: val='=IF(K86="Annual",L86/12,L86)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S87: val='=IF(K87="Annual",L87/12,L87)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S88: val='=IF(K88="Annual",L88/12,L88)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S89: val='=IF(K89="Annual",L89/12,L89)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S90: val='=IF(K90="Annual",L90/12,L90)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S91: val='=IF(K91="Annual",L91/12,L91)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S92: val='=IF(K92="Annual",L92/12,L92)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S93: val='=IF(K93="Annual",L93/12,L93)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S94: val='=IF(K94="Annual",L94/12,L94)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S95: val='=IF(K95="Annual",L95/12,L95)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S96: val='=IF(K96="Annual",L96/12,L96)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S97: val='=IF(K97="Annual",L97/12,L97)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S98: val='=IF(K98="Annual",L98/12,L98)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S99: val='=IF(K99="Annual",L99/12,L99)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S100: val='=IF(K100="Annual",L100/12,L100)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S101: val='=IF(K101="Annual",L101/12,L101)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S102: val='=IF(K102="Annual",L102/12,L102)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S103: val='=IF(K103="Annual",L103/12,L103)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S104: val='=IF(K104="Annual",L104/12,L104)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S105: val='=IF(K105="Annual",L105/12,L105)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S106: val='=IF(K106="Annual",L106/12,L106)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S107: val='=IF(K107="Annual",L107/12,L107)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S108: val='=IF(K108="Annual",L108/12,L108)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S109: val='=IF(K109="Annual",L109/12,L109)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S110: val='=IF(K110="Annual",L110/12,L110)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S111: val='=IF(K111="Annual",L111/12,L111)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S112: val='=IF(K112="Annual",L112/12,L112)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S113: val='=IF(K113="Annual",L113/12,L113)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S114: val='=IF(K114="Annual",L114/12,L114)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S115: val='=IF(K115="Annual",L115/12,L115)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S116: val='=IF(K116="Annual",L116/12,L116)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S117: val='=IF(K117="Annual",L117/12,L117)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S118: val='=IF(K118="Annual",L118/12,L118)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S119: val='=IF(K119="Annual",L119/12,L119)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S120: val='=IF(K120="Annual",L120/12,L120)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S121: val='=IF(K121="Annual",L121/12,L121)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S122: val='=IF(K122="Annual",L122/12,L122)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S123: val='=IF(K123="Annual",L123/12,L123)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S124: val='=IF(K124="Annual",L124/12,L124)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S125: val='=IF(K125="Annual",L125/12,L125)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S126: val='=IF(K126="Annual",L126/12,L126)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S127: val='=IF(K127="Annual",L127/12,L127)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S128: val='=IF(K128="Annual",L128/12,L128)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S129: val='=IF(K129="Annual",L129/12,L129)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S130: val='=IF(K130="Annual",L130/12,L130)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S131: val='=IF(K131="Annual",L131/12,L131)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S132: val='=IF(K132="Annual",L132/12,L132)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S133: val='=IF(K133="Annual",L133/12,L133)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S134: val='=IF(K134="Annual",L134/12,L134)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S135: val='=IF(K135="Annual",L135/12,L135)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S136: val='=IF(K136="Annual",L136/12,L136)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S137: val='=IF(K137="Annual",L137/12,L137)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S138: val='=IF(K138="Annual",L138/12,L138)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S139: val='=IF(K139="Annual",L139/12,L139)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S140: val='=IF(K140="Annual",L140/12,L140)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S141: val='=IF(K141="Annual",L141/12,L141)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S142: val='=IF(K142="Annual",L142/12,L142)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S143: val='=IF(K143="Annual",L143/12,L143)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S144: val='=IF(K144="Annual",L144/12,L144)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S145: val='=IF(K145="Annual",L145/12,L145)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S146: val='=IF(K146="Annual",L146/12,L146)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S147: val='=IF(K147="Annual",L147/12,L147)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S148: val='=IF(K148="Annual",L148/12,L148)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S149: val='=IF(K149="Annual",L149/12,L149)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S150: val='=IF(K150="Annual",L150/12,L150)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S151: val='=IF(K151="Annual",L151/12,L151)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S152: val='=IF(K152="Annual",L152/12,L152)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S153: val='=IF(K153="Annual",L153/12,L153)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S154: val='=IF(K154="Annual",L154/12,L154)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S155: val='=IF(K155="Annual",L155/12,L155)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S156: val='=IF(K156="Annual",L156/12,L156)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S157: val='=IF(K157="Annual",L157/12,L157)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S158: val='=IF(K158="Annual",L158/12,L158)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S159: val='=IF(K159="Annual",L159/12,L159)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S160: val='=IF(K160="Annual",L160/12,L160)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S161: val='=IF(K161="Annual",L161/12,L161)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S162: val='=IF(K162="Annual",L162/12,L162)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S163: val='=IF(K163="Annual",L163/12,L163)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S164: val='=IF(K164="Annual",L164/12,L164)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S165: val='=IF(K165="Annual",L165/12,L165)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S166: val='=IF(K166="Annual",L166/12,L166)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S167: val='=IF(K167="Annual",L167/12,L167)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S168: val='=IF(K168="Annual",L168/12,L168)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S169: val='=IF(K169="Annual",L169/12,L169)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S170: val='=IF(K170="Annual",L170/12,L170)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S171: val='=IF(K171="Annual",L171/12,L171)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S172: val='=IF(K172="Annual",L172/12,L172)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S173: val='=IF(K173="Annual",L173/12,L173)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S174: val='=IF(K174="Annual",L174/12,L174)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S175: val='=IF(K175="Annual",L175/12,L175)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S176: val='=IF(K176="Annual",L176/12,L176)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S177: val='=IF(K177="Annual",L177/12,L177)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S178: val='=IF(K178="Annual",L178/12,L178)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S179: val='=IF(K179="Annual",L179/12,L179)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S180: val='=IF(K180="Annual",L180/12,L180)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S181: val='=IF(K181="Annual",L181/12,L181)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S182: val='=IF(K182="Annual",L182/12,L182)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S183: val='=IF(K183="Annual",L183/12,L183)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S184: val='=IF(K184="Annual",L184/12,L184)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S185: val='=IF(K185="Annual",L185/12,L185)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S186: val='=IF(K186="Annual",L186/12,L186)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S187: val='=IF(K187="Annual",L187/12,L187)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S188: val='=IF(K188="Annual",L188/12,L188)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S189: val='=IF(K189="Annual",L189/12,L189)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S190: val='=IF(K190="Annual",L190/12,L190)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S191: val='=IF(K191="Annual",L191/12,L191)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S192: val='=IF(K192="Annual",L192/12,L192)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S193: val='=IF(K193="Annual",L193/12,L193)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S194: val='=IF(K194="Annual",L194/12,L194)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S195: val='=IF(K195="Annual",L195/12,L195)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S196: val='=IF(K196="Annual",L196/12,L196)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S197: val='=IF(K197="Annual",L197/12,L197)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S198: val='=IF(K198="Annual",L198/12,L198)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S199: val='=IF(K199="Annual",L199/12,L199)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S200: val='=IF(K200="Annual",L200/12,L200)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  S201: val='=IF(K201="Annual",L201/12,L201)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+
+=== MRR Summary === (rows=24, cols=5)
+  A1: val='MRR Summary'  fmt=General
+  A3: val='Key KPIs'  fmt=General
+  A4: val='Active Clients'  fmt=General
+  B4: val='=COUNTIF(Clients!H3:H500,"Active")'  fmt=General
+  D4: val='Reporting month'  fmt=General
+  E4: val='=Assumptions!B3'  fmt=mmmm yyyy
+  A5: val='Total MRR ($)'  fmt=General
+  B5: val='=SUMIF(Clients!H3:H500,"Active",Clients!L3:L500)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  A6: val='ARPU ($/client)'  fmt=General
+  B6: val='=IFERROR(B5/B4,0)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  A7: val='New Clients (this month)'  fmt=General
+  B7: val='=COUNTIFS(Clients!H3:H500,"Active",Clients!I3:I500,">="&EOMONTH($E$4,-1)+1,Clients!I3:I50  fmt=General
+  A8: val='Cancelled Clients (this month)'  fmt=General
+  B8: val='=COUNTIFS(Clients!H3:H500,"Cancelled",Clients!J3:J500,">="&EOMONTH($E$4,-1)+1,Clients!J3:  fmt=General
+  A9: val='Net MRR Change (this month)'  fmt=General
+  B9: val='=SUMIFS(Clients!L3:L500,Clients!H3:H500,"Active",Clients!I3:I500,">="&EOMONTH($E$4,-1)+1,  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  A10: val='Paused Clients'  fmt=General
+  B10: val='=COUNTIF(Clients!H3:H500,"Paused")'  fmt=General
+  A11: val='Paused MRR (potential reactivation)'  fmt=General
+  B11: val='=SUMIF(Clients!H3:H500,"Paused",Clients!L3:L500)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  A13: val='MRR by Product Tag (manual tagging in Products column)'  fmt=General
+  A14: val='Product Tag'  fmt=General
+  B14: val='MRR ($)'  fmt=General
+  C14: val='Active Clients'  fmt=General
+  A15: val='AlToque'  fmt=General
+  B15: val='=SUMPRODUCT((Clients!$H$3:$H$500="Active")*(ISNUMBER(SEARCH("AlToque",Clients!$G$3:$G$500  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  C15: val='=SUMPRODUCT((Clients!$H$3:$H$500="Active")*(ISNUMBER(SEARCH("AlToque",Clients!$G$3:$G$500  fmt=#,##0
+  A16: val='Web'  fmt=General
+  B16: val='=SUMPRODUCT((Clients!$H$3:$H$500="Active")*(ISNUMBER(SEARCH("Web",Clients!$G$3:$G$500)))*  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  C16: val='=SUMPRODUCT((Clients!$H$3:$H$500="Active")*(ISNUMBER(SEARCH("Web",Clients!$G$3:$G$500))))  fmt=#,##0
+  A17: val='Chatbot'  fmt=General
+  B17: val='=SUMPRODUCT((Clients!$H$3:$H$500="Active")*(ISNUMBER(SEARCH("Chatbot",Clients!$G$3:$G$500  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  C17: val='=SUMPRODUCT((Clients!$H$3:$H$500="Active")*(ISNUMBER(SEARCH("Chatbot",Clients!$G$3:$G$500  fmt=#,##0
+  A18: val='Automation'  fmt=General
+  B18: val='=SUMPRODUCT((Clients!$H$3:$H$500="Active")*(ISNUMBER(SEARCH("Automation",Clients!$G$3:$G$  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  C18: val='=SUMPRODUCT((Clients!$H$3:$H$500="Active")*(ISNUMBER(SEARCH("Automation",Clients!$G$3:$G$  fmt=#,##0
+  A19: val='Vacation'  fmt=General
+  B19: val='=SUMPRODUCT((Clients!$H$3:$H$500="Active")*(ISNUMBER(SEARCH("Vacation",Clients!$G$3:$G$50  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  C19: val='=SUMPRODUCT((Clients!$H$3:$H$500="Active")*(ISNUMBER(SEARCH("Vacation",Clients!$G$3:$G$50  fmt=#,##0
+  A21: val='Churn Metrics (actual)'  fmt=General
+  A22: val='Logo Churn Rate (this month)'  fmt=General
+  B22: val='=IFERROR(B8/(B4+B8),0)'  fmt=0.0%
+  A23: val='MRR Lost to Churn ($)'  fmt=General
+  B23: val='=SUMIFS(Clients!L3:L500,Clients!H3:H500,"Cancelled",Clients!J3:J500,">="&EOMONTH($E$4,-1)  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  A24: val='MRR Churn Rate (this month)'  fmt=General
+  B24: val='=IFERROR(B23/(B5+B23),0)'  fmt=0.0%
+
+=== Commission Liability === (rows=17, cols=5)
+  A1: val='Sales Commission Liability (Monthly Residual + One-time paid)'  fmt=General
+  A3: val='Residual commission owed this month (Active clients)'  fmt=General
+  D3: val='One-time initial commissions paid (enter in Clients tab)'  fmt=General
+  A4: val='Total Residual ($/mo)'  fmt=General
+  B4: val='=SUMIF(Clients!H3:H500,"Active",Clients!O3:O500)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  D4: val='Total Initial Paid ($)'  fmt=General
+  E4: val='=SUM(Clients!P3:P500)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  A6: val='Residual by Rep'  fmt=General
+  A7: val='Rep'  fmt=General
+  B7: val='Residual ($/mo)'  fmt=General
+  B8: val='=IF($A8="","",SUMIFS(Clients!$O$3:$O$500,Clients!$H$3:$H$500,"Active",Clients!$E$3:$E$500  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  B9: val='=IF($A9="","",SUMIFS(Clients!$O$3:$O$500,Clients!$H$3:$H$500,"Active",Clients!$E$3:$E$500  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  B10: val='=IF($A10="","",SUMIFS(Clients!$O$3:$O$500,Clients!$H$3:$H$500,"Active",Clients!$E$3:$E$50  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  B11: val='=IF($A11="","",SUMIFS(Clients!$O$3:$O$500,Clients!$H$3:$H$500,"Active",Clients!$E$3:$E$50  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  B12: val='=IF($A12="","",SUMIFS(Clients!$O$3:$O$500,Clients!$H$3:$H$500,"Active",Clients!$E$3:$E$50  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  B13: val='=IF($A13="","",SUMIFS(Clients!$O$3:$O$500,Clients!$H$3:$H$500,"Active",Clients!$E$3:$E$50  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  B14: val='=IF($A14="","",SUMIFS(Clients!$O$3:$O$500,Clients!$H$3:$H$500,"Active",Clients!$E$3:$E$50  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  B15: val='=IF($A15="","",SUMIFS(Clients!$O$3:$O$500,Clients!$H$3:$H$500,"Active",Clients!$E$3:$E$50  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  B16: val='=IF($A16="","",SUMIFS(Clients!$O$3:$O$500,Clients!$H$3:$H$500,"Active",Clients!$E$3:$E$50  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  B17: val='=IF($A17="","",SUMIFS(Clients!$O$3:$O$500,Clients!$H$3:$H$500,"Active",Clients!$E$3:$E$50  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+
+=== P&L === (rows=24, cols=4)
+  A1: val='Monthly Profit & Owner Take'  fmt=General
+  A3: val='Revenue'  fmt=General
+  A4: val='Total MRR'  fmt=General
+  B4: val="='MRR Summary'!B5"  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  A5: val='Installation fees (this month)'  fmt=General
+  B5: val='=SUMIFS(Clients!M3:M500,Clients!H3:H500,"Active",Clients!I3:I500,">="&EOMONTH(Assumptions  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  A6: val='Total Revenue (MRR + installs)'  fmt=General
+  B6: val='=B4+B5'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  A7: val='Gross Margin %'  fmt=General
+  B7: val='=IFERROR((B6-B10)/B6,0)'  fmt=0.0%
+  A9: val='Costs'  fmt=General
+  A10: val='Client variable costs ($/mo)'  fmt=General
+  B10: val='=SUMIF(Clients!H3:H500,"Active",Clients!N3:N500)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  A11: val='Sales residual commissions ($/mo)'  fmt=General
+  B11: val="='Commission Liability'!B4"  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  A12: val='Tools/APIs base ($/mo)'  fmt=General
+  B12: val='=Assumptions!B7'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  A13: val='Payroll / contractors ($/mo)'  fmt=General
+  B13: val='=Assumptions!B8'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  A14: val='Fixed overhead ($/mo)'  fmt=General
+  B14: val='=Assumptions!B6'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  A15: val='Payment processing fees (est.)'  fmt=General
+  B15: val="=B6*Assumptions!B4 + 'MRR Summary'!B4*Assumptions!B5"  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  A16: val='Total Costs'  fmt=General
+  B16: val='=SUM(B10:B15)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  A18: val='Profit'  fmt=General
+  A19: val='Pre-tax Profit'  fmt=General
+  B19: val='=B6-B16'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  A20: val='Tax reserve'  fmt=General
+  B20: val='=MAX(0,B19*Assumptions!B9)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  A21: val='Net Profit'  fmt=General
+  B21: val='=B19-B20'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  A22: val='Net Margin %'  fmt=General
+  B22: val='=IFERROR(B21/B6,0)'  fmt=0.0%
+  A23: val='Owner Take-home (target %)'  fmt=General
+  B23: val='=MAX(0,B21*Assumptions!B12)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  A24: val='Remaining for reinvestment'  fmt=General
+  B24: val='=B21-B23'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+
+=== Targets === (rows=15, cols=2)
+  A1: val='Targets (reverse-engineer goals)'  fmt=General
+  A3: val='Inputs (blue)'  fmt=General
+  A4: val='Target owner take-home ($/mo)'  fmt=General
+  B4: val=3000  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  A5: val='Owner take-home % of net profit'  fmt=General
+  B5: val='=Assumptions!B12'  fmt=General
+  A6: val='Estimated net margin %'  fmt=General
+  B6: val='=Assumptions!B11'  fmt=General
+  A7: val='Estimated avg revenue per client (ARPU) ($)'  fmt=General
+  B7: val=95  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  A8: val='Churn % (monthly)'  fmt=General
+  B8: val='=Assumptions!B10'  fmt=General
+  A10: val='Outputs'  fmt=General
+  A11: val='Net profit required ($/mo)'  fmt=General
+  B11: val='=IFERROR(B4/B5,0)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  A12: val='Revenue required ($/mo)'  fmt=General
+  B12: val='=IFERROR(B11/B6,0)'  fmt="$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)
+  A13: val='Active clients required'  fmt=General
+  B13: val='=IFERROR(B12/B7,0)'  fmt=#,##0
+  A15: val='Suggested weekly new-client target (rough)'  fmt=General
+  B15: val='=ROUNDUP((B13*B8)/4,0)'  fmt=#,##0
+
+=== Monthly History === (rows=3, cols=12)
+  A1: val='Monthly KPI History (paste values each month)'  fmt=General
+  A3: val='Month'  fmt=General
+  B3: val='Active Clients'  fmt=General
+  C3: val='MRR ($)'  fmt=General
+  D3: val='Net Profit ($)'  fmt=General
+  E3: val='Owner Take ($)'  fmt=General
+  F3: val='New Clients'  fmt=General
+  G3: val='Cancelled'  fmt=General
+  H3: val='Paused'  fmt=General
+  I3: val='Logo Churn %'  fmt=General
+  J3: val='Gross Margin %'  fmt=General
+  K3: val='Net Margin %'  fmt=General
+  L3: val='ARPU ($)'  fmt=General

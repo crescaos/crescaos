@@ -1,0 +1,294 @@
+
+================================================================================
+SHEET: README
+Dimensions: A1:A12
+
+  Row 1:
+    A1: 'Todo Directo — Founder Financial Dashboard (El Salvador)' [BOLD]
+  Row 3:
+    A3: 'How to use' [BOLD]
+  Row 4:
+    A4: "1) Fill the blue cells in 'Clients' (one row per client)."
+  Row 5:
+    A5: '2) Maintain status as Active / Paused / Cancelled.'
+  Row 6:
+    A6: "3) Update assumptions in 'Assumptions' (blue cells)."
+  Row 7:
+    A7: "4) Review KPIs in 'MRR Summary' and profit in 'P&L'."
+  Row 9:
+    A9: 'Notes' [BOLD]
+  Row 10:
+    A10: "• Installation fees are treated as cash this month (you can adjust in 'P&L' if you want to amortize)."
+  Row 11:
+    A11: "• Residual commissions are calculated monthly and shown in 'Commission Liability'."
+  Row 12:
+    A12: '• This model is built for simple tracking first—upgrade to CRM when pipeline volume demands it.'
+
+================================================================================
+SHEET: Assumptions
+Dimensions: A1:C13
+
+  Row 1:
+    A1: 'Assumptions (edit blue cells)' [BOLD]
+  Row 2:
+    A2: 'Assumption' [BOLD,bg:001F4E79]
+    B2: 'Value' [BOLD,bg:001F4E79]
+    C2: 'Notes' [BOLD,bg:001F4E79]
+  Row 3:
+    A3: 'Reporting month (1st day)'
+    B3: datetime.datetime(2026, 2, 1, 0, 0) [fmt:m/d/yyyy]
+    C3: "Used to compute 'New this month' and churn metrics."
+  Row 4:
+    A4: 'Payment processing fee %'
+    B4: 0.029 [fmt:0.0%]
+    C4: 'For card/Stripe-style fees; set 0% if mostly cash/transfer.'
+  Row 5:
+    A5: 'Payment processing fee fixed ($)'
+    B5: 0.3 [fmt:"$"#,##0.00_);[Red]("$"#,##0.00)]
+    C5: 'Per transaction (optional).'
+  Row 6:
+    A6: 'Monthly fixed overhead ($)'
+    B6: 0 [fmt:"$"#,##0.00_);[Red]("$"#,##0.00)]
+    C6: 'Office, internet, misc fixed costs.'
+  Row 7:
+    A7: 'Monthly tools/APIs base ($)'
+    B7: 0 [fmt:"$"#,##0.00_);[Red]("$"#,##0.00)]
+    C7: 'Base tool subscriptions not tied to clients.'
+  Row 8:
+    A8: 'Monthly payroll / contractors ($)'
+    B8: 0 [fmt:"$"#,##0.00_);[Red]("$"#,##0.00)]
+    C8: 'VA, support, ops (monthly).'
+  Row 9:
+    A9: 'Tax reserve % of pre-tax profit'
+    B9: 0.2 [fmt:"$"#,##0.00_);[Red]("$"#,##0.00)]
+    C9: 'Conservative default; adjust after accountant advice.'
+  Row 10:
+    A10: 'Churn % (for target modeling)'
+    B10: 0.03 [fmt:0.0%]
+    C10: 'Used in Targets tab only.'
+  Row 11:
+    A11: 'Avg blended net margin % (for target modeling)'
+    B11: 0.6 [fmt:0.0%]
+    C11: 'Used in Targets tab only.'
+  Row 12:
+    A12: 'Owner take-home % of net profit'
+    B12: 0.5 [fmt:0.0%]
+    C12: 'Healthy early-stage range 30–50%.'
+
+================================================================================
+SHEET: Clients
+Dimensions: A1:R202
+
+  Row 1:
+    A1: 'Clients (one row per client) — edit blue cells' [BOLD]
+  Row 2:
+    A2: 'Client ID' [BOLD,bg:001F4E79]
+    B2: 'Client Name' [BOLD,bg:001F4E79]
+    C2: 'Business Type' [BOLD,bg:001F4E79]
+    D2: 'City' [BOLD,bg:001F4E79]
+    E2: 'Rep' [BOLD,bg:001F4E79]
+    F2: 'Country' [BOLD,bg:001F4E79]
+    G2: 'Products (comma)' [BOLD,bg:001F4E79]
+    H2: 'Status' [BOLD,bg:001F4E79]
+    I2: 'Start Date' [BOLD,bg:001F4E79]
+    J2: 'Cancel Date' [BOLD,bg:001F4E79]
+    K2: 'Billing (Monthly/Annual)' [BOLD,bg:001F4E79]
+    L2: 'Monthly Revenue ($)' [BOLD,bg:001F4E79]
+    M2: 'Installation Fee ($)' [BOLD,bg:001F4E79]
+    N2: 'Client Variable Cost ($/mo)' [BOLD,bg:001F4E79]
+    O2: 'Residual Commission ($/mo)' [BOLD,bg:001F4E79]
+    P2: 'Initial Commission Paid ($)' [BOLD,bg:001F4E79]
+    Q2: 'Payment Method' [BOLD,bg:001F4E79]
+    R2: 'Notes' [BOLD,bg:001F4E79]
+
+================================================================================
+SHEET: MRR Summary
+Dimensions: A1:E17
+
+  Row 1:
+    A1: 'MRR Summary' [BOLD]
+  Row 3:
+    A3: 'Key KPIs' [BOLD]
+  Row 4:
+    A4: 'Active Clients' [BOLD]
+    B4: '=COUNTIF(Clients!H3:H500,"Active")'
+    D4: 'Reporting month' [BOLD]
+    E4: '=Assumptions!B3' [BOLD,fmt:mmmm yyyy]
+  Row 5:
+    A5: 'Total MRR ($)' [BOLD]
+    B5: '=SUMIF(Clients!H3:H500,"Active",Clients!L3:L500)' [fmt:"$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)]
+  Row 6:
+    A6: 'ARPU ($/client)' [BOLD]
+    B6: '=IFERROR(B5/B4,0)' [fmt:"$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)]
+  Row 7:
+    A7: 'New Clients (this month)' [BOLD]
+    B7: '=COUNTIFS(Clients!H3:H500,"Active",Clients!I3:I500,">="&EOMONTH($E$4,-1)+1,Clients!I3:I500,"<="&EOMONTH($E$4,0))'
+  Row 8:
+    A8: 'Cancelled Clients (this month)' [BOLD]
+    B8: '=COUNTIFS(Clients!H3:H500,"Cancelled",Clients!J3:J500,">="&EOMONTH($E$4,-1)+1,Clients!J3:J500,"<="&EOMONTH($E$4,0))'
+  Row 9:
+    A9: 'Net MRR Change (this month)' [BOLD]
+    B9: '=SUMIFS(Clients!L3:L500,Clients!H3:H500,"Active",Clients!I3:I500,">="&EOMONTH($E$4,-1)+1,Clients!I3:I500,"<="&EOMONTH($E$4,0)) - SUMIFS(Clients!L3:L500,Clients!H3:H500,"Cancelled",Clients!J3:J500,">="&EOMONTH($E$4,-1)+1,Clients!J3:J500,"<="&EOMONTH($E$4,0))' [fmt:"$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)]
+  Row 11:
+    A11: 'MRR by Product Tag (manual tagging in Products column)' [BOLD]
+  Row 12:
+    A12: 'Product Tag' [BOLD,bg:00D9E1F2]
+    B12: 'MRR ($)' [BOLD,bg:00D9E1F2]
+    C12: 'Active Clients' [BOLD,bg:00D9E1F2]
+  Row 13:
+    A13: 'AlToque'
+    B13: '=SUMPRODUCT((Clients!$H$3:$H$500="Active")*(ISNUMBER(SEARCH("AlToque",Clients!$G$3:$G$500)))*Clients!$L$3:$L$500)' [fmt:"$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)]
+    C13: '=SUMPRODUCT((Clients!$H$3:$H$500="Active")*(ISNUMBER(SEARCH("AlToque",Clients!$G$3:$G$500))))' [fmt:#,##0]
+  Row 14:
+    A14: 'Web'
+    B14: '=SUMPRODUCT((Clients!$H$3:$H$500="Active")*(ISNUMBER(SEARCH("Web",Clients!$G$3:$G$500)))*Clients!$L$3:$L$500)' [fmt:"$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)]
+    C14: '=SUMPRODUCT((Clients!$H$3:$H$500="Active")*(ISNUMBER(SEARCH("Web",Clients!$G$3:$G$500))))' [fmt:#,##0]
+  Row 15:
+    A15: 'Chatbot'
+    B15: '=SUMPRODUCT((Clients!$H$3:$H$500="Active")*(ISNUMBER(SEARCH("Chatbot",Clients!$G$3:$G$500)))*Clients!$L$3:$L$500)' [fmt:"$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)]
+    C15: '=SUMPRODUCT((Clients!$H$3:$H$500="Active")*(ISNUMBER(SEARCH("Chatbot",Clients!$G$3:$G$500))))' [fmt:#,##0]
+  Row 16:
+    A16: 'Automation'
+    B16: '=SUMPRODUCT((Clients!$H$3:$H$500="Active")*(ISNUMBER(SEARCH("Automation",Clients!$G$3:$G$500)))*Clients!$L$3:$L$500)' [fmt:"$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)]
+    C16: '=SUMPRODUCT((Clients!$H$3:$H$500="Active")*(ISNUMBER(SEARCH("Automation",Clients!$G$3:$G$500))))' [fmt:#,##0]
+  Row 17:
+    A17: 'Vacation'
+    B17: '=SUMPRODUCT((Clients!$H$3:$H$500="Active")*(ISNUMBER(SEARCH("Vacation",Clients!$G$3:$G$500)))*Clients!$L$3:$L$500)' [fmt:"$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)]
+    C17: '=SUMPRODUCT((Clients!$H$3:$H$500="Active")*(ISNUMBER(SEARCH("Vacation",Clients!$G$3:$G$500))))' [fmt:#,##0]
+
+================================================================================
+SHEET: Commission Liability
+Dimensions: A1:E17
+
+  Row 1:
+    A1: 'Sales Commission Liability (Monthly Residual + One-time paid)' [BOLD]
+  Row 3:
+    A3: 'Residual commission owed this month (Active clients)' [BOLD]
+    D3: 'One-time initial commissions paid (enter in Clients tab)' [BOLD]
+  Row 4:
+    A4: 'Total Residual ($/mo)' [BOLD]
+    B4: '=SUMIF(Clients!H3:H500,"Active",Clients!O3:O500)' [fmt:"$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)]
+    D4: 'Total Initial Paid ($)' [BOLD]
+    E4: '=SUM(Clients!P3:P500)' [fmt:"$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)]
+  Row 6:
+    A6: 'Residual by Rep' [BOLD]
+  Row 7:
+    A7: 'Rep' [BOLD,bg:00D9E1F2]
+    B7: 'Residual ($/mo)' [BOLD,bg:00D9E1F2]
+  Row 8:
+    B8: '=IF($A8="","",SUMIFS(Clients!$O$3:$O$500,Clients!$H$3:$H$500,"Active",Clients!$E$3:$E$500,$A8))' [fmt:"$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)]
+  Row 9:
+    B9: '=IF($A9="","",SUMIFS(Clients!$O$3:$O$500,Clients!$H$3:$H$500,"Active",Clients!$E$3:$E$500,$A9))' [fmt:"$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)]
+  Row 10:
+    B10: '=IF($A10="","",SUMIFS(Clients!$O$3:$O$500,Clients!$H$3:$H$500,"Active",Clients!$E$3:$E$500,$A10))' [fmt:"$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)]
+  Row 11:
+    B11: '=IF($A11="","",SUMIFS(Clients!$O$3:$O$500,Clients!$H$3:$H$500,"Active",Clients!$E$3:$E$500,$A11))' [fmt:"$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)]
+  Row 12:
+    B12: '=IF($A12="","",SUMIFS(Clients!$O$3:$O$500,Clients!$H$3:$H$500,"Active",Clients!$E$3:$E$500,$A12))' [fmt:"$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)]
+  Row 13:
+    B13: '=IF($A13="","",SUMIFS(Clients!$O$3:$O$500,Clients!$H$3:$H$500,"Active",Clients!$E$3:$E$500,$A13))' [fmt:"$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)]
+  Row 14:
+    B14: '=IF($A14="","",SUMIFS(Clients!$O$3:$O$500,Clients!$H$3:$H$500,"Active",Clients!$E$3:$E$500,$A14))' [fmt:"$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)]
+  Row 15:
+    B15: '=IF($A15="","",SUMIFS(Clients!$O$3:$O$500,Clients!$H$3:$H$500,"Active",Clients!$E$3:$E$500,$A15))' [fmt:"$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)]
+  Row 16:
+    B16: '=IF($A16="","",SUMIFS(Clients!$O$3:$O$500,Clients!$H$3:$H$500,"Active",Clients!$E$3:$E$500,$A16))' [fmt:"$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)]
+  Row 17:
+    B17: '=IF($A17="","",SUMIFS(Clients!$O$3:$O$500,Clients!$H$3:$H$500,"Active",Clients!$E$3:$E$500,$A17))' [fmt:"$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)]
+
+================================================================================
+SHEET: P&L
+Dimensions: A1:D22
+Merged cells: ['A17:D17', 'A3:D3', 'A8:D8']
+
+  Row 1:
+    A1: 'Monthly Profit & Owner Take' [BOLD]
+  Row 3:
+    A3: 'Revenue' [BOLD,bg:001F4E79]
+  Row 4:
+    A4: 'Total MRR'
+    B4: "='MRR Summary'!B5" [fmt:"$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)]
+  Row 5:
+    A5: 'Installation fees (this month)'
+    B5: '=SUMIFS(Clients!M3:M500,Clients!H3:H500,"Active",Clients!I3:I500,">="&EOMONTH(Assumptions!B3,-1)+1,Clients!I3:I500,"<="&EOMONTH(Assumptions!B3,0))' [fmt:"$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)]
+  Row 6:
+    A6: 'Total Revenue (MRR + installs)' [BOLD]
+    B6: '=B4+B5' [BOLD,fmt:"$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)]
+  Row 8:
+    A8: 'Costs' [BOLD,bg:001F4E79]
+  Row 9:
+    A9: 'Client variable costs ($/mo)'
+    B9: '=SUMIF(Clients!H3:H500,"Active",Clients!N3:N500)' [fmt:"$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)]
+  Row 10:
+    A10: 'Sales residual commissions ($/mo)'
+    B10: "='Commission Liability'!B4" [fmt:"$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)]
+  Row 11:
+    A11: 'Tools/APIs base ($/mo)'
+    B11: '=Assumptions!B7' [fmt:"$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)]
+  Row 12:
+    A12: 'Payroll / contractors ($/mo)'
+    B12: '=Assumptions!B8' [fmt:"$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)]
+  Row 13:
+    A13: 'Fixed overhead ($/mo)'
+    B13: '=Assumptions!B6' [fmt:"$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)]
+  Row 14:
+    A14: 'Payment processing fees (est.)'
+    B14: '=B4*Assumptions!B4' [fmt:"$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)]
+  Row 15:
+    A15: 'Total Costs' [BOLD]
+    B15: '=SUM(B9:B14)' [BOLD,fmt:"$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)]
+  Row 17:
+    A17: 'Profit' [BOLD,bg:001F4E79]
+  Row 18:
+    A18: 'Pre-tax Profit'
+    B18: '=B6-B15' [fmt:"$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)]
+  Row 19:
+    A19: 'Tax reserve'
+    B19: '=MAX(0,B18*Assumptions!B9)' [fmt:"$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)]
+  Row 20:
+    A20: 'Net Profit' [BOLD]
+    B20: '=B18-B19' [BOLD,fmt:"$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)]
+  Row 21:
+    A21: 'Owner Take-home (target %)' [BOLD]
+    B21: '=MAX(0,B20*Assumptions!B12)' [BOLD,fmt:"$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)]
+  Row 22:
+    A22: 'Remaining for reinvestment'
+    B22: '=B20-B21' [fmt:"$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)]
+
+================================================================================
+SHEET: Targets
+Dimensions: A1:B15
+
+  Row 1:
+    A1: 'Targets (reverse-engineer goals)' [BOLD]
+  Row 3:
+    A3: 'Inputs (blue)' [BOLD]
+  Row 4:
+    A4: 'Target owner take-home ($/mo)'
+    B4: 3000 [fmt:"$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)]
+  Row 5:
+    A5: 'Owner take-home % of net profit'
+    B5: '=Assumptions!B12'
+  Row 6:
+    A6: 'Estimated net margin %'
+    B6: '=Assumptions!B11'
+  Row 7:
+    A7: 'Estimated avg revenue per client (ARPU) ($)'
+    B7: 95 [fmt:"$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)]
+  Row 8:
+    A8: 'Churn % (monthly)'
+    B8: '=Assumptions!B10'
+  Row 10:
+    A10: 'Outputs' [BOLD]
+  Row 11:
+    A11: 'Net profit required ($/mo)'
+    B11: '=IFERROR(B4/B5,0)' [fmt:"$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)]
+  Row 12:
+    A12: 'Revenue required ($/mo)'
+    B12: '=IFERROR(B11/B6,0)' [fmt:"$"#,##0.00_);[Red]("$"#,##0.00);"-"_);_(@_)]
+  Row 13:
+    A13: 'Active clients required'
+    B13: '=IFERROR(B12/B7,0)' [fmt:#,##0]
+  Row 15:
+    A15: 'Suggested weekly new-client target (rough)'
+    B15: '=ROUNDUP((B13*B8)/4,0)' [fmt:#,##0]

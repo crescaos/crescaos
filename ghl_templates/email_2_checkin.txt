@@ -1,0 +1,7 @@
+Subject: quick question
+
+Hi {{contact.first_name}},
+
+Are you still interested in fixing your lead flow?
+
+– {{user.name}}

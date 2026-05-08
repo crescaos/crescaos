@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+
+<html class="dark scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About | Cresca OS</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Inter:wght@400;500;600&amp;family=Manrope:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .animate-slide-up { animation: slide-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+            .animate-fade-in { animation: fade-in 1s ease-out forwards; }
+            .delay-200 { animation-delay: 200ms; }
+        }
+        @keyframes slide-up {
+            from { transform: translateY(30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes fade-in {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-tertiary-container": "#0085bd",
+              "surface-dim": "#0b1326",
+              "surface-container-low": "#131b2e",
+              "on-primary-fixed": "#002113",
+              "surface-container-lowest": "#060e20",
+              "outline-variant": "#45474b",
+              "on-background": "#dae2fd",
+              "primary-container": "#00150b",
+              "secondary-container": "#3a4a5f",
+              "on-tertiary-fixed-variant": "#004c6e",
+              "secondary": "#b7c8e1",
+              "on-surface": "#dae2fd",
+              "surface-container": "#171f33",
+              "on-surface-variant": "#c6c6cb",
+              "tertiary-fixed-dim": "#89ceff",
+              "on-tertiary": "#00344d",
+              "error-container": "#93000a",
+              "primary-fixed-dim": "#0A84FF",
+              "on-primary-container": "#00E68A",
+              "inverse-primary": "#006c49",
+              "surface-variant": "#2d3449",
+              "on-primary-fixed-variant": "#005236",
+              "surface-container-high": "#222a3d",
+              "secondary-fixed-dim": "#b7c8e1",
+              "on-secondary": "#213145",
+              "primary": "#0A84FF",
+              "surface": "#0F172A",
+              "error": "#ffb4ab",
+              "on-secondary-fixed-variant": "#38485d",
+              "tertiary-container": "#001320",
+              "tertiary-fixed": "#c9e6ff",
+              "primary-fixed": "#6ffbbe",
+              "secondary-fixed": "#d3e4fe",
+              "inverse-surface": "#dae2fd",
+              "background": "#0F172A",
+              "tertiary": "#89ceff",
+              "on-secondary-fixed": "#0b1c30",
+              "on-tertiary-fixed": "#001e2f",
+              "surface-tint": "#0A84FF",
+              "inverse-on-surface": "#283044",
+              "surface-container-highest": "#2d3449",
+              "on-primary": "#FFFFFF",
+              "surface-bright": "#31394d",
+              "outline": "#8f9095",
+              "on-error": "#690005",
+              "on-error-container": "#ffdad6",
+              "on-secondary-container": "#a9bad3",
+              "brand-green": "#00E68A"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Inter"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#0b1326]/70 backdrop-blur-xl shadow-2xl shadow-[#060e20]/40 border-b border-outline-variant/10">
+<div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
+<a href="03_cresca-os-home.html" class="flex items-center gap-3 hover:opacity-80 transition-opacity">
+    <div class="flex items-center gap-3">
+        <svg width="32" height="32" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-8 h-8">
+            <circle cx="24" cy="24" r="18" stroke="#0A84FF" stroke-width="3" />
+            <ellipse cx="24" cy="24" rx="13" ry="7.5" stroke="#00E68A" stroke-width="3" transform="rotate(60 24 24)" />
+            <ellipse cx="24" cy="24" rx="13" ry="7.5" stroke="#00E68A" stroke-width="3" transform="rotate(-60 24 24)" />
+            <circle cx="24" cy="6" r="2.5" fill="#0A84FF" />
+            <circle cx="24" cy="42" r="2.5" fill="#0A84FF" />
+            <circle cx="39.59" cy="15" r="2.5" fill="#00E68A" />
+            <circle cx="8.41" cy="15" r="2.5" fill="#FFFFFF" />
+            <circle cx="39.59" cy="33" r="2.5" fill="#FFFFFF" />
+            <circle cx="8.41" cy="33" r="2.5" fill="#00E68A" />
+            <circle cx="24" cy="24" r="3.5" fill="#FFFFFF" />
+        </svg>
+        <div class="flex items-baseline font-serif text-2xl font-bold tracking-tighter">
+            <span class="text-white">CRESCA</span><span class="text-[#00E68A] ml-px">OS</span>
+        </div>
+    </div>
+</a>
+<div class="hidden md:flex space-x-8">
+<a class="text-[#8f9095] hover:text-[#dae2fd] font-serif text-lg tracking-tight transition-all duration-200" href="02_solutions-infrastructure-ai.html">Solutions</a>
+<a class="text-[#8f9095] hover:text-[#dae2fd] font-serif text-lg tracking-tight transition-all duration-200" href="04_industries-tailored-systems.html">Industries</a>
+<a class="text-[#8f9095] hover:text-[#dae2fd] font-serif text-lg tracking-tight transition-all duration-200" href="11_pricing.html">Pricing</a>
+<a class="text-[#8f9095] hover:text-[#dae2fd] font-serif text-lg tracking-tight transition-all duration-200" href="05_about-practical-systems-thinking.html">About</a>
+<a class="text-[#8f9095] hover:text-[#dae2fd] font-serif text-lg tracking-tight transition-all duration-200" href="07_el-salvador-hub-v2.html">El Salvador</a>
+</div>
+<div class="flex items-center gap-6">
+<span class="text-[#8f9095] font-label text-sm cursor-pointer hover:text-[#dae2fd]" onclick="alert('Bilingual support (ES) is currently in internal testing. Contact our San Salvador hub for localized implementation.')">EN/ES</span>
+<a class="bg-[#4edea3] text-[#003824] px-5 py-2 rounded-lg font-label font-bold scale-95 transition-transform duration-200 hover:scale-100 uppercase tracking-widest text-[10px]" href="08_request-proposal-updated-logo.html">
+                    Book Audit
+                </a>
+</div>
+</div>
+</nav>
+
+<main class="pt-32">
+<!-- Hero Section: The Sovereign Intent -->
+<section class="max-w-7xl mx-auto px-8 mb-24">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
+<div class="lg:col-span-8">
+<span class="font-label text-primary uppercase tracking-widest text-sm mb-4 block">The Cresca Mission</span>
+<h1 class="font-headline text-5xl md:text-7xl text-on-background leading-tight tracking-tight mb-8">
+                        Done-for-You <span class="text-primary">Infrastructure</span>. Built for the Way You Actually Run.
+</h1>
+<p class="font-body text-xl text-on-surface-variant max-w-2xl leading-relaxed">
+                        Most consultants give you a plan. Most software companies give you a login. Cresca OS gives you a finished, functional, and managed operating system. We bridge the gap between where your business is and where your systems need to be.
+                    </p>
+</div>
+<div class="lg:col-span-4 hidden lg:block">
+<div class="p-8 bg-surface-container-low rounded-xl border-l-4 border-primary">
+<span class="material-symbols-outlined text-primary mb-4" style="font-variation-settings: 'FILL' 1;">terminal</span>
+<p class="font-label text-sm text-on-surface-variant leading-tight">
+                            "True efficiency isn't found in a manual; it's earned through the friction of real-world execution."
+                        </p>
+</div>
+</div>
+</div>
+</section>
+<!-- The Founder: Context & Journey -->
+<section class="bg-surface-container-low py-24">
+<div class="max-w-7xl mx-auto px-8">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+<div class="relative group">
+<div class="absolute -inset-4 bg-primary/10 rounded-xl blur-2xl group-hover:bg-primary/20 transition-all duration-500"></div>
+<div class="relative aspect-[4/5] overflow-hidden rounded-xl bg-surface-container shadow-2xl">
+<img class="w-full h-full object-cover grayscale contrast-125 opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700" data-alt="Professional portrait of the founder in a modern architectural setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBn4OcNrvV-RsLV_MnoeCK6skJXN51erpjUc3M0rXgnFUwOvgdmXGa_M5P8pPReJzou0jGCe4JoW1AXLqCkWMNn6N1-ZuAt6bjDLnB0R7h_YilSmChDqwFgoZdSlB8619eoQDJ7yiaMcsLHs-agUu3sdQmp8xaEdMZ1FuX5kG_zUEivy8iL94dX_-lXa1hxlsTEMYnGM7Nip_R7r4Lbaw7JAU2JC5KiVMMGfQ8pLW0jTEH89AqBZ3_5qcbDDFlDEGwiRTX4aVdBR3I"/>
+<div class="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-surface to-transparent">
+<h3 class="font-headline text-2xl text-on-background">Founder &amp; Architect</h3>
+<p class="font-label text-primary uppercase text-xs tracking-widest mt-1">Solar Operations Specialist</p>
+</div>
+</div>
+</div>
+<div class="space-y-8">
+<h2 class="font-headline text-4xl text-on-background leading-tight">Our Philosophy: Built, Not Just Bought.</h2>
+<div class="space-y-6 font-body text-on-surface-variant leading-relaxed">
+<p>
+                                Buying software is easy. Making it work for your specific business is the hard part. At Cresca OS, we don't believe in "off-the-shelf" solutions for high-stakes service businesses.
+                            </p>
+<p>
+                                We believe that true operational excellence comes from systems that are custom-engineered around your logic, your people, and your growth goals. We don't just "implement" tool — we architect your future.
+                            </p>
+</div>
+<div class="grid grid-cols-2 gap-8 pt-6">
+<div>
+<h4 class="font-headline text-3xl text-primary">10k+</h4>
+<p class="font-label text-sm text-outline mt-2">Deployments Managed</p>
+</div>
+<div>
+<h4 class="font-headline text-3xl text-primary">24/7</h4>
+<p class="font-label text-sm text-outline mt-2">Sovereign Availability</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Vision: The Strategic Bridge -->
+<section class="py-24 max-w-7xl mx-auto px-8">
+<div class="mb-16">
+<h2 class="font-headline text-4xl text-on-background mb-4">The Strategic Bridge</h2>
+<div class="h-1 w-24 bg-primary rounded-full"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Card 1: U.S. Strategy -->
+<div class="bg-surface-container p-10 rounded-xl hover:bg-surface-container-high transition-all duration-300">
+<span class="material-symbols-outlined text-tertiary text-4xl mb-6">assured_workload</span>
+<h3 class="font-headline text-2xl mb-4">U.S. Market Precision</h3>
+<p class="font-body text-on-surface-variant leading-relaxed">
+                        We maintain the rigorous standards, compliance, and strategic foresight expected by the world's most demanding market.
+                    </p>
+</div>
+<!-- Card 2: El Salvador Operations -->
+<div class="bg-surface-container p-10 rounded-xl border-t-2 border-primary hover:bg-surface-container-high transition-all duration-300 shadow-xl shadow-primary/5">
+<span class="material-symbols-outlined text-primary text-4xl mb-6">hub</span>
+<h3 class="font-headline text-2xl mb-4">The El Salvador Engine</h3>
+<p class="font-body text-on-surface-variant leading-relaxed">
+                        Leveraging the dynamic, tech-forward energy of El Salvador to build resilient back-office operations and engineering hubs.
+                    </p>
+</div>
+<!-- Card 3: The Synergy -->
+<div class="bg-surface-container p-10 rounded-xl hover:bg-surface-container-high transition-all duration-300">
+<span class="material-symbols-outlined text-secondary text-4xl mb-6">settings_ethernet</span>
+<h3 class="font-headline text-2xl mb-4">Bilateral Integration</h3>
+<p class="font-body text-on-surface-variant leading-relaxed">
+                        A seamless operational corridor where talent, technology, and strategy flow without friction across borders.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Asymmetric Bento: Values & Philosophy -->
+<section class="bg-surface-container-low py-24 overflow-hidden">
+<div class="max-w-7xl mx-auto px-8">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+<div class="lg:col-span-7 bg-surface-container p-12 rounded-xl flex flex-col justify-center">
+<h2 class="font-headline text-3xl mb-6">Our Philosophy: Editorial Intelligence</h2>
+<p class="font-body text-lg text-on-surface-variant leading-relaxed mb-8">
+                            In a world drowning in noise, we prioritize the signal. Our interface and infrastructure are designed for leaders who need immediate, authoritative insights. We don't just provide data; we curate the narrative of your operation.
+                        </p>
+<div class="flex items-center space-x-4">
+<span class="h-10 w-10 rounded-full bg-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">check</span>
+</span>
+<span class="font-label text-sm">Eliminate Bureaucratic Latency</span>
+</div>
+</div>
+<div class="lg:col-span-5 aspect-square relative rounded-xl overflow-hidden shadow-2xl">
+<img class="w-full h-full object-cover" data-alt="High-end corporate office interior with deep shadows and natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3UC1_hXQgSSr2ptczgP24gvG_8FWxOYUnNflxl1X0BsE0tX2eg15HP2Yu99gtaCF3hJi-8cx0qvlzC301NF_6yGihNP8MCgYE9sl48PFPM678nJ_jvb0Ddb-SkxutyOQZH3FrjlshRJfL_iJDdDl9zZOnyq-MwOKTZOXJL64hI9wHATKbjkGov8BKuV9WiQTrTv1ZZesGI47nvd9qx3YX2-7GFup5ioOzVRrk5WU1yHZgxVUFVDJ9JjIkJcK_OjI0VOahph2Ipeo"/>
+<div class="absolute inset-0 bg-surface/40 backdrop-blur-sm flex flex-col justify-end p-8">
+<h4 class="font-headline text-xl text-on-background">Authority in Design.</h4>
+<p class="font-body text-sm text-on-surface-variant mt-2">Every pixel serves a sovereign purpose.</p>
+</div>
+</div>
+<div class="lg:col-span-4 bg-surface-container p-8 rounded-xl border border-outline-variant/15">
+<h3 class="font-headline text-xl mb-3">Resilient Infrastructure</h3>
+<p class="font-body text-sm text-on-surface-variant">Built to withstand the chaos of rapid scaling without sacrificing security or performance.</p>
+</div>
+<div class="lg:col-span-4 bg-primary text-on-primary p-8 rounded-xl flex flex-col justify-between">
+<p class="font-label font-bold text-lg leading-tight italic">"We are not a vendor. We are your architectural partners in expansion."</p>
+<span class="material-symbols-outlined self-end text-3xl">trending_up</span>
+</div>
+<div class="lg:col-span-4 bg-surface-container p-8 rounded-xl border border-outline-variant/15">
+<h3 class="font-headline text-xl mb-3">Human-Centric AI</h3>
+<p class="font-body text-sm text-on-surface-variant">AI that augments your team's decision-making, rather than obscuring it behind black boxes.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-32 relative overflow-hidden">
+<div class="absolute inset-0 signature-texture opacity-10"></div>
+<div class="max-w-4xl mx-auto px-8 text-center relative z-10">
+<h2 class="font-headline text-4xl md:text-5xl mb-8 leading-tight">Ready to institutionalize your operations?</h2>
+<p class="font-body text-xl text-on-surface-variant mb-12">
+                    Connect with our strategic team to explore how Cresca OS can anchor your next phase of growth.
+                </p>
+<div class="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-6">
+<a class="bg-primary text-on-primary px-10 py-4 rounded-xl font-label font-bold tracking-wide hover:scale-105 transition-transform duration-300 block" href="08_request-proposal-updated-logo.html">
+                        Book Your Free Audit →
+</a>
+</div>
+</div>
+</section>
+</main>
+
+<footer class="bg-[#0b1326] w-full border-t border-[#45474b]/15 mt-32">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8 px-8 py-16 max-w-7xl mx-auto">
+<div class="col-span-2 md:col-span-1">
+<div class="flex items-center gap-2.5 mb-6">
+    <svg width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6">
+        <circle cx="24" cy="24" r="18" stroke="#0A84FF" stroke-width="3" />
+        <ellipse cx="24" cy="24" rx="13" ry="7.5" stroke="#00E68A" stroke-width="3" transform="rotate(60 24 24)" />
+        <ellipse cx="24" cy="24" rx="13" ry="7.5" stroke="#00E68A" stroke-width="3" transform="rotate(-60 24 24)" />
+        <circle cx="24" cy="6" r="2.5" fill="#0A84FF" />
+        <circle cx="24" cy="42" r="2.5" fill="#0A84FF" />
+        <circle cx="39.59" cy="15" r="2.5" fill="#00E68A" />
+        <circle cx="8.41" cy="15" r="2.5" fill="#FFFFFF" />
+        <circle cx="39.59" cy="33" r="2.5" fill="#FFFFFF" />
+        <circle cx="8.41" cy="33" r="2.5" fill="#00E68A" />
+        <circle cx="24" cy="24" r="3.5" fill="#FFFFFF" />
+    </svg>
+    <div class="flex items-baseline font-serif text-xl font-bold tracking-tighter">
+        <span class="text-white">CRESCA</span><span class="text-[#00E68A] ml-px">OS</span>
+    </div>
+</div>
+<p class="font-sans text-sm text-[#8f9095] mb-8 leading-relaxed max-w-xs">
+                    Done-for-you business operating systems for high-growth service companies.
+                </p>
+</div>
+<div>
+<h6 class="text-[#4edea3] font-label text-xs uppercase tracking-widest mb-6 font-bold">Solutions</h6>
+<ul class="space-y-4">
+<li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="02_solutions-infrastructure-ai.html">Systems Audit</a></li>
+<li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="11_pricing.html">Pricing</a></li>
+<li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="04_industries-tailored-systems.html">Industries</a></li>
+</ul>
+</div>
+<div>
+<h6 class="text-[#4edea3] font-label text-xs uppercase tracking-widest mb-6 font-bold">Markets</h6>
+<ul class="space-y-4">
+<li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="03_cresca-os-home.html">United States</a></li>
+<li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="07_el-salvador-hub-v2.html">El Salvador Hub</a></li>
+</ul>
+</div>
+<div>
+<h6 class="text-[#4edea3] font-label text-xs uppercase tracking-widest mb-6 font-bold">Company</h6>
+<ul class="space-y-4">
+<li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="05_about-practical-systems-thinking.html">About Us</a></li>
+<li><a class="text-[#8f9095] hover:text-[#4edea3] transition-colors font-sans text-sm" href="08_request-proposal-updated-logo.html">Book Audit</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-8 py-8 border-t border-[#45474b]/10 text-center">
+<p class="font-sans text-xs text-[#8f9095] opacity-80 uppercase tracking-widest">
+                © 2024 Cresca OS. All rights reserved.
+            </p>
+</div>
+</footer>
+</body></html>

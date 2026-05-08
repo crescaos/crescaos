@@ -1,0 +1,142 @@
+﻿
+================================================================================
+Pricing Strategy
+================================================================================
+TODO DIRECTO � Estrategia de Precios y Comisiones
+Investigaci�n de Mercado y Recomendaciones para El Salvador
+Versi�n 1.0 | Febrero 2026 | Confidencial � Solo para Uso Interno
+1. CONTEXTO DEL MERCADO
+El Salvador se encuentra en un momento hist�rico para el emprendimiento digital. San Salvador fue reconocida como el ecosistema de startups de m�s r�pido crecimiento del mundo en 2025, con un objetivo de 4.2 millones de turistas para 2026. El mercado de transformaci�n digital en Am�rica Latina alcanzar� $107.23 billones en 2025, creciendo a un 17.69% anual.
+Lo que esto significa para Todo Directo: Estamos en el mercado correcto, en el momento correcto. Los negocios locales sienten la presi�n de turistas internacionales que esperan tecnolog�a, reservas online y respuestas inmediatas. La demanda existe. El trabajo del representante es cerrar la brecha.
+Factor cr�tico de precios: A diferencia de US o Europa Occidental donde el gasto en software SaaS es alto, El Salvador es un mercado emergente con poder adquisitivo diferente. La investigaci�n muestra que precios regionales bien calibrados generan 25% m�s ingreso por cliente versus precios globales uniformes. Nuestros precios actuales est�n bien calibrados para el mercado � no son demasiado baratos ni fuera de alcance.
+2. AN�LISIS DE PRECIOS ACTUALES vs.�MERCADO
+�Est�n Bien Puestos Nuestros Precios?
+La respuesta corta: s�, y hay espacio para crecer con valor.
+Conclusi�n: Los precios est�n bien para penetraci�n de mercado en El Salvador. No los bajes � deteriorar�as tus m�rgenes y atraer�as clientes que valoran poco el servicio. No los subas todav�a sin agregar valor diferenciador.
+3. AN�LISIS DE M�RGENES Y RENTABILIDAD
+�Cu�nto Necesita Ganar Todo Directo por Cliente?
+Para operar rentablemente como empresa, necesitamos considerar:
+Costos de entrega estimados por producto (mensual):
+M�rgenes brutos estimados:
+Esto es saludable. Las agencias especializadas logran m�rgenes del 25�40%. Estamos en rangos superiores gracias al modelo SaaS. El objetivo es escalar clientes activos, no aumentar precios prematuramente.
+4. EL PROBLEMA DE $0 RESIDUAL EN ALTOQUE
+El Problema Actual
+AlToque Pro ($14.99/mes) y Premium ($29.99/mes) pagan $0 de residual mensual al representante. Esto crea tres problemas:
+Los reps no tienen incentivo de retener estos clientes � si un cliente de AlToque considera cancelar, el rep no gana nada apoyando la retenci�n.
+Parece �barato� en la tabla de comisiones � desincentiva que los reps prioricen esta venta.
+Perdemos el modelo de ingreso recurrente que hace valioso este negocio a largo plazo.
+Soluci�n Recomendada: Agregar Residual Peque�o a AlToque
+Agregar $1.50�$3.00/mes de residual es m�nimo para la empresa pero psicol�gicamente significativo para el rep � especialmente cuando tienen 20�30 clientes activos de AlToque acumulados.
+5. ESTRUCTURA DE COMISIONES OPTIMIZADA
+Principio: Incentivar Comportamientos Correctos
+Una estructura de comisiones efectiva debe: - Pagar m�s por productos con mayor margen para la empresa - Crear ingreso residual genuino para que los reps retengan clientes - Ser f�cil de calcular mentalmente en el campo - Recompensar paquetes (stack selling)
+Tabla de Comisiones Recomendada (Mejorada)
+*Para Vacation Rentals, se recomienda considerar un peque�o % de comisi�n mensual sobre las reservas completadas (ej. 0.5�1%) como incentivo de retenci�n a futuro.
+�Por Qu� Esta Estructura Funciona?
+Para los reps: Hay ingreso inmediato (inicial) y flujo constante (residual). Construir un portafolio de 50 clientes activos genera ingreso pasivo significativo.
+Para Todo Directo: Los porcentajes est�n balanceados con los m�rgenes � nunca pagamos m�s del 30% del ingreso neto al rep, manteniendo la empresa rentable.
+Para los clientes: Los precios se justifican f�cilmente con el ROI demostrable (ver Slide 13 del pitch deck).
+6. POTENCIAL DE INGRESO PARA REPRESENTANTES
+Escenario Realista: Rep con 3 Meses de Trabajo
+Asumiendo un rep activo cerrando 15 tratos/mes durante 3 meses:
+Mes 1 (45 clientes totales): - 20 AlToque Pro: $449 inicial - 10 Web Plan Pro: $596 inicial - 8 Chatbot B�sico: $600 inicial - 5 Automatizaci�n B�sica: $500 inicial - 2 Vacation Rentals A: $600 inicial - Total inicial mes 1: $2,745 - Residual acumulado: $78 + $49 + $180 + $150 = $457/mes
+Mes 2 (30 clientes adicionales): - Cierres nuevos + residual acumulado mes 1 - Ingresos totales mes 2 estimados: ~$2,100 + $457 residual = $2,557
+Mes 3 (45 cierres adicionales acumulados): - Residual mes 3 acumulado (90 clientes activos): ~$1,200/mes solo de residual - Ingresos totales mes 3 estimados: ~$3,500+
+Ingreso Residual Acumulado a 12 Meses
+Un rep que mantiene 100 clientes activos con mezcla de productos genera: - AlToque Pro (30 clientes): $45/mes - Web Pro (25 clientes): $122.50/mes - Chatbot B�sico (25 clientes): $562.50/mes - Automatizaci�n B�sica (20 clientes): $600/mes - Total residual mensual: ~$1,330/mes garantizado, sin cerrar nada nuevo
+7. ESTRATEGIA DE PRECIOS A FUTURO
+Cu�ndo Subir Precios
+Basado en las mejores pr�cticas de SaaS, se recomienda revisar precios cuando:
+El producto mejora � cada nueva funci�n de IA justifica un aumento del 10�15%.
+La demanda supera la capacidad � si hay lista de espera, el precio es demasiado bajo.
+La competencia local aparece � en ese momento, el valor percibido (no el precio) es el diferenciador.
+Anualmente � un aumento del 5�8% anual es normal, esperado y raramente causa cancelaciones.
+El Modelo �10x Rule� para Justificar Precios
+El cliente debe percibir que el valor recibido es 10 veces el precio pagado. Ejemplos:
+Error: 'charmap' codec can't encode character '\u2192' in position 24: character maps to <undefined>
+
+================================================================================
+SOP v2
+================================================================================
+TODO DIRECTO
+Servicios de Transformaci�n Digital para Negocios en El Salvador
+MANUAL DE PROCEDIMIENTOS EST�NDAR DE OPERACI�N
+Gu�a Completa para Representantes Comerciales
+Versi�n 2.0  |  Febrero 2026  |  Confidencial � Solo Uso Interno
+TABLA DE CONTENIDOS
+SECCI�N 1: TU PORTAFOLIO � CINCO SOLUCIONES, UNA MISI�N
+Nuestra misi�n es simple: digitalizar la econom�a salvadore�a. Ofrecemos cinco soluciones distintas adaptadas a las necesidades espec�ficas de cada negocio, todo bajo una sola marca.
+1. AlToque App
+Aplicaci�n web para negocios locales que venden por Facebook o WhatsApp. Organiza cat�logo y pedidos de forma profesional.
+2. PR Vacation Rentals
+Plataforma para propietarios de inmuebles � alternativa local m�s rentable a Airbnb con comisiones menores.
+3. Desarrollo Web / App (WaaS)
+Sitio Web como Servicio para negocios de servicios que necesitan presencia en Google y sistema de reservas.
+4. Automatizaci�n de Procesos Comerciales
+Automatizamos tareas repetitivas: facturaci�n, seguimientos, reportes y flujos de trabajo usando IA de �ltima generaci�n.
+5. Agentes Chatbot con IA
+Agentes de conversaci�n que atienden clientes 24/7, responden preguntas, procesan reservas y califican prospectos.
+Resumen del Portafolio
+SECCI�N 2: LA OPORTUNIDAD EN EL SALVADOR
+El Boom del Turismo
+El Salvador est� experimentando un crecimiento tur�stico sin precedentes, con m�s de 3.9 millones de visitantes al a�o (objetivo 4.2M para 2026). San Salvador fue reconocida como el ecosistema de startups de m�s r�pido crecimiento del mundo en 2025. Cada turista necesita servicios: rentar carros, reservar citas, pedir comida y encontrar alojamiento.
+Negocios Objetivo
+Rentas de Carros: Necesitan sistemas de reserva para turistas internacionales.
+Barber�as y Salones: Necesitan gesti�n de citas.
+Floister�as y Regalos: Necesitan cat�logos en l�nea.
+Restaurantes: Necesitan men�s digitales y gesti�n de pedidos.
+Propietarios de Inmuebles: Necesitan mejor rentabilidad de su inversi�n.
+Cualquier negocio: Puede beneficiarse de la automatizaci�n y los chatbots.
+El Problema del Facebook Marketplace
+La mayor�a de negocios locales operan solo en redes sociales. Cuando crecen, esto se convierte en una trampa: pierden pedidos, no pueden rastrear inventario y parecen poco profesionales ante turistas internacionales. Esa es la �Brecha Digital� que Todo Directo cierra.
+Por Qu� la IA Importa
+No solo construimos sitios web � ofrecemos herramientas impulsadas por IA. Ofrecerle al due�o un �empleado de IA� que trabaja 24/7 es una ventaja competitiva enorme. El mercado de transformaci�n digital en Am�rica Latina alcanzar� $107 billones en 2025. Las posibilidades crecen cada mes.
+SECCI�N 3: SISTEMA DE VENTA CONSULTIVA (SPIN)
+En Todo Directo no �empujamos� productos. Diagnosticamos problemas. Usamos la metodolog�a SPIN para que el due�o reconozca su problema antes de que ofrezcamos la soluci�n.
+1. Pregunta de Situaci�n
+Objetivo: Entender su proceso manual actual. Escucha activamente sin interrumpir.
+2. Pregunta de Problema
+Objetivo: Identificar el dolor de la p�rdida de ingresos. Haz que lo cuantifique.
+3. Pregunta de Implicaci�n
+Objetivo: Hacer el dolor financiero y concreto. Deja que el cliente haga el c�lculo.
+4. Pregunta de Necesidad-Beneficio
+Objetivo: Que visualicen la soluci�n. El prospecto describe su propio futuro ideal.
+5. Pregunta de Calificaci�n (seg�n tipo de negocio)
+Esta pregunta var�a por tipo de negocio. Ejemplos:
+Propietario de inmueble: ��Vive cerca de la propiedad o necesita administraci�n completa?�
+Restaurante/tienda: ��Cu�ntos productos vende? �Recibe pedidos por WhatsApp actualmente?�
+Negocio de servicios: ��Acepta citas o reservas? �Los clientes lo buscan en Google?�
+Cualquier negocio: ��Cu�ntas horas dedica su personal a tareas repetitivas por semana?�
+SECCI�N 4: �RBOL DE DECISI�N
+PASO 1: Identificar el Tipo de Negocio
+Error: 'charmap' codec can't encode character '\u2192' in position 29: character maps to <undefined>
+
+================================================================================
+Intake Form
+================================================================================
+FORMULARIO DE ORDEN DE SERVICIO
+Completar con el cliente en el momento del cierre  �  Letra de imprenta, por favor
+�C�mo prefiere que nos comuniquemos?
+Error: 'charmap' codec can't encode character '\u2610' in position 0: character maps to <undefined>
+
+================================================================================
+PITCH DECK
+================================================================================
+
+--- Slide 1 ---
+TODO DIRECTO
+Transformaci�n Digital para Negocios en El Salvador
+"Empoderar la econom�a salvadore�a llevando herramientas de IA
+accesibles a negocios locales, propietarios y emprendedores."
+AlToque App
+Desarrollo Web
+Vacation Rentals
+Automatizaci�n IA
+Chatbot Agents
+Presentado por: ________________     Fecha: _______________
+www.tododirecto.com  |  info@tododirecto.com  |  El Salvador
+
+--- Slide 2 ---
+SOBRE TODO DIRECTO
+Qui�nes Somos y Por Qu� Confiar en Nosotros
+Error: 'charmap' codec can't encode characters in position 0-1: character maps to <undefined>
