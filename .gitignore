@@ -14,3 +14,6 @@ Cresca Os website copy
 node_modules/
 scratch/
 package-lock.json
+
+# Local Netlify folder
+.netlify
