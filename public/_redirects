@@ -1,0 +1,8 @@
+# Funnel Standardization Redirects
+/book-audit          /diagnostic.html     301!
+/book-audit.html     /diagnostic.html     301!
+/es/book-audit       /es/diagnostic.html  301!
+/es/book-audit.html  /es/diagnostic.html  301!
+
+# API Proxy Routing
+/api/*  https://openclaw-production-977e.up.railway.app/api/:splat  200!
