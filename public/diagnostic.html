@@ -173,6 +173,11 @@
 <script src="/js/scoring.js"></script>
 <script src="/js/funnel-tracking.js"></script>
 <script>
+// ── Config ───────────────────────────────────────────────────────────────────
+// Webhook target: CrescaOS Website Backend (Railway)
+// Do NOT point this to the OpenClaw runtime (openclaw-production-977e)
+const WEBHOOK_URL = 'https://openclaw-production-0664.up.railway.app/api/webhook';
+
 // Language: set via LANG constant ('en' | 'es')
 const LANG = 'en';
 
@@ -494,7 +499,7 @@ function sendDiagnosticData(){
     referrer: state.referrer,
     landing_page: state.landing_page
   };
-  fetch('/api/webhook',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)})
+  fetch(WEBHOOK_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)})
     .then(()=>CrescaTrack.webhookFired(state.score))
     .catch(()=>{});
 }
