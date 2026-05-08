@@ -393,13 +393,13 @@ const STEPS = [
   // 10 — Booking
   ()=>{
     const waLink = `https://wa.me/15162988323?text=Hola%20acabo%20de%20hacer%20el%20diagnostico%20y%20quiero%20ver%20como%20arreglarlo`;
-    const wa = LANG==='es' ? `<div class="mt-6 text-center"><p class="text-on-surface-variant text-xs mb-2">¿Tienes preguntas antes de agendar?</p><a href="${waLink}" target="_blank" onclick="CrescaTrack.ctaClicked('whatsapp')" class="inline-flex items-center gap-2 text-brand-green font-label text-sm font-bold hover:underline">Escríbenos por WhatsApp →</a></div>` : `<div class="mt-6 text-center"><p class="text-on-surface-variant text-xs mb-2">Not ready to commit to a time yet?</p><a href="mailto:info@crescaos.com" class="text-brand-green font-label text-sm font-bold hover:underline">Send us a message instead →</a></div>`;
+    const wa = LANG==='es' ? `<div class="mt-6 text-center"><p class="text-on-surface-variant text-xs mb-2">¿Tienes preguntas antes de agendar?</p><a href="#" onclick="document.querySelector('chat-widget')?.shadowRoot?.querySelector('button')?.click(); return false;" class="inline-flex items-center gap-2 text-brand-green font-label text-sm font-bold hover:underline">Escríbenos por chat →</a></div>` : `<div class="mt-6 text-center"><p class="text-on-surface-variant text-xs mb-2">Not ready to commit to a time yet?</p><a href="#" onclick="document.querySelector('chat-widget')?.shadowRoot?.querySelector('button')?.click(); return false;" class="text-brand-green font-label text-sm font-bold hover:underline">Send us a message instead →</a></div>`;
     return card(`
       ${eyebrow('Final Step')}
       ${h2('Pick a time. We\'ll show you exactly what to fix.')}
       ${sub('30 minutes. We review your score, find the biggest leak, and give you a clear next step. Whether we work together or not.')}
       <div class="rounded-2xl overflow-hidden border border-primary/20 bg-surface-container-low" style="min-height:660px">
-        <iframe src="https://crm.crescaos.com/widget/booking/OlqdoFrT1sgJ3f2nnaIa" style="width:100%;min-height:660px;border:none;overflow:hidden" scrolling="no"></iframe>
+        <iframe src="https://crm.crescaos.com/widget/booking/OlqdoFrT1sgJ3f2nnaIa" style="width: 100%;border:none;overflow: hidden;" scrolling="no" id="OlqdoFrT1sgJ3f2nnaIa_1778254417416"></iframe><br><script src="https://crm.crescaos.com/js/form_embed.js" type="text/javascript"></script>
       </div>
       ${wa}`);
   }
@@ -603,6 +603,12 @@ document.addEventListener('DOMContentLoaded',()=>{ render(1); });
         </div>
     </footer>
     
+    <!-- GHL Chat Widget -->
+    <script 
+      src="https://widgets.leadconnectorhq.com/loader.js"  
+      data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" 
+      data-widget-id="69d3ebd934c0448115bc10d9"> 
+    </script>
     <script src="https://crm.crescaos.com/js/form_embed.js" type="text/javascript"></script>
     <script src="/js/language-manager.js"></script>
 </body>
