@@ -1,32 +1,36 @@
-# Funnel Standardization Redirects
+# API Proxy Routing (Enforced)
+/api/*  https://openclaw-production-977e.up.railway.app/api/:splat  200!
+
+# Funnel Standardization
 /book-audit          /diagnostic          301!
 /book-audit.html     /diagnostic          301!
 /es/book-audit       /es/diagnostic       301!
 /es/book-audit.html  /es/diagnostic       301!
 
-# Clean URL Redirects
-/solutions.html      /solutions      301
-/about.html          /about          301
-/industries.html     /industries     301
-/pricing.html        /pricing        301
-/integrations.html   /integrations   301
-/el-salvador.html    /el-salvador    301
-/diagnostic.html     /diagnostic     301
-/privacy.html        /privacy        301
-/terms.html          /terms          301
-/how-we-work.html    /how-we-work    301
-/thank-you.html      /thank-you      301
+# Redirect .html to Clean URLs (Enforced)
+/solutions.html      /solutions           301!
+/about.html          /about               301!
+/industries.html     /industries          301!
+/pricing.html        /pricing             301!
+/integrations.html   /integrations        301!
+/el-salvador.html    /el-salvador         301!
+/diagnostic.html     /diagnostic          301!
+/privacy.html        /privacy             301!
+/terms.html          /terms               301!
+/how-we-work.html    /how-we-work         301!
+/thank-you.html      /thank-you           301!
+/sales-portal.html   /sales-portal        301!
 
 # Spanish Clean URL Redirects
-/es/solutions.html      /es/solutions      301
-/es/about.html          /es/about          301
-/es/industries.html     /es/industries     301
-/es/pricing.html        /es/pricing        301
-/es/integrations.html   /es/integrations   301
-/es/el-salvador.html    /es/el-salvador    301
-/es/diagnostic.html     /es/diagnostic     301
-/es/how-we-work.html    /es/how-we-work    301
-/es/thank-you.html      /es/thank-you      301
+/es/solutions.html    /es/solutions        301!
+/es/about.html        /es/about            301!
+/es/industries.html   /es/industries       301!
+/es/pricing.html      /es/pricing          301!
+/es/integrations.html /es/integrations     301!
+/es/el-salvador.html  /es/el-salvador      301!
+/es/diagnostic.html   /es/diagnostic       301!
+/es/how-we-work.html  /es/how-we-work      301!
+/es/thank-you.html    /es/thank-you        301!
+/es/privacy.html      /es/privacy          301!
+/es/terms.html        /es/terms            301!
 
-# API Proxy Routing
-/api/*  https://openclaw-production-977e.up.railway.app/api/:splat  200!

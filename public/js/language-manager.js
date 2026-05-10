@@ -5,7 +5,8 @@
 
 (function() {
     const PREF_KEY = 'cresca_lang_pref';
-    const isSpanishPage = window.location.pathname.includes('/es/');
+    const path = window.location.pathname;
+    const isSpanishPage = path.startsWith('/es/') || path === '/es';
     
     // 1. Language Detection & Banner
     function checkLanguage() {
@@ -41,70 +42,77 @@
 
         document.getElementById('btn-switch-es').onclick = () => {
             localStorage.setItem(PREF_KEY, 'es');
-            const targetUrl = window.location.pathname === '/' ? '/es/index.html' : '/es' + window.location.pathname;
+            // Smart redirect to Spanish version of current page
+            let targetUrl = '/es/';
+            if (path !== '/') {
+                targetUrl = '/es' + path.replace('/es', '');
+            }
             window.location.href = targetUrl;
         };
 
         document.getElementById('btn-ignore-lang').onclick = () => {
-            localStorage.setItem(PREF_KEY, 'en'); // Save 'en' so we don't bug them again
+            localStorage.setItem(PREF_KEY, 'en'); 
             banner.remove();
         };
     }
 
     // 2. Preference Persistence for Switcher
-    // This part is handled by static links in the HTML, but we update the preference on click
     document.addEventListener('click', (e) => {
         const langLink = e.target.closest('[data-lang-switch]');
         if (langLink) {
             const lang = langLink.getAttribute('data-lang-switch');
             localStorage.setItem(PREF_KEY, lang);
+            
+            // Allow the default link behavior to handle the redirect
         }
     });
 
-    // 3. Initialize
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', checkLanguage);
-        document.addEventListener('DOMContentLoaded', preserveUTMs);
-    } else {
-        checkLanguage();
-        preserveUTMs();
-    }
-
-    // 4. UTM Preserver Logic
+    // 3. UTM Preserver Logic
     function preserveUTMs() {
         const queryString = window.location.search;
-        if (!queryString) return; // No parameters to preserve
+        if (!queryString) return;
 
         const urlParams = new URLSearchParams(queryString);
         
-        // Find all links that point to the diagnostic funnel
-        const diagnosticLinks = document.querySelectorAll('a[href*="/diagnostic.html"]');
+        // Find all internal links
+        const internalLinks = document.querySelectorAll('a[href^="/"], a[href^="' + window.location.origin + '"]');
         
-        diagnosticLinks.forEach(link => {
+        internalLinks.forEach(link => {
             try {
-                // Parse the link's href
+                // Avoid anchor-only links
+                const href = link.getAttribute('href');
+                if (href.startsWith('#')) return;
+
                 const linkUrl = new URL(link.href, window.location.origin);
                 
-                // Add all current URL params to the link
+                // Add current URL params to the link
                 for (const [key, value] of urlParams) {
                     if (!linkUrl.searchParams.has(key)) {
                         linkUrl.searchParams.append(key, value);
                     }
                 }
                 
-                // Update the href relative or absolute as appropriate
-                // Keep relative path if it was relative
-                if (link.getAttribute('href').startsWith('/')) {
+                // Update the href
+                if (href.startsWith('/')) {
                     link.setAttribute('href', linkUrl.pathname + linkUrl.search + linkUrl.hash);
-                } else if (!link.getAttribute('href').startsWith('http')) {
-                    // if it was like "diagnostic.html"
-                    link.setAttribute('href', linkUrl.pathname.split('/').pop() + linkUrl.search + linkUrl.hash);
                 } else {
                     link.href = linkUrl.toString();
                 }
             } catch (e) {
-                console.error("Error preserving UTMs for link:", link.href, e);
+                // Silently fail for malformed URLs
             }
         });
     }
+
+    // 4. Initialize
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', () => {
+            checkLanguage();
+            preserveUTMs();
+        });
+    } else {
+        checkLanguage();
+        preserveUTMs();
+    }
 })();
+

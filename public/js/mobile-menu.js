@@ -4,7 +4,7 @@
  */
 document.addEventListener('DOMContentLoaded', () => {
     const btn = document.getElementById('mobile-menu-btn');
-    const closeBtn = document.getElementById('mobile-menu-close');
+    const closeBtn = document.getElementById('close-menu') || document.getElementById('mobile-menu-close');
     const menu = document.getElementById('mobile-menu');
     
     if (!btn || !menu) return;
