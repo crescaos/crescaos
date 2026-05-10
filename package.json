@@ -4,6 +4,7 @@
   "description": "Cresca OS Professional Site & Backend",
   "main": "index.js",
   "scripts": {
+    "build": "echo 'Static site - no build required'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {

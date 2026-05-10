@@ -1,7 +1,22 @@
 <!DOCTYPE html>
 <html class="dark scroll-smooth" lang="en">
 <head>
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-P2MS2Z25');</script>
+<!-- End Google Tag Manager -->
+
     <meta charset="utf-8"/>
+    <meta name="robots" content="noindex, follow">
+
+    <!-- Canonical & Hreflang -->
+    <link rel="canonical" href="https://crescaos.com/sales-portal" />
+    <link rel="alternate" hreflang="en" href="https://crescaos.com/sales-portal" />
+    <link rel="alternate" hreflang="es" href="https://crescaos.com/es/sales-portal" />
+    <link rel="alternate" hreflang="x-default" href="https://crescaos.com/sales-portal" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>Internal Sales Portal | Cresca OS</title>
     <link href="https://fonts.googleapis.com" rel="preconnect"/>
@@ -49,7 +64,11 @@
     </style>
 </head>
 <body class="bg-surface text-on-surface font-body min-h-screen">
-    
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P2MS2Z25"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
     <!-- Login Overlay -->
     <div id="login-overlay" class="fixed inset-0 z-50 bg-surface flex flex-col items-center justify-center animate-fade-in">
         <div class="bg-surface-container border border-primary/20 p-12 rounded-[2rem] max-w-md w-full mx-6 shadow-2xl shadow-primary/10">
@@ -101,6 +120,11 @@
                         <p class="text-on-surface-variant">Manage inbound audit submissions and assign to sales reps.</p>
                     </div>
                     <div class="flex items-center gap-4">
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-on-surface focus:outline-none z-[10000]" id="mobile-menu-btn">
+                <span class="material-symbols-outlined text-3xl">menu</span>
+            </button>
+
                         <div class="bg-surface-container-low px-4 py-2 border border-brand-green/30 rounded-lg flex items-center gap-2">
                             <span class="h-2 w-2 rounded-full bg-brand-green animate-pulse"></span>
                             <span class="font-label text-xs uppercase tracking-widest text-brand-green">Live Sync Active</span>
@@ -195,5 +219,31 @@
             }
         });
     </script>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="fixed inset-0 z-[10000] hidden flex-col pt-24 px-8 transform transition-transform duration-300 translate-x-full bg-[#0b1326]/95 backdrop-blur-2xl" id="mobile-menu">
+        <div class="flex justify-between items-center mb-8">
+            <a href="/es/" data-lang-switch="es" class="flex items-center gap-1 text-[#00E68A] font-label text-sm hover:text-[#dae2fd] transition-colors font-bold border border-[#00E68A]/30 rounded-full px-3 py-1.5 bg-[#00E68A]/5"><span class="material-symbols-outlined text-[18px]">language</span> ESPAÑOL</a>
+            <button class="text-on-surface focus:outline-none" id="mobile-menu-close">
+                <span class="material-symbols-outlined text-3xl">close</span>
+            </button>
+        </div>
+        <div class="flex flex-col space-y-8 font-headline text-3xl">
+            <a class="text-on-surface hover:text-primary transition-colors" href="/solutions">Solutions</a>
+            <a class="text-on-surface hover:text-primary transition-colors" href="/industries">Industries</a>
+            <a class="text-on-surface hover:text-primary transition-colors" href="/pricing">Investment</a>
+            <a class="text-on-surface hover:text-primary transition-colors" href="/how-we-work">How It Works</a>
+            <a class="text-on-surface hover:text-primary transition-colors" href="/integrations">Integrations</a>
+            <a class="text-on-surface hover:text-primary transition-colors" href="/about">About</a>
+            <a class="text-on-surface hover:text-primary transition-colors" href="/el-salvador">Global</a>
+        </div>
+        <div class="mt-12">
+            <a class="bg-primary text-on-primary px-6 py-3 rounded-lg font-label font-bold uppercase tracking-widest text-sm inline-block w-full text-center" href="/diagnostic">Get Your Growth Score</a>
+        </div>
+    </div>
+    <!-- End Mobile Menu Overlay -->
+
+    <script src="/js/mobile-menu.js"></script>
+    <script src="/js/language-manager.js"></script>
 </body>
 </html>

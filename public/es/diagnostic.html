@@ -1,13 +1,25 @@
 <!DOCTYPE html>
 <html class="dark scroll-smooth" lang="es">
 <head>
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-P2MS2Z25');</script>
+<!-- End Google Tag Manager -->
+
     <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>Customer Acquisition Diagnostic | Cresca OS</title>
-    <link rel="canonical" href="https://crescaos.com/diagnostic" />
+    <meta name="robots" content="index, follow">
+
+    <!-- Canonical & Hreflang -->
+    <link rel="canonical" href="https://crescaos.com/es/diagnostic" />
     <link rel="alternate" hreflang="en" href="https://crescaos.com/diagnostic" />
     <link rel="alternate" hreflang="es" href="https://crescaos.com/es/diagnostic" />
     <link rel="alternate" hreflang="x-default" href="https://crescaos.com/diagnostic" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Customer Acquisition Diagnostic | Cresca OS</title>
+
     <link href="https://fonts.googleapis.com" rel="preconnect"/>
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Inter:wght@400;500;600&amp;family=Manrope:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
@@ -119,6 +131,11 @@
     </style>
 </head>
 <body class="bg-surface text-on-surface font-body selection:bg-primary/30 selection:text-white overflow-x-hidden">
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P2MS2Z25"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
     <!-- Neural Background Canvas -->
     <canvas id="neural-bg"></canvas>
 
@@ -150,8 +167,13 @@
                 <a class="text-sm font-label uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="/#process">Process</a>
             </div>
             <div class="flex items-center gap-4">
-                <a href="/diagnostic.html" data-lang-switch="en" class="flex items-center gap-1 text-[#00E68A] font-label text-xs hover:text-[#dae2fd] transition-colors font-bold border border-[#00E68A]/30 rounded-full px-2 py-1 bg-[#00E68A]/5"><span class="material-symbols-outlined text-[16px]">language</span> EN</a>
-                <a class="hidden md:inline-flex signature-texture text-on-primary text-xs font-label uppercase tracking-[0.2em] px-8 py-3.5 rounded-full hover:scale-105 transition-all duration-300 shadow-lg shadow-primary/20 font-bold" href="/es/diagnostic.html">Comenzar Diagnóstico</a>
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-on-surface focus:outline-none z-[10000]" id="mobile-menu-btn">
+                <span class="material-symbols-outlined text-3xl">menu</span>
+            </button>
+
+                <a href="/diagnostic" data-lang-switch="en" class="flex items-center gap-1 text-[#00E68A] font-label text-xs hover:text-[#dae2fd] transition-colors font-bold border border-[#00E68A]/30 rounded-full px-2 py-1 bg-[#00E68A]/5"><span class="material-symbols-outlined text-[16px]">language</span> EN</a>
+                <a class="hidden md:inline-flex signature-texture text-on-primary text-xs font-label uppercase tracking-[0.2em] px-8 py-3.5 rounded-full hover:scale-105 transition-all duration-300 shadow-lg shadow-primary/20 font-bold" href="/es/diagnostic">Comenzar Diagnóstico</a>
             </div>
         </div>
     </nav>
@@ -582,7 +604,6 @@ document.addEventListener('DOMContentLoaded',()=>{ render(1); });
             animate();
         });
 
-
     </script>
     
     <!-- Footer -->
@@ -601,8 +622,8 @@ document.addEventListener('DOMContentLoaded',()=>{ render(1); });
                     </p>
                 </div>
                 <div class="flex justify-center gap-6 text-[10px] uppercase tracking-widest text-[#8f9095] mt-4">
-                    <a href="/es/privacy.html" class="hover:text-[#00E68A] transition-colors">Privacy Policy</a>
-                    <a href="/es/terms.html" class="hover:text-[#00E68A] transition-colors">Terms of Service</a>
+                    <a href="/es/privacy" class="hover:text-[#00E68A] transition-colors">Privacy Policy</a>
+                    <a href="/es/terms" class="hover:text-[#00E68A] transition-colors">Terms of Service</a>
                 </div>
             </div>
         </div>
@@ -624,6 +645,31 @@ document.addEventListener('DOMContentLoaded',()=>{ render(1); });
       };
     </script>
     <script src="https://crm.crescaos.com/js/form_embed.js" type="text/javascript"></script>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="fixed inset-0 z-[10000] hidden flex-col pt-24 px-8 transform transition-transform duration-300 translate-x-full bg-[#0b1326]/95 backdrop-blur-2xl" id="mobile-menu">
+        <div class="flex justify-between items-center mb-8">
+            <a href="/" data-lang-switch="en" class="flex items-center gap-1 text-[#00E68A] font-label text-sm hover:text-[#dae2fd] transition-colors font-bold border border-[#00E68A]/30 rounded-full px-3 py-1.5 bg-[#00E68A]/5"><span class="material-symbols-outlined text-[18px]">language</span> ENGLISH</a>
+            <button class="text-on-surface focus:outline-none" id="mobile-menu-close">
+                <span class="material-symbols-outlined text-3xl">close</span>
+            </button>
+        </div>
+        <div class="flex flex-col space-y-8 font-headline text-3xl">
+            <a class="text-on-surface hover:text-primary transition-colors" href="/es/solutions">Soluciones</a>
+            <a class="text-on-surface hover:text-primary transition-colors" href="/es/industries">Industrias</a>
+            <a class="text-on-surface hover:text-primary transition-colors" href="/es/pricing">Inversión</a>
+            <a class="text-on-surface hover:text-primary transition-colors" href="/es/how-we-work">Cómo Funciona</a>
+            <a class="text-on-surface hover:text-primary transition-colors" href="/es/integrations">Integraciones</a>
+            <a class="text-on-surface hover:text-primary transition-colors" href="/es/about">Nosotros</a>
+            <a class="text-on-surface hover:text-primary transition-colors" href="/es/el-salvador">Global</a>
+        </div>
+        <div class="mt-12">
+            <a class="bg-primary text-on-primary px-6 py-3 rounded-lg font-label font-bold uppercase tracking-widest text-sm inline-block w-full text-center" href="/es/diagnostic">Obtén tu Growth Score</a>
+        </div>
+    </div>
+    <!-- End Mobile Menu Overlay -->
+
+    <script src="/js/mobile-menu.js"></script>
     <script src="/js/language-manager.js"></script>
 </body>
 </html>
