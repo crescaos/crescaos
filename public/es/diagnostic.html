@@ -426,7 +426,7 @@ const STEPS = [
       </div>
       <div class="mt-6 text-center">
         <p class="text-on-surface-variant text-xs mb-2">¿Tienes preguntas antes de agendar?</p>
-        <a href="#" onclick="window.lc_chat_toggle(); return false;" class="inline-flex items-center gap-2 text-brand-green font-label text-sm font-bold hover:underline">Escríbenos por chat →</a>
+        <a href="mailto:info@crescaos.com" class="inline-flex items-center gap-2 text-brand-green font-label text-sm font-bold hover:underline">Escríbenos por email →</a>
       </div>`);
   }
 ];
@@ -616,34 +616,19 @@ document.addEventListener('DOMContentLoaded',()=>{ render(1); });
                 <p class="font-sans text-[10px] text-[#8f9095] mt-2 tracking-widest uppercase opacity-60">
                     &copy; 2026 Cresca OS. Customer Acquisition Systems.
                 </p>
-                <div class="mt-4 pt-4 border-t border-[#45474b]/10 w-full max-w-lg mx-auto">
-                    <p class="font-sans text-xs text-[#8f9095] mb-2 font-bold">
-                        516-298-8323 | info@crescaos.com
+                <div class="mt-6 pt-6 border-t border-[#45474b]/5">
+                    <p class="font-sans text-[10px] text-[#8f9095] opacity-70 leading-relaxed max-w-2xl mx-auto uppercase tracking-tighter">
+                        31 Kirby Lane, Central Islip, NY 11550 <br>
+                        Al proporcionar su número de teléfono, acepta recibir comunicaciones por SMS de Cresca OS sobre los resultados de su diagnóstico, recordatorios de citas y servicios relacionados con el crecimiento de su negocio. Pueden aplicarse tarifas de mensajes y datos. La frecuencia de los mensajes puede variar. Responda STOP para cancelar o HELP para recibir ayuda. El consentimiento no es una condición de compra. La información móvil no se compartirá con terceros o afiliados con fines de marketing o promoción. Consulte nuestra <a href="/es/privacy" class="underline hover:text-white transition-colors">Política de Privacidad</a> y nuestros <a href="/es/terms" class="underline hover:text-white transition-colors">Términos</a>.
                     </p>
                 </div>
-                <div class="flex justify-center gap-6 text-[10px] uppercase tracking-widest text-[#8f9095] mt-4">
-                    <a href="/es/privacy" class="hover:text-[#00E68A] transition-colors">Privacy Policy</a>
-                    <a href="/es/terms" class="hover:text-[#00E68A] transition-colors">Terms of Service</a>
+                <div class="flex justify-center gap-6 mt-4 text-[10px] uppercase tracking-widest text-[#8f9095] opacity-60">
+                    <a href="/es/privacy" class="hover:text-white transition-colors">Política de Privacidad</a>
+                    <a href="/es/terms" class="hover:text-white transition-colors">Términos de Servicio</a>
                 </div>
             </div>
         </div>
     </footer>
-    
-    <!-- GHL Chat Widget -->
-    <script 
-      src="https://widgets.leadconnectorhq.com/loader.js"  
-      data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" 
-      data-widget-id="69d3ebd934c0448115bc10d9"> 
-    </script>
-    <script>
-      window.lc_chat_toggle = function() {
-        const widget = document.querySelector('chat-widget');
-        if (widget && widget.shadowRoot) {
-          const btn = widget.shadowRoot.querySelector('button');
-          if (btn) btn.click();
-        }
-      };
-    </script>
     <script src="https://crm.crescaos.com/js/form_embed.js" type="text/javascript"></script>
 
     <!-- Mobile Menu Overlay -->
