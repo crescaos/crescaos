@@ -1,13 +1,26 @@
 <!DOCTYPE html>
 <html class="dark scroll-smooth" lang="en">
 <head>
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-P2MS2Z25');</script>
+<!-- End Google Tag Manager -->
+
     <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>Customer Acquisition Diagnostic | Cresca OS</title>
+    <meta name="robots" content="index, follow">
+
+    <!-- Canonical & Hreflang -->
     <link rel="canonical" href="https://crescaos.com/diagnostic" />
     <link rel="alternate" hreflang="en" href="https://crescaos.com/diagnostic" />
     <link rel="alternate" hreflang="es" href="https://crescaos.com/es/diagnostic" />
     <link rel="alternate" hreflang="x-default" href="https://crescaos.com/diagnostic" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Customer Acquisition Diagnostic | Cresca OS</title>
+    <meta name="description" content="Identify revenue leaks and optimize your customer acquisition infrastructure with the Cresca OS Diagnostic." />
+
     <link href="https://fonts.googleapis.com" rel="preconnect"/>
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Inter:wght@400;500;600&amp;family=Manrope:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
@@ -119,6 +132,11 @@
     </style>
 </head>
 <body class="bg-surface text-on-surface font-body selection:bg-primary/30 selection:text-white overflow-x-hidden">
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P2MS2Z25"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
     <!-- Neural Background Canvas -->
     <canvas id="neural-bg"></canvas>
 
@@ -150,364 +168,363 @@
                 <a class="text-sm font-label uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="/#process">Process</a>
             </div>
             <div class="flex items-center gap-4">
-                <a href="/es/diagnostic.html" data-lang-switch="es" class="flex items-center gap-1 text-[#00E68A] font-label text-xs hover:text-[#dae2fd] transition-colors font-bold border border-[#00E68A]/30 rounded-full px-2 py-1 bg-[#00E68A]/5"><span class="material-symbols-outlined text-[16px]">language</span> ES</a>
-                <a class="hidden md:inline-flex signature-texture text-on-primary text-xs font-label uppercase tracking-[0.2em] px-8 py-3.5 rounded-full hover:scale-105 transition-all duration-300 shadow-lg shadow-primary/20 font-bold" href="/diagnostic.html">Start Diagnostic</a>
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-on-surface focus:outline-none z-[10000]" id="mobile-menu-btn">
+                <span class="material-symbols-outlined text-3xl">menu</span>
+            </button>
+
+                <a href="/es/diagnostic" data-lang-switch="es" class="flex items-center gap-1 text-[#00E68A] font-label text-xs hover:text-[#dae2fd] transition-colors font-bold border border-[#00E68A]/30 rounded-full px-2 py-1 bg-[#00E68A]/5"><span class="material-symbols-outlined text-[16px]">language</span> ES</a>
+                <a class="hidden md:inline-flex signature-texture text-on-primary text-xs font-label uppercase tracking-[0.2em] px-8 py-3.5 rounded-full hover:scale-105 transition-all duration-300 shadow-lg shadow-primary/20 font-bold" href="/diagnostic">Start Diagnostic</a>
             </div>
         </div>
     </nav>
 
     <main class="pt-20 pb-16 bg-surface relative overflow-x-hidden">
-<section class="py-10 px-4 max-w-2xl mx-auto min-h-screen">
-  <div id="prog-wrap" class="mb-8 hidden">
-    <div class="flex justify-between mb-2">
-      <span id="prog-label" class="text-xs font-label uppercase tracking-widest text-on-surface-variant"></span>
-      <span id="prog-pct" class="text-xs font-label font-bold text-brand-green"></span>
-    </div>
-    <div class="h-1 bg-surface-container-highest rounded-full overflow-hidden">
-      <div id="prog-bar" class="h-full signature-texture transition-all duration-500" style="width:0%"></div>
-    </div>
-  </div>
-  <div id="funnel" class="animate-fade-in"></div>
-</section>
-</main>
-<script src="/js/scoring.js"></script>
-<script src="/js/funnel-tracking.js"></script>
-<script>
-// ── Config ───────────────────────────────────────────────────────────────────
-// Webhook target: CrescaOS Website Backend (Railway)
-// Do NOT point this to the OpenClaw internal runtime (openclaw-production-0664)
-const WEBHOOK_URL = '/api/webhook';
-
-// Language: set via LANG constant ('en' | 'es')
-const LANG = 'en';
-
-const urlParams = new URLSearchParams(window.location.search);
-const state = {
-  firstName:'', email:'', phone:'',
-  businessType:'', businessName:'',
-  revenueStage:'', bottleneck:'', responseTime:'',
-  score:0, monthlyLoss:0, tier:'', bottleneckLabel:'',
-  language: LANG,
-  utm_source: urlParams.get('utm_source') || '',
-  utm_medium: urlParams.get('utm_medium') || '',
-  utm_campaign: urlParams.get('utm_campaign') || '',
-  utm_content: urlParams.get('utm_content') || '',
-  utm_term: urlParams.get('utm_term') || '',
-  source_page: window.location.href,
-  referrer: document.referrer || '',
-  landing_page: sessionStorage.getItem('landing_page') || window.location.href
-};
-
-const TOTAL_STEPS = 10;
-
-// ── Copy ────────────────────────────────────────────────────────────────────
-const COPY = {
-  bizTypes:[
-    {v:'home_services',    e:'🏠', h:'Home Services',        s:'Cleaning, HVAC, plumbing, landscaping, pest control'},
-    {v:'health_wellness',  e:'🏥', h:'Health & Wellness',    s:'Med spa, chiro, dental, therapy, gym'},
-    {v:'professional',     e:'🏢', h:'Professional Services', s:'Law, accounting, consulting, coaching'},
-    {v:'trades',           e:'🔧', h:'Trades & Contracting',  s:'Roofing, electrical, remodeling, solar'},
-    {v:'auto',             e:'🚗', h:'Auto & Vehicle',        s:'Detailing, repair, tinting, wraps'},
-    {v:'other',            e:'📦', h:'Other Service Business', s:'Any service-based business'}
-  ],
-  revenue:[
-    {v:'under_10k',  h:'Under $10k/month',    s:'Still building. Every lead matters.'},
-    {v:'10k_30k',    h:'$10k–$30k/month',     s:'Revenue is there, but it comes and goes'},
-    {v:'30k_75k',    h:'$30k–$75k/month',     s:'Growing fast, but the cracks are starting to show'},
-    {v:'75k_150k',   h:'$75k–$150k/month',    s:'Scaling hard, losing jobs we shouldn\'t be losing'},
-    {v:'150k_plus',  h:'$150k+/month',         s:'At capacity — can\'t afford to drop a single lead'}
-  ],
-  bottleneck:[
-    {v:'missed_calls',       e:'📵', h:'Calls go missed', s:'By the time we respond, they\'ve hired someone else'},
-    {v:'leads_no_convert',   e:'🔁', h:'Leads don\'t book', s:'They come in but most never become appointments'},
-    {v:'poor_followup',      e:'🕳️', h:'Inconsistent follow-up', s:'Most leads just go cold and disappear'},
-    {v:'scheduling_chaos',   e:'🗓️', h:'Scheduling is a mess', s:'Everything runs through me and I can\'t keep up'},
-    {v:'no_visibility',      e:'📊', h:'No visibility', s:'We\'re guessing what\'s working every month'},
-    {v:'disconnected_tools', e:'🔧', h:'Tools don\'t connect', s:'Everything\'s manual and disconnected'}
-  ],
-  responseTime:[
-    {v:'under_5min', e:'⚡', h:'Under 5 minutes',       s:'We\'re on it immediately'},
-    {v:'5_30min',    e:'🕐', h:'5–30 minutes',           s:'Pretty fast, most of the time'},
-    {v:'30min_2hr',  e:'🕑', h:'30 min to 2 hours',     s:'We get there, but not always quickly'},
-    {v:'same_day',   e:'🕓', h:'Same day',               s:'When we have a chance to breathe'},
-    {v:'next_day',   e:'📅', h:'Next day or later',      s:'We\'re too busy running jobs'},
-    {v:'no_process', e:'🤷', h:'No consistent process',  s:'Depends on who sees it first'}
-  ],
-  tier:{
-    critical:  {label:'🔴 Critical — Revenue at Risk',         headline:'Right now, you\'re working hard and losing jobs you should be closing.'},
-    leaking:   {label:'🟡 Leaking — Real Revenue Slipping',    headline:'You\'re generating leads. But a big chunk disappear before they book.'},
-    functional:{label:'🟢 Functional — Growth is Capped',      headline:'Your system works when you\'re watching it. The problem is when you\'re not.'},
-    strong:    {label:'🚀 Strong — Time to Scale',              headline:'Your foundation is solid. The next step is building volume without chaos.'}
-  },
-  tierBody:{
-    critical:`<ul class="text-left space-y-2 mt-4 text-on-surface-variant text-sm"><li>• Leads are arriving and leaving before anyone speaks to them</li><li>• Every slow response is a job going to whoever picks up first</li><li>• Fixing this one thing could be worth $5k–$15k/month</li></ul>`,
-    leaking:`<ul class="text-left space-y-2 mt-4 text-on-surface-variant text-sm"><li>• You're getting leads, but conversion is lower than it should be</li><li>• Inconsistent follow-up is letting booked appointments slip weekly</li><li>• Those lost jobs aren't going away — they're going to whoever responds faster</li></ul>`,
-    functional:`<ul class="text-left space-y-2 mt-4 text-on-surface-variant text-sm"><li>• Things work while you're manually holding them together</li><li>• Growth slows because your system depends on you being in it</li><li>• One busy week and the whole thing slips</li></ul>`,
-    strong:`<ul class="text-left space-y-2 mt-4 text-on-surface-variant text-sm"><li>• The foundation is there — the question is how fast you want to grow</li><li>• The next constraint will be lead volume and conversion at scale</li><li>• A Revenue Audit maps exactly what to build next</li></ul>`
-  }
-};
-
-// ── Render Helpers ───────────────────────────────────────────────────────────
-function n(s){ return (s||'').replace(/</g,'&lt;'); }
-
-function optCards(items, field, cols){
-  return `<div class="grid grid-cols-1 ${cols||'md:grid-cols-2'} gap-3">` +
-    items.map(it=>`
-      <div class="option-card cursor-pointer rounded-2xl p-4 border border-outline-variant/20 bg-surface-container hover:border-primary/50 hover:bg-primary/5 transition-all duration-200"
-           data-field="${field}" data-value="${it.v}" onclick="pickOption(this)">
-        <div class="flex items-start gap-3">
-          ${it.e?`<span class="text-xl mt-0.5">${it.e}</span>`:''}
-          <div>
-            <div class="font-label font-semibold text-white text-sm">${it.h}</div>
-            <div class="text-on-surface-variant text-xs mt-0.5">${it.s}</div>
-          </div>
+    <section class="py-10 px-4 max-w-2xl mx-auto min-h-screen">
+      <div id="prog-wrap" class="mb-8 hidden">
+        <div class="flex justify-between mb-2">
+          <span id="prog-label" class="text-xs font-label uppercase tracking-widest text-on-surface-variant"></span>
+          <span id="prog-pct" class="text-xs font-label font-bold text-brand-green"></span>
         </div>
-      </div>`).join('') + '</div>';
-}
-
-function card(content){
-  return `<div class="bg-surface-container p-8 md:p-10 rounded-[2rem] border border-primary/20 shadow-2xl shadow-primary/5 relative overflow-hidden">
-    <div class="absolute -top-20 -right-20 w-56 h-56 bg-primary/8 blur-[80px] rounded-full pointer-events-none"></div>
-    <div class="relative z-10">${content}</div></div>`;
-}
-
-function eyebrow(t){ return `<div class="inline-flex items-center gap-2 mb-5 px-3 py-1 rounded-full bg-surface-container-high border border-outline-variant/15"><span class="flex h-1.5 w-1.5 rounded-full bg-brand-green animate-pulse"></span><span class="text-[10px] font-label uppercase tracking-widest text-brand-green">${t}</span></div>`; }
-function h2(t){ return `<h2 class="font-headline text-3xl md:text-4xl font-bold text-white leading-tight mb-3">${t}</h2>`; }
-function sub(t){ return `<p class="text-on-surface-variant text-base mb-6">${t}</p>`; }
-function btn(id,t,extra=''){return `<button id="${id}" onclick="nextStep()" class="w-full mt-6 signature-texture text-white font-label font-bold py-4 rounded-xl text-sm uppercase tracking-widest hover:scale-[1.02] transition-transform shadow-lg shadow-primary/20 ${extra}">${t}</button>`;}
-
-// ── Steps ────────────────────────────────────────────────────────────────────
-const STEPS = [
-
-  // 1 — Welcome
-  ()=> card(`
-    ${eyebrow('Free Revenue Audit — Takes 2 Minutes')}
-    ${h2('Every missed call is a job that went to your competitor.')}
-    ${sub('Most service businesses lose 40% of their leads before anyone picks up the phone. This free audit shows you exactly where you\'re losing customers — and what one change would stop the bleeding.')}
-    ${btn('s1-cta','Find My Leaks — Free →')}
-    <p class="text-center text-xs text-on-surface-variant mt-3 opacity-70">No sales pitch. No obligation. Just an honest look at your numbers.</p>`),
-
-  // 2 — Contact
-  ()=> card(`
-    ${eyebrow('Step 1 of 8')}
-    ${h2('What\'s your name?')}
-    ${sub('Your results will be built around your answers — not a generic template.')}
-    <div class="space-y-4">
-      <input id="f-name" type="text" placeholder="First name" required
-        class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant/20 px-0 py-3 text-white placeholder:text-outline focus:border-primary outline-none transition-colors"
-        oninput="state.firstName=this.value;document.getElementById('s2-cta').textContent=this.value?'Let\'s go, '+this.value+' →':'Continue →'"/>
-      <input id="f-email" type="email" placeholder="Email address" required
-        class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant/20 px-0 py-3 text-white placeholder:text-outline focus:border-primary outline-none transition-colors"/>
-      <input id="f-phone" type="tel" placeholder="Phone number" required
-        class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant/20 px-0 py-3 text-white placeholder:text-outline focus:border-primary outline-none transition-colors"/>
-    </div>
-    ${btn('s2-cta','Continue →')}`),
-
-  // 3 — Business Type
-  ()=> card(`
-    ${eyebrow('Step 2 of 8')}
-    ${h2(`What kind of business do you run${state.firstName?', '+state.firstName:''}?`)}
-    ${sub('We\'ll benchmark your score against businesses just like yours.')}
-    ${optCards(COPY.bizTypes,'businessType')}`),
-
-  // 4 — Business Name
-  ()=> card(`
-    ${eyebrow('Step 3 of 8')}
-    ${h2('What\'s the name of your business?')}
-    ${sub('Your results will show exactly what\'s happening at your business — not a generic industry average.')}
-    <input id="f-biz" type="text" placeholder="Business name" required
-      class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant/20 px-0 py-3 text-white placeholder:text-outline focus:border-primary outline-none transition-colors"/>
-    ${btn('s4-cta','Continue →')}`),
-
-  // 5 — Revenue
-  ()=> card(`
-    ${eyebrow('Step 4 of 8')}
-    ${h2(`Honestly — where is ${n(state.businessName)||'your business'} right now?`)}
-    ${sub('There\'s no wrong answer. This just makes your score more accurate.')}
-    ${optCards(COPY.revenue,'revenueStage','')}`),
-
-  // 6 — Bottleneck
-  ()=> card(`
-    ${eyebrow('Step 5 of 8')}
-    ${h2(`Where is ${n(state.businessName)||'your business'} bleeding the most right now?`)}
-    ${sub('Pick the one that\'s costing you real jobs — not just frustration.')}
-    ${optCards(COPY.bottleneck,'bottleneck')}`),
-
-  // 7 — Response Time
-  ()=> card(`
-    ${eyebrow('Step 6 of 8')}
-    ${h2('When a new lead comes in — how fast does someone actually respond?')}
-    ${sub('Studies show if you don\'t respond within 5 minutes, you lose 80% of those leads. Be honest.')}
-    ${optCards(COPY.responseTime,'responseTime')}`),
-
-  // 8 — Pivot (auto-advance)
-  ()=>{
-    const r = window.CrescaScoring.compute(state);
-    state.score=r.score; state.monthlyLoss=r.monthlyLoss; state.tier=r.tier; state.bottleneckLabel=r.bottleneckLabel;
-    sendDiagnosticData();
-    setTimeout(()=>goTo(9), 3500);
-    return card(`
-      ${eyebrow('Calculating your score...')}
-      ${h2(`That gap is costing ${n(state.businessName)||'your business'} real money.`)}
-      <p class="text-on-surface-variant text-base mb-6">Here's the math most owners don't want to see:<br><br>
-      If you're bringing in 30 leads/month and losing 40% to slow follow-up — that's 12 customers who hired your competitor.<br><br>
-      At $500 average job value, that's <span class="text-error font-bold">$${state.monthlyLoss.toLocaleString()}/month walking out the door</span>.
-      </p>
-      <div class="flex items-center gap-3 text-brand-green text-sm font-label">
-        <svg class="animate-spin h-4 w-4" viewBox="0 0 24 24" fill="none"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4l3-3-3-3v4a8 8 0 000 16v-4l-3 3 3 3v-4a8 8 0 01-8-8z"/></svg>
-        Calculating your Customer Acquisition Score...
-      </div>`);
-  },
-
-  // 9 — Results
-  ()=>{
-    const t = COPY.tier[state.tier]||COPY.tier.leaking;
-    const body = COPY.tierBody[state.tier]||COPY.tierBody.leaking;
-    CrescaTrack.resultsReached(state.score, state.tier);
-    return card(`
-      ${eyebrow('Your Customer Acquisition Score')}
-      <div class="text-center mb-6">
-        <div class="text-7xl font-headline font-bold text-white">${state.score}</div>
-        <div class="text-on-surface-variant text-sm">/ 100</div>
-        <div class="mt-3 text-sm font-label font-bold text-brand-green">${t.label}</div>
-        <p class="text-white font-semibold mt-2">${t.headline}</p>
+        <div class="h-1 bg-surface-container-highest rounded-full overflow-hidden">
+          <div id="prog-bar" class="h-full signature-texture transition-all duration-500" style="width:0%"></div>
+        </div>
       </div>
-      <div class="bg-surface-container-high rounded-xl p-4 mb-6">
-        <p class="text-xs font-label uppercase tracking-widest text-on-surface-variant mb-1">This is not a traffic problem.</p>
-        <p class="text-white text-sm">It's a conversion and follow-up problem. You're losing leads you already have.</p>
-        ${body}
-      </div>
-      <div class="bg-error/10 border border-error/20 rounded-xl p-4 mb-6 text-sm text-on-surface-variant">
-        Every week this isn't fixed, more leads go unanswered.<br>
-        Not because the market is slow — because the system isn't working when you're not watching.
-      </div>
-      <p class="text-center text-on-surface-variant text-xs mb-4">Here's what we'd fix first — in your free 30-minute Revenue Audit.</p>
-      <button onclick="goTo(10);CrescaTrack.ctaClicked('calendar')" class="w-full signature-texture text-white font-label font-bold py-4 rounded-xl text-sm uppercase tracking-widest hover:scale-[1.02] transition-transform shadow-lg shadow-primary/20">
-        Book My Free Revenue Audit →
-      </button>
-      <div class="flex justify-center gap-6 mt-4 text-xs text-on-surface-variant">
-        <span>✓ Specific to your business</span><span>✓ 30 min flat</span><span>✓ No commitment</span>
-      </div>`);
-  },
+      <div id="funnel" class="animate-fade-in"></div>
+    </section>
+    </main>
 
-  // 10 — Booking
-  ()=>{
-    const waLink = `https://wa.me/15162988323?text=Hola%20acabo%20de%20hacer%20el%20diagnostico%20y%20quiero%20ver%20como%20arreglarlo`;
-    const wa = LANG==='es' ? `<div class="mt-6 text-center"><p class="text-on-surface-variant text-xs mb-2">¿Tienes preguntas antes de agendar?</p><a href="${waLink}" target="_blank" onclick="CrescaTrack.ctaClicked('whatsapp')" class="inline-flex items-center gap-2 text-brand-green font-label text-sm font-bold hover:underline">Escríbenos por WhatsApp →</a></div>` : `<div class="mt-6 text-center"><p class="text-on-surface-variant text-xs mb-2">Not ready to commit to a time yet?</p><a href="mailto:info@crescaos.com" class="text-brand-green font-label text-sm font-bold hover:underline">Send us a message instead →</a></div>`;
-    return card(`
-      ${eyebrow('Final Step')}
-      ${h2('Pick a time. We\'ll show you exactly what to fix.')}
-      ${sub('30 minutes. We review your score, find the biggest leak, and give you a clear next step. Whether we work together or not.')}
-      <div class="rounded-2xl overflow-hidden border border-primary/20 bg-surface-container-low" style="min-height:660px">
-        <iframe src="https://crm.crescaos.com/widget/booking/OlqdoFrT1sgJ3f2nnaIa" style="width:100%;min-height:660px;border:none;overflow:hidden" scrolling="no"></iframe>
-      </div>
-      ${wa}`);
-  }
-];
+    <script src="/js/scoring.js"></script>
+    <script src="/js/funnel-tracking.js"></script>
+    <script>
+    // Cresca OS — Diagnostic Funnel v2 (EN)
+    
+    // â”€â”€ Config â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    const WEBHOOK_URL = '/api/webhook';
+    const LANG = 'en';
 
-// ── Navigation ───────────────────────────────────────────────────────────────
-let currentStep = 1;
+    const urlParams = new URLSearchParams(window.location.search);
+    const diagnosticState = {
+      firstName:'', email:'', phone:'',
+      businessType:'', companyName:'',
+      revenueStage:'', bottleneck:'', responseTime:'',
+      score:0, monthlyLoss:0, tier:'', bottleneckLabel:'',
+      language: LANG,
+      utm_source: urlParams.get('utm_source') || '',
+      utm_medium: urlParams.get('utm_medium') || '',
+      utm_campaign: urlParams.get('utm_campaign') || '',
+      utm_content: urlParams.get('utm_content') || '',
+      utm_term: urlParams.get('utm_term') || '',
+      source_page: window.location.href,
+      referrer: document.referrer || '',
+      landing_page: sessionStorage.getItem('landing_page') || window.location.href
+    };
 
-function render(step){
-  const el = document.getElementById('funnel');
-  el.innerHTML = STEPS[step-1]();
-  el.classList.remove('animate-fade-in');
-  void el.offsetWidth;
-  el.classList.add('animate-fade-in');
-  updateProgress(step);
-  window.scrollTo({top:0,behavior:'smooth'});
-  CrescaTrack.stepCompleted(step, 'step_'+step);
-}
+    const COPY = {
+      bizTypes:[
+        {v:'home_services',    e:'ðŸ ', h:'Home Services',           s:'Cleaning, plumbing, landscaping, HVAC, pest control'},
+        {v:'health_wellness',  e:'ðŸ¥', h:'Health & Wellness',        s:'Aesthetics clinic, chiropractor, dental, coaching, gym'},
+        {v:'professional',     e:'ðŸ¢', h:'Professional Services',    s:'Lawyer, accountant, consulting, business coach'},
+        {v:'trades',           e:'ðŸ”§', h:'Construction & Trades',     s:'Roofing, electrical, remodeling, solar'},
+        {v:'auto',             e:'ðŸš—', h:'Automotive Services',      s:'Detailing, repair shop, window tinting, wrapping'},
+        {v:'other',            e:'ðŸ“¦', h:'Other Service Business',   s:'Any service-based business'}
+      ],
+      revenue:[
+        {v:'under_10k',  h:'Under $10k/mo',   s:'We are building. Every client counts.'},
+        {v:'10k_30k',    h:'$10k–$30k/mo',      s:'Revenue is there, but inconsistent'},
+        {v:'30k_75k',    h:'$30k–$75k/mo',      s:'Growing fast, but starting to see the cracks'},
+        {v:'75k_150k',   h:'$75k–$150k/mo',     s:'Scaling hard, losing jobs we shouldn\'t'},
+        {v:'150k_plus',  h:'$150k+/mo',         s:'At capacity — cannot afford to lose a single client'}
+      ],
+      bottleneck:[
+        {v:'missed_calls',       e:'ðŸ“µ', h:'Calls aren\'t being answered', s:'By the time we respond, they already hired someone else'},
+        {v:'leads_no_convert',   e:'ðŸ”', h:'Leads aren\'t converting',    s:'They come in but most never book an appointment'},
+        {v:'poor_followup',      e:'ðŸ•³ï¸', h:'Inconsistent follow-up',    s:'Most leads go cold and disappear'},
+        {v:'scheduling_chaos',   e:'ðŸ—“ï¸', h:'Scheduling is a mess',       s:'Everything depends on me and I\'m out of time'},
+        {v:'no_visibility',      e:'ðŸ“Š', h:'No visibility',               s:'We don\'t know what\'s working. Guessing every month.'},
+        {v:'disconnected_tools', e:'ðŸ”§', h:'Disconnected tools',         s:'Everything is manual and disorganized'}
+      ],
+      responseTime:[
+        {v:'under_5min', e:'âš¡', h:'Under 5 minutes',      s:'We respond immediately'},
+        {v:'5_30min',    e:'ðŸ•', h:'5 to 30 minutes',        s:'Fairly fast, most of the time'},
+        {v:'30min_2hr',  e:'ðŸ•‘', h:'30 minutes to 2 hours', s:'We get there, but not always fast'},
+        {v:'same_day',   e:'ðŸ•“', h:'Same day',              s:'When we have a moment'},
+        {v:'next_day',   e:'ðŸ“…', h:'Next day or later',      s:'We\'re too busy on jobs'},
+        {v:'no_process', e:'ðŸ¤·', h:'No defined process',     s:'Depends on who sees it first'}
+      ],
+      tier:{
+        critical:  {label:'ðŸ”´ Critical — Revenue at Risk',         headline:'You\'re working hard and losing clients you should be closing.'},
+        leaking:   {label:'ðŸŸ¡ Active Leak — Real Money Slipping', headline:'You\'re generating leads. But a significant portion leaves before booking.'},
+        functional:{label:'ðŸŸ¢ Functional — Growth Ceiling',       headline:'Your system works when you\'re on top of it. The problem is what happens when you aren\'t.'},
+        strong:    {label:'ðŸš€ Solid — Ready to Scale',            headline:'The foundation is there. The next step is growing without adding chaos.'}
+      },
+      tierBody:{
+        critical:`<ul class="text-left space-y-2 mt-4 text-on-surface-variant text-sm"><li>â€¢ Leads are coming in — and leaving before anyone speaks to them</li><li>â€¢ Every slow response is a job going to the first person who answers</li><li>â€¢ Fixing this could represent $5,000–$15,000+ more per month</li></ul>`,
+        leaking:`<ul class="text-left space-y-2 mt-4 text-on-surface-variant text-sm"><li>â€¢ You\'re getting leads, but the conversion rate is lower than it should be</li><li>â€¢ Inconsistent follow-up leaves appointments unbooked every week</li><li>â€¢ Clients you lose are hiring whoever responds fastest</li></ul>`,
+        functional:`<ul class="text-left space-y-2 mt-4 text-on-surface-variant text-sm"><li>â€¢ Things work as long as you\'re manually holding them together</li><li>â€¢ Growth is stalled because the system depends on you being in it</li><li>â€¢ One busy week and everything starts falling through the cracks</li></ul>`,
+        strong:`<ul class="text-left space-y-2 mt-4 text-on-surface-variant text-sm"><li>â€¢ The foundation is solid. The question is how fast you want to grow.</li><li>â€¢ The next constraint will be lead volume and conversion at scale</li><li>â€¢ A Diagnostic gives you the clear map of what to build next</li></ul>`
+      }
+    };
 
-function updateProgress(step){
-  const wrap = document.getElementById('prog-wrap');
-  if(step===1){wrap.classList.add('hidden');return;}
-  wrap.classList.remove('hidden');
-  const pct = Math.round(((step-1)/8)*100);
-  document.getElementById('prog-bar').style.width = pct+'%';
-  document.getElementById('prog-pct').textContent = pct+'%';
-  const labels=['','Contact','Business Type','Business Name','Revenue','Bottleneck','Response Time','Calculating...','Your Score','Book Your Audit'];
-  document.getElementById('prog-label').textContent = 'Step '+(step-1)+': '+(labels[step]||'');
-}
+    function sSafe(s, fallback = 'your business'){ 
+      if (!s || typeof s !== 'string') return fallback;
+      return s.replace(/</g,'&lt;').replace(/>/g,'&gt;').trim().substring(0, 80); 
+    }
 
-function goTo(step){
-  currentStep=step;
-  render(step);
-}
+    function fOptCards(items, field, cols){
+      return `<div class="grid grid-cols-1 ${cols||'md:grid-cols-2'} gap-3">` +
+        items.map(it=>`
+          <div class="option-card cursor-pointer rounded-2xl p-4 border border-outline-variant/20 bg-surface-container hover:border-primary/50 hover:bg-primary/5 transition-all duration-200"
+               data-field="${field}" data-value="${it.v}" onclick="pickOption(this)">
+            <div class="flex items-start gap-3">
+              ${it.e?`<span class="text-xl mt-0.5">${it.e}</span>`:''}
+              <div>
+                <div class="font-label font-semibold text-white text-sm">${it.h}</div>
+                <div class="text-on-surface-variant text-xs mt-0.5">${it.s}</div>
+              </div>
+            </div>
+          </div>`).join('') + '</div>';
+    }
 
-function nextStep(){
-  if(currentStep===1){
-    CrescaTrack.funnelStart();
-    goTo(2);
-    return;
-  }
-  if(currentStep===2){
-    const name=document.getElementById('f-name').value.trim();
-    const email=document.getElementById('f-email').value.trim();
-    const phone=document.getElementById('f-phone').value.trim();
-    if(!name||!email||!phone){alert('Please fill in all fields.');return;}
-    state.firstName=name; state.email=email; state.phone=phone;
-    goTo(3); return;
-  }
-  if(currentStep===4){
-    const biz=document.getElementById('f-biz').value.trim();
-    if(!biz){alert('Please enter your business name.');return;}
-    state.businessName=biz;
-    goTo(5); return;
-  }
-}
+    function fCard(content){
+      return `<div class="bg-surface-container p-8 md:p-10 rounded-[2rem] border border-primary/20 shadow-2xl shadow-primary/5 relative overflow-hidden">
+        <div class="absolute -top-20 -right-20 w-56 h-56 bg-primary/8 blur-[80px] rounded-full pointer-events-none"></div>
+        <div class="relative z-10">${content}</div></div>`;
+    }
 
-function pickOption(el){
-  const field=el.dataset.field, value=el.dataset.value;
-  document.querySelectorAll(`[data-field="${field}"]`).forEach(c=>{
-    c.classList.remove('border-primary','bg-primary/10');
-    c.classList.add('border-outline-variant/20','bg-surface-container');
-  });
-  el.classList.add('border-primary','bg-primary/10');
-  el.classList.remove('border-outline-variant/20','bg-surface-container');
-  state[field]=value;
-  const nextMap={businessType:4,revenueStage:6,bottleneck:7,responseTime:8};
-  const next=nextMap[field];
-  if(next) setTimeout(()=>goTo(next), 320);
-}
+    function fEyebrow(t){ return `<div class="inline-flex items-center gap-2 mb-5 px-3 py-1 rounded-full bg-surface-container-high border border-outline-variant/15"><span class="flex h-1.5 w-1.5 rounded-full bg-brand-green animate-pulse"></span><span class="text-[10px] font-label uppercase tracking-widest text-brand-green">${t}</span></div>`; }
+    function fH2(t){ return `<h2 class="font-headline text-3xl md:text-4xl font-bold text-white leading-tight mb-3">${t}</h2>`; }
+    function fSub(t){ return `<p class="text-on-surface-variant text-base mb-6">${t}</p>`; }
+    function fBtn(id,t,extra=''){return `<button id="${id}" onclick="nextStep()" class="w-full mt-6 signature-texture text-white font-label font-bold py-4 rounded-xl text-sm uppercase tracking-widest hover:scale-[1.02] transition-transform shadow-lg shadow-primary/20 ${extra}">${t}</button>`;}
 
-// ── GHL Data Send ────────────────────────────────────────────────────────────
-let _sent=false;
-function sendDiagnosticData(){
-  if(_sent) return; _sent=true;
-  const payload={
-    source:'Diagnostic Funnel',
-    name: state.firstName,
-    email: state.email,
-    phone: state.phone,
-    businessName: state.businessName,
-    businessType: state.businessType,
-    revenue: state.revenueStage,
-    stage: state.bottleneck,
-    bottleneck: state.bottleneck,
-    responseTime: state.responseTime,
-    score: state.score,
-    score_tier: state.tier,
-    monthlyLoss: state.monthlyLoss,
-    language: LANG,
-    utm_source: state.utm_source,
-    utm_medium: state.utm_medium,
-    utm_campaign: state.utm_campaign,
-    utm_content: state.utm_content,
-    utm_term: state.utm_term,
-    source_page: state.source_page,
-    referrer: state.referrer,
-    landing_page: state.landing_page
-  };
-  fetch(WEBHOOK_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)})
-    .then(()=>CrescaTrack.webhookFired(state.score))
-    .catch(()=>{});
-}
+    function fUpdateName(val){
+      diagnosticState.firstName=val;
+      const btn=document.getElementById('s2-cta');
+      if(btn) btn.textContent=val? 'Let\'s go, '+val+' â†’' : 'Continue â†’';
+    }
 
-// ── Init ─────────────────────────────────────────────────────────────────────
-document.addEventListener('DOMContentLoaded',()=>{ render(1); });
+    const STEPS = [
+      ()=> fCard(`
+        ${fEyebrow('Sales Diagnostic — 2 minutes, free')}
+        ${fH2('Every unanswered call is a customer who went to your competition.')}
+        ${fSub('Most service businesses lose 40% of their leads before anyone ever contacts them. This diagnostic shows exactly where they are going — and what to fix first.')}
+        ${fBtn('s1-cta','See where you\'re losing leads â†’')}
+        <p class="text-center text-xs text-on-surface-variant mt-3 opacity-70">No pressure. No cost. Just your real numbers.</p>`),
 
-</script>
+      ()=> fCard(`
+        ${fEyebrow('Step 1 of 8')}
+        ${fH2('What is your name?')}
+        ${fSub('Your results are built based on your answers — not a generic average.')}
+        <div class="space-y-4">
+          <input id="f-name" type="text" placeholder="Your name" required
+            class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant/20 px-0 py-3 text-white placeholder:text-outline focus:border-primary outline-none transition-colors"
+            oninput="fUpdateName(this.value)"/>
+          <input id="f-email" type="email" placeholder="Email address" required
+            class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant/20 px-0 py-3 text-white placeholder:text-outline focus:border-primary outline-none transition-colors"/>
+          <input id="f-phone" type="tel" placeholder="Phone number" required
+            class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant/20 px-0 py-3 text-white placeholder:text-outline focus:border-primary outline-none transition-colors"/>
+        </div>
+        ${fBtn('s2-cta','Continue â†’')}`),
+
+      ()=> fCard(`
+        ${fEyebrow('Step 2 of 8')}
+        ${fH2(`What type of business do you run${diagnosticState.firstName?', '+diagnosticState.firstName:''}?`)}
+        ${fSub('We compare your score against businesses in your same industry.')}
+        ${fOptCards(COPY.bizTypes,'businessType')}`),
+
+      ()=> fCard(`
+        ${fEyebrow('Step 3 of 8')}
+        ${fH2('What is your business name?')}
+        ${fSub('Your results will reflect what\'s happening in your business — not an industry average.')}
+        <input id="cresca-biz-input" type="text" placeholder="Business name" required
+          class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant/20 px-0 py-3 text-white placeholder:text-outline focus:border-primary outline-none transition-colors"
+          oninput="diagnosticState.companyName=this.value"/>
+        ${fBtn('s4-cta','Continue â†’')}`),
+
+      ()=> fCard(`
+        ${fEyebrow('Step 4 of 8')}
+        ${fH2(`Be honest — how is ${sSafe(diagnosticState.companyName)} doing right now?`)}
+        ${fSub('There is no wrong answer. It just makes your diagnostic more accurate.')}
+        ${fOptCards(COPY.revenue,'revenueStage','')}`),
+
+      ()=> fCard(`
+        ${fEyebrow('Step 5 of 8')}
+        ${fH2(`Where is ${sSafe(diagnosticState.companyName)} losing the most leads right now?`)}
+        ${fSub('Choose the one that is costing you real jobs — not just frustration.')}
+        ${fOptCards(COPY.bottleneck,'bottleneck')}`),
+
+      ()=> fCard(`
+        ${fEyebrow('Step 6 of 8')}
+        ${fH2('When a new lead comes in — how long until someone responds?') }
+        ${fSub('If you don\'t respond in the first 5 minutes, you lose 80% of those leads. Be honest.')}
+        ${fOptCards(COPY.responseTime,'responseTime')}`),
+
+      ()=>{
+        const r = window.CrescaScoring.compute(diagnosticState);
+        diagnosticState.score=r.score; diagnosticState.monthlyLoss=r.monthlyLoss; diagnosticState.tier=r.tier; diagnosticState.bottleneckLabel=r.bottleneckLabel;
+        sendDiagnosticData();
+        setTimeout(()=>goTo(9), 3500);
+        return fCard(`
+          ${fEyebrow('Calculating your diagnostic...')}
+          ${fH2(`That gap is costing ${sSafe(diagnosticState.companyName)} real money.`)}
+          <p class="text-on-surface-variant text-base mb-6">Here are the numbers most owners don\'t want to see:<br><br>
+          If you receive 30 inquiries a month and lose 40% due to slow response — that\'s 12 clients who hired your competition.<br><br>
+          At $500 per average job, that\'s <span class="text-error font-bold">$${diagnosticState.monthlyLoss.toLocaleString()}/mo walking out the door</span>.
+          </p>
+          <div class="flex items-center gap-3 text-brand-green text-sm font-label">
+            <svg class="animate-spin h-4 w-4" viewBox="0 0 24 24" fill="none"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4l3-3-3-3v4a8 8 0 000 16v-4l-3 3 3 3v-4a8 8 0 01-8-8z"/></svg>
+            Calculating your Sales Diagnostic...
+          </div>`);
+      },
+
+      ()=>{
+        const t = COPY.tier[diagnosticState.tier]||COPY.tier.leaking;
+        const body = COPY.tierBody[diagnosticState.tier]||COPY.tierBody.leaking;
+        CrescaTrack.resultsReached(diagnosticState.score, diagnosticState.tier);
+        return fCard(`
+          ${fEyebrow('Your Sales Diagnostic')}
+          <div class="text-center mb-6">
+            <div class="text-7xl font-headline font-bold text-white">${diagnosticState.score}</div>
+            <div class="text-on-surface-variant text-sm">/ 100</div>
+            <div class="mt-3 text-sm font-label font-bold text-brand-green">${t.label}</div>
+            <p class="text-white font-semibold mt-2">${t.headline}</p>
+          </div>
+          <div class="bg-surface-container-high rounded-xl p-4 mb-6">
+            <p class="text-xs font-label uppercase tracking-widest text-on-surface-variant mb-1">This isn\'t a lead volume problem.</p>
+            <p class="text-white text-sm">It\'s a problem of how many leads escape before someone helps them.</p>
+            ${body}
+          </div>
+          <div class="bg-error/10 border border-error/20 rounded-xl p-4 mb-6 text-sm text-on-surface-variant">
+            Every week this isn\'t fixed, more leads are leaving without a response.<br>
+            It\'s not that the market is bad. It\'s that the system isn\'t working when you aren\'t looking.
+          </div>
+          <p class="text-center text-on-surface-variant text-xs mb-4">Let\'s see exactly how much you\'re losing — and what we fix first.</p>
+          <button onclick="goTo(10);CrescaTrack.ctaClicked('calendar')" class="w-full signature-texture text-white font-label font-bold py-4 rounded-xl text-sm uppercase tracking-widest hover:scale-[1.02] transition-transform shadow-lg shadow-primary/20">
+            Show me where the leaks are â†’
+          </button>
+          <div class="flex justify-center gap-6 mt-4 text-xs text-on-surface-variant">
+            <span>âœ“ Specific to your business</span><span>âœ“ 30 minutes</span><span>âœ“ No obligation</span>
+          </div>`);
+      },
+
+      ()=>{
+        return fCard(`
+          ${fEyebrow('Last Step')}
+          ${fH2('Pick a time. We stop the leaks together.')}
+          ${fSub(`30 minutes. We review the results for ${sSafe(diagnosticState.companyName)}, find the biggest leak, and give you the clear next step. Whether we work together or not.`)}
+          <div class="rounded-2xl overflow-hidden border border-primary/20 bg-surface-container-low" style="min-height:660px" id="calendar-container">
+            <iframe src="https://crm.crescaos.com/widget/booking/OlqdoFrT1sgJ3f2nnaIa" style="width: 100%;border:none;overflow: hidden;" scrolling="no" id="OlqdoFrT1sgJ3f2nnaIa_1778254417416"></iframe>
+          </div>
+          <div class="mt-6 text-center">
+            <p class="text-on-surface-variant text-xs mb-2">Have questions before booking?</p>
+            <a href="mailto:info@crescaos.com" class="inline-flex items-center gap-2 text-brand-green font-label text-sm font-bold hover:underline">Email us â†’</a>
+          </div>`);
+      }
+    ];
+
+    let currentStep=1;
+
+    function handleStep10Script() {
+      const container = document.getElementById('calendar-container');
+      if (container && !document.getElementById('ghl-calendar-script')) {
+        const script = document.createElement('script');
+        script.id = 'ghl-calendar-script';
+        script.src = "https://crm.crescaos.com/js/form_embed.js";
+        script.type = "text/javascript";
+        container.appendChild(script);
+      }
+    }
+
+    function render(step){
+      const el=document.getElementById('funnel');
+      el.innerHTML=STEPS[step-1]();
+      el.classList.remove('animate-fade-in'); void el.offsetWidth; el.classList.add('animate-fade-in');
+      updateProgress(step);
+      if(step === 10) handleStep10Script();
+      window.scrollTo({top:0,behavior:'smooth'});
+      CrescaTrack.stepCompleted(step,'step_'+step);
+    }
+
+    function updateProgress(step){
+      const wrap=document.getElementById('prog-wrap');
+      if(step===1){wrap.classList.add('hidden');return;}
+      wrap.classList.remove('hidden');
+      const pct=Math.round(((step-1)/8)*100);
+      document.getElementById('prog-bar').style.width=pct+'%';
+      document.getElementById('prog-pct').textContent=pct+'%';
+      const labels=['','Contact','Business Type','Business Name','Revenue','Main Problem','Response Speed','Calculating...','Your Diagnostic','Booking'];
+      document.getElementById('prog-label').textContent='Step '+(step-1)+': '+(labels[step-1]||'');
+    }
+
+    function goTo(step){ currentStep=step; render(step); }
+
+    function nextStep(){
+      if(currentStep===1){ CrescaTrack.funnelStart(); goTo(2); return; }
+      if(currentStep===2){
+        const name=document.getElementById('f-name').value.trim();
+        const email=document.getElementById('f-email').value.trim();
+        const phone=document.getElementById('f-phone').value.trim();
+        if(!name||!email||!phone){alert('Please complete all fields.');return;}
+        diagnosticState.firstName=name; diagnosticState.email=email; diagnosticState.phone=phone;
+        goTo(3); return;
+      }
+      if(currentStep===4){
+        const biz=document.getElementById('cresca-biz-input').value.trim();
+        if(!biz){alert('Please enter your business name.');return;}
+        diagnosticState.companyName=biz; goTo(5); return;
+      }
+    }
+
+    function pickOption(el){
+      const field=el.dataset.field, value=el.dataset.value;
+      document.querySelectorAll(`[data-field="${field}"]`).forEach(c=>{
+        c.classList.remove('border-primary','bg-primary/10');
+        c.classList.add('border-outline-variant/20','bg-surface-container');
+      });
+      el.classList.add('border-primary','bg-primary/10');
+      el.classList.remove('border-outline-variant/20','bg-surface-container');
+      diagnosticState[field]=value;
+      const nextMap={businessType:4,revenueStage:6,bottleneck:7,responseTime:8};
+      const next=nextMap[field];
+      if(next) setTimeout(()=>goTo(next),320);
+    }
+
+    let _sent=false;
+    function sendDiagnosticData(){
+      if(_sent) return; _sent=true;
+      const payload={
+        source:'Diagnostic Funnel',
+        name: diagnosticState.firstName,
+        email: diagnosticState.email,
+        phone: diagnosticState.phone,
+        companyName: diagnosticState.companyName,
+        businessName: diagnosticState.companyName,
+        businessType: diagnosticState.businessType,
+        revenue: diagnosticState.revenueStage,
+        stage: diagnosticState.bottleneck,
+        bottleneck: diagnosticState.bottleneck,
+        responseTime: diagnosticState.responseTime,
+        score: diagnosticState.score,
+        score_tier: diagnosticState.tier,
+        monthlyLoss: diagnosticState.monthlyLoss,
+        language: LANG,
+        utm_source: diagnosticState.utm_source,
+        utm_medium: diagnosticState.utm_medium,
+        utm_campaign: diagnosticState.utm_campaign,
+        utm_content: diagnosticState.utm_content,
+        utm_term: diagnosticState.utm_term,
+        source_page: diagnosticState.source_page,
+        referrer: diagnosticState.referrer,
+        landing_page: diagnosticState.landing_page
+      };
+      fetch(WEBHOOK_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)})
+        .then(()=>CrescaTrack.webhookFired(diagnosticState.score))
+        .catch(()=>{});
+    }
+
+    document.addEventListener('DOMContentLoaded',()=>{ render(1); });
+
+    </script>
 
     <script>
         // Neural Network Particle Background
@@ -577,7 +594,6 @@ document.addEventListener('DOMContentLoaded',()=>{ render(1); });
             animate();
         });
 
-
     </script>
     
     <!-- Footer -->
@@ -590,20 +606,44 @@ document.addEventListener('DOMContentLoaded',()=>{ render(1); });
                 <p class="font-sans text-[10px] text-[#8f9095] mt-2 tracking-widest uppercase opacity-60">
                     &copy; 2026 Cresca OS. Customer Acquisition Systems.
                 </p>
-                <div class="mt-4 pt-4 border-t border-[#45474b]/10 w-full max-w-lg mx-auto">
-                    <p class="font-sans text-xs text-[#8f9095] mb-2 font-bold">
-                        516-298-8323 | info@crescaos.com
+                <div class="mt-6 pt-6 border-t border-[#45474b]/5">
+                    <p class="font-sans text-[10px] text-[#8f9095] opacity-70 leading-relaxed max-w-2xl mx-auto uppercase tracking-tighter">
+                        31 Kirby Lane, Central Islip, NY 11550 <br>
+                        By providing your phone number, you agree to receive SMS communications from Cresca OS regarding your diagnostic results, appointment reminders, and related business growth services. Message and data rates may apply. Message frequency may vary. Reply STOP to opt out or HELP for help. Consent is not a condition of purchase. Mobile information will not be shared with third parties or affiliates for marketing or promotional purposes. View our <a href="/privacy" class="underline hover:text-white transition-colors">Privacy Policy</a> and <a href="/terms" class="underline hover:text-white transition-colors">Terms</a>.
                     </p>
                 </div>
-                <div class="flex justify-center gap-6 text-[10px] uppercase tracking-widest text-[#8f9095] mt-4">
-                    <a href="/privacy.html" class="hover:text-[#00E68A] transition-colors">Privacy Policy</a>
-                    <a href="/terms.html" class="hover:text-[#00E68A] transition-colors">Terms of Service</a>
+                <div class="flex justify-center gap-6 mt-4 text-[10px] uppercase tracking-widest text-[#8f9095] opacity-60">
+                    <a href="/privacy" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="/terms" class="hover:text-white transition-colors">Terms of Service</a>
                 </div>
             </div>
         </div>
     </footer>
     
-    <script src="https://crm.crescaos.com/js/form_embed.js" type="text/javascript"></script>
+    <!-- Mobile Menu Overlay -->
+    <div class="pb-24 fixed inset-0 z-[10000] hidden flex-col pt-24 px-8 transform transition-transform duration-300 translate-x-full bg-[#0b1326]/95 backdrop-blur-2xl" id="mobile-menu">
+        <div class="flex justify-between items-center mb-8">
+            <a href="/es/diagnostic" data-lang-switch="es" class="flex items-center gap-1 text-[#00E68A] font-label text-sm hover:text-[#dae2fd] transition-colors font-bold border border-[#00E68A]/30 rounded-full px-3 py-1.5 bg-[#00E68A]/5"><span class="material-symbols-outlined text-[18px]">language</span> ESPAÑOL</a>
+            <button class="text-on-surface focus:outline-none" id="mobile-menu-close">
+                <span class="material-symbols-outlined text-3xl">close</span>
+            </button>
+        </div>
+        <div class="flex flex-col space-y-8 font-headline text-3xl">
+            <a class="text-on-surface hover:text-primary transition-colors" href="/solutions">Solutions</a>
+            <a class="text-on-surface hover:text-primary transition-colors" href="/industries">Industries</a>
+            <a class="text-on-surface hover:text-primary transition-colors" href="/pricing">Investment</a>
+            <a class="text-on-surface hover:text-primary transition-colors" href="/how-we-work">How It Works</a>
+            <a class="text-on-surface hover:text-primary transition-colors" href="/integrations">Integrations</a>
+            <a class="text-on-surface hover:text-primary transition-colors" href="/about">About</a>
+            <a class="text-on-surface hover:text-primary transition-colors" href="/el-salvador">Global</a>
+        </div>
+        <div class="mt-12">
+            <a class="bg-primary text-on-primary px-6 py-3 rounded-lg font-label font-bold uppercase tracking-widest text-sm inline-block w-full text-center" href="/diagnostic">Get Your Growth Score</a>
+        </div>
+    </div>
+    <!-- End Mobile Menu Overlay -->
+
+    <script src="/js/mobile-menu.js"></script>
     <script src="/js/language-manager.js"></script>
 </body>
 </html>

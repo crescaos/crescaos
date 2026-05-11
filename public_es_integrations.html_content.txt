@@ -1,0 +1,130 @@
+<section class="relative min-h-[60vh] flex flex-col items-center justify-center px-6 md:px-8 mt-12 mb-20 z-10">
+    <div class="relative z-10 max-w-6xl text-center">
+      <span class="text-xs font-label tracking-[0.2em] text-primary uppercase font-bold mb-6 block">Unified Architecture</span>
+      <h1 class="font-headline text-5xl sm:text-6xl md:text-7xl font-bold text-on-background leading-[1.1] tracking-tight mb-8 animate-slide-up">
+        Trabaja con las herramientas que su empresa ya utiliza
+      </h1>
+      <p class="font-body text-xl md:text-2xl text-on-surface-variant max-w-4xl mx-auto mb-12 leading-relaxed font-light px-4">
+        Cresca OS se conecta con las plataformas que impulsan su marketing, comunicación, ventas y operaciones — para que pueda centralizar su crecimiento sin reconstruir toda su infraestructura tecnológica.
+      </p>
+    </div>
+  </section>
+
+  <!-- Integrations Content -->
+  <section class="py-24 px-6 md:px-8 relative z-10 bg-surface-container-lowest border-y border-outline-variant/5">
+    <div class="max-w-5xl mx-auto">
+      
+      <div class="mb-20">
+        <h2 class="font-headline text-3xl font-bold text-white mb-6">Por qué importan las integraciones</h2>
+        <p class="text-on-surface-variant text-lg font-light leading-relaxed">Las herramientas desconectadas generan pérdida de leads, tiempos de respuesta lentos y trabajo administrativo duplicado. Cuando sus anuncios de Facebook no se comunican directamente con su CRM, y su app de citas no sincroniza con su facturación, su equipo pierde horas capturando datos manualmente — y usted pierde ventas ante competidores más ágiles. Cresca OS elimina estas brechas conectando cada parte del recorrido de su cliente en un solo sistema automatizado.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
+        <div class="bg-surface-container rounded-2xl p-8 border border-outline-variant/10 hover:border-primary/30 transition-colors">
+          <div class="w-12 h-12 rounded-xl bg-[#1877F2]/10 flex items-center justify-center mb-6">
+            <span class="material-symbols-outlined text-[#1877F2] text-2xl">campaign</span>
+          </div>
+          <h3 class="font-headline font-bold text-xl text-white mb-2">Publicidad y Generación de Leads</h3>
+          <p class="text-brand-green/80 text-sm font-label font-bold tracking-widest uppercase mb-4">Meta Ads (Facebook/Instagram), Google Ads, TikTok Ads, Formularios Web</p>
+          <p class="text-on-surface-variant text-sm font-light leading-relaxed">En el momento en que un cliente potencial completa un formulario desde cualquier canal publicitario, Cresca OS lo captura y activa una secuencia de seguimiento en cuestión de segundos — para que usted siempre sea el primero en responder.</p>
+        </div>
+        <div class="bg-surface-container rounded-2xl p-8 border border-outline-variant/10 hover:border-primary/30 transition-colors">
+          <div class="w-12 h-12 rounded-xl bg-[#F22F46]/10 flex items-center justify-center mb-6">
+            <span class="material-symbols-outlined text-[#F22F46] text-2xl">sms</span>
+          </div>
+          <h3 class="font-headline font-bold text-xl text-white mb-2">Comunicación</h3>
+          <p class="text-brand-green/80 text-sm font-label font-bold tracking-widest uppercase mb-4">Twilio, WhatsApp, Google Workspace, Outlook</p>
+          <p class="text-on-surface-variant text-sm font-light leading-relaxed">Consolide todos sus mensajes de SMS, correo electrónico y redes sociales en una sola bandeja de entrada unificada. Su equipo verá el historial completo de conversaciones de cada contacto — sin tener que alternar entre cinco aplicaciones diferentes.</p>
+        </div>
+        <div class="bg-surface-container rounded-2xl p-8 border border-outline-variant/10 hover:border-primary/30 transition-colors">
+          <div class="w-12 h-12 rounded-xl bg-[#635BFF]/10 flex items-center justify-center mb-6">
+            <span class="material-symbols-outlined text-[#635BFF] text-2xl">payments</span>
+          </div>
+          <h3 class="font-headline font-bold text-xl text-white mb-2">Pagos y Finanzas</h3>
+          <p class="text-brand-green/80 text-sm font-label font-bold tracking-widest uppercase mb-4">Stripe, QuickBooks, PayPal</p>
+          <p class="text-on-surface-variant text-sm font-light leading-relaxed">Automatice la facturación, cobre depósitos y realice el seguimiento de pagos directamente dentro de su embudo de ventas. Lleve a sus clientes desde el contrato firmado hasta el pago cobrado sin salir del sistema.</p>
+        </div>
+        <div class="bg-surface-container rounded-2xl p-8 border border-outline-variant/10 hover:border-primary/30 transition-colors">
+          <div class="w-12 h-12 rounded-xl bg-[#FF4F00]/10 flex items-center justify-center mb-6">
+            <span class="material-symbols-outlined text-[#FF4F00] text-2xl">electric_bolt</span>
+          </div>
+          <h3 class="font-headline font-bold text-xl text-white mb-2">Automatización y Conexiones Personalizadas</h3>
+          <p class="text-brand-green/80 text-sm font-label font-bold tracking-widest uppercase mb-4">Zapier, Make (Integromat), Webhooks</p>
+          <p class="text-on-surface-variant text-sm font-light leading-relaxed">Conecte Cresca OS con más de 5,000 aplicaciones adicionales. Si su empresa utiliza una herramienta que no soportamos de forma nativa, podemos construir el puente — asegurando que cada parte de su operación permanezca conectada.</p>
+        </div>
+      </div>
+      
+      <div class="bg-surface-container-high rounded-2xl p-10 border border-brand-green/20">
+        <h2 class="font-headline text-2xl font-bold text-white mb-4">Resultado Central</h2>
+        <p class="text-on-surface-variant text-lg font-light leading-relaxed">Cresca OS puede consolidar múltiples herramientas desconectadas en un solo sistema unificado — reduciendo su gasto mensual en software — o integrarse limpiamente con su infraestructura actual sin necesidad de una migración completa. De cualquier manera, todas las herramientas trabajan juntas y ningún lead se pierde en el proceso.</p>
+      </div>
+
+    </div>
+  </section>
+  
+  <section class="py-24 px-6 md:px-8 mt-12 bg-background border-y border-outline-variant/10 relative z-10">
+    <div class="max-w-4xl mx-auto relative z-10">
+      <div class="text-center mb-16">
+        <h2 class="font-headline text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">Preguntas Frecuentes de Integración</h2>
+      </div>
+      <div class="space-y-4">
+        <details class="group bg-surface-container rounded-2xl border border-outline-variant/10 hover:border-primary/30 transition-colors duration-300">
+          <summary class="flex justify-between items-center font-headline font-bold text-lg text-white cursor-pointer list-none p-6 outline-none">
+            ¿Cómo conecta Cresca OS con mis anuncios de Facebook y Google?
+            <span class="transition group-open:rotate-180">
+              <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+            </span>
+          </summary>
+          <p class="text-on-surface-variant text-sm font-light leading-relaxed mt-2 p-6 pt-0 animate-fade-in group-open:block hidden">
+            Nos conectamos directamente con sus cuentas de Meta Ads y Google Ads. Cuando un cliente potencial completa un formulario o hace clic desde cualquier anuncio, Cresca OS captura su información en tiempo real e inicia de inmediato una secuencia de respuesta, eliminando el retraso que normalmente destruye la conversión.
+          </p>
+        </details>
+        <details class="group bg-surface-container rounded-2xl border border-outline-variant/10 hover:border-primary/30 transition-colors duration-300">
+          <summary class="flex justify-between items-center font-headline font-bold text-lg text-white cursor-pointer list-none p-6 outline-none">
+            ¿Qué pasa si uso una herramienta que no está en su lista de integraciones?
+            <span class="transition group-open:rotate-180">
+              <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+            </span>
+          </summary>
+          <p class="text-on-surface-variant text-sm font-light leading-relaxed mt-2 p-6 pt-0 animate-fade-in group-open:block hidden">
+            Podemos conectarnos prácticamente con cualquier plataforma a través de Zapier, Make o webhooks personalizados. Si su empresa utiliza una herramienta especializada para su industria, nuestro equipo de implementación evaluará el mejor método de conexión durante su proceso de incorporación.
+          </p>
+        </details>
+        <details class="group bg-surface-container rounded-2xl border border-outline-variant/10 hover:border-primary/30 transition-colors duration-300">
+          <summary class="flex justify-between items-center font-headline font-bold text-lg text-white cursor-pointer list-none p-6 outline-none">
+            ¿Tengo que dejar de usar mis herramientas actuales para trabajar con Cresca OS?
+            <span class="transition group-open:rotate-180">
+              <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+            </span>
+          </summary>
+          <p class="text-on-surface-variant text-sm font-light leading-relaxed mt-2 p-6 pt-0 animate-fade-in group-open:block hidden">
+            No. Trabajamos con su configuración actual y le asesoramos sobre el camino más sólido operativamente — ya sea una migración completa a un sistema unificado o una integración en capas con sus herramientas actuales. Nunca imponemos un enfoque de reemplazo forzado.
+          </p>
+        </details>
+        <details class="group bg-surface-container rounded-2xl border border-outline-variant/10 hover:border-primary/30 transition-colors duration-300">
+          <summary class="flex justify-between items-center font-headline font-bold text-lg text-white cursor-pointer list-none p-6 outline-none">
+            ¿Puede Cresca OS recibir leads de múltiples plataformas publicitarias al mismo tiempo?
+            <span class="transition group-open:rotate-180">
+              <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+            </span>
+          </summary>
+          <p class="text-on-surface-variant text-sm font-light leading-relaxed mt-2 p-6 pt-0 animate-fade-in group-open:block hidden">
+            Sí. Cresca OS está diseñado para gestionar el flujo de leads desde múltiples canales — Meta, Google, TikTok y fuentes web orgánicas — simultáneamente, dirigiendo cada lead al embudo correcto, activando la secuencia de seguimiento adecuada y registrando cada punto de contacto de forma automática.
+          </p>
+        </details>
+      </div>
+    </div>
+  </section>
+<!-- Final CTA Section -->
+  <section class="py-24 px-6 md:px-8 mt-12 bg-background border-t border-outline-variant/10 relative z-10 overflow-hidden">
+    <div class="absolute inset-0 pointer-events-none z-0 flex justify-center">
+      <div class="w-[600px] h-[600px] bg-primary/5 rounded-full blur-[100px] translate-y-1/4"></div>
+    </div>
+    <div class="max-w-4xl mx-auto flex flex-col items-center justify-center text-center relative z-10">
+      <h2 class="font-headline text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">¿Listo para unificar sus herramientas?</h2>
+      <p class="font-body text-xl text-on-surface-variant mb-12 max-w-2xl font-light">Deje de perder clientes por sistemas desconectados. Permítanos construir su motor de automatización.</p>
+      <a class="signature-texture text-on-primary px-10 py-5 rounded-xl font-label font-bold tracking-widest text-sm uppercase shadow-[0_0_30px_rgba(0,230,138,0.3)] transition-all duration-300 hover:scale-105" href="/es/diagnostic.html">
+        Agenda su Auditoria de Sistemas
+      </a>
+    </div>
+  </section>

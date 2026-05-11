@@ -1,13 +1,25 @@
 <!DOCTYPE html>
 <html class="dark scroll-smooth" lang="es">
 <head>
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-P2MS2Z25');</script>
+<!-- End Google Tag Manager -->
+
     <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>Customer Acquisition Diagnostic | Cresca OS</title>
-    <link rel="canonical" href="https://crescaos.com/diagnostic" />
+    <meta name="robots" content="index, follow">
+
+    <!-- Canonical & Hreflang -->
+    <link rel="canonical" href="https://crescaos.com/es/diagnostic" />
     <link rel="alternate" hreflang="en" href="https://crescaos.com/diagnostic" />
     <link rel="alternate" hreflang="es" href="https://crescaos.com/es/diagnostic" />
     <link rel="alternate" hreflang="x-default" href="https://crescaos.com/diagnostic" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Customer Acquisition Diagnostic | Cresca OS</title>
+
     <link href="https://fonts.googleapis.com" rel="preconnect"/>
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Inter:wght@400;500;600&amp;family=Manrope:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
@@ -119,6 +131,11 @@
     </style>
 </head>
 <body class="bg-surface text-on-surface font-body selection:bg-primary/30 selection:text-white overflow-x-hidden">
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P2MS2Z25"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
     <!-- Neural Background Canvas -->
     <canvas id="neural-bg"></canvas>
 
@@ -150,8 +167,13 @@
                 <a class="text-sm font-label uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="/#process">Process</a>
             </div>
             <div class="flex items-center gap-4">
-                <a href="/diagnostic.html" data-lang-switch="en" class="flex items-center gap-1 text-[#00E68A] font-label text-xs hover:text-[#dae2fd] transition-colors font-bold border border-[#00E68A]/30 rounded-full px-2 py-1 bg-[#00E68A]/5"><span class="material-symbols-outlined text-[16px]">language</span> EN</a>
-                <a class="hidden md:inline-flex signature-texture text-on-primary text-xs font-label uppercase tracking-[0.2em] px-8 py-3.5 rounded-full hover:scale-105 transition-all duration-300 shadow-lg shadow-primary/20 font-bold" href="/es/diagnostic.html">Comenzar Diagnóstico</a>
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-on-surface focus:outline-none z-[10000]" id="mobile-menu-btn">
+                <span class="material-symbols-outlined text-3xl">menu</span>
+            </button>
+
+                <a href="/diagnostic" data-lang-switch="en" class="flex items-center gap-1 text-[#00E68A] font-label text-xs hover:text-[#dae2fd] transition-colors font-bold border border-[#00E68A]/30 rounded-full px-2 py-1 bg-[#00E68A]/5"><span class="material-symbols-outlined text-[16px]">language</span> EN</a>
+                <a class="hidden md:inline-flex signature-texture text-on-primary text-xs font-label uppercase tracking-[0.2em] px-8 py-3.5 rounded-full hover:scale-105 transition-all duration-300 shadow-lg shadow-primary/20 font-bold" href="/es/diagnostic">Comenzar Diagnóstico</a>
             </div>
         </div>
     </nav>
@@ -176,7 +198,7 @@
 // Cresca OS — Diagnostic Funnel v2 (ES/LATAM)
 // Identical logic to EN, Spanish copy + WhatsApp-first flow
 
-// ── Config ───────────────────────────────────────────────────────────────────
+// â”€â”€ Config â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // Webhook target: CrescaOS Website Backend (Railway)
 // Do NOT point this to the OpenClaw internal runtime (openclaw-production-0664)
 const WEBHOOK_URL = '/api/webhook';
@@ -184,9 +206,9 @@ const WEBHOOK_URL = '/api/webhook';
 const LANG = 'es';
 
 const urlParams = new URLSearchParams(window.location.search);
-const state = {
+const diagnosticState = {
   firstName:'', email:'', phone:'',
-  businessType:'', businessName:'',
+  businessType:'', companyName:'',
   revenueStage:'', bottleneck:'', responseTime:'',
   score:0, monthlyLoss:0, tier:'', bottleneckLabel:'',
   language: LANG,
@@ -204,12 +226,12 @@ const TOTAL_STEPS = 10;
 
 const COPY = {
   bizTypes:[
-    {v:'home_services',    e:'🏠', h:'Servicios para el hogar',     s:'Limpieza, plomería, jardinería, HVAC, fumigación'},
-    {v:'health_wellness',  e:'🏥', h:'Salud y bienestar',            s:'Clínica estética, quiropráctico, dental, coaching, gym'},
-    {v:'professional',     e:'🏢', h:'Servicios profesionales',      s:'Abogado, contador, consultoría, coach de negocios'},
-    {v:'trades',           e:'🔧', h:'Construcción y oficios',       s:'Techos, electricidad, remodelación, solar'},
-    {v:'auto',             e:'🚗', h:'Servicios automotrices',       s:'Detailing, taller, vidrios, rotulado'},
-    {v:'other',            e:'📦', h:'Otro negocio de servicios',    s:'Cualquier negocio basado en servicios'}
+    {v:'home_services',    e:'ðŸ ', h:'Servicios para el hogar',     s:'Limpieza, plomería, jardinería, HVAC, fumigación'},
+    {v:'health_wellness',  e:'ðŸ¥', h:'Salud y bienestar',            s:'Clínica estética, quiropráctico, dental, coaching, gym'},
+    {v:'professional',     e:'ðŸ¢', h:'Servicios profesionales',      s:'Abogado, contador, consultoría, coach de negocios'},
+    {v:'trades',           e:'ðŸ”§', h:'Construcción y oficios',       s:'Techos, electricidad, remodelación, solar'},
+    {v:'auto',             e:'ðŸš—', h:'Servicios automotrices',       s:'Detailing, taller, vidrios, rotulado'},
+    {v:'other',            e:'ðŸ“¦', h:'Otro negocio de servicios',    s:'Cualquier negocio basado en servicios'}
   ],
   revenue:[
     {v:'under_10k',  h:'Menos de $10k/mes',   s:'Estamos construyendo. Cada cliente cuenta.'},
@@ -219,38 +241,44 @@ const COPY = {
     {v:'150k_plus',  h:'$150k+/mes',           s:'A tope de capacidad — no podemos dejar ir ni un cliente'}
   ],
   bottleneck:[
-    {v:'missed_calls',       e:'📵', h:'Las llamadas no se contestan',   s:'Cuando respondemos, el cliente ya contrató a otro'},
-    {v:'leads_no_convert',   e:'🔁', h:'Los leads no se convierten',      s:'Llegan pero la mayoría nunca agenda una cita'},
-    {v:'poor_followup',      e:'🕳️', h:'Seguimiento inconsistente',      s:'La mayoría de los leads se enfría y desaparece'},
-    {v:'scheduling_chaos',   e:'🗓️', h:'Agendar es un caos',             s:'Todo depende de mí y ya no me da el tiempo'},
-    {v:'no_visibility',      e:'📊', h:'Sin visibilidad',                 s:'No sabemos qué está funcionando. Adivinamos cada mes.'},
-    {v:'disconnected_tools', e:'🔧', h:'Herramientas desconectadas',      s:'Todo es manual y desorganizado'}
+    {v:'missed_calls',       e:'ðŸ“µ', h:'Las llamadas no se contestan',   s:'Cuando respondemos, el cliente ya contrató a otro'},
+    {v:'leads_no_convert',   e:'ðŸ”', h:'Los leads no se convierten',      s:'Llegan pero la mayoría nunca agenda una cita'},
+    {v:'poor_followup',      e:'ðŸ•³ï¸', h:'Seguimiento inconsistente',      s:'La mayoría de los leads se enfría y desaparece'},
+    {v:'scheduling_chaos',   e:'ðŸ—“ï¸', h:'Agendar es un caos',             s:'Todo depende de mí y ya no me da el tiempo'},
+    {v:'no_visibility',      e:'ðŸ“Š', h:'Sin visibilidad',                 s:'No sabemos qué está funcionando. Adivinamos cada mes.'},
+    {v:'disconnected_tools', e:'ðŸ”§', h:'Herramientas desconectadas',      s:'Todo es manual y desorganizado'}
   ],
   responseTime:[
-    {v:'under_5min', e:'⚡', h:'Menos de 5 minutos',      s:'Respondemos de inmediato'},
-    {v:'5_30min',    e:'🕐', h:'De 5 a 30 minutos',        s:'Bastante rápido, la mayoría de las veces'},
-    {v:'30min_2hr',  e:'🕑', h:'De 30 minutos a 2 horas', s:'Llegamos, pero no siempre rápido'},
-    {v:'same_day',   e:'🕓', h:'El mismo día',              s:'Cuando tenemos un momento'},
-    {v:'next_day',   e:'📅', h:'Al día siguiente o después',s:'Estamos muy ocupados en los trabajos'},
-    {v:'no_process', e:'🤷', h:'No hay un proceso definido',s:'Depende de quién lo vea primero'}
+    {v:'under_5min', e:'âš¡', h:'Menos de 5 minutos',      s:'Respondemos de inmediato'},
+    {v:'5_30min',    e:'ðŸ•', h:'De 5 a 30 minutos',        s:'Bastante rápido, la mayoría de las veces'},
+    {v:'30min_2hr',  e:'ðŸ•‘', h:'De 30 minutos a 2 horas', s:'Llegamos, pero no siempre rápido'},
+    {v:'same_day',   e:'ðŸ•“', h:'El mismo día',              s:'Cuando tenemos un momento'},
+    {v:'next_day',   e:'ðŸ“…', h:'Al día siguiente o después',s:'Estamos muy ocupados en los trabajos'},
+    {v:'no_process', e:'ðŸ¤·', h:'No hay un proceso definido',s:'Depende de quién lo vea primero'}
   ],
   tier:{
-    critical:  {label:'🔴 Crítico — Ingresos en riesgo',         headline:'Estás trabajando duro y perdiendo clientes que deberías estar cerrando.'},
-    leaking:   {label:'🟡 Fuga activa — Se escapa dinero real',  headline:'Estás generando clientes potenciales. Pero una parte importante se va antes de agendar.'},
-    functional:{label:'🟢 Funcional — El crecimiento tiene techo',headline:'Tu sistema funciona cuando estás encima. El problema es lo que pasa cuando no estás.'},
-    strong:    {label:'🚀 Sólido — Listo para escalar',           headline:'La base está. El siguiente paso es crecer sin agregar caos.'}
+    critical:  {label:'ðŸ”´ Crítico — Ingresos en riesgo',         headline:'Estás trabajando duro y perdiendo clientes que deberías estar cerrando.'},
+    leaking:   {label:'ðŸŸ¡ Fuga activa — Se escapa dinero real',  headline:'Estás generando clientes potenciales. Pero una parte importante se va antes de agendar.'},
+    functional:{label:'ðŸŸ¢ Funcional — El crecimiento tiene techo',headline:'Tu sistema funciona cuando estás encima. El problema es lo que pasa cuando no estás.'},
+    strong:    {label:'ðŸš€ Sólido — Listo para escalar',           headline:'La base está. El siguiente paso es crecer sin agregar caos.'}
   },
   tierBody:{
-    critical:`<ul class="text-left space-y-2 mt-4 text-on-surface-variant text-sm"><li>• Llegan clientes potenciales — y se van antes de que alguien les hable</li><li>• Cada respuesta lenta es un trabajo que se va al que contesta primero</li><li>• Arreglar esto podría representar $5,000–$15,000 más al mes</li></ul>`,
-    leaking:`<ul class="text-left space-y-2 mt-4 text-on-surface-variant text-sm"><li>• Estás consiguiendo leads, pero la tasa de conversión es menor de lo que debería ser</li><li>• El seguimiento inconsistente deja citas sin agendar cada semana</li><li>• Los clientes que pierdes contratan a quien responde más rápido</li></ul>`,
-    functional:`<ul class="text-left space-y-2 mt-4 text-on-surface-variant text-sm"><li>• Las cosas funcionan mientras tú las estás sosteniendo manualmente</li><li>• El crecimiento se frena porque el sistema depende de que tú estés en él</li><li>• Una semana ocupada y todo empieza a caerse</li></ul>`,
-    strong:`<ul class="text-left space-y-2 mt-4 text-on-surface-variant text-sm"><li>• La base está. La pregunta es qué tan rápido quieres crecer.</li><li>• La siguiente restricción será volumen de clientes y conversión a escala</li><li>• Un Diagnóstico te da el mapa claro de qué construir primero</li></ul>`
+    critical:`<ul class="text-left space-y-2 mt-4 text-on-surface-variant text-sm"><li>â€¢ Llegan clientes potenciales — y se van antes de que alguien les hable</li><li>â€¢ Cada respuesta lenta es un trabajo que se va al que contesta primero</li><li>â€¢ Arreglar esto podría representar $5,000–$15,000 más al mes</li></ul>`,
+    leaking:`<ul class="text-left space-y-2 mt-4 text-on-surface-variant text-sm"><li>â€¢ Estás consiguiendo leads, pero la tasa de conversión es menor de lo que debería ser</li><li>â€¢ El seguimiento inconsistente deja citas sin agendar cada semana</li><li>â€¢ Los clientes que pierdes contratan a quien responde más rápido</li></ul>`,
+    functional:`<ul class="text-left space-y-2 mt-4 text-on-surface-variant text-sm"><li>â€¢ Las cosas funcionan mientras tú las estás sosteniendo manualmente</li><li>â€¢ El crecimiento se frena porque el sistema depende de que tú estés en él</li><li>â€¢ Una semana ocupada y todo empieza a caerse</li></ul>`,
+    strong:`<ul class="text-left space-y-2 mt-4 text-on-surface-variant text-sm"><li>â€¢ La base está. La pregunta es qué tan rápido quieres crecer.</li><li>â€¢ La siguiente restricción será volumen de clientes y conversión a escala</li><li>â€¢ Un Diagnóstico te da el mapa claro de qué construir primero</li></ul>`
   }
 };
 
-function n(s){ return (s||'').replace(/</g,'&lt;'); }
+function sSafe(s, fallback = 'tu negocio'){ 
+  if (!s || typeof s !== 'string') return fallback;
+  return s.replace(/</g,'&lt;')
+          .replace(/>/g,'&gt;')
+          .trim()
+          .substring(0, 80); 
+}
 
-function optCards(items, field, cols){
+function fOptCards(items, field, cols){
   return `<div class="grid grid-cols-1 ${cols||'md:grid-cols-2'} gap-3">` +
     items.map(it=>`
       <div class="option-card cursor-pointer rounded-2xl p-4 border border-outline-variant/20 bg-surface-container hover:border-primary/50 hover:bg-primary/5 transition-all duration-200"
@@ -265,83 +293,91 @@ function optCards(items, field, cols){
       </div>`).join('') + '</div>';
 }
 
-function card(content){
+function fCard(content){
   return `<div class="bg-surface-container p-8 md:p-10 rounded-[2rem] border border-primary/20 shadow-2xl shadow-primary/5 relative overflow-hidden">
     <div class="absolute -top-20 -right-20 w-56 h-56 bg-primary/8 blur-[80px] rounded-full pointer-events-none"></div>
     <div class="relative z-10">${content}</div></div>`;
 }
 
-function eyebrow(t){ return `<div class="inline-flex items-center gap-2 mb-5 px-3 py-1 rounded-full bg-surface-container-high border border-outline-variant/15"><span class="flex h-1.5 w-1.5 rounded-full bg-brand-green animate-pulse"></span><span class="text-[10px] font-label uppercase tracking-widest text-brand-green">${t}</span></div>`; }
-function h2(t){ return `<h2 class="font-headline text-3xl md:text-4xl font-bold text-white leading-tight mb-3">${t}</h2>`; }
-function sub(t){ return `<p class="text-on-surface-variant text-base mb-6">${t}</p>`; }
-function btn(id,t){ return `<button id="${id}" onclick="nextStep()" class="w-full mt-6 signature-texture text-white font-label font-bold py-4 rounded-xl text-sm uppercase tracking-widest hover:scale-[1.02] transition-transform shadow-lg shadow-primary/20">${t}</button>`; }
+function fEyebrow(t){ return `<div class="inline-flex items-center gap-2 mb-5 px-3 py-1 rounded-full bg-surface-container-high border border-outline-variant/15"><span class="flex h-1.5 w-1.5 rounded-full bg-brand-green animate-pulse"></span><span class="text-[10px] font-label uppercase tracking-widest text-brand-green">${t}</span></div>`; }
+function fH2(t){ return `<h2 class="font-headline text-3xl md:text-4xl font-bold text-white leading-tight mb-3">${t}</h2>`; }
+function fSub(t){ return `<p class="text-on-surface-variant text-base mb-6">${t}</p>`; }
+function fBtn(id,t,extra=''){return `<button id="${id}" onclick="nextStep()" class="w-full mt-6 signature-texture text-white font-label font-bold py-4 rounded-xl text-sm uppercase tracking-widest hover:scale-[1.02] transition-transform shadow-lg shadow-primary/20 ${extra}">${t}</button>`;}
+
+function fUpdateName(val){
+  diagnosticState.firstName=val;
+  const btn=document.getElementById('s2-cta');
+  if(btn) btn.textContent=val? (LANG==='es'?'Vamos, ':'Let\'s go, ')+val+' â†’' : (LANG==='es'?'Continuar â†’':'Continue â†’');
+}
 
 const STEPS = [
-  ()=> card(`
-    ${eyebrow('Diagnóstico de Ventas — 2 minutos, gratis')}
-    ${h2('Cada llamada sin respuesta es un cliente que se fue con tu competencia.')}
-    ${sub('La mayoría de negocios de servicios pierde el 40% de sus clientes antes de que alguien los contacte. Este diagnóstico te muestra exactamente dónde se están yendo — y qué cambiar primero.')}
-    ${btn('s1-cta','Ver dónde estoy perdiendo clientes →')}
+
+  ()=> fCard(`
+    ${fEyebrow('Diagnóstico de Ventas — 2 minutos, gratis')}
+    ${fH2('Cada llamada sin respuesta es un cliente que se fue con tu competencia.')}
+    ${fSub('La mayoría de negocios de servicios pierde el 40% de sus clientes antes de que alguien los contacte. Este diagnóstico te muestra exactamente dónde se están yendo — y qué cambiar primero.')}
+    ${fBtn('s1-cta','Ver dónde estoy perdiendo clientes â†’')}
     <p class="text-center text-xs text-on-surface-variant mt-3 opacity-70">Sin presión. Sin costo. Solo tus números reales.</p>`),
 
-  ()=> card(`
-    ${eyebrow('Paso 1 de 8')}
-    ${h2('¿Cómo te llamas?')}
-    ${sub('Tus resultados se construyen con base en tus respuestas — no en un promedio genérico.')}
+  ()=> fCard(`
+    ${fEyebrow('Paso 1 de 8')}
+    ${fH2('¿Cómo te llamas?')}
+    ${fSub('Tus resultados se construyen con base en tus respuestas — no en un promedio genérico.')}
     <div class="space-y-4">
       <input id="f-name" type="text" placeholder="Tu nombre" required
         class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant/20 px-0 py-3 text-white placeholder:text-outline focus:border-primary outline-none transition-colors"
-        oninput="state.firstName=this.value;document.getElementById('s2-cta').textContent=this.value?'Vamos, '+this.value+' →':'Continuar →'"/>
+        oninput="fUpdateName(this.value)"/>
       <input id="f-email" type="email" placeholder="Correo electrónico" required
         class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant/20 px-0 py-3 text-white placeholder:text-outline focus:border-primary outline-none transition-colors"/>
       <input id="f-phone" type="tel" placeholder="Número de teléfono" required
         class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant/20 px-0 py-3 text-white placeholder:text-outline focus:border-primary outline-none transition-colors"/>
     </div>
-    ${btn('s2-cta','Continuar →')}`),
+    ${fBtn('s2-cta','Continuar â†’')}`),
 
-  ()=> card(`
-    ${eyebrow('Paso 2 de 8')}
-    ${h2(`¿Qué tipo de negocio manejas${state.firstName?', '+state.firstName:''}?`)}
-    ${sub('Comparamos tu puntuación contra negocios en tu misma industria.')}
-    ${optCards(COPY.bizTypes,'businessType')}`),
+  ()=> fCard(`
+    ${fEyebrow('Paso 2 de 8')}
+    ${fH2(`¿Qué tipo de negocio manejas${diagnosticState.firstName?', '+diagnosticState.firstName:''}?`)}
+    ${fSub('Comparamos tu puntuación contra negocios en tu misma industria.')}
+    ${fOptCards(COPY.bizTypes,'businessType')}`),
 
-  ()=> card(`
-    ${eyebrow('Paso 3 de 8')}
-    ${h2('¿Cómo se llama tu negocio?')}
-    ${sub('Tus resultados van a reflejar lo que está pasando en tu negocio — no un promedio de industria.')}
-    <input id="f-biz" type="text" placeholder="Nombre del negocio" required
-      class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant/20 px-0 py-3 text-white placeholder:text-outline focus:border-primary outline-none transition-colors"/>
-    ${btn('s4-cta','Continuar →')}`),
+  ()=> fCard(`
+    ${fEyebrow('Paso 3 de 8')}
+    ${fH2('¿Cómo se llama tu negocio?')}
+    ${fSub('Tus resultados van a reflejar lo que está pasando en tu negocio — no un promedio de industria.')}
+    <input id="cresca-biz-input" type="text" placeholder="Nombre del negocio" required
+      class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant/20 px-0 py-3 text-white placeholder:text-outline focus:border-primary outline-none transition-colors"
+      oninput="diagnosticState.companyName=this.value"/>
+    ${fBtn('s4-cta','Continuar â†’')}`),
 
-  ()=> card(`
-    ${eyebrow('Paso 4 de 8')}
-    ${h2(`Con sinceridad — ¿cómo está ${n(state.businessName)||'tu negocio'} en este momento?`)}
-    ${sub('No hay respuesta incorrecta. Solo hace tu diagnóstico más preciso.')}
-    ${optCards(COPY.revenue,'revenueStage','')}`),
+  ()=> fCard(`
+    ${fEyebrow('Paso 4 de 8')}
+    ${fH2(`Con sinceridad — ¿cómo está ${sSafe(diagnosticState.companyName)} en este momento?`)}
+    ${fSub('No hay respuesta incorrecta. Solo hace tu diagnóstico más preciso.')}
+    ${fOptCards(COPY.revenue,'revenueStage','')}`),
 
-  ()=> card(`
-    ${eyebrow('Paso 5 de 8')}
-    ${h2(`¿Dónde está perdiendo más clientes ${n(state.businessName)||'tu negocio'} ahora mismo?`)}
-    ${sub('Elige el que te está costando trabajos reales — no solo frustración.')}
-    ${optCards(COPY.bottleneck,'bottleneck')}`),
+  ()=> fCard(`
+    ${fEyebrow('Paso 5 de 8')}
+    ${fH2(`¿Dónde está perdiendo más clientes ${sSafe(diagnosticState.companyName)} ahora mismo?`)}
+    ${fSub('Elige el que te está costando trabajos reales — no solo frustración.')}
+    ${fOptCards(COPY.bottleneck,'bottleneck')}`),
 
-  ()=> card(`
-    ${eyebrow('Paso 6 de 8')}
-    ${h2('Cuando llega un cliente nuevo — ¿en cuánto tiempo le responde alguien?')}
-    ${sub('Si no respondes en los primeros 5 minutos, pierdes el 80% de esos clientes. Sé honesto.')}
-    ${optCards(COPY.responseTime,'responseTime')}`),
+  ()=> fCard(`
+    ${fEyebrow('Paso 6 de 8')}
+    ${fH2('Cuando llega un cliente nuevo — ¿en cuánto tiempo le responde alguien?')}
+    ${fSub('Si no respondes en los primeros 5 minutos, pierdes el 80% de esos clientes. Sé honesto.')}
+    ${fOptCards(COPY.responseTime,'responseTime')}`),
 
   ()=>{
-    const r = window.CrescaScoring.compute(state);
-    state.score=r.score; state.monthlyLoss=r.monthlyLoss; state.tier=r.tier; state.bottleneckLabel=r.bottleneckLabel;
+    const r = window.CrescaScoring.compute(diagnosticState);
+    diagnosticState.score=r.score; diagnosticState.monthlyLoss=r.monthlyLoss; diagnosticState.tier=r.tier; diagnosticState.bottleneckLabel=r.bottleneckLabel;
     sendDiagnosticData();
     setTimeout(()=>goTo(9), 3500);
-    return card(`
-      ${eyebrow('Calculando tu diagnóstico...')}
-      ${h2(`Esa brecha le está costando dinero real a ${n(state.businessName)||'tu negocio'}.`)}
+    return fCard(`
+      ${fEyebrow('Calculando tu diagnóstico...')}
+      ${fH2(`Esa brecha le está costando dinero real a ${sSafe(diagnosticState.companyName)}.`)}
       <p class="text-on-surface-variant text-base mb-6">Aquí están los números que la mayoría de dueños no quiere ver:<br><br>
       Si recibes 30 consultas al mes y pierdes el 40% por respuesta lenta — son 12 clientes que contrataron a tu competencia.<br><br>
-      A $500 por trabajo promedio, son <span class="text-error font-bold">$${state.monthlyLoss.toLocaleString()}/mes saliendo por la puerta</span>.
+      A $500 por trabajo promedio, son <span class="text-error font-bold">$${diagnosticState.monthlyLoss.toLocaleString()}/mes saliendo por la puerta</span>.
       </p>
       <div class="flex items-center gap-3 text-brand-green text-sm font-label">
         <svg class="animate-spin h-4 w-4" viewBox="0 0 24 24" fill="none"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4l3-3-3-3v4a8 8 0 000 16v-4l-3 3 3 3v-4a8 8 0 01-8-8z"/></svg>
@@ -350,13 +386,13 @@ const STEPS = [
   },
 
   ()=>{
-    const t = COPY.tier[state.tier]||COPY.tier.leaking;
-    const body = COPY.tierBody[state.tier]||COPY.tierBody.leaking;
-    CrescaTrack.resultsReached(state.score, state.tier);
-    return card(`
-      ${eyebrow('Tu Diagnóstico de Ventas')}
+    const t = COPY.tier[diagnosticState.tier]||COPY.tier.leaking;
+    const body = COPY.tierBody[diagnosticState.tier]||COPY.tierBody.leaking;
+    CrescaTrack.resultsReached(diagnosticState.score, diagnosticState.tier);
+    return fCard(`
+      ${fEyebrow('Tu Diagnóstico de Ventas')}
       <div class="text-center mb-6">
-        <div class="text-7xl font-headline font-bold text-white">${state.score}</div>
+        <div class="text-7xl font-headline font-bold text-white">${diagnosticState.score}</div>
         <div class="text-on-surface-variant text-sm">/ 100</div>
         <div class="mt-3 text-sm font-label font-bold text-brand-green">${t.label}</div>
         <p class="text-white font-semibold mt-2">${t.headline}</p>
@@ -372,36 +408,49 @@ const STEPS = [
       </div>
       <p class="text-center text-on-surface-variant text-xs mb-4">Veamos exactamente cuánto te está costando — y qué arreglamos primero.</p>
       <button onclick="goTo(10);CrescaTrack.ctaClicked('calendar')" class="w-full signature-texture text-white font-label font-bold py-4 rounded-xl text-sm uppercase tracking-widest hover:scale-[1.02] transition-transform shadow-lg shadow-primary/20">
-        Quiero ver qué se está escapando →
+        Quiero ver qué se está escapando â†’
       </button>
       <div class="flex justify-center gap-6 mt-4 text-xs text-on-surface-variant">
-        <span>✓ Específico para tu negocio</span><span>✓ 30 minutos</span><span>✓ Sin compromiso</span>
+        <span>âœ“ Específico para tu negocio</span><span>âœ“ 30 minutos</span><span>âœ“ Sin compromiso</span>
       </div>`);
   },
 
   ()=>{
     const waLink=`https://wa.me/15162988323?text=Hola%20acabo%20de%20hacer%20el%20diagnostico%20y%20quiero%20ver%20como%20arreglarlo`;
-    return card(`
-      ${eyebrow('Último paso')}
-      ${h2('Elige un horario. Paramos la fuga juntos.')}
-      ${sub('30 minutos. Sin rodeos. Te damos el siguiente paso claro — trabajes con nosotros o no.')}
-      <div class="rounded-2xl overflow-hidden border border-primary/20 bg-surface-container-low" style="min-height:660px">
-        <iframe src="https://crm.crescaos.com/widget/booking/OlqdoFrT1sgJ3f2nnaIa" style="width:100%;min-height:660px;border:none;overflow:hidden" scrolling="no"></iframe>
+    return fCard(`
+      ${fEyebrow('Ãšltimo paso')}
+      ${fH2('Elige un horario. Paramos la fuga juntos.')}
+      ${fSub(`30 minutos. Revisamos los resultados de ${sSafe(diagnosticState.companyName)}, encontramos la mayor fuga, y te damos el siguiente paso claro. Trabajemos juntos o no.`)}
+      <div class="rounded-2xl overflow-hidden border border-primary/20 bg-surface-container-low" style="min-height:660px" id="calendar-container">
+        <iframe src="https://crm.crescaos.com/widget/booking/OlqdoFrT1sgJ3f2nnaIa" style="width: 100%;border:none;overflow: hidden;" scrolling="no" id="OlqdoFrT1sgJ3f2nnaIa_1778254417416"></iframe>
       </div>
       <div class="mt-6 text-center">
         <p class="text-on-surface-variant text-xs mb-2">¿Tienes preguntas antes de agendar?</p>
-        <a href="${waLink}" target="_blank" onclick="CrescaTrack.ctaClicked('whatsapp')" class="inline-flex items-center gap-2 text-brand-green font-label text-sm font-bold hover:underline">Escríbenos por WhatsApp →</a>
+        <a href="mailto:info@crescaos.com" class="inline-flex items-center gap-2 text-brand-green font-label text-sm font-bold hover:underline">Escríbenos por email â†’</a>
       </div>`);
   }
 ];
 
 let currentStep=1;
 
+// Special handler for Step 10 to ensure script executes
+function handleStep10Script() {
+  const container = document.getElementById('calendar-container');
+  if (container && !document.getElementById('ghl-calendar-script')) {
+    const script = document.createElement('script');
+    script.id = 'ghl-calendar-script';
+    script.src = "https://crm.crescaos.com/js/form_embed.js";
+    script.type = "text/javascript";
+    container.appendChild(script);
+  }
+}
+
 function render(step){
   const el=document.getElementById('funnel');
   el.innerHTML=STEPS[step-1]();
   el.classList.remove('animate-fade-in'); void el.offsetWidth; el.classList.add('animate-fade-in');
   updateProgress(step);
+  if(step === 10) handleStep10Script();
   window.scrollTo({top:0,behavior:'smooth'});
   CrescaTrack.stepCompleted(step,'step_'+step);
 }
@@ -414,7 +463,7 @@ function updateProgress(step){
   document.getElementById('prog-bar').style.width=pct+'%';
   document.getElementById('prog-pct').textContent=pct+'%';
   const labels=['','Contacto','Tipo de negocio','Nombre del negocio','Ingresos','Problema principal','Velocidad de respuesta','Calculando...','Tu diagnóstico','Agendar'];
-  document.getElementById('prog-label').textContent='Paso '+(step-1)+': '+(labels[step]||'');
+  document.getElementById('prog-label').textContent='Paso '+(step-1)+': '+(labels[step-1]||'');
 }
 
 function goTo(step){ currentStep=step; render(step); }
@@ -426,13 +475,13 @@ function nextStep(){
     const email=document.getElementById('f-email').value.trim();
     const phone=document.getElementById('f-phone').value.trim();
     if(!name||!email||!phone){alert('Por favor completa todos los campos.');return;}
-    state.firstName=name; state.email=email; state.phone=phone;
+    diagnosticState.firstName=name; diagnosticState.email=email; diagnosticState.phone=phone;
     goTo(3); return;
   }
   if(currentStep===4){
-    const biz=document.getElementById('f-biz').value.trim();
+    const biz=document.getElementById('cresca-biz-input').value.trim();
     if(!biz){alert('Por favor ingresa el nombre de tu negocio.');return;}
-    state.businessName=biz; goTo(5); return;
+    diagnosticState.companyName=biz; goTo(5); return;
   }
 }
 
@@ -444,7 +493,7 @@ function pickOption(el){
   });
   el.classList.add('border-primary','bg-primary/10');
   el.classList.remove('border-outline-variant/20','bg-surface-container');
-  state[field]=value;
+  diagnosticState[field]=value;
   const nextMap={businessType:4,revenueStage:6,bottleneck:7,responseTime:8};
   const next=nextMap[field];
   if(next) setTimeout(()=>goTo(next),320);
@@ -455,30 +504,31 @@ function sendDiagnosticData(){
   if(_sent) return; _sent=true;
   const payload={
     source:'Diagnostic Funnel',
-    name: state.firstName,
-    email: state.email,
-    phone: state.phone,
-    businessName: state.businessName,
-    businessType: state.businessType,
-    revenue: state.revenueStage,
-    stage: state.bottleneck,
-    bottleneck: state.bottleneck,
-    responseTime: state.responseTime,
-    score: state.score,
-    score_tier: state.tier,
-    monthlyLoss: state.monthlyLoss,
+    name: diagnosticState.firstName,
+    email: diagnosticState.email,
+    phone: diagnosticState.phone,
+    companyName: diagnosticState.companyName,
+    businessName: diagnosticState.companyName,
+    businessType: diagnosticState.businessType,
+    revenue: diagnosticState.revenueStage,
+    stage: diagnosticState.bottleneck,
+    bottleneck: diagnosticState.bottleneck,
+    responseTime: diagnosticState.responseTime,
+    score: diagnosticState.score,
+    score_tier: diagnosticState.tier,
+    monthlyLoss: diagnosticState.monthlyLoss,
     language: LANG,
-    utm_source: state.utm_source,
-    utm_medium: state.utm_medium,
-    utm_campaign: state.utm_campaign,
-    utm_content: state.utm_content,
-    utm_term: state.utm_term,
-    source_page: state.source_page,
-    referrer: state.referrer,
-    landing_page: state.landing_page
+    utm_source: diagnosticState.utm_source,
+    utm_medium: diagnosticState.utm_medium,
+    utm_campaign: diagnosticState.utm_campaign,
+    utm_content: diagnosticState.utm_content,
+    utm_term: diagnosticState.utm_term,
+    source_page: diagnosticState.source_page,
+    referrer: diagnosticState.referrer,
+    landing_page: diagnosticState.landing_page
   };
   fetch(WEBHOOK_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)})
-    .then(()=>CrescaTrack.webhookFired(state.score))
+    .then(()=>CrescaTrack.webhookFired(diagnosticState.score))
     .catch(()=>{});
 }
 
@@ -554,7 +604,6 @@ document.addEventListener('DOMContentLoaded',()=>{ render(1); });
             animate();
         });
 
-
     </script>
     
     <!-- Footer -->
@@ -567,20 +616,45 @@ document.addEventListener('DOMContentLoaded',()=>{ render(1); });
                 <p class="font-sans text-[10px] text-[#8f9095] mt-2 tracking-widest uppercase opacity-60">
                     &copy; 2026 Cresca OS. Customer Acquisition Systems.
                 </p>
-                <div class="mt-4 pt-4 border-t border-[#45474b]/10 w-full max-w-lg mx-auto">
-                    <p class="font-sans text-xs text-[#8f9095] mb-2 font-bold">
-                        516-298-8323 | info@crescaos.com
+                <div class="mt-6 pt-6 border-t border-[#45474b]/5">
+                    <p class="font-sans text-[10px] text-[#8f9095] opacity-70 leading-relaxed max-w-2xl mx-auto uppercase tracking-tighter">
+                        31 Kirby Lane, Central Islip, NY 11550 <br>
+                        Al proporcionar su número de teléfono, acepta recibir comunicaciones por SMS de Cresca OS sobre los resultados de su diagnóstico, recordatorios de citas y servicios relacionados con el crecimiento de su negocio. Pueden aplicarse tarifas de mensajes y datos. La frecuencia de los mensajes puede variar. Responda STOP para cancelar o HELP para recibir ayuda. El consentimiento no es una condición de compra. La información móvil no se compartirá con terceros o afiliados con fines de marketing o promoción. Consulte nuestra <a href="/es/privacy" class="underline hover:text-white transition-colors">Política de Privacidad</a> y nuestros <a href="/es/terms" class="underline hover:text-white transition-colors">Términos</a>.
                     </p>
                 </div>
-                <div class="flex justify-center gap-6 text-[10px] uppercase tracking-widest text-[#8f9095] mt-4">
-                    <a href="/es/privacy.html" class="hover:text-[#00E68A] transition-colors">Privacy Policy</a>
-                    <a href="/es/terms.html" class="hover:text-[#00E68A] transition-colors">Terms of Service</a>
+                <div class="flex justify-center gap-6 mt-4 text-[10px] uppercase tracking-widest text-[#8f9095] opacity-60">
+                    <a href="/es/privacy" class="hover:text-white transition-colors">Política de Privacidad</a>
+                    <a href="/es/terms" class="hover:text-white transition-colors">Términos de Servicio</a>
                 </div>
             </div>
         </div>
     </footer>
-    
     <script src="https://crm.crescaos.com/js/form_embed.js" type="text/javascript"></script>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="pb-24 fixed inset-0 z-[10000] hidden flex-col pt-24 px-8 transform transition-transform duration-300 translate-x-full bg-[#0b1326]/95 backdrop-blur-2xl" id="mobile-menu">
+        <div class="flex justify-between items-center mb-8">
+            <a href="/" data-lang-switch="en" class="flex items-center gap-1 text-[#00E68A] font-label text-sm hover:text-[#dae2fd] transition-colors font-bold border border-[#00E68A]/30 rounded-full px-3 py-1.5 bg-[#00E68A]/5"><span class="material-symbols-outlined text-[18px]">language</span> ENGLISH</a>
+            <button class="text-on-surface focus:outline-none" id="close-menu">
+                <span class="material-symbols-outlined text-3xl">close</span>
+            </button>
+        </div>
+        <div class="flex flex-col space-y-8 font-headline text-3xl">
+            <a class="text-on-surface hover:text-primary transition-colors" href="/es/solutions">Soluciones</a>
+            <a class="text-on-surface hover:text-primary transition-colors" href="/es/industries">Industrias</a>
+            <a class="text-on-surface hover:text-primary transition-colors" href="/es/pricing">Inversión</a>
+            <a class="text-on-surface hover:text-primary transition-colors" href="/es/how-we-work">Cómo Funciona</a>
+            <a class="text-on-surface hover:text-primary transition-colors" href="/es/integrations">Integraciones</a>
+            <a class="text-on-surface hover:text-primary transition-colors" href="/es/about">Nosotros</a>
+            <a class="text-on-surface hover:text-primary transition-colors" href="/es/el-salvador">Global</a>
+        </div>
+        <div class="mt-12">
+            <a class="bg-primary text-on-primary px-6 py-3 rounded-lg font-label font-bold uppercase tracking-widest text-sm inline-block w-full text-center" href="/es/diagnostic">Obtén tu Growth Score</a>
+        </div>
+    </div>
+    <!-- End Mobile Menu Overlay -->
+
+    <script src="/js/mobile-menu.js"></script>
     <script src="/js/language-manager.js"></script>
 </body>
 </html>

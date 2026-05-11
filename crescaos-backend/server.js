@@ -91,6 +91,40 @@ app.post('/api/webhook', async (req, res) => {
   }
 });
 
+// ── Manus AI Lead Intelligence ────────────────────────────────────────────────
+app.post('/api/manus-lead-intel', (req, res) => {
+  try {
+    const { contact_id, name, email, phone, business_name, source, diagnostic_score, recommended_tier } = req.body || {};
+    
+    // Log safe summary of the request
+    logger.info('Manus AI Lead Intel Payload Received', {
+      contact_id,
+      name,
+      email,
+      phone,
+      business_name,
+      source,
+      diagnostic_score,
+      recommended_tier
+    });
+
+    // Return success response to GHL
+    res.status(200).json({
+      success: true,
+      message: "Manus lead intelligence request received",
+      contact_id: contact_id || "unknown",
+      status: "queued"
+    });
+  } catch (err) {
+    logger.error('Manus lead intel route error', err.message);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+app.get('/api/manus-lead-intel', (_req, res) => {
+  res.status(200).json({ ok: true, message: 'Manus lead intelligence endpoint active' });
+});
+
 // ── 404 Catch-all ─────────────────────────────────────────────────────────────
 app.use((req, res) => {
   res.status(404).json({ error: `Cannot ${req.method} ${req.path}` });
