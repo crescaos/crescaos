@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html class="dark scroll-smooth" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Managed Infrastructure Investment | Pricing Plans | Cresca OS</title>
+    <meta name="description" content="Transparent, fixed-fee pricing for your managed revenue operating infrastructure. Choose the tier that fits your revenue goals and stop losing leads today.">
+    <link rel="canonical" href="https://crescaos.com/pricing" />
+    <link rel="alternate" hreflang="en" href="https://crescaos.com/pricing" />
+    <link rel="alternate" hreflang="es" href="https://crescaos.com/es/pricing" />
+    <link rel="alternate" hreflang="x-default" href="https://crescaos.com/pricing" />
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600&family=Manrope:wght@500;600;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .animate-slide-up { animation: slide-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+            .animate-fade-in { animation: fade-in 1s ease-out forwards; }
+            .delay-200 { animation-delay: 200ms; }
+        }
+        @keyframes slide-up {
+            from { transform: translateY(30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes fade-in {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .signature-texture {
+            background: linear-gradient(135deg, #0A84FF 0%, #00E68A 100%);
+        }
+        .glow-pulse {
+            box-shadow: 0 0 15px rgba(0, 230, 138, 0.4);
+        }
+        #neural-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.8;
+            pointer-events: none;
+        }
+        body { top: 0 !important; }
+    </style>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-dim": "#0b1326",
+                        "surface-container-low": "#131b2e",
+                        "surface-container-lowest": "#060e20",
+                        "outline-variant": "#45474b",
+                        "on-background": "#dae2fd",
+                        "on-surface": "#dae2fd",
+                        "surface-container": "#171f33",
+                        "on-surface-variant": "#c6c6cb",
+                        "primary": "#0A84FF",
+                        "surface": "#0F172A",
+                        "error": "#ffb4ab",
+                        "background": "#0F172A",
+                        "brand-green": "#00E68A"
+                    },
+                    fontFamily: {
+                        "headline": ["Noto Serif"],
+                        "body": ["Inter"],
+                        "label": ["Manrope"]
+                    }
+                },
+            },
+        }
+    </script>
+
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '158599436040251');
+    fbq('track', 'PageView');
+    </script>
+</head>
+<body class="bg-background text-on-background font-body">
+    <canvas id="neural-bg"></canvas>
+
+    <nav class="fixed top-0 w-full z-50 bg-[#0b1326]/70 backdrop-blur-xl border-b border-outline-variant/10">
+        <div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
+            <a class="flex items-center gap-3 hover:opacity-80 transition-opacity" href="index.html">
+                <div class="flex items-center gap-3">
+                    <svg class="w-8 h-8" fill="none" height="32" viewbox="0 0 48 48" width="32" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="24" cy="24" r="18" stroke="#0A84FF" stroke-width="3"></circle>
+                        <path d="M24 14V34M14 24H34" stroke="#00E68A" stroke-linecap="round" stroke-width="3"></path>
+                    </svg>
+                    <span class="text-xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-white/70">Cresca OS</span>
+                </div>
+            </a>
+            <div class="hidden md:flex items-center gap-8">
+                <a class="text-sm font-medium text-on-surface-variant hover:text-white transition-colors" href="index.html">Infrastructure</a>
+                <a class="text-sm font-medium text-white underline decoration-primary decoration-2 underline-offset-4" href="pricing.html">Investment</a>
+                <a class="text-sm font-medium text-on-surface-variant hover:text-white transition-colors" href="how-we-work.html">How We Work</a>
+                <a class="text-sm font-medium text-on-surface-variant hover:text-white transition-colors" href="el-salvador.html">El Salvador</a>
+                <a class="px-5 py-2.5 rounded-full bg-white text-surface-lowest text-sm font-bold hover:bg-on-surface transition-all transform hover:scale-105" href="#pricing">Audit My Revenue</a>
+            </div>
+        </div>
+    </nav>
+            <div class="flex items-center gap-4 md:mr-0"><a href="/es/pricing.html" data-lang-switch="es" class="flex items-center gap-1 text-[#00E68A] font-label text-xs hover:text-[#dae2fd] transition-colors font-bold border border-[#00E68A]/30 rounded-full px-2 py-1 bg-[#00E68A]/5"><span class="material-symbols-outlined text-[16px]">language</span> ES</a>
+                <a href="/diagnostic.html" class="hidden md:inline-flex bg-[#4edea3] text-[#003824] px-5 py-2 rounded-lg font-label font-bold scale-95 transition-transform duration-200 hover:scale-100 uppercase tracking-widest text-[10px]">Get Your Score</a>
+<!-- Mobile Menu Button -->
+        <button class="md:hidden text-on-surface focus:outline-none z-[10000]" id="mobile-menu-btn">
+            <span class="material-symbols-outlined text-3xl">menu</span>
+        </button>
+</div>
+</div>
+        <!-- Mobile Menu Overlay -->
+        <div class="fixed inset-0 bg-[#0b1326]/95 z-[9999] backdrop-blur-2xl hidden flex-col pt-24 px-8 transform transition-transform duration-300 translate-x-full" id="mobile-menu">
+            <div class="flex justify-between items-center mb-8">
+                <a href="/es/pricing.html" data-lang-switch="es" class="flex items-center gap-1 text-[#00E68A] font-label text-sm hover:text-[#dae2fd] transition-colors font-bold border border-[#00E68A]/30 rounded-full px-3 py-1.5 bg-[#00E68A]/5"><span class="material-symbols-outlined text-[18px]">language</span> ESPA+æOL</a>
+            </div>
+            <div class="flex flex-col space-y-8 font-headline text-3xl">
+                <a class="text-on-surface hover:text-primary transition-colors" href="solutions.html">Infrastructure</a>
+                <a class="text-on-surface hover:text-primary transition-colors" href="industries.html">Industries</a>
+                <a class="text-on-surface hover:text-primary transition-colors" href="pricing.html">Investment</a>
+                <a class="text-on-surface hover:text-primary transition-colors" href="how-we-work.html">How We Work</a>
+                <a class="text-on-surface hover:text-primary transition-colors" href="about.html">About</a>
+                <a class="text-on-surface hover:text-primary transition-colors" href="el-salvador.html">El Salvador</a>
+            </div>
+            <div class="mt-12">
+                <a class="bg-primary text-on-primary px-6 py-3 rounded-lg font-label font-bold uppercase tracking-widest text-sm inline-block w-full text-center" href="/diagnostic.html">Get Your Free Score</a>
+            </div>
+        </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const btn = document.getElementById('mobile-menu-btn');
+                const menu = document.getElementById('mobile-menu');
+                if(btn && menu) {
+                    btn.addEventListener('click', () => {
+                        const isHidden = menu.classList.contains('translate-x-full');
+                        if (isHidden) {
+                            menu.classList.remove('hidden');
+                            setTimeout(() => {
+                                menu.classList.remove('translate-x-full');
+                                menu.classList.add('translate-x-0');
+                            }, 10);
+                            btn.innerHTML = '<span class="material-symbols-outlined text-3xl text-error">close</span>';
+                        } else {
+                            menu.classList.remove('translate-x-0');
+                            menu.classList.add('translate-x-full');
+                            setTimeout(() => menu.classList.add('hidden'), 300);
+                            btn.innerHTML = '<span class="material-symbols-outlined text-3xl">menu</span>';
+                        }
+                    });
+                }
+            });
+        </script>
+    </nav>
+
+    
+    <main class="pt-32 pb-24 px-6">
+        <!-- Hero Section -->
+        <section class="max-w-4xl mx-auto text-center mb-20 animate-slide-up">
+            <span class="px-4 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-bold tracking-widest uppercase mb-6 inline-block">Managed Infrastructure Investment</span>
+            <h1 class="text-5xl md:text-6xl font-headline font-bold mb-8 leading-tight">
+                Predictable Growth Powered by <span class="text-brand-green">Revenue Operating Infrastructure</span>
+            </h1>
+            <p class="text-xl text-on-surface-variant max-w-2xl mx-auto mb-12 leading-relaxed">
+                Stop paying for disconnected tools. Invest in a managed infrastructure that captures, routes, and reports every lead automatically. No hidden fees. Fully managed for you.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+                <a class="signature-texture text-on-primary px-10 py-5 rounded-xl font-label font-bold tracking-widest text-sm uppercase shadow-[0_0_30px_rgba(0,230,138,0.3)] transition-all duration-300 hover:scale-105 block w-full sm:w-auto text-center" href="/diagnostic.html">
+                    Audit My Revenue Leakage
+                </a>
+                <a class="bg-surface-container-high border border-outline-variant/30 text-white px-10 py-5 rounded-xl font-label tracking-widest text-sm uppercase transition-all duration-200 hover:bg-surface-bright block w-full sm:w-auto text-center" href="#pricing">
+                    See Infrastructure Tiers
+                </a>
+            </div>
+        </section>
+
+        <!-- Problem Agitation & Solution -->
+        <section class="max-w-6xl mx-auto px-8 mb-32 relative z-10">
+            <div class="grid md:grid-cols-2 gap-12 items-stretch">
+                <div class="bg-surface-container-lowest border border-error/20 p-8 md:p-12 rounded-3xl">
+                    <span class="text-error font-label tracking-[0.2em] uppercase text-xs font-bold mb-4 block">The Revenue Leak</span>
+                    <h2 class="font-headline text-3xl font-bold text-white mb-8">You Don't Have a Lead Problem. You Have an Infrastructure Problem.</h2>
+                    <ul class="space-y-4 text-on-surface-variant mb-10">
+                        <li class="flex gap-4 items-start"><span class="text-error mt-1">G£ù</span> Leads drop off because follow-up takes 10+ minutes</li>
+                        <li class="flex gap-4 items-start"><span class="text-error mt-1">G£ù</span> Disconnected tools create data silos and missed jobs</li>
+                        <li class="flex gap-4 items-start"><span class="text-error mt-1">G£ù</span> CRM is a "graveyard" of dead leads with no movement</li>
+                        <li class="flex gap-4 items-start"><span class="text-error mt-1">G£ù</span> Operators lack visibility into what's actually converting</li>
+                    </ul>
+                    <p class="text-white font-medium border-l-4 border-error pl-4 italic">Every minute of delay is revenue leaking out of your business.</p>
+                </div>
+                <div class="bg-surface-container border border-outline-variant/10 p-8 md:p-12 rounded-3xl relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-brand-green/5 rounded-bl-full"></div>
+                    <span class="text-brand-green font-label tracking-[0.2em] uppercase text-xs font-bold mb-4 block relative z-10">The Solution</span>
+                    <h3 class="font-headline text-3xl font-bold text-white mb-6 relative z-10">A Managed Revenue Operating Infrastructure</h3>
+                    <p class="text-on-surface-variant mb-8 text-lg font-light relative z-10">Cresca OS installs the foundation that captures, routes, and monitors every lead 24/7:</p>
+                    <ul class="space-y-4 text-on-surface-variant mb-10 relative z-10">
+                        <li class="flex gap-3 items-start"><span class="material-symbols-outlined text-brand-green mt-0.5">hub</span> <strong>Capture:</strong> Lead intake across all channels instantly.</li>
+                        <li class="flex gap-3 items-start"><span class="material-symbols-outlined text-brand-green mt-0.5">route</span> <strong>Route:</strong> Intelligent assignment and instant AI booking.</li>
+                        <li class="flex gap-3 items-start"><span class="material-symbols-outlined text-brand-green mt-0.5">monitor_heart</span> <strong>Monitor:</strong> Real-time tracking of every lead's journey.</li>
+                        <li class="flex gap-3 items-start"><span class="material-symbols-outlined text-brand-green mt-0.5">analytics</span> <strong>Report:</strong> Clear visibility into ROI and operator efficiency.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works -->
+        <section class="max-w-5xl mx-auto px-8 mb-32 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="font-headline text-4xl font-bold text-white mb-4">Three Steps to a Fully Running Revenue System</h2>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-surface-container p-8 rounded-2xl border border-outline-variant/10 relative overflow-hidden group hover:border-primary/30 transition-all">
+                    <div class="text-7xl font-headline font-bold text-surface-container-low absolute -bottom-4 -right-4 group-hover:text-primary/10 transition-colors">1</div>
+                    <h4 class="text-xl font-bold text-white mb-4 relative z-10">Revenue Audit & Strategy</h4>
+                    <p class="text-on-surface-variant text-sm relative z-10 leading-relaxed">We map your current lead flow, response times, and drop-off points. Most businesses discover theyGÇÖre losing 30GÇô50% of leads before their team ever sees them.</p>
+                </div>
+                <div class="bg-surface-container p-8 rounded-2xl border border-outline-variant/10 relative overflow-hidden group hover:border-primary/30 transition-all">
+                    <div class="text-7xl font-headline font-bold text-surface-container-low absolute -bottom-4 -right-4 group-hover:text-primary/10 transition-colors">2</div>
+                    <h4 class="text-xl font-bold text-white mb-4 relative z-10">Build & Deploy</h4>
+                    <p class="text-on-surface-variant text-sm relative z-10 leading-relaxed">We install your CRM, AI response system, automated booking, follow-up sequences, and pipeline. Live in 7GÇô14 days.</p>
+                </div>
+                <div class="bg-surface-container p-8 rounded-2xl border border-outline-variant/10 relative overflow-hidden group hover:border-brand-green/30 transition-all">
+                    <div class="text-7xl font-headline font-bold text-surface-container-low absolute -bottom-4 -right-4 group-hover:text-brand-green/10 transition-colors">3</div>
+                    <h4 class="text-xl font-bold text-brand-green mb-4 relative z-10">Monitor & Optimize</h4>
+                    <p class="text-on-surface-variant text-sm relative z-10 leading-relaxed">We track performance and manage the system ongoing. You get a system that keeps delivering GÇö not one you have to babysit.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing -->
+        <section id="pricing" class="max-w-7xl mx-auto px-8 mb-32 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="font-headline text-4xl md:text-5xl font-bold text-white mb-6">Choose Your Level of Revenue Support</h2>
+                <p class="text-xl text-on-surface-variant max-w-3xl mx-auto mb-6">All plans are fully managed GÇö we handle the technology, optimization, and day-to-day operation. You focus on closing.</p>
+                <div class="inline-block bg-brand-green/10 border border-brand-green/30 px-6 py-2 rounded-full">
+                    <p class="text-brand-green font-bold text-sm tracking-wide">=ƒæë Most clients start with the Growth System to maximize results and ROI.</p>
+                </div>
+            </div>
+            
+            <div class="grid lg:grid-cols-3 gap-8 items-stretch">
+                <!-- Tier 1 -->
+                <div class="bg-surface-container p-10 rounded-[2rem] border border-outline-variant/10 flex flex-col h-full hover:border-primary/30 transition-all">
+                    <div class="mb-6">
+                        <h3 class="font-headline text-3xl font-bold text-white mb-2">Foundation</h3>
+                        <p class="text-sm text-on-surface-variant mb-6 h-10">Best for businesses generating 20+ leads but losing too many to slow follow-up.</p>
+                        <div class="flex items-baseline gap-1">
+                            <span class="text-4xl font-bold text-white tracking-tighter">$2,000</span>
+                            <span class="text-on-surface-variant">/mo</span>
+                        </div>
+                        <p class="text-xs text-on-surface-variant mt-2 mb-6">One-time setup starting at $1,500</p>
+                        
+                        <div class="bg-surface-container-lowest p-4 rounded-xl mb-6 border border-outline-variant/5">
+                            <span class="text-[10px] font-bold text-primary uppercase tracking-widest block mb-2">What to expect</span>
+                            <p class="text-sm text-on-surface">Businesses typically add 8GÇô12 booked appointments per month from leads they were previously losing.</p>
+                        </div>
+                    </div>
+                    <ul class="space-y-4 mb-10 flex-grow text-sm text-on-surface-variant">
+                        <li class="flex gap-3"><span class="material-symbols-outlined text-primary text-[20px] shrink-0">check</span> Full CRM setup and pipeline management</li>
+                        <li class="flex gap-3"><span class="material-symbols-outlined text-primary text-[20px] shrink-0">check</span> Automated lead capture from all active channels</li>
+                        <li class="flex gap-3"><span class="material-symbols-outlined text-primary text-[20px] shrink-0">check</span> SMS & email follow-up sequences</li>
+                        <li class="flex gap-3"><span class="material-symbols-outlined text-primary text-[20px] shrink-0">check</span> Automated appointment booking</li>
+                        <li class="flex gap-3"><span class="material-symbols-outlined text-primary text-[20px] shrink-0">check</span> Basic performance dashboard</li>
+                        <li class="flex gap-3"><span class="material-symbols-outlined text-primary text-[20px] shrink-0">check</span> Ongoing system monitoring and support</li>
+                    </ul>
+                    <div class="space-y-4 mt-auto">
+                        <a href="/api/checkout?plan=capture" class="w-full block py-4 rounded-xl border border-primary/50 text-white font-label font-bold uppercase tracking-widest text-center hover:bg-primary transition-all text-xs">Get Started with Foundation</a>
+                        <a href="/diagnostic.html" class="w-full block py-2 text-on-surface-variant hover:text-white font-label font-bold uppercase tracking-widest text-center transition-all text-[10px]">Or Get Your Score First</a>
+                    </div>
+                </div>
+
+                <!-- Tier 2 -->
+                <div class="bg-surface-container-high p-10 rounded-[2rem] border-2 border-brand-green flex flex-col h-full relative transform lg:scale-105 shadow-[0_0_40px_rgba(0,230,138,0.15)] z-10">
+                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-brand-green text-[#003824] px-6 py-2 rounded-full font-label font-bold uppercase tracking-widest text-[10px] shadow-lg">Most Popular</div>
+                    <div class="mb-6">
+                        <h3 class="font-headline text-3xl font-bold text-white mb-2">Growth System</h3>
+                        <p class="text-sm text-on-surface-variant mb-6 h-10">For teams ready to scale and want a full acquisition system running automatically.</p>
+                        <div class="flex items-baseline gap-1">
+                            <span class="text-5xl font-bold text-white tracking-tighter">$4,500</span>
+                            <span class="text-on-surface-variant">/mo</span>
+                        </div>
+                        <p class="text-xs text-on-surface-variant mt-2 mb-6">One-time setup starting at $3,000</p>
+                        
+                        <div class="bg-brand-green/10 p-4 rounded-xl mb-6 border border-brand-green/20">
+                            <span class="text-[10px] font-bold text-brand-green uppercase tracking-widest block mb-2">What to expect</span>
+                            <p class="text-sm text-white font-medium">Designed to produce 15GÇô25+ booked appointments per month with continuous optimization.</p>
+                        </div>
+                    </div>
+                    <ul class="space-y-4 mb-10 flex-grow text-sm text-on-surface-variant">
+                        <li class="flex gap-3 text-white font-bold mb-4"><span class="material-symbols-outlined text-brand-green text-[20px] shrink-0">verified</span> Everything in Foundation, plus:</li>
+                        <li class="flex gap-3"><span class="material-symbols-outlined text-brand-green text-[20px] shrink-0">check</span> AI-assisted lead intelligence, routing, and response infrastructure</li>
+                        <li class="flex gap-3"><span class="material-symbols-outlined text-brand-green text-[20px] shrink-0">check</span> Advanced multi-touch sequences (7GÇô12 contacts)</li>
+                        <li class="flex gap-3"><span class="material-symbols-outlined text-brand-green text-[20px] shrink-0">check</span> Missed call text-back & lead reactivation</li>
+                        <li class="flex gap-3"><span class="material-symbols-outlined text-brand-green text-[20px] shrink-0">check</span> Full conversion tracking & continuous optimization</li>
+                        <li class="flex gap-3"><span class="material-symbols-outlined text-brand-green text-[20px] shrink-0">check</span> Dedicated bilingual system management team</li>
+                    </ul>
+                    <div class="space-y-4 mt-auto">
+                        <a href="/api/checkout?plan=growth" class="w-full block py-4 rounded-xl signature-texture text-surface-dim font-label font-bold uppercase tracking-widest text-center hover:opacity-90 glow-pulse text-xs">Get Started with Growth</a>
+                        <a href="/diagnostic.html" class="w-full block py-2 text-on-surface-variant hover:text-white font-label font-bold uppercase tracking-widest text-center transition-all text-[10px]">Or Get Your Score First</a>
+                    </div>
+                </div>
+
+                <!-- Tier 3 -->
+                 <div class="bg-surface-container p-10 rounded-[2rem] border border-outline-variant/10 flex flex-col h-full hover:border-primary/30 transition-all">
+                    <div class="mb-6">
+                        <h3 class="font-headline text-3xl font-bold text-white mb-2">Revenue Engine</h3>
+                        <p class="text-sm text-on-surface-variant mb-6 h-10">Companies scaling aggressively that want a true done-for-you revenue machine.</p>
+                        <div class="flex items-baseline gap-1">
+                            <span class="text-2xl font-bold text-white tracking-tighter">Starting at $8,500</span>
+                            <span class="text-on-surface-variant">/mo</span>
+                        </div>
+                        <p class="text-xs text-on-surface-variant mt-2 mb-6">Custom setup fee determined after audit</p>
+                        
+                        <div class="bg-surface-container-lowest p-4 rounded-xl mb-6 border border-outline-variant/5">
+                            <span class="text-[10px] font-bold text-primary uppercase tracking-widest block mb-2">What to expect</span>
+                            <p class="text-sm text-on-surface">A fully predictable, scalable platform. We work alongside your team as a revenue ops partner.</p>
+                        </div>
+                    </div>
+                    <ul class="space-y-4 mb-10 flex-grow text-sm text-on-surface-variant">
+                        <li class="flex gap-3 text-white font-bold mb-4"><span class="material-symbols-outlined text-primary text-[20px] shrink-0">verified</span> Everything in Growth System, plus:</li>
+                        <li class="flex gap-3"><span class="material-symbols-outlined text-primary text-[20px] shrink-0">check</span> Advanced multi-channel AI automation</li>
+                        <li class="flex gap-3"><span class="material-symbols-outlined text-primary text-[20px] shrink-0">check</span> Ad integration & lead flow optimization</li>
+                        <li class="flex gap-3"><span class="material-symbols-outlined text-primary text-[20px] shrink-0">check</span> Custom workflows built to your business logic</li>
+                        <li class="flex gap-3"><span class="material-symbols-outlined text-primary text-[20px] shrink-0">check</span> Strategic performance consulting & scaling roadmap</li>
+                        <li class="flex gap-3"><span class="material-symbols-outlined text-primary text-[20px] shrink-0">check</span> Priority support & dedicated account management</li>
+                    </ul>
+                     <div class="space-y-4 mt-auto">
+                        <a href="#apply" class="w-full block py-4 rounded-xl border border-primary/50 text-white font-label font-bold uppercase tracking-widest text-center hover:bg-primary transition-all text-xs">Apply for Revenue Engine</a>
+                    </div>
+                </div>
+
+                <!-- Tier 4 -->
+                <div class="bg-surface-container p-10 rounded-[2rem] border border-outline-variant/10 flex flex-col h-full hover:border-primary/30 transition-all">
+                    <div class="mb-6">
+                        <h3 class="font-headline text-3xl font-bold text-white mb-2">Enterprise</h3>
+                        <p class="text-sm text-on-surface-variant mb-6 h-10">Scalable infrastructure for multi-location businesses and large service fleets.</p>
+                        <div class="flex items-baseline gap-1">
+                            <span class="text-2xl font-bold text-white tracking-tighter">Custom Pricing</span>
+                        </div>
+                        <p class="text-xs text-on-surface-variant mt-2 mb-6">Designed after deep technical audit</p>
+                        
+                        <div class="bg-surface-container-lowest p-4 rounded-xl mb-6 border border-outline-variant/5">
+                            <span class="text-[10px] font-bold text-primary uppercase tracking-widest block mb-2">What to expect</span>
+                            <p class="text-sm text-on-surface">Full enterprise-grade integration, custom API routing, and dedicated fractional RevOps support.</p>
+                        </div>
+                    </div>
+                    <ul class="space-y-4 mb-10 flex-grow text-sm text-on-surface-variant">
+                        <li class="flex gap-3 text-white font-bold mb-4"><span class="material-symbols-outlined text-primary text-[20px] shrink-0">verified</span> Full Customization:</li>
+                        <li class="flex gap-3"><span class="material-symbols-outlined text-primary text-[20px] shrink-0">check</span> Multi-tenant CRM architecture</li>
+                        <li class="flex gap-3"><span class="material-symbols-outlined text-primary text-[20px] shrink-0">check</span> Custom Supabase/System Memory tracking</li>
+                        <li class="flex gap-3"><span class="material-symbols-outlined text-primary text-[20px] shrink-0">check</span> BI/Reporting dashboard integration</li>
+                        <li class="flex gap-3"><span class="material-symbols-outlined text-primary text-[20px] shrink-0">check</span> Strategic RevOps consulting & scaling</li>
+                        <li class="flex gap-3"><span class="material-symbols-outlined text-primary text-[20px] shrink-0">check</span> 24/7 Priority engineering support</li>
+                    </ul>
+                     <div class="space-y-4 mt-auto">
+                        <a href="/diagnostic.html" class="w-full block py-4 rounded-xl border border-primary/50 text-white font-label font-bold uppercase tracking-widest text-center hover:bg-primary transition-all text-xs">Request Enterprise Audit</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center bg-surface-container-low border border-outline-variant/10 rounded-2xl p-6 max-w-4xl mx-auto flex items-center justify-center gap-4">
+                <span class="material-symbols-outlined text-brand-green text-3xl">info</span>
+                <p class="text-sm text-on-surface-variant text-left"><strong class="text-white">Important Note:</strong> Every new client receives a 1-on-1 Business Strategy & Systems Consultation before we build anything. This ensures your system is built exactly for your business, lead flow, and goals.</p>
+            </div>
+        </section>
+
+        <!-- Value Reframe & Guarantees -->
+        <section class="max-w-6xl mx-auto px-8 mb-32 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-16">
+                <!-- Reframe -->
+                <div>
+                    <h3 class="font-headline text-3xl md:text-4xl font-bold text-white mb-8">What This Actually Replaces</h3>
+                    <div class="grid gap-6">
+                        <div class="bg-surface-container p-8 rounded-3xl border-l-[6px] border-error">
+                            <span class="text-xs uppercase tracking-[0.2em] font-bold text-outline-variant mb-4 block">Before Cresca OS</span>
+                            <ul class="space-y-3 test-base text-on-surface-variant">
+                                <li class="flex items-start gap-3"><span class="text-error">G¥î</span> Leads going cold because response takes hours (or days)</li>
+                                <li class="flex items-start gap-3"><span class="text-error">G¥î</span> Manual follow-up that your team forgets or skips</li>
+                                <li class="flex items-start gap-3"><span class="text-error">G¥î</span> Unpredictable pipeline and inconsistent bookings</li>
+                                <li class="flex items-start gap-3"><span class="text-error">G¥î</span> Hiring extra staff just to keep up with incoming leads</li>
+                                <li class="flex items-start gap-3"><span class="text-error">G¥î</span> Paying for ads with no system to convert the traffic</li>
+                            </ul>
+                        </div>
+                        <div class="bg-brand-green/5 p-8 rounded-3xl border-l-[6px] border-brand-green">
+                            <span class="text-xs uppercase tracking-[0.2em] font-bold text-brand-green mb-4 block">After Cresca OS</span>
+                            <ul class="space-y-3 text-base text-white">
+                                <li class="flex items-start gap-3"><span class="text-brand-green">G£à</span> Every lead contacted in under 60 seconds GÇö automatically</li>
+                                <li class="flex items-start gap-3"><span class="text-brand-green">G£à</span> 7GÇô12 follow-up touches per lead with zero manual effort</li>
+                                <li class="flex items-start gap-3"><span class="text-brand-green">G£à</span> Consistent, predictable booked appointments every month</li>
+                                <li class="flex items-start gap-3"><span class="text-brand-green">G£à</span> Your team focused on closing GÇö not chasing</li>
+                                <li class="flex items-start gap-3"><span class="text-brand-green">G£à</span> Ad spend that actually converts into revenue</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="mt-8 p-8 bg-surface-container-low rounded-3xl border border-outline-variant/10">
+                        <span class="text-xs uppercase tracking-[0.2em] font-bold text-primary mb-2 block">The Math</span>
+                        <p class="text-base text-on-surface-variant leading-relaxed mb-4">If your average job is worth $500 and we help you book 10 more per month, thatGÇÖs <strong class="text-white">$5,000 in new monthly revenue</strong> GÇö often within the first 30GÇô60 days.</p>
+                        <p class="text-brand-green font-medium">Most clients recover their setup investment before Day 90.</p>
+                    </div>
+                </div>
+                
+                <!-- Guarantees & Addons -->
+                <div class="space-y-12">
+                    <div>
+                        <h3 class="font-headline text-3xl md:text-4xl font-bold text-white mb-8">Built for Results. Backed by Two Guarantees.</h3>
+                        <div class="space-y-6">
+                            <div class="bg-surface-container border border-outline-variant/20 p-8 rounded-3xl">
+                                <div class="flex gap-4 items-start mb-4">
+                                    <span class="material-symbols-outlined text-primary text-4xl shrink-0">verified_user</span>
+                                    <div>
+                                        <h4 class="text-xl font-bold text-white mb-2">Guarantee 1 GÇö 90-Day ROI Commitment <span class="block sm:inline text-xs mt-1 sm:mt-0 font-normal text-on-surface-variant uppercase tracking-widest">(All Plans)</span></h4>
+                                        <p class="text-on-surface-variant text-base leading-relaxed">For qualified clients, if the implementation does not identify or help recover enough qualified opportunity value to justify the setup fee within 90 days, we will review the account and make it right.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-surface-container border border-outline-variant/20 p-8 rounded-3xl">
+                                 <div class="flex gap-4 items-start mb-4">
+                                    <span class="material-symbols-outlined text-brand-green text-4xl shrink-0">trending_up</span>
+                                    <div>
+                                        <h4 class="text-xl font-bold text-white mb-2">Guarantee 2 GÇö Performance Commitment <span class="block sm:inline text-xs mt-1 sm:mt-0 font-normal text-brand-green uppercase tracking-widest">(Growth & Revenue)</span></h4>
+                                        <p class="text-on-surface-variant text-base leading-relaxed">If your system is not improving performance within 90 days, we continue optimizing at no additional cost until results move in the right direction.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-white font-medium text-lg italic border-l-4 border-brand-green pl-6 py-2">We donGÇÖt just install a system and walk away.<br/>We own the results with you.</p>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 class="font-headline text-2xl font-bold text-white mb-6">Custom Add-Ons</h3>
+                        <p class="text-sm text-on-surface-variant mb-6">Unlocked After Your Consultation GÇö Recommended only when they make sense for your specific growth goals.</p>
+                        <div class="grid sm:grid-cols-2 gap-4">
+                            <div class="bg-surface-container-low p-4 rounded-xl border border-outline-variant/5 text-sm text-on-surface font-medium">=ƒÄÖn+Å AI Voice Agents</div>
+                            <div class="bg-surface-container-low p-4 rounded-xl border border-outline-variant/5 text-sm text-on-surface font-medium">=ƒöì SEO & Inbound Leads</div>
+                            <div class="bg-surface-container-low p-4 rounded-xl border border-outline-variant/5 text-sm text-on-surface font-medium">=ƒÆ¼ WhatsApp Automation</div>
+                            <div class="bg-surface-container-low p-4 rounded-xl border border-outline-variant/5 text-sm text-on-surface font-medium">=ƒôê Paid Ad Management</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section class="max-w-4xl mx-auto px-8 text-center relative z-10 pb-12">
+            <h2 class="font-headline text-4xl md:text-5xl font-bold text-white mb-6">Ready to Stop Losing Leads and Start Booking More Jobs?</h2>
+            <p class="text-xl text-on-surface-variant leading-relaxed mb-8 font-light">
+                Whether youGÇÖre ready to get started today or want to talk through your options first GÇö the next step is the same: a free Revenue Audit where we map your current lead flow and show you exactly whatGÇÖs possible.
+            </p>
+            <div class="bg-surface-container p-6 rounded-2xl border border-error/20 inline-block mb-10">
+                <div class="flex items-center gap-3">
+                    <span class="material-symbols-outlined text-error">warning</span>
+                    <p class="text-sm text-on-surface text-left">We limit new client onboarding to <strong class="text-white">8 businesses per month</strong> to protect system quality and performance.<br/><span class="text-on-surface-variant">Once capacity is full, new clients are waitlisted.</span></p>
+                </div>
+            </div>
+            
+            <div class="flex flex-col gap-6 justify-center items-center">
+                <a class="signature-texture text-on-primary px-12 py-6 rounded-xl font-label font-bold tracking-widest text-sm sm:text-base uppercase shadow-[0_0_30px_rgba(0,230,138,0.3)] transition-all duration-300 hover:scale-105 block w-full sm:w-auto text-center" href="/diagnostic.html">
+                    Get Your Free Revenue Score
+                    <span class="block text-[10px] sm:text-xs font-normal opacity-80 mt-1 normal-case tracking-normal">No pitch. No pressure. Just clarity.</span>
+                </a>
+                <a class="bg-surface-container-high border border-outline-variant/30 text-white px-10 py-5 rounded-xl font-label tracking-widest text-sm uppercase transition-all duration-200 hover:bg-surface-bright block w-full sm:w-auto text-center" href="#pricing">
+                    Get Started Directly
+                    <span class="block text-[10px] font-normal text-on-surface-variant mt-1 normal-case tracking-normal">Consultation booked within 24hrs of purchase</span>
+                </a>
+            </div>
+            <p class="mt-8 text-sm text-brand-green font-medium italic">Spots fill quickly. If you see availability, itGÇÖs real.</p>
+        </section>
+    </main>
+
+
+    <footer class="bg-surface-container-lowest border-t border-outline-variant/10 py-16 px-8 text-center">
+        <div class="flex items-center justify-center gap-3 mb-8">
+            <div class="font-serif text-2xl font-bold tracking-tighter">
+                <span class="text-white">CRESCA</span><span class="text-brand-green ml-px">OS</span>
+            </div>
+        </div>
+        <p class="text-on-surface-variant mb-8">Done-for-you business operating systems for service companies.</p>
+        <p class="text-xs text-outline tracking-widest uppercase mb-4">&copy; 2026 Cresca OS. All rights reserved.</p>
+        <div class="mt-6 pt-6 border-t border-outline-variant/10">
+            <p class="text-[10px] text-on-surface-variant opacity-70 leading-relaxed max-w-2xl mx-auto uppercase tracking-tighter">
+                31 Kirby Lane, Central Islip, NY 11550 | 516-298-8323 <br>
+                By providing your phone number, you agree to receive SMS communications from Cresca OS. Msg & data rates may apply. Reply STOP to opt-out. Mobile info will not be shared with third parties/affiliates for marketing purposes.
+            </p>
+        </div>
+        <div class="flex justify-center gap-6 mt-4 text-[10px] uppercase tracking-widest text-on-surface-variant opacity-60">
+            <a href="privacy.html" class="hover:text-brand-green transition-colors">Privacy Policy</a>
+            <a href="terms.html" class="hover:text-brand-green transition-colors">Terms of Service</a>
+        </div>
+
+    </footer>
+
+    <script>
+        // Brain-like network background
+        const canvas = document.getElementById('neural-bg');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+        const particleCount = 60;
+
+        function resize() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resize);
+        resize();
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.vx = (Math.random() - 0.5) * 0.4;
+                this.vy = (Math.random() - 0.5) * 0.4;
+            }
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+                if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+                if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+            }
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, 1, 0, Math.PI * 2);
+                ctx.fillStyle = 'rgba(0, 230, 138, 0.5)';
+                ctx.fill();
+            }
+        }
+
+        for (let i = 0; i < particleCount; i++) particles.push(new Particle());
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach((p, i) => {
+                p.update();
+                p.draw();
+                for (let j = i + 1; j < particles.length; j++) {
+                    const dx = p.x - particles[j].x;
+                    const dy = p.y - particles[j].y;
+                    const d = Math.sqrt(dx * dx + dy * dy);
+                    if (d < 150) {
+                        ctx.beginPath();
+                        ctx.moveTo(p.x, p.y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.strokeStyle = `rgba(10, 132, 255, ${0.2 * (1 - d / 150)})`;
+                        ctx.stroke();
+                    }
+                }
+            });
+            requestAnimationFrame(animate);
+        }
+        animate();
+    </script>
+
+    <!-- GHL Chat Widget -->
+    <script 
+      src="https://widgets.leadconnectorhq.com/loader.js"  
+      data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" 
+      data-widget-id="69d3ebd934c0448115bc10d9"> 
+    </script>
+
+    <script src="/js/language-manager.js"></script>
+</body>
+</html>

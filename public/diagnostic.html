@@ -197,9 +197,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <script src="/js/scoring.js"></script>
     <script src="/js/funnel-tracking.js"></script>
     <script>
-    // Cresca OS — Diagnostic Funnel v2 (EN)
+    // Cresca OS â€” Diagnostic Funnel v2 (EN)
     
-    // ── Config ───────────────────────────────────────────────────────────────────
+    // â”€â”€ Config â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
     const WEBHOOK_URL = '/api/webhook';
     const LANG = 'en';
 
@@ -222,47 +222,47 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     const COPY = {
       bizTypes:[
-        {v:'home_services',    e:'🏠', h:'Home Services',           s:'Cleaning, plumbing, landscaping, HVAC, pest control'},
-        {v:'health_wellness',  e:'🏥', h:'Health & Wellness',        s:'Aesthetics clinic, chiropractor, dental, coaching, gym'},
-        {v:'professional',     e:'🏢', h:'Professional Services',    s:'Lawyer, accountant, consulting, business coach'},
-        {v:'trades',           e:'🔧', h:'Construction & Trades',     s:'Roofing, electrical, remodeling, solar'},
-        {v:'auto',             e:'🚗', h:'Automotive Services',      s:'Detailing, repair shop, window tinting, wrapping'},
-        {v:'other',            e:'📦', h:'Other Service Business',   s:'Any service-based business'}
+        {v:'home_services',    e:'ðŸ ', h:'Home Services',           s:'Cleaning, plumbing, landscaping, HVAC, pest control'},
+        {v:'health_wellness',  e:'ðŸ¥', h:'Health & Wellness',        s:'Aesthetics clinic, chiropractor, dental, coaching, gym'},
+        {v:'professional',     e:'ðŸ¢', h:'Professional Services',    s:'Lawyer, accountant, consulting, business coach'},
+        {v:'trades',           e:'ðŸ”§', h:'Construction & Trades',     s:'Roofing, electrical, remodeling, solar'},
+        {v:'auto',             e:'ðŸš—', h:'Automotive Services',      s:'Detailing, repair shop, window tinting, wrapping'},
+        {v:'other',            e:'ðŸ“¦', h:'Other Service Business',   s:'Any service-based business'}
       ],
       revenue:[
         {v:'under_10k',  h:'Under $10k/mo',   s:'We are building. Every client counts.'},
-        {v:'10k_30k',    h:'$10k–$30k/mo',      s:'Revenue is there, but inconsistent'},
-        {v:'30k_75k',    h:'$30k–$75k/mo',      s:'Growing fast, but starting to see the cracks'},
-        {v:'75k_150k',   h:'$75k–$150k/mo',     s:'Scaling hard, losing jobs we shouldn\'t'},
-        {v:'150k_plus',  h:'$150k+/mo',         s:'At capacity — cannot afford to lose a single client'}
+        {v:'10k_30k',    h:'$10kâ€“$30k/mo',      s:'Revenue is there, but inconsistent'},
+        {v:'30k_75k',    h:'$30kâ€“$75k/mo',      s:'Growing fast, but starting to see the cracks'},
+        {v:'75k_150k',   h:'$75kâ€“$150k/mo',     s:'Scaling hard, losing jobs we shouldn\'t'},
+        {v:'150k_plus',  h:'$150k+/mo',         s:'At capacity â€” cannot afford to lose a single client'}
       ],
       bottleneck:[
-        {v:'missed_calls',       e:'📵', h:'Calls aren\'t being answered', s:'By the time we respond, they already hired someone else'},
-        {v:'leads_no_convert',   e:'🔁', h:'Leads aren\'t converting',    s:'They come in but most never book an appointment'},
-        {v:'poor_followup',      e:'🕳️', h:'Inconsistent follow-up',    s:'Most leads go cold and disappear'},
-        {v:'scheduling_chaos',   e:'🗓️', h:'Scheduling is a mess',       s:'Everything depends on me and I\'m out of time'},
-        {v:'no_visibility',      e:'📊', h:'No visibility',               s:'We don\'t know what\'s working. Guessing every month.'},
-        {v:'disconnected_tools', e:'🔧', h:'Disconnected tools',         s:'Everything is manual and disorganized'}
+        {v:'missed_calls',       e:'ðŸ“µ', h:'Calls aren\'t being answered', s:'By the time we respond, they already hired someone else'},
+        {v:'leads_no_convert',   e:'ðŸ”', h:'Leads aren\'t converting',    s:'They come in but most never book an appointment'},
+        {v:'poor_followup',      e:'ðŸ•³ï¸', h:'Inconsistent follow-up',    s:'Most leads go cold and disappear'},
+        {v:'scheduling_chaos',   e:'ðŸ—“ï¸', h:'Scheduling is a mess',       s:'Everything depends on me and I\'m out of time'},
+        {v:'no_visibility',      e:'ðŸ“Š', h:'No visibility',               s:'We don\'t know what\'s working. Guessing every month.'},
+        {v:'disconnected_tools', e:'ðŸ”§', h:'Disconnected tools',         s:'Everything is manual and disorganized'}
       ],
       responseTime:[
-        {v:'under_5min', e:'⚡', h:'Under 5 minutes',      s:'We respond immediately'},
-        {v:'5_30min',    e:'🕐', h:'5 to 30 minutes',        s:'Fairly fast, most of the time'},
-        {v:'30min_2hr',  e:'🕑', h:'30 minutes to 2 hours', s:'We get there, but not always fast'},
-        {v:'same_day',   e:'🕓', h:'Same day',              s:'When we have a moment'},
-        {v:'next_day',   e:'📅', h:'Next day or later',      s:'We\'re too busy on jobs'},
-        {v:'no_process', e:'🤷', h:'No defined process',     s:'Depends on who sees it first'}
+        {v:'under_5min', e:'âš¡', h:'Under 5 minutes',      s:'We respond immediately'},
+        {v:'5_30min',    e:'ðŸ•', h:'5 to 30 minutes',        s:'Fairly fast, most of the time'},
+        {v:'30min_2hr',  e:'ðŸ•‘', h:'30 minutes to 2 hours', s:'We get there, but not always fast'},
+        {v:'same_day',   e:'ðŸ•“', h:'Same day',              s:'When we have a moment'},
+        {v:'next_day',   e:'ðŸ“…', h:'Next day or later',      s:'We\'re too busy on jobs'},
+        {v:'no_process', e:'ðŸ¤·', h:'No defined process',     s:'Depends on who sees it first'}
       ],
       tier:{
-        critical:  {label:'🔴 Critical — Revenue at Risk',         headline:'You\'re working hard and losing clients you should be closing.'},
-        leaking:   {label:'🟡 Active Leak — Real Money Slipping', headline:'You\'re generating leads. But a significant portion leaves before booking.'},
-        functional:{label:'🟢 Functional — Growth Ceiling',       headline:'Your system works when you\'re on top of it. The problem is what happens when you aren\'t.'},
-        strong:    {label:'🚀 Solid — Ready to Scale',            headline:'The foundation is there. The next step is growing without adding chaos.'}
+        critical:  {label:'ðŸ”´ Critical â€” Revenue at Risk',         headline:'You\'re working hard and losing clients you should be closing.'},
+        leaking:   {label:'ðŸŸ¡ Active Leak â€” Real Money Slipping', headline:'You\'re generating leads. But a significant portion leaves before booking.'},
+        functional:{label:'ðŸŸ¢ Functional â€” Growth Ceiling',       headline:'Your system works when you\'re on top of it. The problem is what happens when you aren\'t.'},
+        strong:    {label:'ðŸš€ Solid â€” Ready to Scale',            headline:'The foundation is there. The next step is growing without adding chaos.'}
       },
       tierBody:{
-        critical:`<ul class="text-left space-y-2 mt-4 text-on-surface-variant text-sm"><li>• Leads are coming in — and leaving before anyone speaks to them</li><li>• Every slow response is a job going to the first person who answers</li><li>• Fixing this could represent $5,000–$15,000+ more per month</li></ul>`,
-        leaking:`<ul class="text-left space-y-2 mt-4 text-on-surface-variant text-sm"><li>• You\'re getting leads, but the conversion rate is lower than it should be</li><li>• Inconsistent follow-up leaves appointments unbooked every week</li><li>• Clients you lose are hiring whoever responds fastest</li></ul>`,
-        functional:`<ul class="text-left space-y-2 mt-4 text-on-surface-variant text-sm"><li>• Things work as long as you\'re manually holding them together</li><li>• Growth is stalled because the system depends on you being in it</li><li>• One busy week and everything starts falling through the cracks</li></ul>`,
-        strong:`<ul class="text-left space-y-2 mt-4 text-on-surface-variant text-sm"><li>• The foundation is solid. The question is how fast you want to grow.</li><li>• The next constraint will be lead volume and conversion at scale</li><li>• A Diagnostic gives you the clear map of what to build next</li></ul>`
+        critical:`<ul class="text-left space-y-2 mt-4 text-on-surface-variant text-sm"><li>â€¢ Leads are coming in â€” and leaving before anyone speaks to them</li><li>â€¢ Every slow response is a job going to the first person who answers</li><li>â€¢ Fixing this could represent $5,000â€“$15,000+ more per month</li></ul>`,
+        leaking:`<ul class="text-left space-y-2 mt-4 text-on-surface-variant text-sm"><li>â€¢ You\'re getting leads, but the conversion rate is lower than it should be</li><li>â€¢ Inconsistent follow-up leaves appointments unbooked every week</li><li>â€¢ Clients you lose are hiring whoever responds fastest</li></ul>`,
+        functional:`<ul class="text-left space-y-2 mt-4 text-on-surface-variant text-sm"><li>â€¢ Things work as long as you\'re manually holding them together</li><li>â€¢ Growth is stalled because the system depends on you being in it</li><li>â€¢ One busy week and everything starts falling through the cracks</li></ul>`,
+        strong:`<ul class="text-left space-y-2 mt-4 text-on-surface-variant text-sm"><li>â€¢ The foundation is solid. The question is how fast you want to grow.</li><li>â€¢ The next constraint will be lead volume and conversion at scale</li><li>â€¢ A Diagnostic gives you the clear map of what to build next</li></ul>`
       }
     };
 
@@ -300,21 +300,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     function fUpdateName(val){
       diagnosticState.firstName=val;
       const btn=document.getElementById('s2-cta');
-      if(btn) btn.textContent=val? 'Let\'s go, '+val+' →' : 'Continue →';
+      if(btn) btn.textContent=val? 'Let\'s go, '+val+' â†’' : 'Continue â†’';
     }
 
     const STEPS = [
       ()=> fCard(`
-        ${fEyebrow('Sales Diagnostic — 2 minutes, free')}
+        ${fEyebrow('Sales Diagnostic â€” 2 minutes, free')}
         ${fH2('Every unanswered call is a customer who went to your competition.')}
-        ${fSub('Most service businesses lose 40% of their leads before anyone ever contacts them. This diagnostic shows exactly where they are going — and what to fix first.')}
-        ${fBtn('s1-cta','See where you\'re losing leads →')}
+        ${fSub('Most service businesses lose 40% of their leads before anyone ever contacts them. This diagnostic shows exactly where they are going â€” and what to fix first.')}
+        ${fBtn('s1-cta','See where you\'re losing leads â†’')}
         <p class="text-center text-xs text-on-surface-variant mt-3 opacity-70">No pressure. No cost. Just your real numbers.</p>`),
 
       ()=> fCard(`
         ${fEyebrow('Step 1 of 8')}
         ${fH2('What is your name?')}
-        ${fSub('Your results are built based on your answers — not a generic average.')}
+        ${fSub('Your results are built based on your answers â€” not a generic average.')}
         <div class="space-y-4">
           <input id="f-name" type="text" placeholder="Your name" required
             class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant/20 px-0 py-3 text-white placeholder:text-outline focus:border-primary outline-none transition-colors"
@@ -324,7 +324,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <input id="f-phone" type="tel" placeholder="Phone number" required
             class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant/20 px-0 py-3 text-white placeholder:text-outline focus:border-primary outline-none transition-colors"/>
         </div>
-        ${fBtn('s2-cta','Continue →')}`),
+        ${fBtn('s2-cta','Continue â†’')}`),
 
       ()=> fCard(`
         ${fEyebrow('Step 2 of 8')}
@@ -335,27 +335,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       ()=> fCard(`
         ${fEyebrow('Step 3 of 8')}
         ${fH2('What is your business name?')}
-        ${fSub('Your results will reflect what\'s happening in your business — not an industry average.')}
+        ${fSub('Your results will reflect what\'s happening in your business â€” not an industry average.')}
         <input id="cresca-biz-input" type="text" placeholder="Business name" required
           class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant/20 px-0 py-3 text-white placeholder:text-outline focus:border-primary outline-none transition-colors"
           oninput="diagnosticState.companyName=this.value"/>
-        ${fBtn('s4-cta','Continue →')}`),
+        ${fBtn('s4-cta','Continue â†’')}`),
 
       ()=> fCard(`
         ${fEyebrow('Step 4 of 8')}
-        ${fH2(`Be honest — how is ${sSafe(diagnosticState.companyName)} doing right now?`)}
+        ${fH2(`Be honest â€” how is ${sSafe(diagnosticState.companyName)} doing right now?`)}
         ${fSub('There is no wrong answer. It just makes your diagnostic more accurate.')}
         ${fOptCards(COPY.revenue,'revenueStage','')}`),
 
       ()=> fCard(`
         ${fEyebrow('Step 5 of 8')}
         ${fH2(`Where is ${sSafe(diagnosticState.companyName)} losing the most leads right now?`)}
-        ${fSub('Choose the one that is costing you real jobs — not just frustration.')}
+        ${fSub('Choose the one that is costing you real jobs â€” not just frustration.')}
         ${fOptCards(COPY.bottleneck,'bottleneck')}`),
 
       ()=> fCard(`
         ${fEyebrow('Step 6 of 8')}
-        ${fH2('When a new lead comes in — how long until someone responds?') }
+        ${fH2('When a new lead comes in â€” how long until someone responds?') }
         ${fSub('If you don\'t respond in the first 5 minutes, you lose 80% of those leads. Be honest.')}
         ${fOptCards(COPY.responseTime,'responseTime')}`),
 
@@ -368,7 +368,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           ${fEyebrow('Calculating your diagnostic...')}
           ${fH2(`That gap is costing ${sSafe(diagnosticState.companyName)} real money.`)}
           <p class="text-on-surface-variant text-base mb-6">Here are the numbers most owners don\'t want to see:<br><br>
-          If you receive 30 inquiries a month and lose 40% due to slow response — that\'s 12 clients who hired your competition.<br><br>
+          If you receive 30 inquiries a month and lose 40% due to slow response â€” that\'s 12 clients who hired your competition.<br><br>
           At $500 per average job, that\'s <span class="text-error font-bold">$${diagnosticState.monthlyLoss.toLocaleString()}/mo walking out the door</span>.
           </p>
           <div class="flex items-center gap-3 text-brand-green text-sm font-label">
@@ -398,12 +398,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             Every week this isn\'t fixed, more leads are leaving without a response.<br>
             It\'s not that the market is bad. It\'s that the system isn\'t working when you aren\'t looking.
           </div>
-          <p class="text-center text-on-surface-variant text-xs mb-4">Let\'s see exactly how much you\'re losing — and what we fix first.</p>
+          <p class="text-center text-on-surface-variant text-xs mb-4">Let\'s see exactly how much you\'re losing â€” and what we fix first.</p>
           <button onclick="goTo(10);CrescaTrack.ctaClicked('calendar')" class="w-full signature-texture text-white font-label font-bold py-4 rounded-xl text-sm uppercase tracking-widest hover:scale-[1.02] transition-transform shadow-lg shadow-primary/20">
-            Show me where the leaks are →
+            Show me where the leaks are â†’
           </button>
           <div class="flex justify-center gap-6 mt-4 text-xs text-on-surface-variant">
-            <span>✓ Specific to your business</span><span>✓ 30 minutes</span><span>✓ No obligation</span>
+            <span>âœ“ Specific to your business</span><span>âœ“ 30 minutes</span><span>âœ“ No obligation</span>
           </div>`);
       },
 
@@ -417,7 +417,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
           <div class="mt-6 text-center">
             <p class="text-on-surface-variant text-xs mb-2">Have questions before booking?</p>
-            <a href="mailto:info@crescaos.com" class="inline-flex items-center gap-2 text-brand-green font-label text-sm font-bold hover:underline">Email us →</a>
+            <a href="mailto:info@crescaos.com" class="inline-flex items-center gap-2 text-brand-green font-label text-sm font-bold hover:underline">Email us â†’</a>
           </div>`);
       }
     ];
@@ -623,7 +623,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- Mobile Menu Overlay -->
     <div class="fixed inset-0 z-[10000] hidden flex-col pt-24 px-8 transform transition-transform duration-300 translate-x-full bg-[#0b1326]/95 backdrop-blur-2xl" id="mobile-menu">
         <div class="flex justify-between items-center mb-8">
-            <a href="/es/diagnostic" data-lang-switch="es" class="flex items-center gap-1 text-[#00E68A] font-label text-sm hover:text-[#dae2fd] transition-colors font-bold border border-[#00E68A]/30 rounded-full px-3 py-1.5 bg-[#00E68A]/5"><span class="material-symbols-outlined text-[18px]">language</span> ESPAÑOL</a>
+            <a href="/es/diagnostic" data-lang-switch="es" class="flex items-center gap-1 text-[#00E68A] font-label text-sm hover:text-[#dae2fd] transition-colors font-bold border border-[#00E68A]/30 rounded-full px-3 py-1.5 bg-[#00E68A]/5"><span class="material-symbols-outlined text-[18px]">language</span> ESPAÃ‘OL</a>
             <button class="text-on-surface focus:outline-none" id="mobile-menu-close">
                 <span class="material-symbols-outlined text-3xl">close</span>
             </button>
