@@ -73,15 +73,28 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div id="login-overlay" class="fixed inset-0 z-50 bg-surface flex flex-col items-center justify-center animate-fade-in">
         <div class="bg-surface-container border border-primary/20 p-12 rounded-[2rem] max-w-md w-full mx-6 shadow-2xl shadow-primary/10">
             <div class="flex items-center justify-center gap-3 mb-8">
-                <span class="material-symbols-outlined text-primary text-4xl">webhook</span>
-                <span class="text-3xl font-headline font-bold text-white tracking-tight">Cresca <span class="italic text-primary">OS</span></span>
+                <svg class="w-12 h-12" fill="none" height="48" viewBox="0 0 48 48" width="48" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="24" cy="24" r="18" stroke="#0A84FF" stroke-width="3"></circle>
+                    <ellipse cx="24" cy="24" rx="13" ry="7.5" stroke="#00E68A" stroke-width="3" transform="rotate(60 24 24)"></ellipse>
+                    <ellipse cx="24" cy="24" rx="13" ry="7.5" stroke="#00E68A" stroke-width="3" transform="rotate(-60 24 24)"></ellipse>
+                    <circle cx="24" cy="6" fill="#0A84FF" r="2.5"></circle>
+                    <circle cx="24" cy="42" fill="#0A84FF" r="2.5"></circle>
+                    <circle cx="39.59" cy="15" fill="#00E68A" r="2.5"></circle>
+                    <circle cx="8.41" cy="15" fill="#FFFFFF" r="2.5"></circle>
+                    <circle cx="39.59" cy="33" fill="#FFFFFF" r="2.5"></circle>
+                    <circle cx="8.41" cy="33" fill="#00E68A" r="2.5"></circle>
+                    <circle cx="24" cy="24" fill="#FFFFFF" r="3.5"></circle>
+                </svg>
+                <div class="flex items-baseline font-serif text-3xl font-bold tracking-tighter">
+                    <span class="text-white">CRESCA</span><span class="text-[#00E68A] ml-px">OS</span>
+                </div>
             </div>
             <h2 class="text-center text-on-surface-variant mb-6 font-label uppercase tracking-widest text-sm">Secure Portal Login</h2>
             
             <form id="login-form" class="space-y-6">
                 <div class="space-y-2">
                     <label class="block font-label text-xs text-on-surface-variant uppercase tracking-wider">Access PIN / Password</label>
-                    <input type="password" id="password" class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant/15 px-0 py-3 text-on-surface focus:border-primary focus:ring-0 transition-all duration-200" placeholder="â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢" required>
+                    <input type="password" id="password" class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant/15 px-0 py-3 text-on-surface focus:border-primary focus:ring-0 transition-all duration-200" placeholder="••••••••" required>
                 </div>
                 <div id="login-error" class="hidden text-error text-xs font-label uppercase tracking-widest">Invalid credentials</div>
                 <button type="submit" class="w-full signature-texture text-[#002113] font-label font-bold py-4 rounded-xl flex items-center justify-center gap-3 uppercase tracking-widest hover:scale-[1.02] transition-transform">
@@ -95,8 +108,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div id="dashboard" class="hidden min-h-screen flex">
         <!-- Sidebar -->
         <aside class="w-64 bg-surface-container-low border-r border-outline-variant/10 flex flex-col">
-            <div class="p-6 border-b border-outline-variant/10">
-                <span class="text-xl font-headline font-bold text-white tracking-tight">Sales <span class="italic text-brand-green">Portal</span></span>
+            <div class="p-6 border-b border-outline-variant/10 flex items-center gap-3">
+                <svg class="w-6 h-6" fill="none" height="24" viewBox="0 0 48 48" width="24" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="24" cy="24" r="18" stroke="#0A84FF" stroke-width="3"></circle>
+                    <ellipse cx="24" cy="24" rx="13" ry="7.5" stroke="#00E68A" stroke-width="3" transform="rotate(60 24 24)"></ellipse>
+                    <ellipse cx="24" cy="24" rx="13" ry="7.5" stroke="#00E68A" stroke-width="3" transform="rotate(-60 24 24)"></ellipse>
+                </svg>
+                <span class="text-xl font-headline font-bold text-white tracking-tight">SALES <span class="italic text-brand-green">PORTAL</span></span>
             </div>
             <nav class="flex-1 p-4 space-y-2">
                 <a href="#" class="flex items-center gap-3 px-4 py-3 rounded-lg bg-primary/10 text-primary font-label text-sm uppercase tracking-wider">
