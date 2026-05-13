@@ -143,25 +143,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- Navigation -->
     <nav class="fixed top-0 left-0 w-full z-50 transition-all duration-300 border-b border-outline-variant/10 bg-surface/80 backdrop-blur-xl py-4">
         <div class="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
-            <a class="flex items-center gap-3 hover:opacity-80 transition-opacity" href="/">
-                <div class="flex items-center gap-3">
-                    <svg class="w-8 h-8" fill="none" height="32" viewbox="0 0 48 48" width="32" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="24" cy="24" r="18" stroke="#0A84FF" stroke-width="3"></circle>
-                        <ellipse cx="24" cy="24" rx="13" ry="7.5" stroke="#00E68A" stroke-width="3" transform="rotate(60 24 24)"></ellipse>
-                        <ellipse cx="24" cy="24" rx="13" ry="7.5" stroke="#00E68A" stroke-width="3" transform="rotate(-60 24 24)"></ellipse>
-                        <circle cx="24" cy="6" fill="#0A84FF" r="2.5"></circle>
-                        <circle cx="24" cy="42" fill="#0A84FF" r="2.5"></circle>
-                        <circle cx="39.59" cy="15" fill="#00E68A" r="2.5"></circle>
-                        <circle cx="8.41" cy="15" fill="#FFFFFF" r="2.5"></circle>
-                        <circle cx="39.59" cy="33" fill="#FFFFFF" r="2.5"></circle>
-                        <circle cx="8.41" cy="33" fill="#00E68A" r="2.5"></circle>
-                        <circle cx="24" cy="24" fill="#FFFFFF" r="3.5"></circle>
-                    </svg>
-                    <div class="flex items-baseline font-serif text-2xl font-bold tracking-tighter">
-                        <span class="text-white">CRESCA</span><span class="text-[#00E68A] ml-px">OS</span>
-                    </div>
-                </div>
-            </a>
+            <a class="flex items-center gap-3 hover:opacity-80 transition-opacity" href="/"><div class="flex items-center gap-3">
+<svg class="w-8 h-8" fill="none" height="32" viewbox="0 0 48 48" width="32" xmlns="http://www.w3.org/2000/svg">
+<circle cx="24" cy="24" r="18" stroke="#0A84FF" stroke-width="3"></circle>
+<ellipse cx="24" cy="24" rx="13" ry="7.5" stroke="#00E68A" stroke-width="3" transform="rotate(60 24 24)"></ellipse>
+<ellipse cx="24" cy="24" rx="13" ry="7.5" stroke="#00E68A" stroke-width="3" transform="rotate(-60 24 24)"></ellipse>
+<circle cx="24" cy="6" fill="#0A84FF" r="2.5"></circle>
+<circle cx="24" cy="42" fill="#0A84FF" r="2.5"></circle>
+<circle cx="39.59" cy="15" fill="#00E68A" r="2.5"></circle>
+<circle cx="8.41" cy="15" fill="#FFFFFF" r="2.5"></circle>
+<circle cx="39.59" cy="33" fill="#FFFFFF" r="2.5"></circle>
+<circle cx="8.41" cy="33" fill="#00E68A" r="2.5"></circle>
+<circle cx="24" cy="24" fill="#FFFFFF" r="3.5"></circle>
+</svg>
+<div class="flex items-baseline font-serif text-2xl font-bold tracking-tighter">
+<span class="text-white">CRESCA</span><span class="text-[#00E68A] ml-px">OS</span>
+</div>
+</div></a>
             <div class="hidden md:flex items-center gap-10">
                 <a class="text-sm font-label uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="/#services">Systems</a>
                 <a class="text-sm font-label uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="/#solutions">Solutions</a>
@@ -173,8 +171,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <span class="material-symbols-outlined text-3xl">menu</span>
             </button>
 
-                <a href="/es/diagnostic" data-lang-switch="es" class="flex items-center gap-1 text-[#00E68A] font-label text-xs hover:text-[#dae2fd] transition-colors font-bold border border-[#00E68A]/30 rounded-full px-2 py-1 bg-[#00E68A]/5"><span class="material-symbols-outlined text-[16px]">language</span> ES</a>
-                <a class="hidden md:inline-flex signature-texture text-on-primary text-xs font-label uppercase tracking-[0.2em] px-8 py-3.5 rounded-full hover:scale-105 transition-all duration-300 shadow-lg shadow-primary/20 font-bold" href="/diagnostic">Start Diagnostic</a>
+                <a href="/es/diagnostic" data-lang-switch="es" class="flex items-center gap-1 text-[#00E68A] font-label text-xs hover:text-[#dae2fd] transition-colors font-bold border border-[#00E68A]/30 rounded-full px-3 py-1.5 bg-[#00E68A]/5"><span class="material-symbols-outlined text-[16px]">language</span> ES</a>
+                <a href="/diagnostic" class="hidden md:inline-flex signature-texture text-white px-5 py-2.5 rounded-lg font-label font-bold transition-all duration-300 hover:scale-105 uppercase tracking-widest text-[10px] shadow-lg shadow-primary/20">Start Diagnostic</a>
             </div>
         </div>
     </nav>
@@ -222,12 +220,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     const COPY = {
       bizTypes:[
-        {v:'home_services',    e:'ðŸ ', h:'Home Services',           s:'Cleaning, plumbing, landscaping, HVAC, pest control'},
-        {v:'health_wellness',  e:'ðŸ¥', h:'Health & Wellness',        s:'Aesthetics clinic, chiropractor, dental, coaching, gym'},
-        {v:'professional',     e:'ðŸ¢', h:'Professional Services',    s:'Lawyer, accountant, consulting, business coach'},
-        {v:'trades',           e:'🔍§', h:'Construction & Trades',     s:'Roofing, electrical, remodeling, solar'},
-        {v:'auto',             e:'ðŸš—', h:'Automotive Services',      s:'Detailing, repair shop, window tinting, wrapping'},
-        {v:'other',            e:'ðŸ“¦', h:'Other Service Business',   s:'Any service-based business'}
+        {v:'home_services',    e:'&#x1F3E0;', h:'Home Services',           s:'Cleaning, plumbing, landscaping, HVAC, pest control'},
+        {v:'health_wellness',  e:'&#x1F3E5;', h:'Health & Wellness',        s:'Aesthetics clinic, chiropractor, dental, coaching, gym'},
+        {v:'professional',     e:'&#x1F4BC;', h:'Professional Services',    s:'Lawyer, accountant, consulting, business coach'},
+        {v:'trades',           e:'&#x1F3D7;&#xFE0F;', h:'Construction & Trades',     s:'Roofing, electrical, remodeling, solar'},
+        {v:'auto',             e:'&#x1F697;', h:'Automotive Services',      s:'Detailing, repair shop, window tinting, wrapping'},
+        {v:'other',            e:'&#x1F4E6;', h:'Other Service Business',   s:'Any service-based business'}
       ],
       revenue:[
         {v:'under_10k',  h:'Under $10k/mo',   s:'We are building. Every client counts.'},
@@ -237,26 +235,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         {v:'150k_plus',  h:'$150k+/mo',         s:'At capacity — cannot afford to lose a single client'}
       ],
       bottleneck:[
-        {v:'missed_calls',       e:'ðŸ“µ', h:'Calls aren\'t being answered', s:'By the time we respond, they already hired someone else'},
-        {v:'leads_no_convert',   e:'🔍', h:'Leads aren\'t converting',    s:'They come in but most never book an appointment'},
-        {v:'poor_followup',      e:'ðŸ•³ï¸', h:'Inconsistent follow-up',    s:'Most leads go cold and disappear'},
-        {v:'scheduling_chaos',   e:'ðŸ—“ï¸', h:'Scheduling is a mess',       s:'Everything depends on me and I\'m out of time'},
-        {v:'no_visibility',      e:'ðŸ“Š', h:'No visibility',               s:'We don\'t know what\'s working. Guessing every month.'},
-        {v:'disconnected_tools', e:'🔍§', h:'Disconnected tools',         s:'Everything is manual and disorganized'}
+        {v:'missed_calls',       e:'&#x1F4F5;', h:'Calls aren\'t being answered', s:'By the time we respond, they already hired someone else'},
+        {v:'leads_no_convert',   e:'&#x1F50D;', h:'Leads aren\'t converting',    s:'They come in but most never book an appointment'},
+        {v:'poor_followup',      e:'&#x1F4E8;', h:'Inconsistent follow-up',    s:'Most leads go cold and disappear'},
+        {v:'scheduling_chaos',   e:'&#x1F4C5;', h:'Scheduling is a mess',       s:'Everything depends on me and I\'m out of time'},
+        {v:'no_visibility',      e:'&#x1F4CA;', h:'No visibility',               s:'We don\'t know what\'s working. Guessing every month.'},
+        {v:'disconnected_tools', e:'&#x1F6E0;&#xFE0F;', h:'Disconnected tools',         s:'Everything is manual and disorganized'}
       ],
       responseTime:[
-        {v:'under_5min', e:'⚡', h:'Under 5 minutes',      s:'We respond immediately'},
-        {v:'5_30min',    e:'ðŸ•', h:'5 to 30 minutes',        s:'Fairly fast, most of the time'},
-        {v:'30min_2hr',  e:'ðŸ•‘', h:'30 minutes to 2 hours', s:'We get there, but not always fast'},
-        {v:'same_day',   e:'ðŸ•“', h:'Same day',              s:'When we have a moment'},
-        {v:'next_day',   e:'ðŸ“…', h:'Next day or later',      s:'We\'re too busy on jobs'},
-        {v:'no_process', e:'ðŸ¤·', h:'No defined process',     s:'Depends on who sees it first'}
+        {v:'under_5min', e:'&#x26A1;', h:'Under 5 minutes',      s:'We respond immediately'},
+        {v:'5_30min',    e:'&#x1F552;', h:'5 to 30 minutes',        s:'Fairly fast, most of the time'},
+        {v:'30min_2hr',  e:'&#x1F558;', h:'30 minutes to 2 hours', s:'We get there, but not always fast'},
+        {v:'same_day',   e:'&#x1F4C5;', h:'Same day',              s:'When we have a moment'},
+        {v:'next_day',   e:'&#x1F4C6;', h:'Next day or later',      s:'We\'re too busy on jobs'},
+        {v:'no_process', e:'&#x1F937;', h:'No defined process',     s:'Depends on who sees it first'}
       ],
       tier:{
-        critical:  {label:'🔍´ Critical — Revenue at Risk',         headline:'You\'re working hard and losing clients you should be closing.'},
-        leaking:   {label:'ðŸŸ¡ Active Leak — Real Money Slipping', headline:'You\'re generating leads. But a significant portion leaves before booking.'},
-        functional:{label:'ðŸŸ¢ Functional — Growth Ceiling',       headline:'Your system works when you\'re on top of it. The problem is what happens when you aren\'t.'},
-        strong:    {label:'ðŸš€ Solid — Ready to Scale',            headline:'The foundation is there. The next step is growing without adding chaos.'}
+        critical:  {label:'&#x1F534; Critical — Revenue at Risk',         headline:'You\'re working hard and losing clients you should be closing.'},
+        leaking:   {label:'&#x1F7E1; Active Leak — Real Money Slipping', headline:'You\'re generating leads. But a significant portion leaves before booking.'},
+        functional:{label:'&#x1F7E2; Functional — Growth Ceiling',       headline:'Your system works when you\'re on top of it. The problem is what happens when you aren\'t.'},
+        🚀:    {label:'&#x1F680; Solid — Ready to Scale',            headline:'The foundation is there. The next step is growing without adding chaos.'}
       },
       tierBody:{
         critical:`<ul class="text-left space-y-2 mt-4 text-on-surface-variant text-sm"><li>• Leads are coming in — and leaving before anyone speaks to them</li><li>• Every slow response is a job going to the first person who answers</li><li>• Fixing this could represent $5,000–$15,000+ more per month</li></ul>`,
