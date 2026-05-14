@@ -298,7 +298,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     function fUpdateName(val){
       diagnosticState.firstName=val;
       const btn=document.getElementById('s2-cta');
-      if(btn) btn.textContent=val? 'Let\'s go, '+val+' →' : 'Continue →';
+      if(btn) btn.textContent=val? 'Let\'s go, '+val+' &rarr;' : 'Continue &rarr;';
     }
 
     const STEPS = [
@@ -306,7 +306,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         ${fEyebrow('Sales Diagnostic — 2 minutes, free')}
         ${fH2('Every unanswered call is a customer who went to your competition.')}
         ${fSub('Most service businesses lose 40% of their leads before anyone ever contacts them. This diagnostic shows exactly where they are going — and what to fix first.')}
-        ${fBtn('s1-cta','See where you\'re losing leads →')}
+        ${fBtn('s1-cta','See where you\'re losing leads &rarr;')}
         <p class="text-center text-xs text-on-surface-variant mt-3 opacity-70">No pressure. No cost. Just your real numbers.</p>`),
 
       ()=> fCard(`
@@ -322,7 +322,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <input id="f-phone" type="tel" placeholder="Phone number" required
             class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant/20 px-0 py-3 text-white placeholder:text-outline focus:border-primary outline-none transition-colors"/>
         </div>
-        ${fBtn('s2-cta','Continue →')}`),
+        ${fBtn('s2-cta','Continue &rarr;')}`),
 
       ()=> fCard(`
         ${fEyebrow('Step 2 of 8')}
@@ -337,7 +337,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <input id="cresca-biz-input" type="text" placeholder="Business name" required
           class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant/20 px-0 py-3 text-white placeholder:text-outline focus:border-primary outline-none transition-colors"
           oninput="diagnosticState.companyName=this.value"/>
-        ${fBtn('s4-cta','Continue →')}`),
+        ${fBtn('s4-cta','Continue &rarr;')}`),
 
       ()=> fCard(`
         ${fEyebrow('Step 4 of 8')}
@@ -398,7 +398,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
           <p class="text-center text-on-surface-variant text-xs mb-4">Let\'s see exactly how much you\'re losing — and what we fix first.</p>
           <button onclick="goTo(10);CrescaTrack.ctaClicked('calendar')" class="w-full signature-texture text-white font-label font-bold py-4 rounded-xl text-sm uppercase tracking-widest hover:scale-[1.02] transition-transform shadow-lg shadow-primary/20">
-            Show me where the leaks are →
+            Show me where the leaks are &rarr;
           </button>
           <div class="flex justify-center gap-6 mt-4 text-xs text-on-surface-variant">
             <span>✓ Specific to your business</span><span>✓ 30 minutes</span><span>✓ No obligation</span>
@@ -415,7 +415,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
           <div class="mt-6 text-center">
             <p class="text-on-surface-variant text-xs mb-2">Have questions before booking?</p>
-            <a href="mailto:info@crescaos.com" class="inline-flex items-center gap-2 text-brand-green font-label text-sm font-bold hover:underline">Email us →</a>
+            <a href="mailto:info@crescaos.com" class="inline-flex items-center gap-2 text-brand-green font-label text-sm font-bold hover:underline">Email us &rarr;</a>
           </div>`);
       }
     ];
