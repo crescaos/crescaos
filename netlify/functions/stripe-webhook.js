@@ -1,0 +1,101 @@
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
+const ghl = require('./utils/ghl');
+const logger = require('./utils/logger');
+
+const headers = {
+  'Access-Control-Allow-Origin': '*',
+  'Access-Control-Allow-Methods': 'POST, OPTIONS',
+  'Access-Control-Allow-Headers': 'Content-Type, stripe-signature'
+};
+
+/**
+ * Handles incoming webhooks from Stripe after successful checkout.
+ */
+exports.handler = async (event, context) => {
+  // CORS Preflight
+  if (event.httpMethod === 'OPTIONS') return { statusCode: 200, headers, body: '' };
+  if (event.httpMethod !== 'POST') return { statusCode: 405, headers, body: '' };
+
+  const signature = event.headers['stripe-signature'] || event.headers['Stripe-Signature'];
+  const endpointSecret = process.env.STRIPE_WEBHOOK_SECRET;
+
+  let stripeEvent;
+
+  try {
+    // 1. Verify Webhook Authenticity
+    // In Netlify, event.body is already a string (raw body) if it's text/plain or application/json.
+    // However, if the body is base64 encoded by Netlify, we need to decode it.
+    const rawBody = event.isBase64Encoded ? Buffer.from(event.body, 'base64').toString('utf8') : event.body;
+
+    stripeEvent = stripe.webhooks.constructEvent(
+      rawBody,
+      signature,
+      endpointSecret
+    );
+  } catch (err) {
+    logger.error('Stripe Webhook Verification Failed', err.message);
+    return { statusCode: 400, headers, body: `Webhook Error: ${err.message}` };
+  }
+
+  // 2. Process the Event
+  if (stripeEvent.type === 'checkout.session.completed') {
+    const session = stripeEvent.data.object;
+    
+    logger.info('Processing Successful Stripe Checkout', { sessionId: session.id });
+
+    const isAudit = session.metadata.type === 'audit';
+    const plan = session.metadata.plan || 'none';
+
+    // 3. Extract Customer Info
+    const contactData = {
+      email: session.customer_details.email,
+      firstName: session.customer_details.name.split(' ')[0] || (session.metadata.customer_name && session.metadata.customer_name.split(' ')[0]) || '',
+      lastName: session.customer_details.name.split(' ').slice(1).join(' ') || (session.metadata.customer_name && session.metadata.customer_name.split(' ').slice(1).join(' ')) || '',
+      phone: session.customer_details.phone || '',
+      tags: ['stripe-purchase', plan !== 'none' ? plan : '', isAudit ? 'paid-audit' : ''].filter(Boolean)
+    };
+
+    try {
+      // 4. Create/Update Contact in GHL
+      const contact = await ghl.upsertContact(contactData);
+      const contactId = contact.id || (contact.contact ? contact.contact.id : null);
+
+      // 5. Dynamic Map Plan to GHL Stage
+      // TODO: Move these fallbacks to strict environment variables
+      const stageMapping = {
+        'lite': process.env.GHL_SALE_LITE_ID || 'a0296611-9844-4c19-b344-e4d028c70c69',
+        'growth': process.env.GHL_SALE_GROWTH_ID || 'bb4b9701-abc6-42cd-8690-0f4df07bd8ea',
+        'pro': process.env.GHL_SALE_PRO_ID || '9176acb4-3c14-46bf-b196-34682e4b0c34',
+        'discovery': process.env.GHL_AUDIT_STAGE_ID || 'b621db30-363f-42e5-a0ed-4a00465d8363' // Discovery Call (matches Netlify: GHL_AUDIT_STAGE_ID)
+      };
+
+      if (!process.env.GHL_SALE_LITE_ID) logger.warn('Missing GHL_SALE_LITE_ID env var, using fallback');
+      if (!process.env.GHL_SALE_GROWTH_ID) logger.warn('Missing GHL_SALE_GROWTH_ID env var, using fallback');
+      if (!process.env.GHL_SALE_PRO_ID) logger.warn('Missing GHL_SALE_PRO_ID env var, using fallback');
+      if (!process.env.GHL_AUDIT_STAGE_ID) logger.warn('Missing GHL_AUDIT_STAGE_ID env var, using fallback');
+
+      const pipelineId = process.env.GHL_AUDIT_PIPELINE_ID || 'k9Ke4zv94rXG6WezViHR';
+      if (!process.env.GHL_AUDIT_PIPELINE_ID) logger.warn('Missing GHL_AUDIT_PIPELINE_ID env var, using fallback');
+      
+      // If it's an audit or no specific plan, move to Discovery Call stage
+      const stageId = (isAudit || plan === 'none') ? stageMapping['discovery'] : (stageMapping[plan] || stageMapping['lite']);
+
+      if (contactId) {
+        await ghl.createOpportunity(
+          contactId,
+          pipelineId,
+          stageId,
+          isAudit ? 'PAID AUDIT: Full Systems Analysis' : `PROJECT START: ${plan.toUpperCase()} ($500 Deposit Paid)`,
+          session.amount_total / 100
+        );
+        logger.info('Stripe Deposit successfully synced to GHL', { email: contactData.email, plan, isAudit });
+      }
+
+    } catch (error) {
+      logger.error('Failed to sync Stripe purchase to GHL', error);
+      return { statusCode: 500, headers, body: JSON.stringify({ error: 'Failed to process purchase automation' }) };
+    }
+  }
+
+  return { statusCode: 200, headers, body: JSON.stringify({ received: true }) };
+};

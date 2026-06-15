@@ -1,3 +1,5 @@
+/api/checkout        /.netlify/functions/checkout        200!
+/api/stripe-webhook  /.netlify/functions/stripe-webhook  200!
 # API Proxy Routing (Enforced)
 /api/*  https://openclaw-production-977e.up.railway.app/api/:splat  200!
 
