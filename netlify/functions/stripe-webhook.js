@@ -8,6 +8,15 @@ const headers = {
   'Access-Control-Allow-Headers': 'Content-Type, stripe-signature'
 };
 
+// Case-insensitive header lookup helper
+const getHeader = (headers, key) => {
+  const lowerKey = key.toLowerCase();
+  for (const k of Object.keys(headers)) {
+    if (k.toLowerCase() === lowerKey) return headers[k];
+  }
+  return null;
+};
+
 /**
  * Handles incoming webhooks from Stripe after successful checkout.
  */
@@ -16,7 +25,7 @@ exports.handler = async (event, context) => {
   if (event.httpMethod === 'OPTIONS') return { statusCode: 200, headers, body: '' };
   if (event.httpMethod !== 'POST') return { statusCode: 405, headers, body: '' };
 
-  const signature = event.headers['stripe-signature'] || event.headers['Stripe-Signature'];
+  const signature = getHeader(event.headers, 'stripe-signature');
   const endpointSecret = process.env.STRIPE_WEBHOOK_SECRET;
 
   let stripeEvent;
@@ -52,16 +61,18 @@ exports.handler = async (event, context) => {
       firstName: session.customer_details.name.split(' ')[0] || (session.metadata.customer_name && session.metadata.customer_name.split(' ')[0]) || '',
       lastName: session.customer_details.name.split(' ').slice(1).join(' ') || (session.metadata.customer_name && session.metadata.customer_name.split(' ').slice(1).join(' ')) || '',
       phone: session.customer_details.phone || '',
-      tags: ['stripe-purchase', plan !== 'none' ? plan : '', isAudit ? 'paid-audit' : ''].filter(Boolean)
+      tags: ['stripe-purchase', 'stripe-checkout-completed', plan !== 'none' ? plan : '', isAudit ? 'paid-audit' : ''].filter(Boolean)
     };
 
     try {
       // 4. Create/Update Contact in GHL
-      const contact = await ghl.upsertContact(contactData);
+      const upsertResult = await ghl.upsertContact(contactData);
+      const contact = upsertResult.contact;
       const contactId = contact.id || (contact.contact ? contact.contact.id : null);
+      const contactStatus = upsertResult.status;
+      logger.info('GHL Contact processing complete', { email: contactData.email, contactId, status: contactStatus });
 
       // 5. Dynamic Map Plan to GHL Stage
-      // TODO: Move these fallbacks to strict environment variables
       const stageMapping = {
         'lite': process.env.GHL_SALE_LITE_ID || 'a0296611-9844-4c19-b344-e4d028c70c69',
         'growth': process.env.GHL_SALE_GROWTH_ID || 'bb4b9701-abc6-42cd-8690-0f4df07bd8ea',
@@ -81,14 +92,43 @@ exports.handler = async (event, context) => {
       const stageId = (isAudit || plan === 'none') ? stageMapping['discovery'] : (stageMapping[plan] || stageMapping['lite']);
 
       if (contactId) {
-        await ghl.createOpportunity(
-          contactId,
-          pipelineId,
-          stageId,
-          isAudit ? 'PAID AUDIT: Full Systems Analysis' : `PROJECT START: ${plan.toUpperCase()} ($500 Deposit Paid)`,
-          session.amount_total / 100
+        // 6. Webhook Idempotency Check (Check GHL Opportunities first)
+        const opportunities = await ghl.getOpportunities(contactId);
+        const duplicateOpportunity = opportunities.find(opp => 
+          (opp.notes && opp.notes.includes(session.id)) || 
+          (opp.name && opp.name.includes(session.id))
         );
-        logger.info('Stripe Deposit successfully synced to GHL', { email: contactData.email, plan, isAudit });
+
+        if (duplicateOpportunity) {
+          logger.info('Duplicate opportunity creation skipped (Stripe Session already processed)', { 
+            sessionId: session.id, 
+            opportunityId: duplicateOpportunity.id 
+          });
+        } else {
+          const notes = `Stripe Session ID: ${session.id}
+Plan: ${plan}
+Type: ${session.metadata.type || 'purchase'}
+Amount: $${session.amount_total / 100}
+Customer Email: ${contactData.email}
+Checkout Timestamp: ${new Date(session.created * 1000).toISOString()}`;
+
+          await ghl.createOpportunity(
+            contactId,
+            pipelineId,
+            stageId,
+            isAudit ? 'PAID AUDIT: Full Systems Analysis' : `PROJECT START: ${plan.toUpperCase()} ($500 Deposit Paid)`,
+            session.amount_total / 100,
+            notes
+          );
+          logger.info('Stripe Deposit successfully synced to GHL (Opportunity Created)', { 
+            email: contactData.email, 
+            plan, 
+            isAudit, 
+            sessionId: session.id 
+          });
+        }
+      } else {
+        logger.error('Failed to sync Stripe purchase: contactId is undefined', { email: contactData.email });
       }
 
     } catch (error) {
