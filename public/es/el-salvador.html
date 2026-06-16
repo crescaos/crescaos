@@ -391,103 +391,99 @@
 
                 <div class="grid md:grid-cols-3 gap-8 items-start">
                     <!-- Starter Plan -->
-                    <div class="bg-surface-container border border-outline-variant/10 rounded-3xl p-8 transition-all duration-300 hover:border-primary/30 text-left">
-                        <div class="mb-8">
-                            <h3 class="text-on-surface-variant text-xs uppercase tracking-[0.2em] font-bold mb-2">Plan Inicial</h3>
-                            <div class="flex items-baseline gap-1">
-                                <span class="text-4xl font-bold text-white">$249</span>
-                                <span class="text-on-surface-variant text-sm">/mes</span>
+                    <div class="bg-surface-container p-10 rounded-[2rem] border border-outline-variant/10 flex flex-col h-full hover:border-primary/30 transition-all text-left">
+                        <div class="mb-6">
+                            <h3 class="font-headline text-3xl font-bold text-white mb-2">Plan Inicial</h3>
+                            <p class="text-sm text-on-surface-variant mb-6 h-10">El mejor para empresas que generan más de 20 leads pero pierden demasiados por un seguimiento lento.</p>
+                            <div class="flex items-baseline gap-1 mt-6">
+                                <span class="text-3xl font-bold text-white tracking-tighter">$97</span>
+                                <span class="text-on-surface-variant">/mes</span>
                             </div>
-                            <p class="mt-4 text-sm text-on-surface-variant font-light italic">Ideal para freelancers o negocios emergentes.</p>
+                            <p class="text-xs text-on-surface-variant mt-2 mb-6">Configuración inicial desde $300 (pago único)</p>
+                    
+                            <div class="bg-surface-container-lowest p-4 rounded-xl mb-6 border border-outline-variant/5">
+                                <span class="text-[10px] font-bold text-primary uppercase tracking-widest block mb-2">Qué esperar</span>
+                                <p class="text-sm text-on-surface">Las empresas suelen recuperar de 8 a 12 oportunidades al mes que antes se perdían.</p>
+                            </div>
                         </div>
-                        <ul class="space-y-4 mb-10">
-                            <li class="flex items-start gap-3 text-sm text-on-surface-variant font-light">
-                                <span class="material-symbols-outlined text-brand-green text-sm mt-0.5">check_circle</span>
-                                CRM configurado y pipeline activo
-                            </li>
-                            <li class="flex items-start gap-3 text-sm text-on-surface-variant font-light">
-                                <span class="material-symbols-outlined text-brand-green text-sm mt-0.5">check_circle</span>
-                                Captura de leads desde tus canales activos
-                            </li>
-                            <li class="flex items-start gap-3 text-sm text-on-surface-variant font-light">
-                                <span class="material-symbols-outlined text-brand-green text-sm mt-0.5">check_circle</span>
-                                Respuesta autom&aacute;tica inicial v&iacute;a Web
-                            </li>
-                            <li class="flex items-start gap-3 text-sm text-on-surface-variant font-light opacity-40">
-                                <span class="material-symbols-outlined text-sm mt-0.5">block</span>
-                                Seguimiento avanzado multicanal
-                            </li>
+                        <ul class="space-y-4 mb-10 flex-grow text-sm text-on-surface-variant">
+                            <li class="flex gap-3"><span class="material-symbols-outlined text-primary text-[20px] shrink-0">check</span> Configuración completa de CRM y pipeline activo</li>
+                            <li class="flex gap-3"><span class="material-symbols-outlined text-primary text-[20px] shrink-0">check</span> Captura de leads desde todos tus canales activos</li>
+                            <li class="flex gap-3"><span class="material-symbols-outlined text-primary text-[20px] shrink-0">check</span> Captura y enrutamiento de leads asistido por IA</li>
+                            <li class="flex gap-3"><span class="material-symbols-outlined text-primary text-[20px] shrink-0">check</span> Seguimiento automatizado por SMS y correo electrónico</li>
+                            <li class="flex gap-3"><span class="material-symbols-outlined text-primary text-[20px] shrink-0">check</span> Monitoreo básico de rendimiento</li>
+                            <li class="flex gap-3"><span class="material-symbols-outlined text-primary text-[20px] shrink-0">check</span> Soporte de equipo local bilingüe</li>
                         </ul>
-                        <a class="block w-full py-4 text-center border border-outline-variant/30 rounded-xl text-white font-label font-bold text-xs uppercase tracking-widest hover:bg-white hover:text-black transition-all" href="/es/diagnostic">Elegir Inicial</a>
+                        <div class="space-y-4 mt-auto">
+                            <a href="/api/checkout?plan=starter&market=el-salvador&type=setup" class="w-full block py-4 rounded-xl border border-primary/50 text-white font-label font-bold uppercase tracking-widest text-center hover:bg-primary transition-all text-xs">Comenzar con Plan Inicial</a>
+                            <a href="/es/diagnostic" class="w-full block py-2 text-on-surface-variant hover:text-white font-label font-bold uppercase tracking-widest text-center transition-all text-[10px]">O Solicita una Auditoría Gratuita Primero</a>
+                        </div>
                     </div>
 
                     <!-- Growth Plan (Most Popular) -->
-                    <div class="bg-surface-container border-2 border-primary rounded-3xl p-8 relative shadow-2xl shadow-primary/10 text-left">
-                        <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-white px-4 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest whitespace-nowrap">
-                            M&Aacute;S POPULAR EN EL SALVADOR
-                        </div>
-                        <div class="mb-8">
-                            <h3 class="text-primary text-xs uppercase tracking-[0.2em] font-bold mb-2">Plan Crecimiento</h3>
-                            <div class="flex items-baseline gap-1">
-                                <span class="text-4xl font-bold text-white">$497</span>
-                                <span class="text-on-surface-variant text-sm">/mes</span>
+                    <div class="bg-surface-container-high p-10 rounded-[2rem] border-2 border-brand-green flex flex-col h-full relative transform lg:scale-105 shadow-[0_0_40px_rgba(0,230,138,0.15)] z-10 text-left">
+                        <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-brand-green text-[#003824] px-6 py-2 rounded-full font-label font-bold uppercase tracking-widest text-[10px] shadow-lg whitespace-nowrap">MÁS POPULAR EN EL SALVADOR</div>
+                        <div class="mb-6">
+                            <h3 class="font-headline text-3xl font-bold text-white mb-2">Plan Crecimiento</h3>
+                            <p class="text-sm text-on-surface-variant mb-6 h-10">Ideal para: Empresas listas para escalar que desean un sistema completo funcionando sin esfuerzo manual.</p>
+                            <div class="flex items-baseline gap-1 mt-6">
+                                <span class="text-3xl font-bold text-white tracking-tighter">Desde $297</span>
+                                <span class="text-on-surface-variant">/mes</span>
                             </div>
-                            <p class="mt-4 text-sm text-on-surface-variant font-light italic">Para empresas que necesitan escalar volumen de leads.</p>
+                            <p class="text-xs text-on-surface-variant mt-2 mb-6">Precio inicial desde $800 - pago único</p>
+                    
+                            <div class="bg-brand-green/10 p-4 rounded-xl mb-6 border border-brand-green/20">
+                                <span class="text-[10px] font-bold text-brand-green uppercase tracking-widest block mb-2">Qué esperar</span>
+                                <p class="text-sm text-white font-medium">Los clientes de este plan suelen añadir entre 10 y 20 citas mensuales, según el volumen de leads.</p>
+                            </div>
                         </div>
-                        <ul class="space-y-4 mb-10">
-                            <li class="flex items-start gap-3 text-sm text-white font-medium">
-                                <span class="material-symbols-outlined text-brand-green text-sm mt-0.5">check_circle</span>
-                                Todo el Plan Inicial
-                            </li>
-                            <li class="flex items-start gap-3 text-sm text-on-surface-variant font-light">
-                                <span class="material-symbols-outlined text-brand-green text-sm mt-0.5">check_circle</span>
-                                Respuesta autom&aacute;tica v&iacute;a WhatsApp
-                            </li>
-                            <li class="flex items-start gap-3 text-sm text-on-surface-variant font-light">
-                                <span class="material-symbols-outlined text-brand-green text-sm mt-0.5">check_circle</span>
-                                Seguimiento automatizado por SMS y Email
-                            </li>
-                            <li class="flex items-start gap-3 text-sm text-on-surface-variant font-light">
-                                <span class="material-symbols-outlined text-brand-green text-sm mt-0.5">check_circle</span>
-                                Sistema de agendamiento de citas
-                            </li>
-                            <li class="flex items-start gap-3 text-sm text-on-surface-variant font-light">
-                                <span class="material-symbols-outlined text-brand-green text-sm mt-0.5">check_circle</span>
-                                Soporte Local Continuo (Hub ES)
-                            </li>
+                        <ul class="space-y-4 mb-4 flex-grow text-sm text-on-surface-variant">
+                            <li class="flex gap-3 text-white font-bold mb-4"><span class="material-symbols-outlined text-brand-green text-[20px] shrink-0">verified</span> Todo lo incluido en el Plan Inicial, más:</li>
+                            <li class="flex gap-3"><span class="material-symbols-outlined text-brand-green text-[20px] shrink-0">check</span> Respuesta automática avanzada por WhatsApp, teléfono, SMS y correo</li>
+                            <li class="flex gap-3"><span class="material-symbols-outlined text-brand-green text-[20px] shrink-0">check</span> Secuencias de seguimiento multi-punto (7-12 contactos)</li>
+                            <li class="flex gap-3"><span class="material-symbols-outlined text-brand-green text-[20px] shrink-0">check</span> Reactivación de leads fríos y clientes antiguos</li>
+                            <li class="flex gap-3"><span class="material-symbols-outlined text-brand-green text-[20px] shrink-0">check</span> Respuesta automática por SMS para llamadas perdidas</li>
+                            <li class="flex gap-3"><span class="material-symbols-outlined text-brand-green text-[20px] shrink-0">check</span> Seguimiento de conversiones y optimización continua</li>
+                            <li class="flex gap-3"><span class="material-symbols-outlined text-brand-green text-[20px] shrink-0">check</span> Gestión dedicada por nuestro equipo bilingüe local</li>
                         </ul>
-                        <a class="block w-full py-4 text-center signature-texture rounded-xl text-on-primary font-label font-bold text-xs uppercase tracking-widest shadow-xl transition-all hover:scale-[1.02]" href="/es/diagnostic">Elegir Crecimiento</a>
+                        <div class="mb-6 text-xs text-on-surface-variant italic border-l-2 border-brand-green pl-3">
+                            <strong class="text-white not-italic block mb-1">Compromiso de Rendimiento:</strong>
+                            Si el sistema no mejora el rendimiento en 90 días, continuamos optimizando sin costo adicional.
+                        </div>
+                        <div class="space-y-4 mt-auto">
+                            <a href="/api/checkout?plan=growth&market=el-salvador&type=setup" class="w-full block py-4 rounded-xl signature-texture text-surface-dim font-label font-bold uppercase tracking-widest text-center hover:opacity-90 glow-pulse text-xs">Comenzar con Growth</a>
+                            <a href="/es/diagnostic" class="w-full block py-2 text-on-surface-variant hover:text-white font-label font-bold uppercase tracking-widest text-center transition-all text-[10px]">O Solicita un Diagnóstico Gratuito Primero</a>
+                        </div>
                     </div>
 
                     <!-- Pro Plan -->
-                    <div class="bg-surface-container border border-outline-variant/10 rounded-3xl p-8 transition-all duration-300 hover:border-brand-green/30 text-left">
-                        <div class="mb-8">
-                            <h3 class="text-brand-green text-xs uppercase tracking-[0.2em] font-bold mb-2">Plan Pro</h3>
-                            <div class="flex items-baseline gap-1">
-                                <span class="text-4xl font-bold text-white">$997</span>
-                                <span class="text-on-surface-variant text-sm">/mes</span>
+                    <div class="bg-surface-container p-10 rounded-[2rem] border border-outline-variant/10 flex flex-col h-full hover:border-primary/30 transition-all text-left">
+                        <div class="mb-6">
+                            <h3 class="font-headline text-3xl font-bold text-white mb-2">Motor de Ingresos</h3>
+                            <p class="text-sm text-on-surface-variant mb-6 h-10">Escalamiento agresivo con una verdadera máquina operativa de ingresos hecha para ti.</p>
+                            <div class="flex items-baseline gap-1 mt-6">
+                                <span class="text-2xl font-bold text-white tracking-tighter">Desde $2,000</span>
+                                <span class="text-on-surface-variant">/mes</span>
                             </div>
-                            <p class="mt-4 text-sm text-on-surface-variant font-light italic">Dominaci&oacute;n total del mercado y infraestructura avanzada.</p>
+                            <p class="text-xs text-on-surface-variant mt-2 mb-6">Auditoría Estratégica: Depósito de $500 (acreditado a tu primer pago)</p>
+                    
+                            <div class="bg-surface-container-lowest p-4 rounded-xl mb-6 border border-outline-variant/5">
+                                <span class="text-[10px] font-bold text-primary uppercase tracking-widest block mb-2">Qué esperar</span>
+                                <p class="text-sm text-on-surface">Una plataforma totalmente predecible y escalable. Trabajamos junto a tu equipo como socio de RevOps.</p>
+                            </div>
                         </div>
-                        <ul class="space-y-4 mb-10">
-                            <li class="flex items-start gap-3 text-sm text-white font-medium">
-                                <span class="material-symbols-outlined text-brand-green text-sm mt-0.5">check_circle</span>
-                                Todo el Plan Crecimiento
-                            </li>
-                            <li class="flex items-start gap-3 text-sm text-on-surface-variant font-light">
-                                <span class="material-symbols-outlined text-brand-green text-sm mt-0.5">check_circle</span>
-                                Secuencias multi-punto avanzadas
-                            </li>
-                            <li class="flex items-start gap-3 text-sm text-on-surface-variant font-light">
-                                <span class="material-symbols-outlined text-brand-green text-sm mt-0.5">check_circle</span>
-                                Reactivaci&oacute;n de leads fr&iacute;os y antiguos
-                            </li>
-                            <li class="flex items-start gap-3 text-sm text-on-surface-variant font-light">
-                                <span class="material-symbols-outlined text-brand-green text-sm mt-0.5">check_circle</span>
-                                Seguimiento de conversiones y optimizaci&oacute;n
-                            </li>
+                        <ul class="space-y-4 mb-10 flex-grow text-sm text-on-surface-variant">
+                            <li class="flex gap-3 text-white font-bold mb-4"><span class="material-symbols-outlined text-primary text-[20px] shrink-0">verified</span> Todo en el Plan Crecimiento, más:</li>
+                            <li class="flex gap-3"><span class="material-symbols-outlined text-primary text-[20px] shrink-0">check</span> Automatización avanzada de IA multicanal</li>
+                            <li class="flex gap-3"><span class="material-symbols-outlined text-primary text-[20px] shrink-0">check</span> Integración de anuncios y optimización del flujo de leads</li>
+                            <li class="flex gap-3"><span class="material-symbols-outlined text-primary text-[20px] shrink-0">check</span> Flujos de trabajo personalizados según tu lógica de negocio</li>
+                            <li class="flex gap-3"><span class="material-symbols-outlined text-primary text-[20px] shrink-0">check</span> Consultoría de rendimiento estratégico y mapa de ruta de escalamiento</li>
+                            <li class="flex gap-3"><span class="material-symbols-outlined text-primary text-[20px] shrink-0">check</span> Soporte prioritario y gestión de cuenta dedicada</li>
                         </ul>
-                        <a class="block w-full py-4 text-center border border-brand-green/30 rounded-xl text-white font-label font-bold text-xs uppercase tracking-widest hover:bg-brand-green hover:text-black transition-all" href="/es/diagnostic">Elegir Plan Pro</a>
+                         <div class="space-y-4 mt-auto">
+                            <a href="/api/checkout?plan=pro&market=el-salvador&type=audit" class="w-full block py-4 rounded-xl border border-primary/50 text-white font-label font-bold uppercase tracking-widest text-center hover:bg-primary transition-all text-xs">Reserva tu Auditoría Estratégica — Depósito de $500</a>
+                            <p class="text-[10px] text-on-surface-variant text-center mt-2">El depósito se acredita a tu primer pago si decides avanzar con el proyecto.</p>
+                        </div>
                     </div>
                 </div>
             </div>
