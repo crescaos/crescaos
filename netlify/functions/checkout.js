@@ -16,7 +16,7 @@ exports.handler = async (event) => {
     const CANCEL_URL  = process.env.STRIPE_CANCEL_URL  || 'https://crescaos.com/pricing';
 
     let targetPlan = plan || 'none';
-    const country = event.headers['x-country'];
+    const country = event.headers['x-country'] || event.headers['X-Country'];
 
     if (['US', 'CA'].includes(country)) {
       if (targetPlan === 'sv-inicial') targetPlan = 'capture';

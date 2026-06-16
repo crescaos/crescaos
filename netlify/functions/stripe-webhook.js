@@ -66,16 +66,16 @@ exports.handler = async (event, context) => {
         'lite': process.env.GHL_SALE_LITE_ID || 'a0296611-9844-4c19-b344-e4d028c70c69',
         'growth': process.env.GHL_SALE_GROWTH_ID || 'bb4b9701-abc6-42cd-8690-0f4df07bd8ea',
         'pro': process.env.GHL_SALE_PRO_ID || '9176acb4-3c14-46bf-b196-34682e4b0c34',
-        'discovery': process.env.GHL_AUDIT_STAGE_ID || 'b621db30-363f-42e5-a0ed-4a00465d8363' // Discovery Call (matches Netlify: GHL_AUDIT_STAGE_ID)
+        'discovery': process.env.GHL_AUDIT_STAGE_ID || process.env.GHL_STAGE_ID || 'b621db30-363f-42e5-a0ed-4a00465d8363' // Discovery Call (matches Netlify: GHL_AUDIT_STAGE_ID)
       };
 
       if (!process.env.GHL_SALE_LITE_ID) logger.warn('Missing GHL_SALE_LITE_ID env var, using fallback');
       if (!process.env.GHL_SALE_GROWTH_ID) logger.warn('Missing GHL_SALE_GROWTH_ID env var, using fallback');
       if (!process.env.GHL_SALE_PRO_ID) logger.warn('Missing GHL_SALE_PRO_ID env var, using fallback');
-      if (!process.env.GHL_AUDIT_STAGE_ID) logger.warn('Missing GHL_AUDIT_STAGE_ID env var, using fallback');
+      if (!process.env.GHL_AUDIT_STAGE_ID && !process.env.GHL_STAGE_ID) logger.warn('Missing GHL_AUDIT_STAGE_ID and GHL_STAGE_ID env var, using fallback');
 
-      const pipelineId = process.env.GHL_AUDIT_PIPELINE_ID || 'k9Ke4zv94rXG6WezViHR';
-      if (!process.env.GHL_AUDIT_PIPELINE_ID) logger.warn('Missing GHL_AUDIT_PIPELINE_ID env var, using fallback');
+      const pipelineId = process.env.GHL_AUDIT_PIPELINE_ID || process.env.GHL_PIPELINE_ID || 'k9Ke4zv94rXG6WezViHR';
+      if (!process.env.GHL_AUDIT_PIPELINE_ID && !process.env.GHL_PIPELINE_ID) logger.warn('Missing GHL_AUDIT_PIPELINE_ID and GHL_PIPELINE_ID env var, using fallback');
       
       // If it's an audit or no specific plan, move to Discovery Call stage
       const stageId = (isAudit || plan === 'none') ? stageMapping['discovery'] : (stageMapping[plan] || stageMapping['lite']);
