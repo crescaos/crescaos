@@ -52,13 +52,17 @@ exports.handler = async (event, context) => {
 
     const tags = [];
     if (isESLead) tags.push('es-lead');
-    else if (isDiagnostic) tags.push('cresca:diagnostic_completed', payload.language === 'es' ? 'cresca:lang_es' : 'cresca:lang_en');
+    else if (isDiagnostic) {
+      tags.push('cresca:diagnostic_completed', payload.language === 'es' ? 'cresca:lang_es' : 'cresca:lang_en');
+      if (payload.service) tags.push(`cresca:service_${payload.service}`);
+    }
     else tags.push('growth-audit');
 
     const contactData = {
       firstName: firstName || 'Audit',
       lastName: lastName || 'Lead',
       tags: tags,
+      source: payload.utm_source || payload.source || 'Diagnostic Funnel',
       customFields: []
     };
     
@@ -112,6 +116,7 @@ exports.handler = async (event, context) => {
       if (payload.needs) noteContent += `Biggest Needs: ${payload.needs}\n`;
     } else if (isDiagnostic) {
       noteContent += `--- Diagnostic Funnel Results ---\n`;
+      if (payload.service) noteContent += `Service Interest: ${payload.service}\n`;
       if (payload.score) noteContent += `Score: ${payload.score} / 100 (${payload.score_tier || 'N/A'})\n`;
       if (payload.monthlyLoss) noteContent += `Monthly Revenue Loss: $${payload.monthlyLoss.toLocaleString()}\n`;
       if (payload.businessType) noteContent += `Business Type: ${payload.businessType}\n`;
