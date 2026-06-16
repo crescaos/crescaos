@@ -52,8 +52,11 @@ exports.handler = async (event, context) => {
     
     logger.info('Processing Successful Stripe Checkout', { sessionId: session.id });
 
-    const isAudit = session.metadata.type === 'audit';
     const plan = session.metadata.plan || 'none';
+    const market = session.metadata.market || 'us';
+    const type = session.metadata.type || 'setup';
+    const amountType = session.metadata.amount_type || type;
+    const creditPolicy = session.metadata.credit_policy || 'none';
 
     // 3. Extract Customer Info
     const contactData = {
@@ -61,7 +64,13 @@ exports.handler = async (event, context) => {
       firstName: session.customer_details.name.split(' ')[0] || (session.metadata.customer_name && session.metadata.customer_name.split(' ')[0]) || '',
       lastName: session.customer_details.name.split(' ').slice(1).join(' ') || (session.metadata.customer_name && session.metadata.customer_name.split(' ').slice(1).join(' ')) || '',
       phone: session.customer_details.phone || '',
-      tags: ['stripe-purchase', 'stripe-checkout-completed', plan !== 'none' ? plan : '', isAudit ? 'paid-audit' : ''].filter(Boolean)
+      tags: [
+        'stripe-purchase', 
+        'stripe-checkout-completed', 
+        plan !== 'none' ? plan : '', 
+        market ? `market-${market}` : '', 
+        type === 'audit' ? 'audit-deposit' : 'setup-payment'
+      ].filter(Boolean)
     };
 
     try {
@@ -75,6 +84,8 @@ exports.handler = async (event, context) => {
       // 5. Dynamic Map Plan to GHL Stage
       const stageMapping = {
         'lite': process.env.GHL_SALE_LITE_ID || 'a0296611-9844-4c19-b344-e4d028c70c69',
+        'starter': process.env.GHL_SALE_STARTER_ID || process.env.GHL_SALE_LITE_ID || 'a0296611-9844-4c19-b344-e4d028c70c69',
+        'capture': process.env.GHL_SALE_CAPTURE_ID || process.env.GHL_SALE_LITE_ID || 'a0296611-9844-4c19-b344-e4d028c70c69',
         'growth': process.env.GHL_SALE_GROWTH_ID || 'bb4b9701-abc6-42cd-8690-0f4df07bd8ea',
         'pro': process.env.GHL_SALE_PRO_ID || '9176acb4-3c14-46bf-b196-34682e4b0c34',
         'discovery': process.env.GHL_AUDIT_STAGE_ID || process.env.GHL_STAGE_ID || 'b621db30-363f-42e5-a0ed-4a00465d8363' // Discovery Call (matches Netlify: GHL_AUDIT_STAGE_ID)
@@ -89,7 +100,7 @@ exports.handler = async (event, context) => {
       if (!process.env.GHL_AUDIT_PIPELINE_ID && !process.env.GHL_PIPELINE_ID) logger.warn('Missing GHL_AUDIT_PIPELINE_ID and GHL_PIPELINE_ID env var, using fallback');
       
       // If it's an audit or no specific plan, move to Discovery Call stage
-      const stageId = (isAudit || plan === 'none') ? stageMapping['discovery'] : (stageMapping[plan] || stageMapping['lite']);
+      const stageId = (type === 'audit' || plan === 'none') ? stageMapping['discovery'] : (stageMapping[plan] || stageMapping['lite']);
 
       if (contactId) {
         // 6. Webhook Idempotency Check (Check GHL Opportunities first)
@@ -107,23 +118,28 @@ exports.handler = async (event, context) => {
         } else {
           const notes = `Stripe Session ID: ${session.id}
 Plan: ${plan}
-Type: ${session.metadata.type || 'purchase'}
-Amount: $${session.amount_total / 100}
-Customer Email: ${contactData.email}
+Market: ${market}
+Type: ${type}
+Payment Category: ${type === 'audit' ? 'audit_deposit' : 'setup_payment'}
+Credit Policy: ${creditPolicy}
+Amount Paid: $${session.amount_total / 100} ${session.currency.toUpperCase()}
 Checkout Timestamp: ${new Date(session.created * 1000).toISOString()}`;
+
+          const oppTitle = type === 'audit'
+            ? `PAID AUDIT: ${plan.toUpperCase()} Strategy Audit ($${session.amount_total / 100} Deposit Paid)`
+            : `PROJECT START: ${plan.toUpperCase()} ($${session.amount_total / 100} Setup Paid)`;
 
           await ghl.createOpportunity(
             contactId,
             pipelineId,
             stageId,
-            isAudit ? 'PAID AUDIT: Full Systems Analysis' : `PROJECT START: ${plan.toUpperCase()} ($500 Deposit Paid)`,
+            oppTitle,
             session.amount_total / 100,
             notes
           );
           logger.info('Stripe Deposit successfully synced to GHL (Opportunity Created)', { 
             email: contactData.email, 
             plan, 
-            isAudit, 
             sessionId: session.id 
           });
         }
