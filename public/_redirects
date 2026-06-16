@@ -3,6 +3,22 @@
 # API Proxy Routing (Enforced)
 /api/*  https://openclaw-production-977e.up.railway.app/api/:splat  200!
 
+# Link Hub & Portfolio Clean URL Rewrites (First)
+/start                  /start.html                 200
+/es/start               /es/start.html              200
+/custom-build           /custom-build.html          200
+/es/custom-build        /es/custom-build.html       200
+/projects               /projects.html             200
+/es/projects            /es/projects.html           200
+
+# Link Hub & Portfolio HTML to Clean Redirects (Second)
+/start.html             /start                      301!
+/es/start.html          /es/start                   301!
+/custom-build.html      /custom-build               301!
+/es/custom-build.html   /es/custom-build            301!
+/projects.html          /projects                   301!
+/es/projects.html       /es/projects                301!
+
 # Funnel Standardization
 /book-audit          /diagnostic          301!
 /book-audit.html     /diagnostic          301!

@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html class="dark scroll-smooth" lang="es">
+<head>
+    <meta charset="UTF-8">
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-P2MS2Z25');</script>
+    <!-- End Google Tag Manager -->
+
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Portafolio y Proyectos | Cresca OS</title>
+    <meta name="description" content="Mira proyectos seleccionados, sitios web, automatizaciones, plataformas de capacitación y sistemas de negocio creados por Roberto Alas.">
+    <meta name="author" content="Cresca OS">
+    <meta name="robots" content="index, follow">
+
+    <!-- Canonical & Hreflang -->
+    <link rel="canonical" href="https://crescaos.com/es/projects" />
+    <link rel="alternate" hreflang="en" href="https://crescaos.com/projects" />
+    <link rel="alternate" hreflang="es" href="https://crescaos.com/es/projects" />
+    <link rel="alternate" hreflang="x-default" href="https://crescaos.com/projects" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://crescaos.com/es/projects">
+    <meta property="og:title" content="Portafolio y Proyectos | Cresca OS">
+    <meta property="og:description" content="Mira proyectos seleccionados, sitios web, automatizaciones, plataformas de capacitación y sistemas de negocio creados por Roberto Alas.">
+    <meta property="og:image" content="https://crescaos.com/logo-preview.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Portafolio y Proyectos | Cresca OS">
+    <meta name="twitter:description" content="Mira proyectos seleccionados, sitios web, automatizaciones, plataformas de capacitación y sistemas de negocio creados por Roberto Alas.">
+    <meta name="twitter:image" content="https://crescaos.com/logo-preview.png">
+
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Inter:wght@300;400;600&amp;family=Manrope:wght@500;700&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .animate-slide-up { animation: slide-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+            .animate-fade-in { animation: fade-in 1s ease-out forwards; }
+        }
+        @keyframes slide-up {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes fade-in {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .signature-texture {
+            background: linear-gradient(135deg, #0A84FF 0%, #00E68A 100%);
+        }
+        .glass-card {
+            background: rgba(23, 31, 51, 0.55);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        #neural-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.6;
+            pointer-events: none;
+        }
+    </style>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container-low": "#131b2e",
+                        "surface-container-lowest": "#060e20",
+                        "outline-variant": "#45474b",
+                        "on-background": "#dae2fd",
+                        "secondary": "#b7c8e1",
+                        "on-surface": "#dae2fd",
+                        "surface-container": "#171f33",
+                        "on-surface-variant": "#c6c6cb",
+                        "primary": "#0A84FF",
+                        "surface": "#0F172A",
+                        "background": "#0F172A",
+                        "brand-green": "#00E68A",
+                        "surface-container-high": "#222a3d",
+                        "surface-bright": "#31394d"
+                    },
+                    fontFamily: {
+                        "headline": ["Noto Serif"],
+                        "body": ["Inter"],
+                        "label": ["Manrope"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-[#0F172A] text-on-background font-body relative min-h-screen flex flex-col justify-between overflow-x-hidden selection:bg-primary/30 selection:text-white">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P2MS2Z25"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <canvas id="neural-bg"></canvas>
+
+    <!-- Top NavBar -->
+    <nav class="w-full z-50 bg-[#0b1326]/70 backdrop-blur-xl border-b border-outline-variant/10 py-4 fixed top-0 left-0">
+        <div class="flex justify-between items-center px-6 md:px-8 max-w-2xl mx-auto">
+            <a class="flex items-center gap-3 hover:opacity-80 transition-opacity" href="/es/">
+                <svg class="w-7 h-7" fill="none" height="28" viewbox="0 0 48 48" width="28" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="24" cy="24" r="18" stroke="#0A84FF" stroke-width="3"></circle>
+                    <ellipse cx="24" cy="24" rx="13" ry="7.5" stroke="#00E68A" stroke-width="3" transform="rotate(60 24 24)"></ellipse>
+                    <ellipse cx="24" cy="24" rx="13" ry="7.5" stroke="#00E68A" stroke-width="3" transform="rotate(-60 24 24)"></ellipse>
+                    <circle cx="24" cy="24" fill="#FFFFFF" r="3.5"></circle>
+                </svg>
+                <div class="flex items-baseline font-serif text-xl font-bold tracking-tighter">
+                    <span class="text-white">CRESCA</span><span class="text-[#00E68A] ml-px">OS</span>
+                </div>
+            </a>
+            <div>
+                <a href="/projects" data-lang-switch="en" class="flex items-center gap-1 text-[#00E68A] font-label text-xs hover:text-[#dae2fd] transition-colors font-bold border border-[#00E68A]/30 rounded-full px-3 py-1.5 bg-[#00E68A]/5">
+                    <span class="material-symbols-outlined text-[16px]">language</span> EN
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <main class="flex-1 w-full max-w-2xl mx-auto px-5 pt-24 pb-16 relative z-10">
+        <header class="text-center py-8 md:py-12 animate-slide-up">
+            <span class="inline-flex items-center gap-1.5 font-label text-[10px] font-bold text-primary uppercase tracking-widest bg-[#0A84FF]/5 border border-[#0A84FF]/20 rounded-full px-3 py-1 mb-4">
+                <span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span> Muestra de Portafolio
+            </span>
+            <h1 class="font-headline text-3xl sm:text-4xl font-bold text-white leading-tight tracking-tight mb-4">
+                Implementaciones de Sistemas y<br>Casos de Estudio Seleccionados
+            </h1>
+            <p class="font-body text-base text-on-surface-variant max-w-md mx-auto mb-8 leading-relaxed font-light">
+                Una vista previa de infraestructura de operaciones, simuladores de entrenamiento de ventas y sitios web creados para impulsar un crecimiento de alto rendimiento.
+            </p>
+        </header>
+
+        <!-- Project Grid -->
+        <section class="space-y-6 mb-8">
+            
+            <!-- Project 1: Cresca OS -->
+            <div class="p-6 rounded-2xl glass-card flex flex-col md:flex-row gap-4 justify-between items-start">
+                <div class="space-y-2">
+                    <div class="flex items-center gap-2">
+                        <span class="font-label text-[10px] font-bold text-brand-green uppercase tracking-widest bg-brand-green/10 px-2.5 py-0.5 rounded-full">Producto Principal</span>
+                        <span class="font-label text-[10px] font-bold text-primary uppercase tracking-widest bg-primary/10 px-2.5 py-0.5 rounded-full">Revenue Ops</span>
+                    </div>
+                    <h3 class="font-headline text-lg font-bold text-white">Cresca OS</h3>
+                    <p class="font-body text-xs text-on-surface-variant leading-relaxed font-light">
+                        Sistemas de operaciones de ingresos completamente gestionados que unifican la agregación de leads, el enrutamiento automatizado para respuestas rápidas, verificaciones de integridad de CRM y el seguimiento en tableros ejecutivos en tiempo real.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Project 2: SeptiVolt -->
+            <div class="p-6 rounded-2xl glass-card flex flex-col md:flex-row gap-4 justify-between items-start">
+                <div class="space-y-2">
+                    <div class="flex items-center gap-2">
+                        <span class="font-label text-[10px] font-bold text-primary uppercase tracking-widest bg-primary/10 px-2.5 py-0.5 rounded-full">Ventas Solar</span>
+                        <span class="font-label text-[10px] font-bold text-brand-green uppercase tracking-widest bg-brand-green/10 px-2.5 py-0.5 rounded-full">Simulación IA</span>
+                    </div>
+                    <h3 class="font-headline text-lg font-bold text-white">SeptiVolt</h3>
+                    <p class="font-body text-xs text-on-surface-variant leading-relaxed font-light">
+                        Plataforma de capacitación de ventas impulsada por IA con simuladores interactivos de presentaciones, juegos de rol para el manejo de objeciones verbales en tiempo real, calificación automática de representantes y paneles de visualización para gerentes.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Project 3: G&G Cleaning Services -->
+            <div class="p-6 rounded-2xl glass-card flex flex-col md:flex-row gap-4 justify-between items-start">
+                <div class="space-y-2">
+                    <div class="flex items-center gap-2">
+                        <span class="font-label text-[10px] font-bold text-primary uppercase tracking-widest bg-primary/10 px-2.5 py-0.5 rounded-full">Servicios Hogar</span>
+                        <span class="font-label text-[10px] font-bold text-[#8f9095] uppercase tracking-widest bg-white/5 px-2.5 py-0.5 rounded-full">Embudo CRM</span>
+                    </div>
+                    <h3 class="font-headline text-lg font-bold text-white">G&G Cleaning Services</h3>
+                    <p class="font-body text-xs text-on-surface-variant leading-relaxed font-light">
+                        Una plataforma de reservas en múltiples ciudades, sincronización de calendarios, estructura de listados locales y motor de despacho que aumentó las tasas de reserva en un 35%.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Project 4: New Era Solar Energy -->
+            <div class="p-6 rounded-2xl glass-card flex flex-col md:flex-row gap-4 justify-between items-start">
+                <div class="space-y-2">
+                    <div class="flex items-center gap-2">
+                        <span class="font-label text-[10px] font-bold text-primary uppercase tracking-widest bg-primary/10 px-2.5 py-0.5 rounded-full">Utilidad Solar</span>
+                        <span class="font-label text-[10px] font-bold text-brand-green uppercase tracking-widest bg-brand-green/10 px-2.5 py-0.5 rounded-full">Enrutamiento</span>
+                    </div>
+                    <h3 class="font-headline text-lg font-bold text-white">New Era Solar Energy</h3>
+                    <p class="font-body text-xs text-on-surface-variant leading-relaxed font-light">
+                        Integración de portal de clientes con análisis automático de facturas de servicios públicos, APIs de mapeo de techos, calculadoras de precios instantáneas y enrutamiento directo a consultores locales de energía solar.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Project 5: AI Automation Systems -->
+            <div class="p-6 rounded-2xl glass-card flex flex-col md:flex-row gap-4 justify-between items-start">
+                <div class="space-y-2">
+                    <div class="flex items-center gap-2">
+                        <span class="font-label text-[10px] font-bold text-brand-green uppercase tracking-widest bg-brand-green/10 px-2.5 py-0.5 rounded-full">Agentes IA</span>
+                        <span class="font-label text-[10px] font-bold text-[#8f9095] uppercase tracking-widest bg-white/5 px-2.5 py-0.5 rounded-full">APIs e Integraciones</span>
+                    </div>
+                    <h3 class="font-headline text-lg font-bold text-white">Sistemas de Automatización con IA</h3>
+                    <p class="font-body text-xs text-on-surface-variant leading-relaxed font-light">
+                        Flujos de trabajo de IA personalizados utilizando modelos de OpenAI y Gemini, bots conversacionales para SMS/WhatsApp, conectores de bases de datos (Supabase) y sistemas automatizados de reportes en Slack.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Project 6: Sales Training Platforms -->
+            <div class="p-6 rounded-2xl glass-card flex flex-col md:flex-row gap-4 justify-between items-start">
+                <div class="space-y-2">
+                    <div class="flex items-center gap-2">
+                        <span class="font-label text-[10px] font-bold text-primary uppercase tracking-widest bg-primary/10 px-2.5 py-0.5 rounded-full">E-Learning</span>
+                        <span class="font-label text-[10px] font-bold text-brand-green uppercase tracking-widest bg-brand-green/10 px-2.5 py-0.5 rounded-full">Analíticas</span>
+                    </div>
+                    <h3 class="font-headline text-lg font-bold text-white">Plataformas de Capacitación de Ventas</h3>
+                    <p class="font-body text-xs text-on-surface-variant leading-relaxed font-light">
+                        Cursos interactivos virtuales, tarjetas de puntuación de representantes, análisis de simulaciones de video/audio, programas de onboarding y paneles de informes para gerentes.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Project 7: CRM / Funnel Builds -->
+            <div class="p-6 rounded-2xl glass-card flex flex-col md:flex-row gap-4 justify-between items-start">
+                <div class="space-y-2">
+                    <div class="flex items-center gap-2">
+                        <span class="font-label text-[10px] font-bold text-primary uppercase tracking-widest bg-primary/10 px-2.5 py-0.5 rounded-full">GoHighLevel</span>
+                        <span class="font-label text-[10px] font-bold text-[#8f9095] uppercase tracking-widest bg-white/5 px-2.5 py-0.5 rounded-full">Stripe Checkout</span>
+                    </div>
+                    <h3 class="font-headline text-lg font-bold text-white">CRM y Embudos de Venta</h3>
+                    <p class="font-body text-xs text-on-surface-variant leading-relaxed font-light">
+                        Configuraciones personalizadas multi-inquilino, secuencias de automatización de SMS/Email, configuraciones de calendario, flujos personalizados de Stripe Checkout y endpoints de webhooks seguros.
+                    </p>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Bottom Audit CTA Box -->
+        <section class="bg-[#00E68A]/5 border border-[#00E68A]/20 rounded-[2rem] p-8 text-center max-w-xl mx-auto shadow-xl mb-8">
+            <span class="material-symbols-outlined text-brand-green text-4xl mb-4">analytics</span>
+            <h2 class="font-headline text-xl font-bold text-white mb-3">¿Quieres sistemas a medida como estos para tu negocio?</h2>
+            <p class="font-body text-sm text-[#c6c6cb] mb-6 leading-relaxed font-light">
+                Reserva una auditoría rápida para encontrar fugas de ingresos en tus herramientas actuales y trazar un desarrollo a medida para tus operaciones.
+            </p>
+            <a class="signature-texture text-white px-8 py-3.5 rounded-xl font-label font-bold tracking-wider text-xs uppercase shadow-lg shadow-primary/25 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 inline-block" 
+               href="/es/diagnostic?source=start-page&service=projects">
+                Reservar Auditoría de Negocios &rarr;
+            </a>
+        </section>
+
+        <!-- Bottom Contact Section -->
+        <section class="p-8 rounded-[2rem] border border-outline-variant/10 bg-[#171f33]/40 backdrop-blur-md text-center max-w-xl mx-auto">
+            <h3 class="font-headline text-lg font-bold text-white mb-2">¿Quieres construir sistemas como estos?</h3>
+            <p class="font-body text-sm text-[#c6c6cb] mb-6 font-light">
+                Escríbeme directamente para ponernos en contacto.
+            </p>
+            <div class="flex justify-center">
+                <a class="bg-surface-container-high border border-outline-variant/30 text-white px-6 py-2.5 rounded-xl font-label font-bold text-xs uppercase hover:bg-surface-bright transition-all inline-block" href="mailto:info@crescaos.com">
+                    info@crescaos.com
+                </a>
+            </div>
+        </section>
+
+        <!-- Back Link -->
+        <div class="text-center mt-10">
+            <a class="text-xs text-primary hover:text-brand-green font-label uppercase tracking-widest inline-flex items-center gap-1 transition-colors" href="/es/start">
+                <span class="material-symbols-outlined text-[14px]">arrow_back</span> Volver al Centro de Mando
+            </a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center py-6 border-t border-outline-variant/10">
+        <p class="text-[11px] font-label text-[#8f9095]">
+            &copy; 2026 Cresca OS. Todos los derechos reservados.
+        </p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="/js/language-manager.js"></script>
+    <script>
+        // Interactive Canvas Particle Background
+        window.addEventListener('DOMContentLoaded', () => {
+            const canvas = document.getElementById('neural-bg');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            let particles = [];
+            const particleCount = 35;
+            const maxDistance = 140;
+
+            function resize() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            }
+
+            window.addEventListener('resize', resize);
+            resize();
+
+            class Particle {
+                constructor() {
+                    this.x = Math.random() * canvas.width;
+                    this.y = Math.random() * canvas.height;
+                    this.vx = (Math.random() - 0.5) * 0.4;
+                    this.vy = (Math.random() - 0.5) * 0.4;
+                    this.radius = Math.random() * 2 + 0.5;
+                }
+
+                update() {
+                    this.x += this.vx;
+                    this.y += this.vy;
+
+                    if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+                    if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+                }
+
+                draw() {
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                    ctx.fillStyle = 'rgba(0, 230, 138, 0.8)';
+                    ctx.fill();
+                }
+            }
+
+            for (let i = 0; i < particleCount; i++) {
+                particles.push(new Particle());
+            }
+
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                
+                for (let i = 0; i < particles.length; i++) {
+                    particles[i].update();
+                    particles[i].draw();
+
+                    for (let j = i + 1; j < particles.length; j++) {
+                        const dx = particles[i].x - particles[j].x;
+                        const dy = particles[i].y - particles[j].y;
+                        const distance = Math.sqrt(dx * dx + dy * dy);
+
+                        if (distance < maxDistance) {
+                            ctx.beginPath();
+                            ctx.moveTo(particles[i].x, particles[i].y);
+                            ctx.lineTo(particles[j].x, particles[j].y);
+                            ctx.strokeStyle = `rgba(10, 132, 255, ${0.35 * (1 - distance / maxDistance)})`;
+                            ctx.lineWidth = 0.6;
+                            ctx.stroke();
+                        }
+                    }
+                }
+                requestAnimationFrame(animate);
+            }
+            animate();
+        });
+    </script>
+</body>
+</html>
