@@ -10,6 +10,8 @@
 /es/custom-build        /es/custom-build.html       200
 /projects               /projects.html             200
 /es/projects            /es/projects.html           200
+/life-architect         /life-architect.html         200
+/es/life-architect      /es/life-architect.html      200
 
 # Link Hub & Portfolio HTML to Clean Redirects (Second)
 /start.html             /start                      301!
@@ -18,6 +20,8 @@
 /es/custom-build.html   /es/custom-build            301!
 /projects.html          /projects                   301!
 /es/projects.html       /es/projects                301!
+/life-architect.html    /life-architect              301!
+/es/life-architect.html /es/life-architect           301!
 
 # Funnel Standardization
 /book-audit          /diagnostic          301!
